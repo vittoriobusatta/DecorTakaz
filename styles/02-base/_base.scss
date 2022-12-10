@@ -1,0 +1,13 @@
+::-moz-selection {
+  background: var(--primary_color);
+  text-shadow: none;
+}
+::selection {
+  background: var(--primary_color);
+  text-shadow: none;
+}
+
+body {
+  height: 100%;
+  background-color: $background_color;
+}
