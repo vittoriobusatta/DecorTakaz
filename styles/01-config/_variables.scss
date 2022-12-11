@@ -1,11 +1,11 @@
-$background_color: #EDE0D4;
-$title_color: #6C5347;
-$primary_color: #745033;
-$secondary_color: #DDB892;
+$backgroundColor: #EDE0D4;
+$titleColor: #6C5347;
+$primaryColor: #745033;
+$secondaryColor: #DDB892;
+$activeColor: #C9986D;
+$ManropeRegular: "Manrope Regular";
 
 :export {
-  backgroundColor: $background_color;
-  titleColor: $title_color;
-  primaryColor: $primary_color;
-  secondaryColor: $secondary_color;
+  backgroundColor: $backgroundColor;
+  primaryColor: $primaryColor;
 }

@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Table basse",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/mobilier1.png",
+    "desc": ""
+  },
+  {
+    "id": 2,
+    "name": "Tabouret",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/mobilier2.png",
+    "desc": ""
+  },
+  {
+    "id": 3,
+    "name": "Table basse",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/mobilier3.png",
+    "desc": ""
+  },
+  {
+    "id": 4,
+    "name": "Table basse",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/mobilier4.png",
+    "desc": ""
+  },
+  {
+    "id": 5,
+    "name": "Table basse",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/mobilier5.png",
+    "desc": "Dim: 1m x 60cm, 45cm de haut"
+  },
+  {
+    "id": 6,
+    "name": "Douche",
+    "category": "Intérieur",
+    "filter": "salle de bain",
+    "src": "",
+    "desc": ""
+  }
+]
