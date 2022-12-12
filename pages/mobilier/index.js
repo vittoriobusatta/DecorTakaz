@@ -16,7 +16,7 @@ export const SubHead = styled.div`
   flex-direction: column;
   row-gap: 45px;
   overflow: hidden;
-  margin-bottom: 67px;
+  margin-bottom: 45px;
   @media screen and (min-width: 1224px) {
     align-items: flex-end;
     flex-direction: row;
@@ -26,8 +26,10 @@ export const SubHead = styled.div`
 
 export const BackCatalogue = styled.ul`
   margin-top: 22px;
+  padding: 0 32px;
   @media screen and (min-width: 1224px) {
     margin-top: 50px;
+    padding: 0;
   }
 `;
 
@@ -39,7 +41,7 @@ const Card = () => {
       {categoryArray.map((i) => (
         <li key={i.id}>
           <div>
-            <Image src={i.src} alt={"image mobilier " + i.id} width={300} height={300} />
+            <Image src={i.src} alt={"Image " + i.id} width={300} height={300} />
             <h3>{i.name}</h3>
             <p>
               {i.desc} <br />

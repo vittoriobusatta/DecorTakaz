@@ -10,13 +10,14 @@ export const Contenthead = styled.div`
     font-size: 48px;
     text-transform: uppercase;
     color: #6c5347;
+    padding: 0 32px;
     @media screen and (min-width: 1224px) {
       font-size: 110px;
+      padding: 0;
     }
     &::before {
       position: absolute;
       top: -20px;
-      left: 0;
       font-family: "Manrope";
       font-weight: 800;
       font-size: 14px;

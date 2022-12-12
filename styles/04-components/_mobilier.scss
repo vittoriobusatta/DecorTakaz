@@ -1,7 +1,7 @@
 section#mobilier {
   margin-top: 122px;
   height: 200vh;
-  padding: 0 32px;
+  // padding: 0 32px;
   @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 992px) {
@@ -38,6 +38,7 @@ ul.moby {
   flex-wrap: wrap;
   flex-grow: 1;
   column-gap: 60px;
+  padding: 0 32px;
   @media screen and (min-width: 1224px) {
     justify-content: space-between;
     row-gap: 200px;
@@ -49,7 +50,7 @@ ul.moby {
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px;
-    @media screen and (min-width: 1224px) {
+    @media screen and (min-width: 768px) {
       width: 45%;
     }
     & img {
@@ -69,13 +70,13 @@ ul.moby {
     }
     & p {
       font-family: "Manrope";
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 18px;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 17px;
       color: #785436;
       @media screen and (min-width: 1224px) {
         font-size: 16px;
-      line-height: 22px;
+        line-height: 22px;
       }
     }
   }
