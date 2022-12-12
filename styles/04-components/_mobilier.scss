@@ -75,10 +75,8 @@ ul.moby {
       color: #785436;
       @media screen and (min-width: 1224px) {
         font-size: 16px;
+      line-height: 22px;
       }
-    }
-    &:nth-child(1) {
-      // margin-top: 200px;
     }
   }
 }
