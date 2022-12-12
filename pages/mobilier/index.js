@@ -31,8 +31,24 @@ export const BackCatalogue = styled.ul`
   }
 `;
 
+const categoryArray = data.filter((item) => item.category == "Mobilier");
+
+
+const Card = () => {
+  return (
+    <ul className="moby">
+      {categoryArray.map((i) => (
+        <li key={i.id}>
+          <Image src={i.src} alt="img" width={300} height={300} />
+          <h3>{i.name}</h3>
+          <p>{i.desc}</p>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 const Mobilier = () => {
-  const categoryArray = data.filter((item) => item.category == "Mobilier");
 
   const MobilierHead = styled(Contenthead)`
     h1::before {
@@ -66,19 +82,13 @@ const Mobilier = () => {
             <li>Buffet</li>
           </Filter>
         </SubHead>
-      </MobilierHead>
 
-      <main>
-        {categoryArray.map((i) => (
-          <div key={i.id}>
-            <Image src={i.src} alt="img" width={300} height={300} />
-            <h3>{i.name}</h3>
-            <p>{i.desc}</p>
-          </div>
-        ))}
-      </main>
+        <Card />
+      </MobilierHead>
     </section>
   );
 };
+
+
 
 export default Mobilier;

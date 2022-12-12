@@ -30,3 +30,42 @@ section#mobilier {
     line-height: 28px;
   }
 }
+
+ul.moby {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 60px;
+  row-gap: 50px;
+  @media screen and (min-width: 1224px) {
+    row-gap: 200px;
+  }
+  & li {
+    width: fit-content;
+    & h3 {
+      font-family: "Manrope";
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 28px;
+      text-transform: uppercase;
+      color: #785436;
+      @media screen and (min-width: 1224px) {
+      font-size: 20px;
+      }
+    }
+    & p {
+      font-family: "Manrope";
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 22px;
+      color: #785436;
+      @media screen and (min-width: 1224px) {
+      font-size: 16px;
+        }
+    }
+    &:nth-child(1) {
+      // margin-top: 200px;
+    }
+  }
+}

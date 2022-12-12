@@ -5,7 +5,7 @@
     "category": "Mobilier",
     "filter": "table",
     "src": "/images/mobilier1.png",
-    "desc": ""
+    "desc": "Fusce hendrerit gravida purus."
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "category": "Mobilier",
     "filter": "table",
     "src": "/images/mobilier2.png",
-    "desc": ""
+    "desc": "Fusce hendrerit gravida purus."
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "category": "Mobilier",
     "filter": "table",
     "src": "/images/mobilier3.png",
-    "desc": ""
+    "desc": "Fusce hendrerit gravida purus."
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "category": "Mobilier",
     "filter": "table",
     "src": "/images/mobilier4.png",
-    "desc": ""
+    "desc": "Fusce hendrerit gravida purus."
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "category": "Mobilier",
     "filter": "table",
     "src": "/images/mobilier5.png",
-    "desc": "Dim: 1m x 60cm, 45cm de haut"
+    "desc": "Fusce hendrerit gravida purus."
   },
   {
     "id": 6,
@@ -45,6 +45,6 @@
     "category": "Intérieur",
     "filter": "salle de bain",
     "src": "",
-    "desc": ""
+    "desc": "Fusce hendrerit gravida purus."
   }
 ]
