@@ -26,7 +26,7 @@ export const SubHead = styled.div`
 
 export const BackCatalogue = styled.ul`
   margin-top: 22px;
-  padding: 0 32px;
+  padding: 0 24px;
   @media screen and (min-width: 1224px) {
     margin-top: 50px;
     padding: 0;
