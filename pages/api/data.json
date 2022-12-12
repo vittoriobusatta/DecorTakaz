@@ -4,7 +4,7 @@
     "name": "Table à manger",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier1.png",
+    "src": "/images/mobilier1.webp",
     "desc": "Bois de Tamarin, Essence vert/bleu",
     "dim": "1,70m x 80 cm, Hauteur : 75cm"
   },
@@ -13,7 +13,7 @@
     "name": "Tabouret",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier2.png",
+    "src": "/images/mobilier2.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
@@ -22,7 +22,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier3.png",
+    "src": "/images/mobilier3.webp",
     "desc": "Bois de Tamarin, Tranparent",
     "dim": "1m x 60cm, Hauteur : 45cm"
   },
@@ -31,7 +31,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier4.png",
+    "src": "/images/mobilier4.webp",
     "desc": "Bois de Tamarin, Vert avec effet ",
     "dim": "80cm, Hauteur : 45cm"
   },
@@ -40,7 +40,7 @@
     "name": "Table basse ronde",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier12.png",
+    "src": "/images/mobilier12.webp",
     "desc": "Bois de Tamarin, Vert",
     "dim": "70cm x 45cm"
   },
@@ -49,7 +49,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier5.png",
+    "src": "/images/mobilier5.webp",
     "desc": "Bois de Tamarin, Tranparent",
     "dim": "1m x 60cm, Hauteur : 45cm"
   },
@@ -58,7 +58,7 @@
     "name": "Table à manger",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier13.png",
+    "src": "/images/mobilier13.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
@@ -68,7 +68,7 @@
     "name": "Table à manger ronde",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier7.png",
+    "src": "/images/mobilier7.webp",
     "desc": "Bois de Tamarin, Vert Emeraude",
     "dim": "1.20m, Hauteur : 75cm"
   },
@@ -77,7 +77,7 @@
     "name": "Table basse océan",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier8.png",
+    "src": "/images/mobilier8.webp",
     "desc": "Bois de Tamarin",
     "dim": "50cm x 70cm"
   },
@@ -86,7 +86,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier9.png",
+    "src": "/images/mobilier9.webp",
     "desc": "Bois de Tamarin, bleu océan",
     "dim": "50cm x 70cm"
   },
@@ -95,7 +95,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier6.png",
+    "src": "/images/mobilier6.webp",
     "desc": "Bois de Tamarin, Tranparent",
     "dim": "1m x 60cm, Hauteur : 45cm"
   },
@@ -104,7 +104,7 @@
     "name": "Table à manger",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier11.png",
+    "src": "/images/mobilier11.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
@@ -114,7 +114,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier10.png",
+    "src": "/images/mobilier10.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   }
