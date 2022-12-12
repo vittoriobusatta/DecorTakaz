@@ -16,7 +16,7 @@ export const SubHead = styled.div`
   flex-direction: column;
   row-gap: 45px;
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 67px;
   @media screen and (min-width: 1224px) {
     align-items: flex-end;
     flex-direction: row;
@@ -33,15 +33,19 @@ export const BackCatalogue = styled.ul`
 
 const categoryArray = data.filter((item) => item.category == "Mobilier");
 
-
 const Card = () => {
   return (
     <ul className="moby">
       {categoryArray.map((i) => (
         <li key={i.id}>
-          <Image src={i.src} alt="img" width={300} height={300} />
-          <h3>{i.name}</h3>
-          <p>{i.desc}</p>
+          <div>
+            <Image src={i.src} alt={"image mobilier " + i.id} width={300} height={300} />
+            <h3>{i.name}</h3>
+            <p>
+              {i.desc} <br />
+              {i.dim}
+            </p>
+          </div>
         </li>
       ))}
     </ul>
@@ -49,7 +53,6 @@ const Card = () => {
 };
 
 const Mobilier = () => {
-
   const MobilierHead = styled(Contenthead)`
     h1::before {
       content: "(${categoryArray.length})";
@@ -88,7 +91,5 @@ const Mobilier = () => {
     </section>
   );
 };
-
-
 
 export default Mobilier;

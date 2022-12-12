@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Contenthead = styled.div`
+  display: flex;
+  flex-direction: column;
   h1 {
     position: relative;
     font-family: "Manrope";
@@ -36,9 +38,12 @@ export const Filter = styled.ul`
   column-gap: 40px;
   padding: 6px 20px;
   cursor: grab;
+  width: 100%;
+
   @media screen and (min-width: 1224px) {
     column-gap: 80px;
     overflow-y: none;
+    width: auto;
   }
   li {
     background: none;

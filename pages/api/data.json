@@ -5,7 +5,8 @@
     "category": "Mobilier",
     "filter": "table",
     "src": "/images/mobilier1.png",
-    "desc": "Fusce hendrerit gravida purus."
+    "desc": "Bois de Tamarin, Tranparent",
+    "dim": "1m x 60cm, Hauteur : 45cm"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "category": "Mobilier",
     "filter": "table",
     "src": "/images/mobilier2.png",
-    "desc": "Fusce hendrerit gravida purus."
+    "desc": "Bois de Tamarin, Tranparent",
+    "dim": "1m x 60cm, Hauteur : 45cm"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "category": "Mobilier",
     "filter": "table",
     "src": "/images/mobilier3.png",
-    "desc": "Fusce hendrerit gravida purus."
+    "desc": "Bois de Tamarin, Tranparent",
+    "dim": "1m x 60cm, Hauteur : 45cm"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "category": "Mobilier",
     "filter": "table",
     "src": "/images/mobilier4.png",
-    "desc": "Fusce hendrerit gravida purus."
+    "desc": "Bois de Tamarin, Vert avec effet ",
+    "dim": "80cm, Hauteur : 45cm"
   },
   {
     "id": 5,
@@ -37,14 +41,52 @@
     "category": "Mobilier",
     "filter": "table",
     "src": "/images/mobilier5.png",
-    "desc": "Fusce hendrerit gravida purus."
+    "desc": "Bois de Tamarin, Tranparent",
+    "dim": "1m x 60cm, Hauteur : 45cm"
   },
   {
     "id": 6,
-    "name": "Douche",
-    "category": "Intérieur",
-    "filter": "salle de bain",
-    "src": "",
-    "desc": "Fusce hendrerit gravida purus."
+    "name": "Table basse",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/mobilier6.png",
+    "desc": "Bois de Tamarin, Tranparent",
+    "dim": "1m x 60cm, Hauteur : 45cm"
+  },
+  {
+    "id": 7,
+    "name": "Table à manger ronde",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/mobilier7.png",
+    "desc": "Bois de Tamarin, Vert Emeraude",
+    "dim": "1.20m, Hauteur : 75cm"
+  },
+  {
+    "id": 8,
+    "name": "Table basse océan",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/mobilier8.png",
+    "desc": "Bois de Tamarin",
+    "dim": "50cm x 70cm"
+  },
+  {
+    "id": 9,
+    "name": "Table basse",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/mobilier9.png",
+    "desc": "Bois de Tamarin, bleu océan",
+    "dim": "50cm x 70cm"
+  },
+  {
+    "id": 9,
+    "name": "Table basse",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/mobilier10.png",
+    "desc": "Bois de Tamarin",
+    "dim": " 1m x 80cm, Hauteur : 45cm"
   }
 ]
