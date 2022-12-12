@@ -41,7 +41,7 @@ const Card = () => {
       {categoryArray.map((i) => (
         <li key={i.id}>
           <div>
-            <Image src={i.src} alt={"Image " + i.id} width={300} height={300} />
+            <Image src={i.src} alt={"Image " + i.id} width={300} height={300} placeholder="blur" blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP88OFpPQAI4wNGcgmq4AAAAABJRU5ErkJggg==" />
             <h3>{i.name}</h3>
             <p>
               {i.desc} <br />
