@@ -34,8 +34,6 @@ export const Contenthead = styled.div`
 `;
 
 export const Filter = styled.ul`
-  position: sticky;
-  top: 0;
   background-color: #e1d2c1;
   display: inline-flex;
   column-gap: 40px;
@@ -56,5 +54,6 @@ export const Filter = styled.ul`
     line-height: 28px;
     text-transform: uppercase;
     color: #785436;
+    white-space: nowrap;
   }
 `;

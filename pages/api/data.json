@@ -4,7 +4,7 @@
     "name": "Table à manger",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier1.webp",
+    "src": "/images/img1.webp",
     "desc": "Bois de Tamarin, Essence vert/bleu",
     "dim": "1,70m x 80 cm, Hauteur : 75cm"
   },
@@ -13,7 +13,7 @@
     "name": "Tabouret",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier2.webp",
+    "src": "/images/img2.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
@@ -22,7 +22,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier3.webp",
+    "src": "/images/img3.webp",
     "desc": "Bois de Tamarin, Tranparent",
     "dim": "1m x 60cm, Hauteur : 45cm"
   },
@@ -31,7 +31,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier4.webp",
+    "src": "/images/img4.webp",
     "desc": "Bois de Tamarin, Vert avec effet ",
     "dim": "80cm, Hauteur : 45cm"
   },
@@ -40,7 +40,7 @@
     "name": "Table basse ronde",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier12.webp",
+    "src": "/images/img5.webp",
     "desc": "Bois de Tamarin, Vert",
     "dim": "70cm x 45cm"
   },
@@ -49,7 +49,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier5.webp",
+    "src": "/images/img6.webp",
     "desc": "Bois de Tamarin, Tranparent",
     "dim": "1m x 60cm, Hauteur : 45cm"
   },
@@ -58,7 +58,7 @@
     "name": "Table à manger",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier13.webp",
+    "src": "/images/img7.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
@@ -68,7 +68,7 @@
     "name": "Table à manger ronde",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier7.webp",
+    "src": "/images/img8.webp",
     "desc": "Bois de Tamarin, Vert Emeraude",
     "dim": "1.20m, Hauteur : 75cm"
   },
@@ -77,7 +77,7 @@
     "name": "Table basse océan",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier8.webp",
+    "src": "/images/img9.webp",
     "desc": "Bois de Tamarin",
     "dim": "50cm x 70cm"
   },
@@ -86,7 +86,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier9.webp",
+    "src": "/images/img10.webp",
     "desc": "Bois de Tamarin, bleu océan",
     "dim": "50cm x 70cm"
   },
@@ -95,7 +95,7 @@
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier6.webp",
+    "src": "/images/img11.webp",
     "desc": "Bois de Tamarin, Tranparent",
     "dim": "1m x 60cm, Hauteur : 45cm"
   },
@@ -104,17 +104,70 @@
     "name": "Table à manger",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier11.webp",
+    "src": "/images/img12.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
-
   {
     "id": 13,
     "name": "Table basse",
     "category": "Mobilier",
     "filter": "table",
-    "src": "/images/mobilier10.webp",
+    "src": "/images/img13.webp",
+    "desc": "Bois de Tamarin",
+    "dim": ""
+  },
+  {
+    "id": 14,
+    "name": "Mirroir",
+    "category": "Interieur",
+    "filter": "bathroom",
+    "src": "/images/img14.png",
+    "desc": "Bois de Tamarin",
+    "dim": ""
+  },
+  {
+    "id": 15,
+    "name": "Cuisine",
+    "category": "Interieur",
+    "filter": "cuisine",
+    "src": "/images/img15.png",
+    "desc": "Bois de Tamarin, Résine époxy vert",
+    "dim": ""
+  },
+  {
+    "id": 16,
+    "name": "Meuble de salle de bain",
+    "category": "Interieur",
+    "filter": "bathroom",
+    "src": "/images/img16.png",
+    "desc": "Mahogany (Acajou d'Afrique)",
+    "dim": "140 x 60cm, Pronfondeur : 50cm"
+  },
+  {
+    "id": 17,
+    "name": "Plan de travail",
+    "category": "Interieur",
+    "filter": "cuisine",
+    "src": "/images/img17.png",
+    "desc": "Bois de Tamarin",
+    "dim": "1,6m x 40cm x 4cm"
+  },
+  {
+    "id": 18,
+    "name": "Planche avec robinet",
+    "category": "Interieur",
+    "filter": "bathroom",
+    "src": "/images/img18.png",
+    "desc": "Bois de Tamarin",
+    "dim": "1,6m x 40cm x 4cm"
+  },
+  {
+    "id": 19,
+    "name": "Console",
+    "category": "Mobilier",
+    "filter": "salon",
+    "src": "/images/img19.png",
     "desc": "Bois de Tamarin",
     "dim": ""
   }

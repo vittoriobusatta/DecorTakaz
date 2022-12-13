@@ -15,6 +15,7 @@ function Home() {
 
       <main className="main">
         <Link href="/mobilier/">Mobilier</Link>
+        <Link href="/interieur/">Intérieur</Link>
       </main>
     </>
   );
