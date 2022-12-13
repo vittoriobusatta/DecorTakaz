@@ -1,14 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Table à manger",
-    "category": "Mobilier",
-    "filter": "table",
-    "src": "/images/img1.webp",
-    "desc": "Bois de Tamarin, Essence vert/bleu",
-    "dim": "1,70m x 80 cm, Hauteur : 75cm"
-  },
-  {
     "id": 2,
     "name": "Tabouret",
     "category": "Mobilier",
@@ -16,6 +7,15 @@
     "src": "/images/img2.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
+  },
+  {
+    "id": 1,
+    "name": "Table à manger",
+    "category": "Mobilier",
+    "filter": "table",
+    "src": "/images/img1.webp",
+    "desc": "Bois de Tamarin, Essence vert/bleu",
+    "dim": "1,70m x 80 cm, Hauteur : 75cm"
   },
   {
     "id": 3,
@@ -225,5 +225,4 @@
     "desc": "Bois de Tamarin",
     "dim": ""
   }
- 
 ]
