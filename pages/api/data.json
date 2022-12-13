@@ -2,7 +2,7 @@
   {
     "id": 2,
     "name": "Tabouret",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img2.webp",
     "desc": "Bois de Tamarin",
@@ -11,7 +11,7 @@
   {
     "id": 1,
     "name": "Table à manger",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img1.webp",
     "desc": "Bois de Tamarin, Essence vert/bleu",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "name": "Table basse",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img3.webp",
     "desc": "Bois de Tamarin, Tranparent",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "Table basse",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img4.webp",
     "desc": "Bois de Tamarin, Vert avec effet ",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "name": "Table basse ronde",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img5.webp",
     "desc": "Bois de Tamarin, Vert",
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "name": "Table basse",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img6.webp",
     "desc": "Bois de Tamarin, Tranparent",
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "name": "Table à manger",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img7.webp",
     "desc": "Bois de Tamarin",
@@ -66,7 +66,7 @@
   {
     "id": 8,
     "name": "Table à manger ronde",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img8.webp",
     "desc": "Bois de Tamarin, Vert Emeraude",
@@ -75,7 +75,7 @@
   {
     "id": 9,
     "name": "Table basse océan",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img9.webp",
     "desc": "Bois de Tamarin",
@@ -84,7 +84,7 @@
   {
     "id": 10,
     "name": "Table basse",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img10.webp",
     "desc": "Bois de Tamarin, bleu océan",
@@ -93,7 +93,7 @@
   {
     "id": 11,
     "name": "Table basse",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img11.webp",
     "desc": "Bois de Tamarin, Tranparent",
@@ -102,7 +102,7 @@
   {
     "id": 12,
     "name": "Table à manger",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img12.webp",
     "desc": "Bois de Tamarin",
@@ -111,7 +111,7 @@
   {
     "id": 13,
     "name": "Table basse",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "table",
     "src": "/images/img13.webp",
     "desc": "Bois de Tamarin",
@@ -120,7 +120,7 @@
   {
     "id": 14,
     "name": "Mirroir",
-    "category": "Interieur",
+    "category": "interieur",
     "filter": "bathroom",
     "src": "/images/img14.png",
     "desc": "Bois de Tamarin",
@@ -129,7 +129,7 @@
   {
     "id": 15,
     "name": "Cuisine",
-    "category": "Interieur",
+    "category": "interieur",
     "filter": "cuisine",
     "src": "/images/img15.png",
     "desc": "Bois de Tamarin, Résine époxy vert",
@@ -138,7 +138,7 @@
   {
     "id": 16,
     "name": "Meuble de salle de bain",
-    "category": "Interieur",
+    "category": "interieur",
     "filter": "bathroom",
     "src": "/images/img16.png",
     "desc": "Mahogany (Acajou d'Afrique)",
@@ -147,7 +147,7 @@
   {
     "id": 17,
     "name": "Plan de travail",
-    "category": "Interieur",
+    "category": "interieur",
     "filter": "cuisine",
     "src": "/images/img17.png",
     "desc": "Bois de Tamarin",
@@ -156,7 +156,7 @@
   {
     "id": 18,
     "name": "Planche avec robinet",
-    "category": "Interieur",
+    "category": "interieur",
     "filter": "bathroom",
     "src": "/images/img18.png",
     "desc": "Bois de Tamarin",
@@ -165,7 +165,7 @@
   {
     "id": 19,
     "name": "Console",
-    "category": "Mobilier",
+    "category": "mobilier",
     "filter": "salon",
     "src": "/images/img19.png",
     "desc": "Bois de Tamarin",
@@ -174,7 +174,7 @@
   {
     "id": 20,
     "name": "Lampe de Chevet",
-    "category": "Produits",
+    "category": "produits",
     "filter": "lampes",
     "src": "/images/img20.png",
     "desc": "Bois de Tamarin, Résine transparente",
@@ -183,7 +183,7 @@
   {
     "id": 21,
     "name": "Planche pour Bar de cuisine",
-    "category": "Interieur",
+    "category": "interieur",
     "filter": "cuisine",
     "src": "/images/img21.png",
     "desc": "Bois de Tamarin",
@@ -192,7 +192,7 @@
   {
     "id": 22,
     "name": "Comptoir pour Salle de bain",
-    "category": "Interieur",
+    "category": "interieur",
     "filter": "bathroom",
     "src": "/images/img22.png",
     "desc": "Bois de Tamarin",
@@ -201,7 +201,7 @@
   {
     "id": 23,
     "name": "Ensemble de Salon",
-    "category": "Interieur",
+    "category": "interieur",
     "filter": "salon",
     "src": "/images/img23.png",
     "desc": "Bois de Tamarin",
@@ -210,7 +210,7 @@
   {
     "id": 24,
     "name": "Support Tablette",
-    "category": "Produits",
+    "category": "produits",
     "filter": "",
     "src": "/images/img24.png",
     "desc": "Bois de Tamarin",
@@ -219,7 +219,7 @@
   {
     "id": 25,
     "name": "Planche a découper",
-    "category": "Produits",
+    "category": "produits",
     "filter": "",
     "src": "/images/img25.png",
     "desc": "Bois de Tamarin",

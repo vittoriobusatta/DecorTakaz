@@ -32,7 +32,7 @@ export const BackCatalogue = styled.ul`
   }
 `;
 
-const categoryArray = data.filter((item) => item.category == "Interieur");
+const categoryArray = data.filter((item) => item.category == "interieur");
 
 const Card = () => {
   return (
