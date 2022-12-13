@@ -170,6 +170,60 @@
     "src": "/images/img19.png",
     "desc": "Bois de Tamarin",
     "dim": ""
+  },
+  {
+    "id": 20,
+    "name": "Lampe de Chevet",
+    "category": "Produits",
+    "filter": "lampes",
+    "src": "/images/img20.png",
+    "desc": "Bois de Tamarin, Résine transparente",
+    "dim": "Hauteur de 50cm, largeur du plateau 40cm"
+  },
+  {
+    "id": 21,
+    "name": "Planche pour Bar de cuisine",
+    "category": "Interieur",
+    "filter": "cuisine",
+    "src": "/images/img21.png",
+    "desc": "Bois de Tamarin",
+    "dim": ""
+  },
+  {
+    "id": 22,
+    "name": "Comptoir pour Salle de bain",
+    "category": "Interieur",
+    "filter": "bathroom",
+    "src": "/images/img22.png",
+    "desc": "Bois de Tamarin",
+    "dim": "1,2m de long sur 80cm de large."
+  },
+  {
+    "id": 23,
+    "name": "Ensemble de Salon",
+    "category": "Interieur",
+    "filter": "salon",
+    "src": "/images/img23.png",
+    "desc": "Bois de Tamarin",
+    "dim": ""
+  },
+  {
+    "id": 24,
+    "name": "Support Tablette",
+    "category": "Produits",
+    "filter": "",
+    "src": "/images/img24.png",
+    "desc": "Bois de Tamarin",
+    "dim": ""
+  },
+  {
+    "id": 25,
+    "name": "Planche a découper",
+    "category": "Produits",
+    "filter": "",
+    "src": "/images/img25.png",
+    "desc": "Bois de Tamarin",
+    "dim": ""
   }
  
 ]

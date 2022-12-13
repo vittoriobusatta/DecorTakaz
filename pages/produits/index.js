@@ -32,7 +32,7 @@ export const BackCatalogue = styled.ul`
   }
 `;
 
-const categoryArray = data.filter((item) => item.category == "Interieur");
+const categoryArray = data.filter((item) => item.category == "Produits");
 
 const Card = () => {
   return (
@@ -74,13 +74,13 @@ const Mobilier = () => {
   return (
     <section id="mobilier">
       <Head>
-        <title>Intérieur | Menuiserie Artisanale</title>
+        <title>Produits | Menuiserie Artisanale</title>
       </Head>
 
       <Header />
 
       <MobilierHead>
-        <h1>Intérieur</h1>
+        <h1>Produits</h1>
 
         <SubHead>
           <BackCatalogue className="backcatalogue">
@@ -88,19 +88,18 @@ const Mobilier = () => {
               <li>Mobilier</li>
             </Link>
             <Link href="/interieur/">
-              <li className="active">Intérieur</li>
+              <li>Intérieur</li>
             </Link>
             <Link href="/produits/">
-              <li>Produits</li>
+              <li className="active">Produits</li>
             </Link>
             {/* <li>Architecture</li> */}
           </BackCatalogue>
 
           <Filter>
             <li className="active">Tous</li>
-            <li>Salle de Bain</li>
-            <li>Salon</li>
-            <li>Cuisine</li>
+            <li>Lampes</li>
+            <li>Mirroirs</li>
           </Filter>
         </SubHead>
 

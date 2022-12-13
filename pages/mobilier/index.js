@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import { Contenthead, Filter } from "../../utils/common";
-// import img from "../../assets/images/mobilier2.png";
 import Header from "../../components/Header";
 import data from "../api/data.json";
 
@@ -91,8 +90,10 @@ const Mobilier = () => {
             <Link href="/interieur/">
               <li>Intérieur</li>
             </Link>
-            <li>Produits</li>
-            <li>Architecture</li>
+            <Link href="/produits/">
+              <li>Produits</li>
+            </Link>
+            {/* <li>Architecture</li> */}
           </BackCatalogue>
 
           <Filter>
