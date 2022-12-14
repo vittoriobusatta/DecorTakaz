@@ -2,6 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Header from "../components/Header";
 import React, { useState } from 'react'
+import Image from "next/image";
+import Release from "../components/Release";
 
 
 function Home() {
@@ -13,10 +15,13 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
+
       <main className="main">
-        <Link href="/mobilier/">Mobilier</Link>
+        {/* <Link href="/mobilier/">Mobilier</Link>
         <Link href="/interieur/">Intérieur</Link>
-        <Link href="/produits/">Produits</Link>
+        <Link href="/produits/">Produits</Link> */}
+        <Release />
       </main>
     </>
   );
