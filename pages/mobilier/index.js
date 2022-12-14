@@ -86,7 +86,7 @@ const Mobilier = () => {
               onClick={handleFilterChange}
               value="other"
             >
-              Autres
+              Divers
             </button>
           </Filter>
         </SubHead>
