@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Header from "../components/Header";
-import React from 'react'
+import React, { useState } from 'react'
 
 
 function Home() {

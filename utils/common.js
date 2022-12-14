@@ -71,14 +71,13 @@ export const Filter = styled.ul`
   display: inline-flex;
   column-gap: 40px;
   padding: 6px 20px;
-  cursor: grab;
   width: 100%;
   @media screen and (min-width: 992px) {
     column-gap: 80px;
     overflow-y: none;
     width: auto;
   }
-  li {
+  button {
     background: none;
     font-family: "Manrope";
     font-weight: 800;
@@ -87,5 +86,6 @@ export const Filter = styled.ul`
     text-transform: uppercase;
     color: #785436;
     white-space: nowrap;
+    cursor: pointer;
   }
 `;
