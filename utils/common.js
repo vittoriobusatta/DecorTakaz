@@ -10,7 +10,10 @@ export const Contenthead = styled.div`
     font-size: 48px;
     text-transform: uppercase;
     color: #6c5347;
-    padding: 0 24px;
+    padding: 0 54px;
+    @media screen and (min-width: 992px) {
+      padding: 0 82px;
+    }
     @media screen and (min-width: 1224px) {
       font-size: 110px;
       padding: 0;
@@ -33,6 +36,36 @@ export const Contenthead = styled.div`
   }
 `;
 
+export const SubHead = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  row-gap: 45px;
+  overflow: hidden;
+  margin-bottom: 45px;
+  @media screen and (min-width: 992px) {
+    align-items: flex-end;
+    flex-direction: row;
+  }
+  @media screen and (min-width: 1224px) {
+    margin-bottom: 200px;
+  }
+`;
+
+export const BackCatalogue = styled.ul`
+  margin-top: 22px;
+  padding: 0 54px;
+  @media screen and (min-width: 992px) {
+    padding: 0 82px;
+  }
+  @media screen and (min-width: 1224px) {
+    margin-top: 50px;
+    padding: 0;
+  }
+`;
+
 export const Filter = styled.ul`
   background-color: #e1d2c1;
   display: inline-flex;
@@ -40,8 +73,7 @@ export const Filter = styled.ul`
   padding: 6px 20px;
   cursor: grab;
   width: 100%;
-
-  @media screen and (min-width: 1224px) {
+  @media screen and (min-width: 992px) {
     column-gap: 80px;
     overflow-y: none;
     width: auto;

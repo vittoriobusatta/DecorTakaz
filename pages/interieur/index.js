@@ -3,40 +3,15 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import { Contenthead, Filter } from "../../utils/common";
+import { Contenthead, Filter, BackCatalogue, SubHead } from "../../utils/common";
 import Header from "../../components/Header";
 import data from "../api/data.json";
-
-export const SubHead = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: column;
-  row-gap: 45px;
-  overflow: hidden;
-  margin-bottom: 45px;
-  @media screen and (min-width: 1224px) {
-    align-items: flex-end;
-    flex-direction: row;
-    margin-bottom: 100px;
-  }
-`;
-
-export const BackCatalogue = styled.ul`
-  margin-top: 22px;
-  padding: 0 24px;
-  @media screen and (min-width: 1224px) {
-    margin-top: 50px;
-    padding: 0;
-  }
-`;
 
 const categoryArray = data.filter((item) => item.category == "interieur");
 
 const Card = () => {
   return (
-    <ul className="moby">
+    <ul className="gallerie">
       {categoryArray.map((i) => (
         <li key={i.id}>
           <div>
