@@ -1,14 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import {
-  Contenthead,
-  Filter,
-  BackCatalogue,
-  SubHead,
-} from "../../utils/common";
+import { Contenthead, Filter, BackCatalogue, SubHead } from "../../utils/common";
 import Header from "../../components/Header";
 import data from "../api/data.json";
 
@@ -44,58 +39,6 @@ const Card = () => {
   );
 };
 
-
-
-const HorizontalScroller = () => {
-  const [scrollPos, setScrollPos] = useState(0);
-
-  const handleTouchMove = (event) => {
-    setScrollPos(event.touches[0].clientX);
-  };
-
-  const Filtre = styled.ul`
-  background-color: #e1d2c1;
-  display: inline-flex;
-  column-gap: 40px;
-  padding: 6px 20px;
-  cursor: grab;
-  width: 100%;
-  @media screen and (min-width: 992px) {
-    column-gap: 80px;
-    overflow-y: none;
-    width: auto;
-  }
-  li {
-    background: none;
-    font-family: "Manrope";
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 28px;
-    text-transform: uppercase;
-    color: #785436;
-    white-space: nowrap;
-  }
-`;
-
-  return (
-    <Filtre
-      onTouchMove={handleTouchMove}
-      style={{
-        whiteSpace: "nowrap",
-        scrollBehavior: "smooth",
-        scrollSnapType: "x mandatory",
-        scrollLeft: scrollPos,
-      }}
-    >
-      <li className="active">Tous</li>
-      <li>Tables</li>
-      <li>Commodes</li>
-      <li>Buffets</li>
-      <li>Buffets</li>
-    </Filtre>
-  );
-};
-
 const Mobilier = () => {
   const MobilierHead = styled(Contenthead)`
     h1::before {
@@ -128,7 +71,12 @@ const Mobilier = () => {
             {/* <li>Architecture</li> */}
           </BackCatalogue>
 
-          <HorizontalScroller />
+          <Filter>
+            <li className="active">Tous</li>
+            <li>Tables</li>
+            <li>Commodes</li>
+            <li>Buffets</li>
+          </Filter>
         </SubHead>
 
         <Card />
