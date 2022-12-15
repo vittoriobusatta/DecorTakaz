@@ -23,8 +23,14 @@ const Container = styled.section`
     & li {
       height: 100%;
       width: 100%;
-      background: #745033;
+      background-color: #745033;
       height: 200px;
+      &:hover {
+        background-color: #906745;
+        & svg path {
+          fill: #ffd2a4;
+        }
+      }
       @media screen and (min-width: 1224px) {
         height: 260px;
         width: 24%;
@@ -42,7 +48,7 @@ const Container = styled.section`
         grid-area: 2 / 2 / 3 / 3;
       }
       & svg {
-        height: 50px;
+        height: 55px;
         width: auto;
         @media screen and (min-width: 576px) {
           height: 60px;
@@ -61,16 +67,17 @@ const Container = styled.section`
         justify-content: center;
         align-items: center;
         flex-direction: column-reverse;
-        padding-top: 30px;
+        padding-top: 40px;
       }
       & p {
         font-family: "Manrope";
         font-weight: 600;
-        font-size: 16px;
+        font-size: 15px;
         line-height: 36px;
         text-transform: uppercase;
         color: #ede0d4;
         margin-top: 10px;
+        letter-spacing: 0.03em;
         @media screen and (min-width: 576px) {
           font-size: 18px;
         }
