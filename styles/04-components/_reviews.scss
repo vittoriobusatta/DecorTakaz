@@ -1,0 +1,89 @@
+.reviews {
+  background-color: #2a201e;
+  color: #ede0d4;
+}
+.reviews_content {
+  padding: 80px 24px;
+  height: 100%;
+  width: 100%;
+  background: url("../../assets/share/woodlines.png") no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @media screen and (min-width: 1224px) {
+    padding: 100px 30px;
+  }
+  & h2 {
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ede0d4;
+    margin-bottom: 40px;
+    @media screen and (min-width: 1224px) {
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+}
+
+.reviews_layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  & span {
+    font-weight: 500;
+    font-size: 56px;
+    text-align: center;
+    color: #785436;
+    @media screen and (min-width: 1224px) {
+      font-size: 96px;
+      line-height: 132px;
+    }
+  }
+  p {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: #ede0d4;
+    max-width: 650px;
+    margin-bottom: 40px;
+    @media screen and (min-width: 1224px) {
+      font-size: 24px;
+      line-height: 165%;
+    }
+  }
+}
+
+.reviews_customers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  & h4 {
+    font-weight: 800;
+    font-size: 18px;
+    color: #ede0d4;
+    margin-top: 10px;
+    @media screen and (min-width: 1224px) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+  & h5 {
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #8e5f31;
+    margin-top: 10px;
+    @media screen and (min-width: 1224px) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}
