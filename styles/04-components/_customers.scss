@@ -28,18 +28,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  & li {
-    margin: 0 30px;
+  column-gap: 60px;
+  @media screen and (min-width: 576px) {
+    column-gap: 100px;
+  }
+  @media screen and (min-width: 768px) {
+    column-gap: 140px;
+  }
+  @media screen and (min-width: 992px) {
+    column-gap: 180px;
+  }
+  @media screen and (min-width: 1224px) {
+    column-gap: 220px;
+  }
+  & li img {
+    height: auto;
+    width: 50px;
+    min-width: 45px;
     @media screen and (min-width: 1224px) {
-      margin: 0 70px;
-    }
-    & img {
-      height: auto;
-      width: 50px;
-      min-width: 45px;
-      @media screen and (min-width: 1224px) {
-        width: 70px;
-      }
+      width: 70px;
     }
   }
 }

@@ -9,6 +9,7 @@ import Reviews from "../components/Reviews";
 import soa from "/assets/share/soa.png";
 import vittorio from "/assets/share/vb.png";
 import trinity from "/assets/share/ljt.png";
+import Footer from "../components/Footer";
 
 
 const Forest = () => {
@@ -50,7 +51,7 @@ function Home() {
         <Forest />
         <Customers />
         <Reviews />
-        <section>.</section>
+        <Footer />
       </main>
     </>
   );

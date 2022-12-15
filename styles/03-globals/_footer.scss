@@ -1,0 +1,31 @@
+footer {
+  padding: 10px 24px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    padding: 24px 42px;
+  }
+  @media screen and (min-width: 992px) {
+    padding: 24px 52px;
+  }
+  @media screen and (min-width: 1224px) {
+    padding: 24px 62px;
+  }
+  & p {
+    font-weight: 700;
+    font-size: 12px;
+    color: #785436;
+    max-width: 130px;
+    @media screen and (min-width: 768px) {
+      max-width: 300px;
+    }
+    &:nth-child(1) {
+      text-align: start;
+    }
+    &:nth-child(2) {
+      text-align: end;
+    }
+  }
+}
