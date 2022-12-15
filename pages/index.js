@@ -35,6 +35,20 @@ const Customers = () => {
   );
 };
 
+const Contact = () => {
+  return (
+    <section className="contact_container">
+      <div className="contact_content">
+        <p>
+          <span>Impressionnez par notre travail?</span>
+          <span>Contactez-nous maintenant</span>
+        </p>
+        <button>Nous Contacter</button>
+      </div>
+    </section>
+  );
+};
+
 function Home() {
   return (
     <>
@@ -51,6 +65,7 @@ function Home() {
         <Forest />
         <Customers />
         <Reviews />
+        <Contact />
         <Footer />
       </main>
     </>
