@@ -12,7 +12,10 @@ import {
 const Container = styled.section`
   width: 100%;
   margin-top: 122px;
-  margin-bottom: 122px;
+  margin-bottom: 70px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 122px;
+  }
 `;
 
 const Content = styled.div`
@@ -36,7 +39,7 @@ const Content = styled.div`
       content: "Nos dernières";
       position: absolute;
       top: -15px;
-      font-size: max(2vw, 10px);
+      font-size: max(2vw, 12px);
       line-height: 11px;
       letter-spacing: 0.05em;
       color: #d9a672;

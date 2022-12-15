@@ -10,6 +10,7 @@ import soa from "/assets/share/soa.png";
 import vittorio from "/assets/share/vb.png";
 import trinity from "/assets/share/ljt.png";
 import Footer from "../components/Footer";
+import About from "../components/About";
 
 
 const Forest = () => {
@@ -62,6 +63,7 @@ function Home() {
 
       <main className="main">
         <Release />
+        {/* <About /> */}
         <Forest />
         <Customers />
         <Reviews />
