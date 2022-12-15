@@ -216,9 +216,9 @@ function Release() {
           <p>
             En tant que menuisier passionné, je suis toujours à la recherche de
             nouvelles idées et de matériaux innovants pour mes réalisations. Je
-            prends le temps découter attentivement les souhaits et les besoins
+            prends le temps d&#39;écouter attentivement les souhaits et les besoins
             de mes clients pour garantir une satisfaction complète. Je suis
-            également habile dans lutilisation de différentes techniques de
+            également habile dans l&#39;utilisation de différentes techniques de
             finition, ce qui me permet de produire des pièces finies de qualité
             supérieure.
           </p>
