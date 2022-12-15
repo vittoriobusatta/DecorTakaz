@@ -23,8 +23,7 @@ const Content = styled.div`
   & h1 {
     position: relative;
     font-weight: 800;
-    font-size: 42px;
-    line-height: 52px;
+    font-size: max(10vw, 38px);
     text-transform: uppercase;
     color: #6c5347;
     margin-bottom: 50px;
@@ -36,12 +35,13 @@ const Content = styled.div`
       content: "Nos dernières";
       position: absolute;
       top: -15px;
-      font-size: 10px;
+      /* font-size: 10px; */
+      font-size: max(2vw, 10px);
       line-height: 11px;
       letter-spacing: 0.05em;
       color: #d9a672;
       @media screen and (min-width: 1224px) {
-        top: -25px;
+        top: -30px;
         font-size: 24px;
         line-height: 33px;
       }
@@ -54,6 +54,9 @@ const About = styled.div`
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
+  @media screen and (min-width: 768px) {
+    align-items: flex-start;
+  }
   @media screen and (min-width: 1224px) {
     justify-content: space-between;
     flex-direction: row;
@@ -78,6 +81,7 @@ const About = styled.div`
       text-transform: uppercase;
       color: #785436;
       margin-right: 10px;
+      white-space: nowrap;
       @media screen and (min-width: 1224px) {
         font-size: 20px;
         line-height: 30px;
@@ -95,11 +99,12 @@ const About = styled.div`
   & p {
     font-weight: 500;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 20px;
     color: #785436;
-    max-width: 750px;
+    max-width: 850px;
     padding-bottom: 20px;
     text-align: start;
+    margin-right: 30px;
     @media screen and (min-width: 1224px) {
       font-size: 20px;
       line-height: 26px;
@@ -116,11 +121,16 @@ const Table = styled.ul`
   width: 100%;
   margin-top: 60px;
   padding: 0 15px;
+  @media screen and (min-width: 768px) {
+    margin-top: 100px;
+  }
   @media screen and (min-width: 992px) {
     display: flex;
     justify-content: space-between;
-    padding: 0 80px;
     margin-top: 120px;
+  }
+  @media screen and (min-width: 1224px) {
+    padding: 0 80px;
   }
   & li {
     height: 100%;
@@ -204,10 +214,13 @@ function Release() {
         <h1>Réalisations</h1>
         <About>
           <p>
-            Fusce hendrerit gravida purus, porta aliquam tortor tempor
-            efficitur. Suspendisse gravida lorem enim, bibendum ornare justo
-            lacinia ut. Maecenas lacinia.nunc id faucibus vestibulum, nibh odio
-            aliquam leo, ut ullamcorper tor.
+            En tant que menuisier passionné, je suis toujours à la recherche de
+            nouvelles idées et de matériaux innovants pour mes réalisations. Je
+            prends le temps découter attentivement les souhaits et les besoins
+            de mes clients pour garantir une satisfaction complète. Je suis
+            également habile dans lutilisation de différentes techniques de
+            finition, ce qui me permet de produire des pièces finies de qualité
+            supérieure.
           </p>
           <div>
             <span>Voir le catalogue</span>
