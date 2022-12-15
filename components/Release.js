@@ -23,7 +23,7 @@ const Content = styled.div`
   & h1 {
     position: relative;
     font-weight: 800;
-    font-size: max(10vw, 38px);
+    font-size: max(11.5vw, 38px);
     text-transform: uppercase;
     color: #6c5347;
     margin-bottom: 50px;
@@ -35,7 +35,6 @@ const Content = styled.div`
       content: "Nos dernières";
       position: absolute;
       top: -15px;
-      /* font-size: 10px; */
       font-size: max(2vw, 10px);
       line-height: 11px;
       letter-spacing: 0.05em;
@@ -49,7 +48,7 @@ const Content = styled.div`
   }
 `;
 
-const About = styled.div`
+const Description = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -108,10 +107,10 @@ const About = styled.div`
     max-width: 850px;
     padding-bottom: 20px;
     text-align: start;
-    margin-right: 30px;
     @media screen and (min-width: 1224px) {
       font-size: 20px;
       line-height: 26px;
+      margin-right: 30px;
     }
   }
 `;
@@ -217,7 +216,7 @@ function Release() {
     <Container>
       <Content>
         <h1>Réalisations</h1>
-        <About>
+        <Description>
           <p>
             En tant que menuisier passionné, je suis toujours à la recherche de
             nouvelles idées et de matériaux innovants pour mes réalisations. Je
@@ -231,7 +230,7 @@ function Release() {
             <span>Voir le catalogue</span>
             <CatalogueIcon />
           </div>
-        </About>
+        </Description>
       </Content>
       <Table>
         <li>

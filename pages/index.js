@@ -5,6 +5,16 @@ import React, { useState } from 'react'
 import Image from "next/image";
 import Release from "../components/Release";
 import Catalogue from "../components/Catalogue";
+import fort from "/assets/share/Subtract.png"
+
+const Forest = () => {
+  return (
+    <section className="forest_container">
+      <div className="color"></div>
+      {/* <Image src={fort} alt="alt" /> */}
+    </section>
+  )
+}
 
 
 function Home() {
@@ -20,7 +30,10 @@ function Home() {
 
       <main className="main">
         <Release />
-        {/* <Catalogue /> */}
+        <Forest />
+        <Release />
+
+        <section>.</section>
       </main>
     </>
   );
