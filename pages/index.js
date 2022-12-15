@@ -4,14 +4,32 @@ import Header from "../components/Header";
 import React, { useState } from "react";
 import Image from "next/image";
 import Release from "../components/Release";
-import Catalogue from "../components/Catalogue";
 import fort from "/assets/share/Subtract.png";
 import Reviews from "../components/Reviews";
+import soa from "/assets/share/soa.png";
+import vittorio from "/assets/share/vb.png";
+import trinity from "/assets/share/ljt.png";
+
 
 const Forest = () => {
   return (
     <section className="forest_container">
       <Image src={fort} alt="alt" />
+    </section>
+  );
+};
+
+const Customers = () => {
+  return (
+    <section className="customers_container">
+      <div className="customers_content">
+        <h2>Nos Clients</h2>
+        <ul className="customers_layout">
+          <li><Image src={vittorio} alt="alt" /></li>
+          <li><Image src={soa} alt="alt" /></li>
+          <li><Image src={trinity} alt="alt" /></li>
+        </ul>
+      </div>
     </section>
   );
 };
@@ -29,7 +47,8 @@ function Home() {
 
       <main className="main">
         <Release />
-        {/* <Forest /> */}
+        <Forest />
+        <Customers />
         <Reviews />
         <section>.</section>
       </main>

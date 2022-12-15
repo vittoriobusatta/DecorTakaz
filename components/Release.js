@@ -12,6 +12,7 @@ import {
 const Container = styled.section`
   width: 100%;
   margin-top: 122px;
+  margin-bottom: 122px;
 `;
 
 const Content = styled.div`

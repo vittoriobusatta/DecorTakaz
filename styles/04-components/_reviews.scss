@@ -3,7 +3,7 @@
   color: #ede0d4;
 }
 .reviews_content {
-  padding: 80px 24px;
+  padding: 44px 24px;
   height: 100%;
   width: 100%;
   background: url("../../assets/share/woodlines.png") no-repeat;
@@ -76,10 +76,11 @@
     font-weight: 800;
     font-size: 18px;
     color: #ede0d4;
-    margin-top: 10px;
+    margin-top: 15px;
     @media screen and (min-width: 1224px) {
       font-size: 22px;
       line-height: 30px;
+      margin-top: 25px;
     }
   }
   & h5 {
@@ -87,7 +88,7 @@
     font-size: 12px;
     text-transform: uppercase;
     color: #8e5f31;
-    margin-top: 10px;
+    margin-top: 5px;
     @media screen and (min-width: 1224px) {
       font-size: 16px;
       line-height: 22px;
