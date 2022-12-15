@@ -82,6 +82,7 @@ const About = styled.div`
       color: #785436;
       margin-right: 10px;
       white-space: nowrap;
+      transition: 0.5s ease;
       @media screen and (min-width: 1224px) {
         font-size: 20px;
         line-height: 30px;
@@ -91,6 +92,9 @@ const About = styled.div`
     & svg {
       height: 45px;
       width: auto;
+      & path {
+        transition: 0.5s ease;
+      }
       @media screen and (min-width: 1224px) {
         height: 50px;
       }
@@ -137,12 +141,17 @@ const Table = styled.ul`
     width: 100%;
     background-color: #745033;
     height: 180px;
+    transition: 0.5s ease-out;
     &:hover {
       background-color: #906745;
       & svg path {
         fill: #ffd8af;
       }
     }
+    & svg path {
+      transition: 0.5s ease-out;
+    }
+
     @media screen and (min-width: 576px) {
       height: 200px;
     }
@@ -171,9 +180,6 @@ const Table = styled.ul`
       @media screen and (min-width: 768px) {
         height: 80px;
       }
-      @media screen and (min-width: 1224px) {
-        height: 100px;
-      }
     }
     & a {
       height: 100%;
@@ -188,7 +194,6 @@ const Table = styled.ul`
       }
     }
     & p {
-      font-family: "Manrope";
       font-weight: 600;
       font-size: 15px;
       line-height: 36px;
@@ -216,11 +221,11 @@ function Release() {
           <p>
             En tant que menuisier passionné, je suis toujours à la recherche de
             nouvelles idées et de matériaux innovants pour mes réalisations. Je
-            prends le temps d&#39;écouter attentivement les souhaits et les besoins
-            de mes clients pour garantir une satisfaction complète. Je suis
-            également habile dans l&#39;utilisation de différentes techniques de
-            finition, ce qui me permet de produire des pièces finies de qualité
-            supérieure.
+            prends le temps d&#39;écouter attentivement les souhaits et les
+            besoins de mes clients pour garantir une satisfaction complète. Je
+            suis également habile dans l&#39;utilisation de différentes
+            techniques de finition, ce qui me permet de produire des pièces
+            finies de qualité supérieure.
           </p>
           <div>
             <span>Voir le catalogue</span>
