@@ -13,7 +13,7 @@ const Container = styled.section`
     grid-row-gap: 15px;
     width: 100%;
     margin-top: 60px;
-    padding: 0 26px;
+    padding: 0 15px;
     @media screen and (min-width: 992px) {
       display: flex;
       justify-content: space-between;
@@ -24,7 +24,10 @@ const Container = styled.section`
       height: 100%;
       width: 100%;
       background-color: #745033;
-      height: 200px;
+      height: 180px;
+      @media screen and (min-width: 576px) {
+        height: 200px;
+      }
       &:hover {
         background-color: #906745;
         & svg path {
@@ -67,7 +70,10 @@ const Container = styled.section`
         justify-content: center;
         align-items: center;
         flex-direction: column-reverse;
-        padding-top: 40px;
+        padding-top: 30px;
+        @media screen and (min-width: 576px) {
+          padding-top: 40px;
+        }
       }
       & p {
         font-family: "Manrope";
