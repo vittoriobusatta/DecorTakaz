@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import React, { useState } from 'react'
 import Image from "next/image";
 import Release from "../components/Release";
+import Catalogue from "../components/Catalogue";
 
 
 function Home() {
@@ -18,10 +19,8 @@ function Home() {
       <Header />
 
       <main className="main">
-        {/* <Link href="/mobilier/">Mobilier</Link>
-        <Link href="/interieur/">Intérieur</Link>
-        <Link href="/produits/">Produits</Link> */}
         <Release />
+        {/* <Catalogue /> */}
       </main>
     </>
   );
