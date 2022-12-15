@@ -65,6 +65,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  & img {
+    height: 50px;
+    width: auto;
+    @media screen and (min-width: 1224px) {
+      height: 80px;
+    }
+  }
   & h4 {
     font-weight: 800;
     font-size: 18px;

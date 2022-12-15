@@ -15,7 +15,7 @@ function Reviews() {
             vision que j&#39;avais concernant mon enseigne.
           </p>
           <div className="reviews_customers">
-            <Image src={circle1} alt="alt" height={50} />
+            <Image src={circle1} alt="alt" />
             <h4>- Jenny Beauty</h4>
             <h5>Esthéticienne</h5>
           </div>
