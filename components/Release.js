@@ -9,22 +9,22 @@ const Container = styled.section`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 60px;
     padding: 0 26px;
-    column-gap: 20px;
     @media screen and (min-width: 992px) {
       display: flex;
       justify-content: space-between;
       padding: 0 80px;
+      margin-top: 120px;
     }
     & li {
       height: 100%;
       width: 100%;
       background: #745033;
-      height: 220px;
+      height: 200px;
       @media screen and (min-width: 1224px) {
         height: 260px;
         width: 24%;
@@ -42,8 +42,11 @@ const Container = styled.section`
         grid-area: 2 / 2 / 3 / 3;
       }
       & svg {
-        height: 60px;
+        height: 50px;
         width: auto;
+        @media screen and (min-width: 576px) {
+          height: 60px;
+        }
         @media screen and (min-width: 768px) {
           height: 80px;
         }
@@ -58,17 +61,22 @@ const Container = styled.section`
         justify-content: center;
         align-items: center;
         flex-direction: column-reverse;
+        padding-top: 30px;
       }
       & p {
         font-family: "Manrope";
         font-weight: 600;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 36px;
         text-transform: uppercase;
         color: #ede0d4;
-        margin-top: 20px;
+        margin-top: 10px;
+        @media screen and (min-width: 576px) {
+          font-size: 18px;
+        }
         @media screen and (min-width: 1224px) {
           font-size: 24px;
+          margin-top: 20px;
         }
       }
     }
@@ -80,7 +88,7 @@ const Content = styled.div`
   @media screen and (min-width: 1224px) {
     padding: 24px 120px;
   }
-  & div {
+  & .about {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -89,6 +97,41 @@ const Content = styled.div`
       justify-content: space-between;
       flex-direction: row;
       align-items: center;
+    }
+    & div {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        & span {
+          color: #d9a672;
+        }
+        & svg path {
+          fill: #d9a672;
+        }
+      }
+      & span {
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 11px;
+        text-transform: uppercase;
+        color: #785436;
+        margin-right: 10px;
+        @media screen and (min-width: 1224px) {
+          font-size: 20px;
+          line-height: 30px;
+          margin-right: 30px;
+        }
+      }
+      & svg {
+        height: 45px;
+        width: auto;
+        @media screen and (min-width: 1224px) {
+          height: 50px;
+        }
+      }
     }
     & p {
       font-family: "Manrope";
@@ -99,6 +142,7 @@ const Content = styled.div`
       color: #785436;
       max-width: 750px;
       padding-bottom: 20px;
+      text-align: start;
       @media screen and (min-width: 1224px) {
         font-size: 20px;
         line-height: 26px;
@@ -141,16 +185,16 @@ function Release() {
     <Container>
       <Content>
         <h1>Réalisations</h1>
-        <div>
+        <div className="about">
           <p>
             Fusce hendrerit gravida purus, porta aliquam tortor tempor
             efficitur. Suspendisse gravida lorem enim, bibendum ornare justo
             lacinia ut. Maecenas lacinia.nunc id faucibus vestibulum, nibh odio
             aliquam leo, ut ullamcorper tor.
           </p>
-          <span>
-            <p>Voir le catalogue</p>
-            {/* <svg
+          <div>
+            <span>Voir le catalogue</span>
+            <svg
               width="80"
               height="80"
               viewBox="0 0 80 80"
@@ -165,8 +209,8 @@ function Release() {
                 d="M62.6103 38.9032H12.9034V41.0967H62.6103V44.387L67.0969 39.9999L62.6103 35.6128V38.9032Z"
                 fill="#785436"
               />
-            </svg> */}
-          </span>
+            </svg>
+          </div>
         </div>
       </Content>
       <ul>
