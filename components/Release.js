@@ -66,14 +66,17 @@ const Description = styled.div`
     display: inline-flex;
     align-items: center;
     cursor: pointer;
-    &:hover {
-      & span {
-        color: #d9a672;
-      }
-      & svg path {
-        fill: #d9a672;
+    @media screen and (min-width: 1224px) {
+      &:hover {
+        & span {
+          color: #d9a672;
+        }
+        & svg path {
+          fill: #d9a672;
+        }
       }
     }
+
     & span {
       font-weight: 800;
       font-size: 14px;
@@ -142,10 +145,12 @@ const Table = styled.ul`
     background-color: #745033;
     height: 180px;
     transition: 0.5s ease-out;
-    &:hover {
-      background-color: #906745;
-      & svg path {
-        fill: #ffd8af;
+    @media screen and (min-width: 1224px) {
+      &:hover {
+        background-color: #906745;
+        & svg path {
+          fill: #ffd8af;
+        }
       }
     }
     & svg path {
