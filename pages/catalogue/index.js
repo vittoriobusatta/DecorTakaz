@@ -25,7 +25,7 @@ const Catalogue = () => {
           </div>
 
           <div className="catalogue_layout">
-            <div>
+            <div className="catalogue_content">
               <Title className="catalogue_title">Catalogue</Title>
               <Description className="catalogue_description">
                 Décor Ta Kaz propose une variété de produits et de services pour
