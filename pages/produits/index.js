@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import {
-  Contenthead,
   Filter,
   BackCatalogue,
   SubHead,
@@ -15,8 +14,8 @@ import data from "/public/data.json";
 const categoryArray = data.filter((item) => item.catalogue == "produits");
 
 const Produits = () => {
-  const MobilierHead = styled(Contenthead)`
-    h1::before {
+  const TitleProduits = styled.h1`
+    &::before {
       content: "(${categoryArray.length})";
     }
   `;
@@ -42,11 +41,11 @@ const Produits = () => {
 
       <Header />
 
-      <MobilierHead>
-        <h1>Produits</h1>
+      <div className="category_head">
+        <TitleProduits>Produits</TitleProduits>
 
         <SubHead>
-          <BackCatalogue className="backcatalogue">
+          <BackCatalogue>
             <Link href="/mobilier/">
               <li>Mobilier</li>
             </Link>
@@ -116,7 +115,7 @@ const Produits = () => {
             </li>
           ))}
         </ul>
-      </MobilierHead>
+      </div>
     </section>
   );
 };

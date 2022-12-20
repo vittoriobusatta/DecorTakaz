@@ -13,8 +13,8 @@ function Header() {
         <LogoIcon />
       </Link>
       <button className="menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
       </button>
       <Image className="axterix" src={axterix} alt="axterix" ref={asterix} />
     </header>

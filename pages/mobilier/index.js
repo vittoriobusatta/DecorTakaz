@@ -15,8 +15,8 @@ import data from "/public/data.json";
 const categoryArray = data.filter((item) => item.catalogue == "mobilier");
 
 const Mobilier = () => {
-  const MobilierHead = styled(Contenthead)`
-    h1::before {
+  const TitleMobilier = styled.h1`
+    &::before {
       content: "(${categoryArray.length})";
     }
   `;
@@ -42,11 +42,11 @@ const Mobilier = () => {
 
       <Header />
 
-      <MobilierHead>
-        <h1>Mobilier</h1>
+      <div className="category_head">
+        <TitleMobilier>Mobilier</TitleMobilier>
 
         <SubHead>
-          <BackCatalogue className="backcatalogue">
+          <BackCatalogue>
             <Link href="/mobilier/">
               <li className="active">Mobilier</li>
             </Link>
@@ -117,7 +117,7 @@ const Mobilier = () => {
           ))}
         </ul>
 
-      </MobilierHead>
+      </div>
     </section>
   );
 };

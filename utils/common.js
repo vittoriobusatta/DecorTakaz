@@ -1,46 +1,5 @@
 import styled from "styled-components";
 
-export const Contenthead = styled.div`
-  display: flex;
-  flex-direction: column;
-  h1 {
-    position: relative;
-    font-family: "Manrope";
-    font-weight: 800;
-    font-size: 48px;
-    text-transform: uppercase;
-    color: #6c5347;
-    padding: 0 34px;
-    @media screen and (min-width: 576px) {
-      padding: 0 54px;
-    }
-    @media screen and (min-width: 768px) {
-      padding: 0 68px;
-    }
-    @media screen and (min-width: 992px) {
-      padding: 0 82px;
-    }
-    @media screen and (min-width: 1224px) {
-      font-size: 110px;
-      padding: 0;
-    }
-    &::before {
-      position: absolute;
-      top: -20px;
-      font-family: "Manrope";
-      font-weight: 800;
-      font-size: 14px;
-      line-height: 33px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #d9a672;
-      @media screen and (min-width: 1224px) {
-        font-size: 24px;
-        top: 0px;
-      }
-    }
-  }
-`;
 
 export const SubHead = styled.div`
   width: 100%;
@@ -64,6 +23,19 @@ export const SubHead = styled.div`
 export const BackCatalogue = styled.ul`
   margin-top: 22px;
   padding: 0 34px;
+  & li {
+    font-family: "Manrope";
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #785436;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+    @media screen and (min-width: 1224px) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
   @media screen and (min-width: 576px) {
     padding: 0 54px;
   }

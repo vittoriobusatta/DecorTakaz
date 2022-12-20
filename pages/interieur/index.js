@@ -3,24 +3,18 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import {
-  Contenthead,
-  Filter,
-  BackCatalogue,
-  SubHead,
-} from "../../utils/common";
+import { Filter, BackCatalogue, SubHead } from "../../utils/common";
 import Header from "../../components/Header";
 import data from "/public/data.json";
 
 const categoryArray = data.filter((item) => item.catalogue == "interieur");
 
 const Interieur = () => {
-  const MobilierHead = styled(Contenthead)`
-    h1::before {
+  const TitleInterieur = styled.h1`
+    &::before {
       content: "(${categoryArray.length})";
     }
   `;
-
   const [filter, setFilter] = useState("all");
 
   const handleFilterChange = (event) => {
@@ -42,11 +36,11 @@ const Interieur = () => {
 
       <Header />
 
-      <MobilierHead>
-        <h1>Intérieur</h1>
+      <div className="category_head cth_interieur">
+        <TitleInterieur>Intérieur</TitleInterieur>
 
         <SubHead>
-          <BackCatalogue className="backcatalogue">
+          <BackCatalogue>
             <Link href="/mobilier/">
               <li>Mobilier</li>
             </Link>
@@ -116,7 +110,7 @@ const Interieur = () => {
             </li>
           ))}
         </ul>
-      </MobilierHead>
+      </div>
     </section>
   );
 };
