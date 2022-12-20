@@ -14,7 +14,7 @@ import data from "/public/data.json";
 
 const categoryArray = data.filter((item) => item.catalogue == "produits");
 
-const Mobilier = () => {
+const Produits = () => {
   const MobilierHead = styled(Contenthead)`
     h1::before {
       content: "(${categoryArray.length})";
@@ -121,4 +121,4 @@ const Mobilier = () => {
   );
 };
 
-export default Mobilier;
+export default Produits;

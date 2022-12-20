@@ -28,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 60px;
+  column-gap: 70px;
   @media screen and (min-width: 576px) {
     column-gap: 100px;
   }
@@ -43,8 +43,8 @@
   }
   & li img {
     height: auto;
-    width: 50px;
-    min-width: 45px;
+    width: 45px;
+    min-width: 35px;
     @media screen and (min-width: 1224px) {
       width: 70px;
     }
