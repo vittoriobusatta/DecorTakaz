@@ -25,8 +25,8 @@ const Catalogue = () => {
           </div>
 
           <div className="catalogue_layout">
-            <div className="catalogue_content">
-              <Title>Catalogue</Title>
+            <div>
+              <Title className="catalogue_title">Catalogue</Title>
               <Description>
                 Décor Ta Kaz propose une variété de produits et de services pour
                 répondre aux besoins de ses clients. Dans notre catalogue, vous
@@ -45,26 +45,34 @@ const Catalogue = () => {
             <ul className="catalogue_table">
               <li>
                 <Link href="/mobilier/">
-                  <p>Mobilier</p>
-                  <ArrowIcon />
+                  <div className="catalogue_table_child">
+                    <p>Mobilier</p>
+                    <ArrowIcon />
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/interieur/">
-                  <p>Intérieur</p>
-                  <ArrowIcon />
+                  <div className="catalogue_table_child">
+                    <p>Intérieur</p>
+                    <ArrowIcon />
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/produits/">
-                  <p>Produits</p>
-                  <ArrowIcon />
+                  <div className="catalogue_table_child">
+                    <p>Produits</p>
+                    <ArrowIcon />
+                  </div>
                 </Link>
               </li>
               <li>
                 <Link href="/">
-                  <p>Architecture</p>
-                  <ArrowIcon />
+                  <div className="catalogue_table_child">
+                    <p>Architecture</p>
+                    <ArrowIcon />
+                  </div>
                 </Link>
               </li>
             </ul>
