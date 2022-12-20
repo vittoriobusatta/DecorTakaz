@@ -27,7 +27,7 @@ const Catalogue = () => {
           <div className="catalogue_layout">
             <div>
               <Title className="catalogue_title">Catalogue</Title>
-              <Description>
+              <Description className="catalogue_description">
                 Décor Ta Kaz propose une variété de produits et de services pour
                 répondre aux besoins de ses clients. Dans notre catalogue, vous
                 trouverez divers types de mobilier conçues sur mesure pour

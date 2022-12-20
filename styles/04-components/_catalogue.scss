@@ -52,10 +52,20 @@
       }
     }
   }
+  & .catalogue_description {
+    @media screen and (min-width: 992px) {
+      font-size: 16px;
+      line-height: 26px;
+      max-width: 800px;
+    }
+  }
 }
 
 .catalogue_table {
   width: 100%;
+  @media screen and (min-width: 992px) {
+    margin-top: 80px;
+  }
   & li {
     transition: 0.3s ease-in;
     @media screen and (min-width: 992px) {
@@ -75,7 +85,9 @@
         }
       }
     }
-
+    & a {
+      height: 100px;
+    }
     & .catalogue_table_child {
       display: inline-flex;
       justify-content: space-between;
