@@ -11,6 +11,7 @@ import vittorio from "/assets/share/vb.png";
 import trinity from "/assets/share/ljt.png";
 import Footer from "../components/Footer";
 import About from "../components/About";
+import Process from "../components/Process";
 
 
 const Forest = () => {
@@ -63,7 +64,7 @@ function Home() {
 
       <main className="main">
         <Release />
-        {/* <About /> */}
+        <Process />
         <Forest />
         <Customers />
         <Reviews />

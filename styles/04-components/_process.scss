@@ -1,0 +1,72 @@
+.process {
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+.process_content {
+  width: 100%;
+  @media screen and (min-width: 1224px) {
+    padding: 24px 120px;
+  }
+  & h1::before {
+    content: "Notre";
+  }
+}
+
+.process_steps {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 24px;
+  margin-top: 24px;
+  & li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    & h3 {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 19px;
+      color: #563213;
+      margin: 16px 0px 6px;
+    }
+    & p {
+      max-width: 300px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 14px;
+      color: #785436;
+    }
+  }
+}
+
+.treetrunk {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100px;
+  min-height: 100px;
+  width: 80%;
+  height: 60%;
+  background-image: url("../../assets/share/treetrunk.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #785436;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & svg {
+    height: 37px;
+    width: auto;
+  }
+}
