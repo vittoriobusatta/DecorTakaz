@@ -127,7 +127,7 @@ function Reviews() {
           <div className="reviews_customers">
             <Image ref={circle} src={currentTestimonial.image} alt="alt" />
             <div>
-              <h4 ref={name}>- {currentTestimonial.name}</h4>
+              <h4 ref={name}>{currentTestimonial.name}</h4>
             </div>
             <div>
               <h5 ref={job}>{currentTestimonial.job}</h5>
