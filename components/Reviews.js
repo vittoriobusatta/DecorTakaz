@@ -72,16 +72,14 @@ function Reviews() {
         <AnimatePresence>
           {isVisible && (
             <motion.div
-              initial={{ x: "100%" }}
+              initial={{ x: "100%", opacity: 1 }}
               animate={{ x: "0%" }}
-              exit={{ x: "-100%" }}
+              exit={{ x: "100%", opacity: 0  }}
               transition={{ duration: 0.5 }}
               className="reviews_layout"
             >
               <span>&#34;</span>
               <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
               >
                 {currentTestimonial.description}
