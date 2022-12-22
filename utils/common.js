@@ -111,7 +111,7 @@ export const Description = styled.p`
   font-size: 14px;
   line-height: 20px;
   color: #785436;
-  max-width: 850px;
+  max-width: 1200px;
   text-align: start;
   padding: 24px 26px 48px;
   @media screen and (min-width: 1224px) {

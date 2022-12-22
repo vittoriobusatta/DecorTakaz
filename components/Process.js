@@ -19,7 +19,7 @@ const Process = () => {
           </Description>
         </div>
         <ul className="process_steps">
-          <li>
+          <li className="firststep">
             <div className="square">
               <PenIcon />
             </div>
@@ -30,7 +30,7 @@ const Process = () => {
               votre intérieur.
             </p>
           </li>
-          <div className="connected_point">
+          <div className="connected_point firstpoint">
             <svg
               width="4"
               height="43"
@@ -44,7 +44,7 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li>
+          <li className="secondstep">
             <div className="square">
               <LogIcon />
             </div>
@@ -54,7 +54,7 @@ const Process = () => {
               caractéristiques pour que vous puissiez faire un choix éclairé.
             </p>
           </li>
-          <div className="connected_point">
+          <div className="connected_point secondpoint">
             <svg
               width="4"
               height="43"
@@ -68,7 +68,7 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li>
+          <li className="thirdstep">
             <div className="square">
               <ToolsIcon />
             </div>
@@ -78,7 +78,7 @@ const Process = () => {
               manière artisanale, en respectant les traditions de la menuiserie.
             </p>
           </li>
-          <div className="connected_point">
+          <div className="connected_point thirdpoint">
             <svg
               width="4"
               height="43"
@@ -92,7 +92,7 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li>
+          <li className="fourthstep">
             <div className="square">
               <GiftIcon />
             </div>
