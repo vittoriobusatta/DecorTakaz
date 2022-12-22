@@ -14,45 +14,48 @@ const Process = () => {
   const secondpoint = useRef(null);
   const thirdpoint = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const index = Array.from(entry.target.parentNode.children).indexOf(
-          entry.target
-        );
+  const titles = useRef([null, null, null, null]); // tableau de références
+  const paragraphs = useRef([null, null, null, null]); // tableau de références
 
-        if (entry.isIntersecting && !animatedElements.includes(index)) {
-          setAnimatedElements([...animatedElements, index]);
-          gsap.fromTo(
-            entry.target,
-            {
-              y: "100%",
-            },
-            {
-              duration: 1.5,
-              y: "0%",
-              opacity: 1,
-              ease: "power2.out",
-              delay: index * 0.1,
-            }
-          );
+  useEffect(() => {
+    // Création de l'observateur
+    const observer = new IntersectionObserver((entries) => {
+      // Pour chaque entrée de l'observateur
+      entries.forEach((entry) => {
+        // Si l'élément est visible
+        if (entry.isIntersecting) {
+          // Lancer l'animation de l'élément
+          animateElement(entry.target);
         }
       });
     });
 
-    observer.observe(firststep.current);
-    observer.observe(secondstep.current);
-    observer.observe(thirdstep.current);
-    observer.observe(fourthstep.current);
+    // Fonction pour lancer l'animation de l'élément
+    const animateElement = (element) => {
+      // Animation de l'élément
+      gsap.fromTo(
+        element,
+        {
+          y: 20,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
 
-    observer.observe(firstpoint.current);
-    observer.observe(secondpoint.current);
-    observer.observe(thirdpoint.current);
-
-    return () => {
-      observer.disconnect();
+      // Suppression de l'élément de l'observateur
+      observer.unobserve(element);
     };
-  }, [animatedElements]);
+
+    titles.current.forEach((title, index) => {
+      observer.observe(title);
+      observer.observe(paragraphs.current[index]);
+    });
+  }, [animatedElements]); // [] pour exécuter l'effet une seule fois au montage du composant
 
   return (
     <section className="process">
@@ -74,8 +77,10 @@ const Process = () => {
             <div className="square">
               <PenIcon />
             </div>
-            <h3>01. Conception du design</h3>
-            <p>
+            <h3 ref={(el) => (titles.current[0] = el)}>
+              01. Conception du design
+            </h3>
+            <p ref={(el) => (paragraphs.current[0] = el)}>
               Nous vous proposerons différents modèles et styles afin que vous
               puissiez choisir celui qui correspond le mieux à vos goûts et à
               votre intérieur.
@@ -99,8 +104,10 @@ const Process = () => {
             <div className="square">
               <LogIcon />
             </div>
-            <h3>02. Sélection des matières</h3>
-            <p>
+            <h3 ref={(el) => (titles.current[1] = el)}>
+              02. Sélection des matières
+            </h3>
+            <p ref={(el) => (paragraphs.current[1] = el)}>
               Nous vous présenterons les différentes essences et leurs
               caractéristiques pour que vous puissiez faire un choix éclairé.
             </p>
@@ -123,8 +130,8 @@ const Process = () => {
             <div className="square">
               <ToolsIcon />
             </div>
-            <h3>03. Fabrication</h3>
-            <p>
+            <h3 ref={(el) => (titles.current[2] = el)}>03. Fabrication</h3>
+            <p ref={(el) => (paragraphs.current[2] = el)}>
               Nous mettons un point d&#39;honneur à réaliser chaque meuble de
               manière artisanale, en respectant les traditions de la menuiserie.
             </p>
@@ -147,8 +154,8 @@ const Process = () => {
             <div className="square">
               <GiftIcon />
             </div>
-            <h3>04. Livraison</h3>
-            <p>
+            <h3 ref={(el) => (titles.current[3] = el)}>04. Livraison</h3>
+            <p ref={(el) => (paragraphs.current[3] = el)}>
               Nous nous chargeons de toutes les étapes de transport et
               d&#39;installation afin que vous puissiez profiter pleinement de
               votre nouvelle pièce dès son arrivée.
