@@ -35,20 +35,24 @@ function Reviews() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentTestimonial = testimonials[currentIndex];
-  const ref = useRef(null);
   const name = useRef(null);
   const job = useRef(null);
   const circle = useRef(null);
+  const paragraph = useRef(null);
 
-  const animateElements = (ref, circle, name, job) => {
+  const animateElements = (paragraph, circle, name, job) => {
     gsap.fromTo(
-      ref.current,
+      paragraph.current,
       {
+        y: 20,
         opacity: 0,
       },
       {
-        duration: 1.5,
+        delay: 0.1,
+        duration: 1,
+        y: 0,
         opacity: 1,
+        ease: "power2.out",
       }
     );
     gsap.fromTo(
@@ -58,7 +62,7 @@ function Reviews() {
       },
       {
         delay: 0.3,
-        duration: 0.5,
+        duration: 1.5,
         ease: "power2.out",
         clipPath: "circle(100%",
         opacity: 1,
@@ -88,13 +92,11 @@ function Reviews() {
         y: 0,
       }
     );
-  }
-  
-  
+  };
 
   const handleCircleClick = (index) => {
     setCurrentIndex(index);
-    animateElements(ref, circle, name, job);
+    animateElements(paragraph, circle, name, job);
   };
 
   const nextTestimonial = useCallback(() => {
@@ -108,7 +110,7 @@ function Reviews() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextTestimonial();
-      animateElements(ref, circle, name, job);
+      animateElements(paragraph, circle, name, job);
     }, 5000);
     return () => clearInterval(interval);
   }, [nextTestimonial, currentIndex]);
@@ -119,16 +121,16 @@ function Reviews() {
         <h2>Leurs Avis</h2>
         <div className="reviews_layout">
           <span className="reviews_quote">&#34;</span>
-          <div ref={ref}>
-            <p>{currentTestimonial.description}</p>
-            <div className="reviews_customers">
-              <Image ref={circle} src={currentTestimonial.image} alt="alt" />
-              <div>
-                <h4 ref={name}>- {currentTestimonial.name}</h4>
-              </div>
-              <div>
-                <h5 ref={job}>{currentTestimonial.job}</h5>
-              </div>
+          <div className="reviews_paragraph">
+            <p ref={paragraph}>{currentTestimonial.description}</p>
+          </div>
+          <div className="reviews_customers">
+            <Image ref={circle} src={currentTestimonial.image} alt="alt" />
+            <div>
+              <h4 ref={name}>- {currentTestimonial.name}</h4>
+            </div>
+            <div>
+              <h5 ref={job}>{currentTestimonial.job}</h5>
             </div>
           </div>
         </div>
