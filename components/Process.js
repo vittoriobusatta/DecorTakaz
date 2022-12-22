@@ -1,8 +1,56 @@
-import React from "react";
-import { Description, Title } from "../utils/common";
+import gsap from "gsap";
+import React, { useEffect, useRef, useState } from "react";
 import { GiftIcon, LogIcon, PenIcon, ToolsIcon } from "../utils/icons";
 
+
 const Process = () => {
+
+  const [animatedElements, setAnimatedElements] = useState([]); 
+
+  const firststep = useRef(null);
+  const secondstep = useRef(null);
+  const thirdstep = useRef(null);
+  const fourthstep = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+
+        if (entry.isIntersecting && !animatedElements.includes(index)) {
+          setAnimatedElements([...animatedElements, index]);
+
+          gsap.fromTo(
+            entry.target, 
+            {
+              y: "100%",
+              opacity: 0,
+            },
+            {
+              duration: 1.5,
+              y: "0%",
+              opacity: 1,
+              ease: "power2.out",
+              delay: index * 0.5,
+            }
+          );
+        }
+        
+      });
+    });
+
+    observer.observe(firststep.current);
+    observer.observe(secondstep.current);
+    observer.observe(thirdstep.current);
+    observer.observe(fourthstep.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [animatedElements]);
+
+   
+
+  
   return (
     <section className="process">
       <div className="process_content">
@@ -19,7 +67,7 @@ const Process = () => {
           </p>
         </div>
         <ul className="process_steps">
-          <li className="firststep">
+          <li ref={firststep} className="firststep">
             <div className="square">
               <PenIcon />
             </div>
@@ -44,7 +92,7 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li className="secondstep">
+          <li ref={secondstep} className="secondstep">
             <div className="square">
               <LogIcon />
             </div>
@@ -68,7 +116,7 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li className="thirdstep">
+          <li ref={thirdstep} className="thirdstep">
             <div className="square">
               <ToolsIcon />
             </div>
@@ -92,7 +140,7 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li className="fourthstep">
+          <li ref={fourthstep} className="fourthstep">
             <div className="square">
               <GiftIcon />
             </div>
