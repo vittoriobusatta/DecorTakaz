@@ -24,10 +24,10 @@ const Forest = () => {
 
 const Customers = () => {
   return (
-    <section className="customers_container">
-      <div className="customers_content">
+    <section className="customers">
+      <div className="customers_container">
         <h2>Nos Clients</h2>
-        <ul className="customers_layout">
+        <ul className="customers_content">
           <li><Image src={vittorio} alt="alt" /></li>
           <li><Image src={soa} alt="alt" /></li>
           <li><Image src={trinity} alt="alt" /></li>
@@ -39,7 +39,7 @@ const Customers = () => {
 
 const Contact = () => {
   return (
-    <section className="contact_container">
+    <section className="contact">
       <div className="contact_content">
         <p>
           <span>Impressionnez par notre travail?</span>
@@ -64,12 +64,12 @@ function Home() {
 
       <main className="main">
         <Release />
-        <Process />
+        {/* <Process />
         <Forest />
         <Customers />
         <Reviews />
         <Contact />
-        <Footer />
+        <Footer /> */}
       </main>
     </>
   );

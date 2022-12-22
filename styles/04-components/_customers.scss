@@ -1,5 +1,8 @@
-.customers_content {
-  padding: 44px 24px;
+.customers {
+  padding: 44px 26px;
+}
+
+.customers_container {
   height: 100%;
   width: 100%;
   display: flex;
@@ -24,7 +27,7 @@
   }
 }
 
-.customers_layout {
+.customers_content {
   display: flex;
   justify-content: center;
   align-items: center;

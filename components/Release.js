@@ -12,8 +12,8 @@ function Release() {
   return (
     <section className="release">
       <div className="release_content">
-        <Title>Réalisations</Title>
-        <Description>
+        <h1 className="title">Réalisations</h1>
+        <p className="introduction">
           En tant que menuisier passionné, je suis toujours à la recherche de
           nouvelles idées et de matériaux innovants pour mes réalisations. Je
           prends le temps d&#39;écouter attentivement les souhaits et les
@@ -21,7 +21,7 @@ function Release() {
           suis également habile dans l&#39;utilisation de différentes techniques
           de finition, ce qui me permet de produire des pièces finies de qualité
           supérieure.
-        </Description>
+        </p>
       </div>
       <ul className="release_category">
         <li>

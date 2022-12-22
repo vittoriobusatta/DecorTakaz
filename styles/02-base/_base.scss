@@ -7,13 +7,13 @@
   text-shadow: none;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 10px;
-  background-color: #FAF7EE;
+  background-color: #faf7ee;
 }
-  
-::-webkit-scrollbar-thumb{
-  background: #E1D2C1;
+
+::-webkit-scrollbar-thumb {
+  background: #e1d2c1;
   border-radius: 15px;
 }
 
@@ -23,3 +23,51 @@ body {
   font-family: "Manrope", sans-serif;
 }
 
+.title {
+  position: relative;
+  font-weight: 800;
+  font-size: max(11.5vw, 38px);
+  text-transform: uppercase;
+  color: #6c5347;
+
+  @media screen and (min-width: 1224px) {
+    font-size: 110px;
+    line-height: 151px;
+  }
+  &::before {
+    position: absolute;
+    top: -10px;
+    font-size: max(2vw, 12px);
+    line-height: 11px;
+    letter-spacing: 0.05em;
+    color: #d9a672;
+    @media screen and (min-width: 1224px) {
+      top: -30px;
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+}
+
+.introduction {
+  font-weight: 500;
+  font-size: 14px;
+  color: #785436;
+  max-width: 1200px;
+  text-align: start;
+  padding: 24px 0 48px;
+  @media screen and (min-width: 576px) {
+    font-size: 15px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 24px 0 48px;
+    font-size: 16px;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 1224px) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
