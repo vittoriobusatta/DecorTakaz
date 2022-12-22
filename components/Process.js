@@ -10,6 +10,10 @@ const Process = () => {
   const thirdstep = useRef(null);
   const fourthstep = useRef(null);
 
+  const firstpoint = useRef(null);
+  const secondpoint = useRef(null);
+  const thirdpoint = useRef(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -19,20 +23,19 @@ const Process = () => {
 
         if (entry.isIntersecting && !animatedElements.includes(index)) {
           setAnimatedElements([...animatedElements, index]);
-            gsap.fromTo(
-              entry.target,
-              {
-                y: "100%",
-                opacity: 0,
-              },
-              {
-                duration: 1.5,
-                y: "0%",
-                opacity: 1,
-                ease: "power2.out",
-                delay: index * 0.1,
-              }
-            );
+          gsap.fromTo(
+            entry.target,
+            {
+              y: "100%",
+            },
+            {
+              duration: 1.5,
+              y: "0%",
+              opacity: 1,
+              ease: "power2.out",
+              delay: index * 0.1,
+            }
+          );
         }
       });
     });
@@ -42,12 +45,14 @@ const Process = () => {
     observer.observe(thirdstep.current);
     observer.observe(fourthstep.current);
 
+    observer.observe(firstpoint.current);
+    observer.observe(secondpoint.current);
+    observer.observe(thirdpoint.current);
+
     return () => {
       observer.disconnect();
     };
   }, [animatedElements]);
-
-  console.log(animatedElements);
 
   return (
     <section className="process">
@@ -76,7 +81,7 @@ const Process = () => {
               votre intérieur.
             </p>
           </li>
-          <div className="connected_point firstpoint">
+          <div ref={firstpoint} className="connected_point firstpoint">
             <svg
               width="4"
               height="43"
@@ -100,7 +105,7 @@ const Process = () => {
               caractéristiques pour que vous puissiez faire un choix éclairé.
             </p>
           </li>
-          <div className="connected_point secondpoint">
+          <div ref={secondpoint} className="connected_point secondpoint">
             <svg
               width="4"
               height="43"
@@ -124,7 +129,7 @@ const Process = () => {
               manière artisanale, en respectant les traditions de la menuiserie.
             </p>
           </li>
-          <div className="connected_point thirdpoint">
+          <div ref={thirdpoint} className="connected_point thirdpoint">
             <svg
               width="4"
               height="43"
