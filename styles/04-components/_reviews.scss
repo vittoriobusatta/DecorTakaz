@@ -2,7 +2,7 @@
   background-color: #2a201e;
   color: #ede0d4;
   min-height: 500px;
- 
+  overflow: hidden;
 }
 .reviews_content {
   height: 100%;
@@ -108,4 +108,24 @@
       line-height: 22px;
     }
   }
+}
+
+
+.reviews_circles {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.reviews_circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #4E3D3A;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.reviews_circle.active {
+  background-color: #EDE0D4;
 }

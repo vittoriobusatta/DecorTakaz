@@ -2,7 +2,7 @@ import Image from "next/image";
 import jennyPP from "/assets/share/circle.png";
 import lisaPP from "/assets/share/circle2.png";
 import victorPP from "/assets/share/circle3.png";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Reviews() {
@@ -30,25 +30,28 @@ function Reviews() {
     },
   ]);
 
-
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const currentTestimonial = testimonials[currentIndex];
 
-  const handlePrevClick = () => {
-    let newIndex = currentIndex - 1;
-    if (newIndex < 0) {
-      newIndex = testimonials.length - 1;
-    }
-    setCurrentIndex(newIndex);
+  const handleCircleClick = (index) => {
+    setCurrentIndex(index);
   };
 
-  const handleNextClick = () => {
+  const nextTestimonial = useCallback(() => {
     let newIndex = currentIndex + 1;
     if (newIndex >= testimonials.length) {
       newIndex = 0;
     }
     setCurrentIndex(newIndex);
-  };
+  }, [currentIndex, testimonials.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextTestimonial();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [nextTestimonial]);
 
   return (
     <section className="reviews">
@@ -72,9 +75,18 @@ function Reviews() {
             </div>
           </motion.div>
         </AnimatePresence>
-        <div>
-          <button onClick={handleNextClick}>Next</button>
-          <button onClick={handlePrevClick}>Prev</button>
+        <div className="reviews_circles">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={testimonial.id}
+              className={
+                index === currentIndex
+                  ? "reviews_circle active"
+                  : "reviews_circle"
+              }
+              onClick={() => handleCircleClick(index)}
+            />
+          ))}
         </div>
       </div>
     </section>
