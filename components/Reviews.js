@@ -29,7 +29,10 @@ function Reviews() {
       image: victorPP,
     },
   ]);
+
+
   const [currentIndex, setCurrentIndex] = useState(0);
+  const currentTestimonial = testimonials[currentIndex];
 
   const handlePrevClick = () => {
     let newIndex = currentIndex - 1;
@@ -37,9 +40,6 @@ function Reviews() {
       newIndex = testimonials.length - 1;
     }
     setCurrentIndex(newIndex);
-    setTimeout(() => {
-      setIsVisible(true);
-    }, 500);
   };
 
   const handleNextClick = () => {
@@ -48,37 +48,29 @@ function Reviews() {
       newIndex = 0;
     }
     setCurrentIndex(newIndex);
-    setTimeout(() => {
-      setIsVisible(true);
-    }, 500);
   };
 
-  const [isVisible, setIsVisible] = useState(true);
-
-  const currentTestimonial = testimonials[currentIndex];
   return (
     <section className="reviews">
       <div className="reviews_content">
         <h2>Leurs Avis</h2>
         <AnimatePresence>
-          {isVisible && (
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: "0%" }}
-              exit={{ x: "-100%" }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="reviews_layout">
-                <span>&#34;</span>
-                <p>{currentTestimonial.description}</p>
-                <div className="reviews_customers">
-                  <Image src={currentTestimonial.image} alt="alt" />
-                  <h4>- {currentTestimonial.name}</h4>
-                  <h5>{currentTestimonial.job}</h5>
-                </div>
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: "0%" }}
+            exit={{ x: "-100%" }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="reviews_layout">
+              <span>&#34;</span>
+              <p>{currentTestimonial.description}</p>
+              <div className="reviews_customers">
+                <Image src={currentTestimonial.image} alt="alt" />
+                <h4>- {currentTestimonial.name}</h4>
+                <h5>{currentTestimonial.job}</h5>
               </div>
-            </motion.div>
-          )}
+            </div>
+          </motion.div>
         </AnimatePresence>
         <div>
           <button onClick={handleNextClick}>Next</button>
