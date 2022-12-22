@@ -3,7 +3,7 @@ import jennyPP from "/assets/share/circle.png";
 import lisaPP from "/assets/share/circle2.png";
 import victorPP from "/assets/share/circle3.png";
 import React, { useCallback, useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 function Reviews() {
   const [testimonials, setTestimonials] = useState([
@@ -31,6 +31,7 @@ function Reviews() {
   ]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
   const currentTestimonial = testimonials[currentIndex];
 
@@ -44,6 +45,10 @@ function Reviews() {
       newIndex = 0;
     }
     setCurrentIndex(newIndex);
+    setIsVisible(false);
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 500);
   }, [currentIndex, testimonials.length]);
 
   useEffect(() => {
@@ -58,22 +63,29 @@ function Reviews() {
       <div className="reviews_content">
         <h2>Leurs Avis</h2>
         <AnimatePresence>
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: "0%" }}
-            exit={{ x: "-100%" }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="reviews_layout">
+          {isVisible && (
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: "0%" }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.5 }}
+              className="reviews_layout"
+            >
               <span>&#34;</span>
-              <p>{currentTestimonial.description}</p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                {currentTestimonial.description}
+              </motion.p>
               <div className="reviews_customers">
                 <Image src={currentTestimonial.image} alt="alt" />
                 <h4>- {currentTestimonial.name}</h4>
                 <h5>{currentTestimonial.job}</h5>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          )}
         </AnimatePresence>
         <div className="reviews_circles">
           {testimonials.map((testimonial, index) => (
