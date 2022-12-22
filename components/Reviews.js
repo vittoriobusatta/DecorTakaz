@@ -48,7 +48,7 @@ function Reviews() {
         opacity: 0,
       },
       {
-        delay: 0.1,
+        delay: 0.2,
         duration: 1,
         y: 0,
         opacity: 1,
@@ -111,7 +111,7 @@ function Reviews() {
     const interval = setInterval(() => {
       nextTestimonial();
       animateElements(paragraph, circle, name, job);
-    }, 5000);
+    }, 4500);
     return () => clearInterval(interval);
   }, [nextTestimonial, currentIndex]);
 
