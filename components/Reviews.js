@@ -1,7 +1,7 @@
 import Image from "next/image";
 import jennyPP from "/assets/share/circle.png";
-import lisaPP from "/assets/share/circle2.png";
-import victorPP from "/assets/share/circle3.png";
+import assadPP from "/assets/share/circle2.png";
+import ambdouPP from "/assets/share/circle3.png";
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 
@@ -17,19 +17,19 @@ function Reviews() {
     },
     {
       id: 2,
-      name: "Lisa",
+      name: "Assad",
       description:
         "Je suis absolument ravi du travail qui a été réalisé. Ils ont fabriqué et installé des placards sur mesure dans ma cuisine, et le résultat est absolument parfait. ",
-      job: "Designer",
-      image: lisaPP,
+      job: "Entrepreneur",
+      image: assadPP,
     },
     {
       id: 3,
-      name: "Victor",
+      name: "Ambdou",
       description:
         "J'ai été très satisfait du travail de cette entreprise de menuiserie. Ils ont fabriqué et installé une porte d'entrée sur mesure, et le résultat est parfait. Je recommande !",
       job: "Manager",
-      image: victorPP,
+      image: ambdouPP,
     },
   ]);
 
