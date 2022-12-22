@@ -17,14 +17,14 @@ function Reviews() {
     {
       name: "Lisa",
       description:
-        "Je suis absolument ravi du travail qui a été réalisé. Ils ont fabriqué et installé des placards sur mesure dans ma cuisine, et le résultat est absolument parfait. Je recommande vivement Décor Ta Kaz à tous ceux qui cherchent à améliorer l'espace de rangement de leur maison.",
+        "Je suis absolument ravi du travail qui a été réalisé. Ils ont fabriqué et installé des placards sur mesure dans ma cuisine, et le résultat est absolument parfait. ",
       job: "Designer",
       image: lisaPP,
     },
     {
       name: "Victor",
       description:
-        "J'ai été très satisfait du travail de cette entreprise de menuiserie. Ils ont fabriqué et installé une porte d'entrée sur mesure, et le résultat est parfait. Le travail a été effectué rapidement et proprement, et la porte est de très haute qualité. Je recommande vivement Décor Ta Kaz.",
+        "J'ai été très satisfait du travail de cette entreprise de menuiserie. Ils ont fabriqué et installé une porte d'entrée sur mesure, et le résultat est parfait. Je recommande !",
       job: "Manager",
       image: victorPP,
     },
@@ -40,8 +40,8 @@ function Reviews() {
     setTimeout(() => {
       setIsVisible(true);
     }, 500);
-  }
-  
+  };
+
   const handleNextClick = () => {
     let newIndex = currentIndex + 1;
     if (newIndex >= testimonials.length) {
@@ -51,7 +51,7 @@ function Reviews() {
     setTimeout(() => {
       setIsVisible(true);
     }, 500);
-  }
+  };
 
   const [isVisible, setIsVisible] = useState(true);
 
@@ -80,8 +80,10 @@ function Reviews() {
             </motion.div>
           )}
         </AnimatePresence>
-        <button onClick={handleNextClick}>Next</button>
-        <button onClick={handlePrevClick}>Prev</button>
+        <div>
+          <button onClick={handleNextClick}>Next</button>
+          <button onClick={handlePrevClick}>Prev</button>
+        </div>
       </div>
     </section>
   );
