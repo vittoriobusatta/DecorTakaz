@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 function Reviews() {
   const [testimonials, setTestimonials] = useState([
     {
+      id: 1,
       name: "Jenny",
       description:
         "Le seul et unique ARTISAN spécialisé en bois et résine sur l'île qui a cru à mon projet, le seul qui a su réaliser et rendre réel la vision que j'avais concernant mon enseigne.",
@@ -15,6 +16,7 @@ function Reviews() {
       image: jennyPP,
     },
     {
+      id: 2,
       name: "Lisa",
       description:
         "Je suis absolument ravi du travail qui a été réalisé. Ils ont fabriqué et installé des placards sur mesure dans ma cuisine, et le résultat est absolument parfait. ",
@@ -22,6 +24,7 @@ function Reviews() {
       image: lisaPP,
     },
     {
+      id: 3,
       name: "Victor",
       description:
         "J'ai été très satisfait du travail de cette entreprise de menuiserie. Ils ont fabriqué et installé une porte d'entrée sur mesure, et le résultat est parfait. Je recommande !",
@@ -37,6 +40,10 @@ function Reviews() {
 
   const handleCircleClick = (index) => {
     setCurrentIndex(index);
+    setIsVisible(false);
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 500);
   };
 
   const nextTestimonial = useCallback(() => {
