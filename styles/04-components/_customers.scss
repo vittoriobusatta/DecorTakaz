@@ -9,9 +9,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  @media screen and (min-width: 1224px) {
-    padding: 100px 30px;
-  }
+  // @media screen and (min-width: 1224px) {
+  //   padding: 100px 30px;
+  // }
   & h2 {
     font-weight: 800;
     font-size: 18px;
@@ -29,20 +29,15 @@
 
 .customers_content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  column-gap: 70px;
+  width: 100%;
+  max-width: 360px;
   @media screen and (min-width: 576px) {
-    column-gap: 100px;
-  }
-  @media screen and (min-width: 768px) {
-    column-gap: 140px;
-  }
-  @media screen and (min-width: 992px) {
-    column-gap: 180px;
-  }
-  @media screen and (min-width: 1224px) {
-    column-gap: 220px;
+    justify-content: center;
+    max-width: none;
+    column-gap: 20vw;
+    max-width: 1000px;
   }
   & li img {
     height: auto;

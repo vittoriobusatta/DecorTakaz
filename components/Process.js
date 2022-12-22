@@ -7,8 +7,8 @@ const Process = () => {
     <section className="process">
       <div className="process_content">
         <div className="process_head">
-          <Title>Processus</Title>
-          <Description>
+          <h1 className="title">Processus</h1>
+          <p className="introduction">
             Décor ta Kaz est une entreprise spécialisée dans la conception et la
             fabrication de meubles et de structures en bois. Nous commençons par
             établir les spécifications du projet avec le client, puis préparons
@@ -16,7 +16,7 @@ const Process = () => {
             avec soin. Nous veillons à ce que chaque produit soit fini avec soin
             et vérifié pour garantir une qualité exceptionnelle avant de le
             livrer à nos clients.
-          </Description>
+          </p>
         </div>
         <ul className="process_steps">
           <li className="firststep">

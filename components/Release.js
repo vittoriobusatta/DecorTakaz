@@ -11,7 +11,7 @@ import {
 function Release() {
   return (
     <section className="release">
-      <div className="release_content">
+      <div className="release_head">
         <h1 className="title">Réalisations</h1>
         <p className="introduction">
           En tant que menuisier passionné, je suis toujours à la recherche de

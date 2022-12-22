@@ -64,12 +64,12 @@ function Home() {
 
       <main className="main">
         <Release />
-        {/* <Process />
+        <Process />
         <Forest />
         <Customers />
         <Reviews />
         <Contact />
-        <Footer /> */}
+        <Footer />
       </main>
     </>
   );
