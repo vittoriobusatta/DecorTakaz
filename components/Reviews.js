@@ -3,6 +3,7 @@ import jennyPP from "/assets/share/circle.png";
 import lisaPP from "/assets/share/circle2.png";
 import victorPP from "/assets/share/circle3.png";
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Reviews() {
   const [testimonials, setTestimonials] = useState([
@@ -30,50 +31,58 @@ function Reviews() {
   ]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      let newIndex = currentIndex + 1;
-      if (newIndex >= testimonials.length) {
-        newIndex = 0;
-      }
-      setCurrentIndex(newIndex);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [currentIndex, testimonials.length]);
-
   const handlePrevClick = () => {
     let newIndex = currentIndex - 1;
     if (newIndex < 0) {
       newIndex = testimonials.length - 1;
     }
     setCurrentIndex(newIndex);
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 500);
   }
-
+  
   const handleNextClick = () => {
     let newIndex = currentIndex + 1;
     if (newIndex >= testimonials.length) {
       newIndex = 0;
     }
     setCurrentIndex(newIndex);
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 500);
   }
+
+  const [isVisible, setIsVisible] = useState(true);
 
   const currentTestimonial = testimonials[currentIndex];
   return (
     <section className="reviews">
       <div className="reviews_content">
         <h2>Leurs Avis</h2>
-        <div className="reviews_layout">
-          <span>&#34;</span>
-          <p>{currentTestimonial.description}</p>
-          <div className="reviews_customers">
-            <Image src={currentTestimonial.image} alt="alt" />
-            <h4>- {currentTestimonial.name}</h4>
-            <h5>{currentTestimonial.job}</h5>
-          </div>
-        </div>
+        <AnimatePresence>
+          {isVisible && (
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: "0%" }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="reviews_layout">
+                <span>&#34;</span>
+                <p>{currentTestimonial.description}</p>
+                <div className="reviews_customers">
+                  <Image src={currentTestimonial.image} alt="alt" />
+                  <h4>- {currentTestimonial.name}</h4>
+                  <h5>{currentTestimonial.job}</h5>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <button onClick={handleNextClick}>Next</button>
+        <button onClick={handlePrevClick}>Prev</button>
       </div>
-      <button onClick={handleNextClick}>Next</button>
-      <button onClick={handlePrevClick}>Prev</button>
     </section>
   );
 }
