@@ -2,10 +2,8 @@ import gsap from "gsap";
 import React, { useEffect, useRef, useState } from "react";
 import { GiftIcon, LogIcon, PenIcon, ToolsIcon } from "../utils/icons";
 
-
 const Process = () => {
-
-  const [animatedElements, setAnimatedElements] = useState([]); 
+  const [animatedElements, setAnimatedElements] = useState([]);
 
   const firststep = useRef(null);
   const secondstep = useRef(null);
@@ -14,27 +12,28 @@ const Process = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
+      entries.forEach((entry) => {
+        const index = Array.from(entry.target.parentNode.children).indexOf(
+          entry.target
+        );
 
         if (entry.isIntersecting && !animatedElements.includes(index)) {
           setAnimatedElements([...animatedElements, index]);
-
-          gsap.fromTo(
-            entry.target, 
-            {
-              y: "100%",
-              opacity: 0,
-            },
-            {
-              duration: 1.5,
-              y: "0%",
-              opacity: 1,
-              ease: "power2.out",
-              delay: index * 0.5,
-            }
-          );
+            gsap.fromTo(
+              entry.target,
+              {
+                y: "100%",
+                opacity: 0,
+              },
+              {
+                duration: 1.5,
+                y: "0%",
+                opacity: 1,
+                ease: "power2.out",
+                delay: index * 0.1,
+              }
+            );
         }
-        
       });
     });
 
@@ -48,9 +47,8 @@ const Process = () => {
     };
   }, [animatedElements]);
 
-   
+  console.log(animatedElements);
 
-  
   return (
     <section className="process">
       <div className="process_content">
