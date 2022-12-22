@@ -64,7 +64,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    // opacity: 0;
     @media screen and (min-width: 768px) {
       justify-content: flex-start;
     }
@@ -74,6 +73,7 @@
       line-height: 19px;
       color: #563213;
       margin: 16px 0px 6px;
+    opacity: 0;
       @media screen and (min-width: 992px) {
         font-size: 20px;
         margin: 20px 0px 8px;
@@ -85,6 +85,7 @@
       font-weight: 500;
       font-size: 14px;
       color: #785436;
+    opacity: 0;
       @media screen and (min-width: 992px) {
         max-width: 400px;
         font-size: 16px;
