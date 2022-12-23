@@ -69,8 +69,8 @@ const Customers = () => {
   }
 
   return (
-    <section className="customers">
-      <div ref={customersContainerRef} className="customers_container">
+    <section ref={customersContainerRef} className="customers">
+      <div  className="customers_container">
         <div className="hidden">
           <h2 ref={titleRef}>Nos Clients</h2>
         </div>

@@ -27,7 +27,6 @@
     font-size: 18px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    margin-bottom: 40px;
     @media screen and (min-width: 1224px) {
       font-size: 24px;
       line-height: 33px;
@@ -40,6 +39,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 40px;
   & .reviews_quote {
     font-weight: 500;
     font-size: 56px;

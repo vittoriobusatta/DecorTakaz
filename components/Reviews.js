@@ -40,6 +40,9 @@ function Reviews() {
   const circle = useRef(null);
   const paragraph = useRef(null);
 
+  const reviewsContainerRef = useRef(null);
+  const titleRef = useRef(null);
+
   const animateElements = (paragraph, circle, name, job) => {
     gsap.fromTo(
       paragraph.current,
@@ -115,10 +118,38 @@ function Reviews() {
     return () => clearInterval(interval);
   }, [nextTestimonial, currentIndex]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateTitle();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(reviewsContainerRef.current);
+  }, []);
+
+  const animateTitle = () => {
+    gsap.fromTo(
+      titleRef.current,
+      { y: 70 },
+      {
+        delay : 0.2,
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
+  };
+
   return (
     <section className="reviews">
-      <div className="reviews_content">
-        <h2>Leurs Avis</h2>
+      <div ref={reviewsContainerRef} className="reviews_content">
+        <div className="hidden">
+          <h2 ref={titleRef}>Leurs Avis</h2>
+        </div>
         <div className="reviews_layout">
           <span className="reviews_quote">&#34;</span>
           <div className="reviews_paragraph">
