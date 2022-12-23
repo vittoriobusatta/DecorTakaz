@@ -10,7 +10,7 @@ import soa from "/assets/share/soa.png";
 import vittorio from "/assets/share/vb.png";
 import trinity from "/assets/share/ljt.png";
 import Footer from "../components/Footer";
-import About from "../components/About";
+import Menu from "../components/Menu";
 import Process from "../components/Process";
 import gsap from "gsap";
 
@@ -70,7 +70,7 @@ const Customers = () => {
 
   return (
     <section ref={customersContainerRef} className="customers">
-      <div  className="customers_container">
+      <div className="customers_container">
         <div className="hidden">
           <h2 ref={titleRef}>Nos Clients</h2>
         </div>
@@ -105,6 +105,7 @@ const Contact = () => {
 };
 
 function Home() {
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
       <Head>
@@ -113,7 +114,8 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Header setOpenMenu={setOpenMenu} openMenu={openMenu} />
+      {openMenu && <Menu setOpenMenu={setOpenMenu} openMenu={openMenu} />}
 
       <main className="main">
         <Release />
