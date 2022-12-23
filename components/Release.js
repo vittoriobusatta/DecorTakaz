@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import { Description, Title } from "../utils/common";
 import {
   ArchitectureIcon,
   InterieurIcon,

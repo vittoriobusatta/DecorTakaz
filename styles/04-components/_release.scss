@@ -76,7 +76,9 @@
       &:hover {
         background-color: #906745;
         & svg path {
-          fill: #ffd8af;
+          stroke-dasharray: 0;
+          animation: animateStroke 1s linear forwards;
+          stroke: #55392B;
         }
       }
     }
@@ -90,6 +92,15 @@
   }
 }
 
+@keyframes animateStroke {
+  from {
+    stroke-dasharray: 0;
+  }
+  to {
+    stroke-dasharray: 500;
+  }
+}
+
 .release_category li {
   & svg {
     height: 50px;
@@ -99,6 +110,9 @@
     }
     @media screen and (min-width: 992px) {
       height: 70px;
+    }
+    @media screen and (min-width: 1224px) {
+      height: 80px;
     }
   }
   & svg path {
@@ -128,7 +142,7 @@
       font-size: 18px;
     }
     @media screen and (min-width: 1224px) {
-      font-size: 24px;
+      font-size: 22px;
       margin-top: 20px;
     }
   }
