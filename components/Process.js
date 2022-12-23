@@ -5,17 +5,8 @@ import { GiftIcon, LogIcon, PenIcon, ToolsIcon } from "../utils/icons";
 const Process = () => {
   const [animatedElements, setAnimatedElements] = useState([]);
 
-  const firststep = useRef(null);
-  const secondstep = useRef(null);
-  const thirdstep = useRef(null);
-  const fourthstep = useRef(null);
-
-  const firstpoint = useRef(null);
-  const secondpoint = useRef(null);
-  const thirdpoint = useRef(null);
-
-  const titles = useRef([null, null, null, null]); // tableau de références
-  const paragraphs = useRef([null, null, null, null]); // tableau de références
+  const titles = useRef([]);
+  const paragraphs = useRef([]);
 
   useEffect(() => {
     // Création de l'observateur
@@ -73,7 +64,7 @@ const Process = () => {
           </p>
         </div>
         <ul className="process_steps">
-          <li ref={firststep} className="firststep">
+          <li className="firststep">
             <div className="square">
               <PenIcon />
             </div>
@@ -86,7 +77,7 @@ const Process = () => {
               votre intérieur.
             </p>
           </li>
-          <div ref={firstpoint} className="connected_point firstpoint">
+          <div className="connected_point firstpoint">
             <svg
               width="4"
               height="43"
@@ -100,7 +91,7 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li ref={secondstep} className="secondstep">
+          <li className="secondstep">
             <div className="square">
               <LogIcon />
             </div>
@@ -112,7 +103,7 @@ const Process = () => {
               caractéristiques pour que vous puissiez faire un choix éclairé.
             </p>
           </li>
-          <div ref={secondpoint} className="connected_point secondpoint">
+          <div className="connected_point secondpoint">
             <svg
               width="4"
               height="43"
@@ -126,7 +117,7 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li ref={thirdstep} className="thirdstep">
+          <li className="thirdstep">
             <div className="square">
               <ToolsIcon />
             </div>
@@ -136,7 +127,7 @@ const Process = () => {
               manière artisanale, en respectant les traditions de la menuiserie.
             </p>
           </li>
-          <div ref={thirdpoint} className="connected_point thirdpoint">
+          <div className="connected_point thirdpoint">
             <svg
               width="4"
               height="43"
@@ -150,7 +141,7 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li ref={fourthstep} className="fourthstep">
+          <li className="fourthstep">
             <div className="square">
               <GiftIcon />
             </div>

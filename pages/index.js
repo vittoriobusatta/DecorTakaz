@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Header from "../components/Header";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Release from "../components/Release";
 import fort from "/assets/share/Subtract.png";
@@ -12,7 +12,7 @@ import trinity from "/assets/share/ljt.png";
 import Footer from "../components/Footer";
 import About from "../components/About";
 import Process from "../components/Process";
-
+import gsap from "gsap";
 
 const Forest = () => {
   return (
@@ -23,14 +23,64 @@ const Forest = () => {
 };
 
 const Customers = () => {
+  const icon1Ref = useRef(null);
+  const icon2Ref = useRef(null);
+  const icon3Ref = useRef(null);
+
+  // Créez une fonction pour animer chaque icône
+
+  useEffect(() => {
+    // Créez un IntersectionObserver qui observe chaque icône
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // Si l'icône est visible dans la fenêtre, lancez l'animation
+        if (entry.isIntersecting) {
+          animateIcon(entry.target);
+          console.log("je suus la");
+          // Désactivez l'observation de l'icône une fois l'animation terminée
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    console.log(icon1Ref);
+
+    // Observez chaque icône avec l'IntersectionObserver
+    observer.observe(icon1Ref.current);
+    observer.observe(icon2Ref.current);
+    observer.observe(icon3Ref.current);
+  }, []);
+
+  function animateIcon(icon) {
+    gsap.fromTo(
+      icon,
+      {
+        y: 70,
+      },
+      {
+        delay: 0.2,
+        duration: 0.6,
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
+  }
+
   return (
     <section className="customers">
       <div className="customers_container">
         <h2>Nos Clients</h2>
         <ul className="customers_content">
-          <li><Image src={vittorio} alt="alt" /></li>
-          <li><Image src={soa} alt="alt" /></li>
-          <li><Image src={trinity} alt="alt" /></li>
+          <li>
+            <Image ref={icon1Ref} src={vittorio} alt="alt" />
+          </li>
+          <li>
+            <Image ref={icon2Ref} src={soa} alt="alt" />
+          </li>
+          <li>
+            <Image ref={icon3Ref} src={trinity} alt="alt" />
+          </li>
         </ul>
       </div>
     </section>

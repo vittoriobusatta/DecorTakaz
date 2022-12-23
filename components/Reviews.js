@@ -6,7 +6,7 @@ import React, { useCallback, useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 
 function Reviews() {
-  const [testimonials, setTestimonials] = useState([
+  const testimonials = [
     {
       id: 1,
       name: "Jenny",
@@ -31,7 +31,7 @@ function Reviews() {
       job: "Manager",
       image: ambdouPP,
     },
-  ]);
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentTestimonial = testimonials[currentIndex];
@@ -62,8 +62,8 @@ function Reviews() {
       },
       {
         delay: 0.3,
-        duration: 1.5,
-        ease: "power2.out",
+        duration: 1,
+        ease: "power4.easeIn",
         clipPath: "circle(100%",
         opacity: 1,
       }
@@ -71,7 +71,7 @@ function Reviews() {
     gsap.fromTo(
       name.current,
       {
-        y: 20,
+        y: 40,
       },
       {
         opacity: 1,
@@ -83,7 +83,7 @@ function Reviews() {
     gsap.fromTo(
       job.current,
       {
-        y: 20,
+        y: 30,
       },
       {
         opacity: 1,

@@ -39,12 +39,15 @@
     column-gap: 20vw;
     max-width: 1000px;
   }
-  & li img {
-    height: auto;
-    width: 45px;
-    min-width: 35px;
-    @media screen and (min-width: 1224px) {
-      width: 70px;
+  & li {
+    overflow: hidden;
+    & img {
+      height: auto;
+      width: 45px;
+      min-width: 35px;
+      @media screen and (min-width: 1224px) {
+        width: 70px;
+      }
     }
   }
 }
