@@ -23,93 +23,54 @@ const Forest = () => {
 };
 
 const Customers = () => {
+  const customersContainerRef = useRef(null);
+  const titleRef = useRef(null);
   const icon1Ref = useRef(null);
   const icon2Ref = useRef(null);
   const icon3Ref = useRef(null);
-  const titleRef = useRef(null);
-
-  // Créez une fonction pour animer chaque icône
 
   useEffect(() => {
-    // Créez un IntersectionObserver qui observe chaque icône
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        // Si l'icône est visible dans la fenêtre, lancez l'animation
         if (entry.isIntersecting) {
-          animateIcon(entry.target);
-          // Désactivez l'observation de l'icône une fois l'animation terminée
+          animateElements();
           observer.unobserve(entry.target);
         }
       });
     });
 
-    console.log(icon1Ref);
-
-    // Observez chaque icône avec l'IntersectionObserver
-    observer.observe(icon1Ref.current);
-    observer.observe(icon2Ref.current);
-    observer.observe(icon3Ref.current);
-    observer.observe(titleRef.current);
+    observer.observe(customersContainerRef.current);
   }, []);
 
-  function animateIcon() {
-    gsap.fromTo(
-      icon1Ref.current,
-      {
-        y: 70,
-      },
-      {
-        delay: 0.2,
-        duration: 0.6,
-        y: 0,
-        opacity: 1,
-        ease: "power2.out",
-      }
-    );
-    gsap.fromTo(
-      icon2Ref.current,
-      {
-        y: 70,
-      },
-      {
-        delay: 0.4,
-        duration: 0.6,
-        y: 0,
-        opacity: 1,
-        ease: "power2.out",
-      }
-    );
-    gsap.fromTo(
-      icon3Ref.current,
-      {
-        y: 70,
-      },
-      {
-        delay: 0.6,
-        duration: 0.6,
-        y: 0,
-        opacity: 1,
-        ease: "power2.out",
-      }
-    );
+  function animateElements() {
     gsap.fromTo(
       titleRef.current,
+      { y: 70 },
       {
-        y: 70,
-      },
-      {
-        delay: 0.2,
-        duration: 0.6,
         y: 0,
         opacity: 1,
         ease: "power2.out",
       }
     );
+
+    const icons = [icon1Ref, icon2Ref, icon3Ref];
+    icons.forEach((icon, index) => {
+      gsap.fromTo(
+        icon.current,
+        { y: 70 },
+        {
+          delay: index * 0.2,
+          y: 0,
+          opacity: 1,
+          ease: "power2.out",
+        }
+      );
+    });
   }
 
   return (
     <section className="customers">
-      <div className="customers_container">
+      <div ref={customersContainerRef} className="customers_container">
         <div className="hidden">
           <h2 ref={titleRef}>Nos Clients</h2>
         </div>
