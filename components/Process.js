@@ -9,21 +9,14 @@ const Process = () => {
   const paragraphs = useRef([]);
 
   useEffect(() => {
-    // Création de l'observateur
     const observer = new IntersectionObserver((entries) => {
-      // Pour chaque entrée de l'observateur
       entries.forEach((entry) => {
-        // Si l'élément est visible
         if (entry.isIntersecting) {
-          // Lancer l'animation de l'élément
           animateElement(entry.target);
         }
       });
     });
-
-    // Fonction pour lancer l'animation de l'élément
     const animateElement = (element) => {
-      // Animation de l'élément
       gsap.fromTo(
         element,
         {
@@ -37,8 +30,6 @@ const Process = () => {
           ease: "power2.out",
         }
       );
-
-      // Suppression de l'élément de l'observateur
       observer.unobserve(element);
     };
 
@@ -46,7 +37,7 @@ const Process = () => {
       observer.observe(title);
       observer.observe(paragraphs.current[index]);
     });
-  }, [animatedElements]); // [] pour exécuter l'effet une seule fois au montage du composant
+  }, [animatedElements]);
 
   return (
     <section className="process">

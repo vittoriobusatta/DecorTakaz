@@ -26,6 +26,7 @@ const Customers = () => {
   const icon1Ref = useRef(null);
   const icon2Ref = useRef(null);
   const icon3Ref = useRef(null);
+  const titleRef = useRef(null);
 
   // Créez une fonction pour animer chaque icône
 
@@ -36,7 +37,6 @@ const Customers = () => {
         // Si l'icône est visible dans la fenêtre, lancez l'animation
         if (entry.isIntersecting) {
           animateIcon(entry.target);
-          console.log("je suus la");
           // Désactivez l'observation de l'icône une fois l'animation terminée
           observer.unobserve(entry.target);
         }
@@ -49,11 +49,51 @@ const Customers = () => {
     observer.observe(icon1Ref.current);
     observer.observe(icon2Ref.current);
     observer.observe(icon3Ref.current);
+    observer.observe(titleRef.current);
   }, []);
 
-  function animateIcon(icon) {
+  function animateIcon() {
     gsap.fromTo(
-      icon,
+      icon1Ref.current,
+      {
+        y: 70,
+      },
+      {
+        delay: 0.2,
+        duration: 0.6,
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      icon2Ref.current,
+      {
+        y: 70,
+      },
+      {
+        delay: 0.4,
+        duration: 0.6,
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      icon3Ref.current,
+      {
+        y: 70,
+      },
+      {
+        delay: 0.6,
+        duration: 0.6,
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      titleRef.current,
       {
         y: 70,
       },
@@ -70,7 +110,9 @@ const Customers = () => {
   return (
     <section className="customers">
       <div className="customers_container">
-        <h2>Nos Clients</h2>
+        <div className="hidden">
+          <h2 ref={titleRef}>Nos Clients</h2>
+        </div>
         <ul className="customers_content">
           <li>
             <Image ref={icon1Ref} src={vittorio} alt="alt" />

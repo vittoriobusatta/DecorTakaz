@@ -18,11 +18,10 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #785436;
-    margin-bottom: 40px;
+    opacity: 0;
     @media screen and (min-width: 1224px) {
       font-size: 24px;
       line-height: 33px;
-      margin-bottom: 80px;
     }
   }
 }
@@ -33,11 +32,15 @@
   align-items: center;
   width: 100%;
   max-width: 360px;
+  margin-top: 40px;
   @media screen and (min-width: 576px) {
     justify-content: center;
     max-width: none;
     column-gap: 20vw;
     max-width: 1000px;
+  }
+  @media screen and (min-width: 1224px) {
+    margin-top: 80px;
   }
   & li {
     overflow: hidden;
