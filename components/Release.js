@@ -93,10 +93,10 @@ function Release() {
         item.current,
         { x: -170 },
         {
-          delay: index * 0.6,
+          delay: index * 0.8,
           x: 0,
           opacity: 1,
-          ease: "back.out",
+          ease: "power1.out",
         }
       );
     });
