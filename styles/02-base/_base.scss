@@ -28,7 +28,6 @@ body {
   font-size: max(11.5vw, 38px);
   text-transform: uppercase;
   color: #6c5347;
-  opacity: 0;
   @media screen and (min-width: 1224px) {
     font-size: 110px;
     line-height: 151px;
@@ -42,7 +41,6 @@ body {
   color: #d9a672;
   font-weight: 800;
   text-transform: uppercase;
-  opacity: 0;
   @media screen and (min-width: 1224px) {
     font-size: 24px;
     line-height: 33px;
@@ -55,7 +53,6 @@ body {
   color: #785436;
   max-width: 1200px;
   text-align: start;
-  opacity: 0;
   @media screen and (min-width: 576px) {
     font-size: 15px;
   }
@@ -73,10 +70,13 @@ body {
 }
 
 .introduction_container {
-  // padding: 24px 0 48px;
   margin: 24px 0 48px;
 }
 
 .hidden {
   overflow: hidden;
+}
+
+.opacity {
+  opacity: 0;
 }

@@ -107,17 +107,17 @@ function Release() {
     <section ref={releaseContainerRef} className="release">
       <div className="release_head">
         <div className="hidden">
-          <h5 ref={subtitleRef} className="subtitle">
+          <h5 ref={subtitleRef} className="subtitle opacity">
             Nos dernières
           </h5>
         </div>
         <div className="hidden">
-          <h1 ref={titleRef} className="title">
+          <h1 ref={titleRef} className="title opacity">
             Réalisations
           </h1>
         </div>
         <div className="introduction_container hidden">
-          <p ref={paragrahRef} className="introduction">
+          <p ref={paragrahRef} className="introduction opacity">
             En tant que menuisier passionné, je suis toujours à la recherche de
             nouvelles idées et de matériaux innovants pour mes réalisations. Je
             prends le temps d&#39;écouter attentivement les souhaits et les

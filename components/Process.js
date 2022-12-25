@@ -75,7 +75,6 @@ const Process = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !entry.target.animated) {
-          console.log("je vois");
           animateElement(entry.target);
           entry.target.animated = true;
           observer.unobserve(entry.target);
@@ -94,7 +93,7 @@ const Process = () => {
           opacity: 0,
         },
         {
-          delay: 0.3,
+          delay: 0.5,
           y: 0,
           opacity: 1,
           ease: "power2.out",
@@ -107,7 +106,7 @@ const Process = () => {
           opacity: 0,
         },
         {
-          delay: 0.5,
+          delay: 0.8,
           y: 0,
           opacity: 1,
           ease: "power2.out",
@@ -127,17 +126,17 @@ const Process = () => {
       <div className="process_content">
         <div className="process_head">
           <div className="hidden">
-            <h5 ref={subtitleRef} className="subtitle">
+            <h5 ref={subtitleRef} className="subtitle opacity">
               Notre
             </h5>
           </div>
           <div className="hidden">
-            <h1 ref={titleRef} className="title">
+            <h1 ref={titleRef} className="title opacity">
               Processus
             </h1>
           </div>
           <div className="introduction_container hidden">
-            <p ref={paragraphRef} className="introduction">
+            <p ref={paragraphRef} className="introduction opacity">
               Décor ta Kaz est une entreprise spécialisée dans la conception et
               la fabrication de meubles et de structures en bois. Nous
               commençons par établir les spécifications du projet avec le

@@ -22,16 +22,11 @@
     & p {
       display: flex;
       font-weight: 800;
-      font-size: 20px;
-      line-height: 26px;
+      font-size: clamp(20px, 5vw, 38px);
       text-align: center;
       color: #ddb892;
       white-space: nowrap;
       opacity: 0;
-      @media screen and (min-width: 1224px) {
-        font-size: 46px;
-        line-height: 60px;
-      }
     }
   }
 
