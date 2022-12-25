@@ -63,14 +63,15 @@ function Release() {
     gsap.fromTo(
       paragrahRef.current,
       {
-        // y: 200,
+        y: 100,
         opacity: 0,
       },
       {
-        delay: 0.6,
+        delay: 0.5,
         y: 0,
-        // duration: 1.2,
+        duration: 1.2,
         opacity: 1,
+        ease: "power2.out",
       }
     );
     const items = [icon1Ref, icon2Ref, icon3Ref, icon4Ref];
