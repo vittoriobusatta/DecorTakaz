@@ -106,12 +106,17 @@ const Contact = () => {
     function animateElements(element) {
       gsap.fromTo(
         element,
-        { y: 70 },
+
+        { y: 70, skewY: 20 },
         {
+          duration: 1.2,
           y: 0,
           opacity: 1,
-          duration: 1,
-          ease: "power2.out",
+          skewY: 0,
+          stagger: {
+            amount: 0.4,
+          },
+          ease: "power4.out",
         }
       );
       gsap.fromTo(

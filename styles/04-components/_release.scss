@@ -72,11 +72,21 @@
     &:nth-child(4) {
       grid-area: 2 / 2 / 3 / 3;
     }
+    @keyframes dashed {
+      0% {
+        stroke-dasharray: 0;
+      }
+      100% {
+        stroke-dasharray: 500;
+      }
+    }
     @media screen and (min-width: 1224px) {
       &:hover {
         background-color: #906745;
         & svg path {
-          fill: #ffd8af;
+          stroke-dasharray: 0;
+          animation: dashed 1.5s forwards;
+          stroke: #D9A672;
         }
       }
     }
