@@ -59,7 +59,7 @@ const Customers = () => {
         icon.current,
         { y: 70 },
         {
-          delay: index * 0.2,
+          delay: index * 0.3,
           y: 0,
           opacity: 1,
           ease: "power2.out",
@@ -69,12 +69,12 @@ const Customers = () => {
   }
 
   return (
-    <section ref={customersContainerRef} className="customers">
+    <section className="customers">
       <div className="customers_container">
         <div className="hidden">
           <h2 ref={titleRef}>Nos Clients</h2>
         </div>
-        <ul className="customers_content">
+        <ul ref={customersContainerRef} className="customers_content">
           <li>
             <Image ref={icon1Ref} src={vittorio} alt="alt" />
           </li>
@@ -91,14 +91,77 @@ const Customers = () => {
 };
 
 const Contact = () => {
+  const contactTitles = useRef([]);
+  const contactButton = useRef(null);
+  const contactCta = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateElements(entry.target);
+        }
+      });
+    });
+    function animateElements(element) {
+      gsap.fromTo(
+        element,
+        { y: 70 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        }
+      );
+      gsap.fromTo(
+        contactButton.current,
+        { width: 0 },
+        {
+          delay: 0.5,
+          opacity: 1,
+          ease: "power2.out",
+          width: "auto",
+        }
+      );
+      gsap.fromTo(
+        contactCta.current,
+        { y: 70 },
+        {
+          y: 0,
+          delay: 0.8,
+          opacity: 1,
+          ease: "power2.out",
+        }
+      );
+      observer.unobserve(element);
+    }
+
+    contactTitles.current.forEach((title) => {
+      observer.observe(title);
+    });
+  }, []);
+
   return (
     <section className="contact">
       <div className="contact_content">
-        <p>
-          <span>Impressionnez par notre travail?</span>
-          <span>Contactez-nous maintenant</span>
-        </p>
-        <button>Nous Contacter</button>
+        <span>
+          <div className="hidden">
+            <p ref={(el) => (contactTitles.current[0] = el)}>
+              Impressionnez par notre travail?
+            </p>
+          </div>
+          <div className="hidden">
+            <p ref={(el) => (contactTitles.current[1] = el)}>
+              Contactez-nous maintenant
+            </p>
+          </div>
+        </span>
+        <button ref={contactButton}>
+          <div className="hidden">
+            <p ref={contactCta}>Nous Contacter</p>
+          </div>
+        </button>
       </div>
     </section>
   );

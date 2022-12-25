@@ -146,11 +146,11 @@ function Reviews() {
 
   return (
     <section className="reviews">
-      <div ref={reviewsContainerRef} className="reviews_content">
+      <div className="reviews_content">
         <div className="hidden">
           <h2 ref={titleRef}>Leurs Avis</h2>
         </div>
-        <div className="reviews_layout">
+        <div ref={reviewsContainerRef} className="reviews_layout">
           <span className="reviews_quote">&#34;</span>
           <div className="reviews_paragraph">
             <p ref={paragraph}>{currentTestimonial.description}</p>
