@@ -3,9 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { GiftIcon, LogIcon, PenIcon, ToolsIcon } from "../utils/icons";
 
 const Process = () => {
-
   const titlesSteps = useRef([]);
   const paragraphs = useRef([]);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const paragrahRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -29,6 +31,43 @@ const Process = () => {
           ease: "power2.out",
         }
       );
+      gsap.fromTo(
+        titleRef.current,
+        { y: 110, skewY: 10 },
+        {
+          delay: 0.3,
+          y: 0,
+          duration: 0.8,
+          opacity: 1,
+          skewY: 0,
+          ease: "power4.out",
+        }
+      );
+      gsap.fromTo(
+        subtitleRef.current,
+        { y: 70, skewY: 10 },
+        {
+          delay: 0.1,
+          y: 0,
+          opacity: 1,
+          skewY: 0,
+          ease: "power4.out",
+        }
+      );
+      gsap.fromTo(
+        paragrahRef.current,
+        {
+          y: 100,
+          opacity: 0,
+        },
+        {
+          delay: 0.5,
+          y: 0,
+          duration: 1.2,
+          opacity: 1,
+          ease: "power2.out",
+        }
+      );
       observer.unobserve(element);
     };
 
@@ -43,20 +82,26 @@ const Process = () => {
       <div className="process_content">
         <div className="process_head">
           <div className="hidden">
-            <h5 className="subtitle">Notre</h5>
+            <h5 ref={subtitleRef} className="subtitle">
+              Notre
+            </h5>
           </div>
           <div className="hidden">
-            <h1 className="title">Processus</h1>
+            <h1 ref={titleRef} className="title">
+              Processus
+            </h1>
           </div>
-          <p className="introduction">
-            Décor ta Kaz est une entreprise spécialisée dans la conception et la
-            fabrication de meubles et de structures en bois. Nous commençons par
-            établir les spécifications du projet avec le client, puis préparons
-            les matériaux nécessaires et assemblons chaque meuble ou structure
-            avec soin. Nous veillons à ce que chaque produit soit fini avec soin
-            et vérifié pour garantir une qualité exceptionnelle avant de le
-            livrer à nos clients.
-          </p>
+          <div className="introduction_container hidden">
+            <p ref={paragrahRef} className="introduction">
+              Décor ta Kaz est une entreprise spécialisée dans la conception et
+              la fabrication de meubles et de structures en bois. Nous
+              commençons par établir les spécifications du projet avec le
+              client, puis préparons les matériaux nécessaires et assemblons
+              chaque meuble ou structure avec soin. Nous veillons à ce que
+              chaque produit soit fini avec soin et vérifié pour garantir une
+              qualité exceptionnelle avant de le livrer à nos clients.
+            </p>
+          </div>
         </div>
         <ul className="process_steps">
           <li className="firststep">
