@@ -24,28 +24,26 @@ body {
 }
 
 .title {
-  position: relative;
   font-weight: 800;
   font-size: max(11.5vw, 38px);
   text-transform: uppercase;
   color: #6c5347;
-
   @media screen and (min-width: 1224px) {
     font-size: 110px;
     line-height: 151px;
   }
-  &::before {
-    position: absolute;
-    top: -10px;
-    font-size: max(2vw, 12px);
-    line-height: 11px;
-    letter-spacing: 0.05em;
-    color: #d9a672;
-    @media screen and (min-width: 1224px) {
-      top: -30px;
-      font-size: 24px;
-      line-height: 33px;
-    }
+}
+
+.subtitle {
+  font-size: max(2vw, 12px);
+  line-height: 11px;
+  letter-spacing: 0.05em;
+  color: #d9a672;
+  font-weight: 800;
+  text-transform: uppercase;
+  @media screen and (min-width: 1224px) {
+    font-size: 24px;
+    line-height: 33px;
   }
 }
 
@@ -55,7 +53,6 @@ body {
   color: #785436;
   max-width: 1200px;
   text-align: start;
-  padding: 24px 0 48px;
   @media screen and (min-width: 576px) {
     font-size: 15px;
   }
@@ -70,6 +67,11 @@ body {
     font-size: 20px;
     line-height: 26px;
   }
+}
+
+.introduction_container {
+  // padding: 24px 0 48px;
+  margin: 24px 0 48px;
 }
 
 .hidden {

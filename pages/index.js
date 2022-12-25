@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Header from "../components/Header";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
@@ -106,16 +105,12 @@ const Contact = () => {
     function animateElements(element) {
       gsap.fromTo(
         element,
-
         { y: 70, skewY: 20 },
         {
           duration: 1.2,
           y: 0,
           opacity: 1,
           skewY: 0,
-          stagger: {
-            amount: 0.4,
-          },
           ease: "power4.out",
         }
       );

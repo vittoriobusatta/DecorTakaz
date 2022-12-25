@@ -3,9 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { GiftIcon, LogIcon, PenIcon, ToolsIcon } from "../utils/icons";
 
 const Process = () => {
-  const [animatedElements, setAnimatedElements] = useState([]);
 
-  const titles = useRef([]);
+  const titlesSteps = useRef([]);
   const paragraphs = useRef([]);
 
   useEffect(() => {
@@ -33,17 +32,22 @@ const Process = () => {
       observer.unobserve(element);
     };
 
-    titles.current.forEach((title, index) => {
+    titlesSteps.current.forEach((title, index) => {
       observer.observe(title);
       observer.observe(paragraphs.current[index]);
     });
-  }, [animatedElements]);
+  }, []);
 
   return (
     <section className="process">
       <div className="process_content">
         <div className="process_head">
-          <h1 className="title">Processus</h1>
+          <div className="hidden">
+            <h5 className="subtitle">Notre</h5>
+          </div>
+          <div className="hidden">
+            <h1 className="title">Processus</h1>
+          </div>
           <p className="introduction">
             Décor ta Kaz est une entreprise spécialisée dans la conception et la
             fabrication de meubles et de structures en bois. Nous commençons par
@@ -59,7 +63,7 @@ const Process = () => {
             <div className="square">
               <PenIcon />
             </div>
-            <h3 ref={(el) => (titles.current[0] = el)}>
+            <h3 ref={(el) => (titlesSteps.current[0] = el)}>
               01. Conception du design
             </h3>
             <p ref={(el) => (paragraphs.current[0] = el)}>
@@ -86,7 +90,7 @@ const Process = () => {
             <div className="square">
               <LogIcon />
             </div>
-            <h3 ref={(el) => (titles.current[1] = el)}>
+            <h3 ref={(el) => (titlesSteps.current[1] = el)}>
               02. Sélection des matières
             </h3>
             <p ref={(el) => (paragraphs.current[1] = el)}>
@@ -112,7 +116,7 @@ const Process = () => {
             <div className="square">
               <ToolsIcon />
             </div>
-            <h3 ref={(el) => (titles.current[2] = el)}>03. Fabrication</h3>
+            <h3 ref={(el) => (titlesSteps.current[2] = el)}>03. Fabrication</h3>
             <p ref={(el) => (paragraphs.current[2] = el)}>
               Nous mettons un point d&#39;honneur à réaliser chaque meuble de
               manière artisanale, en respectant les traditions de la menuiserie.
@@ -136,7 +140,7 @@ const Process = () => {
             <div className="square">
               <GiftIcon />
             </div>
-            <h3 ref={(el) => (titles.current[3] = el)}>04. Livraison</h3>
+            <h3 ref={(el) => (titlesSteps.current[3] = el)}>04. Livraison</h3>
             <p ref={(el) => (paragraphs.current[3] = el)}>
               Nous nous chargeons de toutes les étapes de transport et
               d&#39;installation afin que vous puissiez profiter pleinement de

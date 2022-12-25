@@ -22,9 +22,6 @@
   @media screen and (min-width: 1224px) {
     padding: 0 62px;
   }
-  & h1::before {
-    content: "Nos dernières";
-  }
 }
 
 .release_category {
@@ -34,8 +31,7 @@
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   width: 100%;
-  padding: 0 26px;
-  margin-top: 12px;
+  padding: 12px 26px 0;
   @media screen and (min-width: 576px) {
     margin-top: 30px;
     padding: 0 22px;
@@ -56,10 +52,10 @@
   }
   & li {
     height: 100%;
-    width: 100%;
     background-color: #745033;
     height: 160px;
     transition: 0.5s ease-out;
+    overflow: hidden;
     &:nth-child(1) {
       grid-area: 1 / 1 / 2 / 2;
     }
@@ -86,7 +82,7 @@
         & svg path {
           stroke-dasharray: 0;
           animation: dashed 1.5s forwards;
-          stroke: #D9A672;
+          stroke: #d9a672;
         }
       }
     }

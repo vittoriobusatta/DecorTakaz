@@ -23,10 +23,10 @@ function Header({ openMenu, setOpenMenu }) {
   return (
     <>
       <header>
-        <Link href="/">
+        <Link aria-label="Retourner à l'accueil" href="/">
           <LogoIcon />
         </Link>
-        <button onClick={ClickMenu} className={`burger ${openMenu ? 'active' : ''}`}>
+        <button aria-label="menu" onClick={ClickMenu} className={`burger ${openMenu ? 'active' : ''}`}>
           <div className="bar"></div>
           <div className="bar"></div>
         </button>
