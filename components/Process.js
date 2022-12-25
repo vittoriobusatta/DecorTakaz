@@ -3,113 +3,126 @@ import React, { useEffect, useRef, useState } from "react";
 import { GiftIcon, LogIcon, PenIcon, ToolsIcon } from "../utils/icons";
 
 const Process = () => {
-  const [headAnimated, setHeadAnimated] = useState(false);
-
   const processContainerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const paragraphRef = useRef(null);
 
-  const h3Refs = useRef([]);
-  const pRefs = useRef([]);
+  const itemsRefs = useRef([]);
+
+  const title1 = useRef(null);
+  const title2 = useRef(null);
+  const title3 = useRef(null);
+  const title4 = useRef(null);
+
+  const paragraph1 = useRef(null);
+  const paragraph2 = useRef(null);
+  const paragraph3 = useRef(null);
+  const paragraph4 = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          animateElements(titleRef, subtitleRef, paragraphRef, h3Refs, pRefs);
+          const animateHeadElements = (titleRef, subtitleRef, paragraphRef) => {
+            gsap.fromTo(
+              titleRef.current,
+              { y: 110, skewY: 10 },
+              {
+                delay: 0.3,
+                y: 0,
+                duration: 0.8,
+                opacity: 1,
+                skewY: 0,
+                ease: "power4.out",
+              }
+            );
+            gsap.fromTo(
+              subtitleRef.current,
+              { y: 70, skewY: 10 },
+              {
+                delay: 0.1,
+                y: 0,
+                opacity: 1,
+                skewY: 0,
+                ease: "power4.out",
+              }
+            );
+            gsap.fromTo(
+              paragraphRef.current,
+              {
+                y: 100,
+                opacity: 0,
+              },
+              {
+                delay: 0.5,
+                y: 0,
+                duration: 1.2,
+                opacity: 1,
+                ease: "power2.out",
+              }
+            );
+          };
+          animateHeadElements(titleRef, subtitleRef, paragraphRef);
           observer.unobserve(entry.target);
         }
       });
     }, {});
     observer.observe(processContainerRef.current);
+  }, []);
 
-    // observer doit être créé avant d'être utilisé pour observer les éléments
-    // [titleRef, subtitleRef, paragraphRef].forEach((el) => {
-    //   observer.observe(el.current);
-    // });
-    h3Refs.current.forEach((el) => {
-      observer.observe(el);
-    });
-    pRefs.current.forEach((el) => {
-      observer.observe(el);
-    });
-  }, []); // exécuté une seule fois lors du premier rendu
-
-  const animateElements = (
-    titleRef,
-    subtitleRef,
-    paragraphRef,
-    h3Refs,
-    pRefs
-  ) => {
-    if (!headAnimated) {
-      gsap.fromTo(
-        titleRef.current,
-        { y: 110, skewY: 10 },
-        {
-          delay: 0.3,
-          y: 0,
-          duration: 0.8,
-          opacity: 1,
-          skewY: 0,
-          ease: "power4.out",
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !entry.target.animated) {
+          console.log("je vois");
+          animateElement(entry.target);
+          entry.target.animated = true;
+          observer.unobserve(entry.target);
         }
-      );
+      });
+    });
+    
+    const animateElement = (element) => {
+      const titles = [title1, title2, title3, title4];
+      const paragraphs = [paragraph1, paragraph2, paragraph3, paragraph4];
+      const index = itemsRefs.current.indexOf(element);
       gsap.fromTo(
-        subtitleRef.current,
-        { y: 70, skewY: 10 },
+        titles[index].current,
         {
-          delay: 0.1,
-          y: 0,
-          opacity: 1,
-          skewY: 0,
-          ease: "power4.out",
-        }
-      );
-      gsap.fromTo(
-        paragraphRef.current,
-        {
-          y: 100,
+          y: 20,
           opacity: 0,
         },
         {
-          delay: 0.5,
+          delay: (index + 1) * 0.5,
           y: 0,
-          duration: 1.2,
           opacity: 1,
+          duration: 1,
           ease: "power2.out",
         }
       );
-
-      setHeadAnimated(true);
-    }
-    h3Refs.current.forEach((el) => {
       gsap.fromTo(
-        el,
-        { y: 70 },
+        paragraphs[index].current,
         {
+          y: 20,
+          opacity: 0,
+        },
+        {
+          delay: (index + 1) * 0.7,
           y: 0,
           opacity: 1,
-          ease: "power3.out",
-          delay: 0.1,
-        }
-      );
-    });
-    pRefs.current.forEach((el) => {
-      gsap.fromTo(
-        el,
-        { y: 20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.5,
+          duration: 1,
           ease: "power2.out",
-          delay: 0.5,
         }
       );
+    };
+    
+    itemsRefs.current.forEach((itemRef) => {
+      itemRef.animated = false;
+      observer.observe(itemRef);
     });
-  };
+    
+  }, []);
 
   return (
     <section ref={processContainerRef} className="process">
@@ -138,16 +151,17 @@ const Process = () => {
           </div>
         </div>
         <ul className="process_steps">
-          <li className="firststep">
+          <li
+            ref={(item) => (itemsRefs.current[0] = item)}
+            className="firststep"
+          >
             <div className="square">
               <PenIcon />
             </div>
             <div className="hidden">
-              <h3 ref={(el) => (h3Refs.current[0] = el)}>
-                01. Conception du design
-              </h3>
+              <h3 ref={title1}>01. Conception du design</h3>
             </div>
-            <p ref={(el) => (pRefs.current[0] = el)}>
+            <p ref={paragraph1}>
               Nous vous proposerons différents modèles et styles afin que vous
               puissiez choisir celui qui correspond le mieux à vos goûts et à
               votre intérieur.
@@ -167,16 +181,17 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li className="secondstep">
+          <li
+            ref={(item) => (itemsRefs.current[1] = item)}
+            className="secondstep"
+          >
             <div className="square">
               <LogIcon />
             </div>
             <div className="hidden">
-              <h3 ref={(el) => (h3Refs.current[1] = el)}>
-                02. Sélection des matières
-              </h3>
+              <h3 ref={title2}>02. Sélection des matières</h3>
             </div>
-            <p ref={(el) => (pRefs.current[1] = el)}>
+            <p ref={paragraph2}>
               Nous vous présenterons les différentes essences et leurs
               caractéristiques pour que vous puissiez faire un choix éclairé.
             </p>
@@ -195,14 +210,17 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li className="thirdstep">
+          <li
+            ref={(item) => (itemsRefs.current[2] = item)}
+            className="thirdstep"
+          >
             <div className="square">
               <ToolsIcon />
             </div>
             <div className="hidden">
-              <h3 ref={(el) => (h3Refs.current[2] = el)}>03. Fabrication</h3>
+              <h3 ref={title3}>03. Fabrication</h3>
             </div>
-            <p ref={(el) => (pRefs.current[2] = el)}>
+            <p ref={paragraph3}>
               Nous mettons un point d&#39;honneur à réaliser chaque meuble de
               manière artisanale, en respectant les traditions de la menuiserie.
             </p>
@@ -221,14 +239,17 @@ const Process = () => {
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
           </div>
-          <li className="fourthstep">
+          <li
+            ref={(item) => (itemsRefs.current[3] = item)}
+            className="fourthstep"
+          >
             <div className="square">
               <GiftIcon />
             </div>
             <div className="hidden">
-              <h3 ref={(el) => (h3Refs.current[3] = el)}>04. Livraison</h3>
+              <h3 ref={title4}>04. Livraison</h3>
             </div>
-            <p ref={(el) => (pRefs.current[3] = el)}>
+            <p ref={paragraph4}>
               Nous nous chargeons de toutes les étapes de transport et
               d&#39;installation afin que vous puissiez profiter pleinement de
               votre nouvelle pièce dès son arrivée.
