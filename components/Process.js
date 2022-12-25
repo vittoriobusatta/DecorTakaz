@@ -94,10 +94,9 @@ const Process = () => {
           opacity: 0,
         },
         {
-          delay: (index + 1) * 0.5,
+          delay: 0.3,
           y: 0,
           opacity: 1,
-          duration: 1,
           ease: "power2.out",
         }
       );
@@ -108,10 +107,9 @@ const Process = () => {
           opacity: 0,
         },
         {
-          delay: (index + 1) * 0.7,
+          delay: 0.5,
           y: 0,
           opacity: 1,
-          duration: 1,
           ease: "power2.out",
         }
       );
