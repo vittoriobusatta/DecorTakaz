@@ -3,34 +3,47 @@ import React, { useEffect, useRef, useState } from "react";
 import { GiftIcon, LogIcon, PenIcon, ToolsIcon } from "../utils/icons";
 
 const Process = () => {
-  const titlesSteps = useRef([]);
-  const paragraphs = useRef([]);
+  const [headAnimated, setHeadAnimated] = useState(false);
+
+  const processContainerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
-  const paragrahRef = useRef(null);
+  const paragraphRef = useRef(null);
+
+  const h3Refs = useRef([]);
+  const pRefs = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          animateElement(entry.target);
+          animateElements(titleRef, subtitleRef, paragraphRef, h3Refs, pRefs);
+          observer.unobserve(entry.target);
         }
       });
+    }, {});
+    observer.observe(processContainerRef.current);
+
+    // observer doit être créé avant d'être utilisé pour observer les éléments
+    // [titleRef, subtitleRef, paragraphRef].forEach((el) => {
+    //   observer.observe(el.current);
+    // });
+    h3Refs.current.forEach((el) => {
+      observer.observe(el);
     });
-    const animateElement = (element) => {
-      gsap.fromTo(
-        element,
-        {
-          y: 20,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-        }
-      );
+    pRefs.current.forEach((el) => {
+      observer.observe(el);
+    });
+  }, []); // exécuté une seule fois lors du premier rendu
+
+  const animateElements = (
+    titleRef,
+    subtitleRef,
+    paragraphRef,
+    h3Refs,
+    pRefs
+  ) => {
+    if (!headAnimated) {
       gsap.fromTo(
         titleRef.current,
         { y: 110, skewY: 10 },
@@ -55,7 +68,7 @@ const Process = () => {
         }
       );
       gsap.fromTo(
-        paragrahRef.current,
+        paragraphRef.current,
         {
           y: 100,
           opacity: 0,
@@ -68,17 +81,38 @@ const Process = () => {
           ease: "power2.out",
         }
       );
-      observer.unobserve(element);
-    };
 
-    titlesSteps.current.forEach((title, index) => {
-      observer.observe(title);
-      observer.observe(paragraphs.current[index]);
+      setHeadAnimated(true);
+    }
+    h3Refs.current.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { y: 70 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: "power3.out",
+          delay: 0.1,
+        }
+      );
     });
-  }, []);
+    pRefs.current.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+          delay: 0.5,
+        }
+      );
+    });
+  };
 
   return (
-    <section className="process">
+    <section ref={processContainerRef} className="process">
       <div className="process_content">
         <div className="process_head">
           <div className="hidden">
@@ -92,7 +126,7 @@ const Process = () => {
             </h1>
           </div>
           <div className="introduction_container hidden">
-            <p ref={paragrahRef} className="introduction">
+            <p ref={paragraphRef} className="introduction">
               Décor ta Kaz est une entreprise spécialisée dans la conception et
               la fabrication de meubles et de structures en bois. Nous
               commençons par établir les spécifications du projet avec le
@@ -108,10 +142,12 @@ const Process = () => {
             <div className="square">
               <PenIcon />
             </div>
-            <h3 ref={(el) => (titlesSteps.current[0] = el)}>
-              01. Conception du design
-            </h3>
-            <p ref={(el) => (paragraphs.current[0] = el)}>
+            <div className="hidden">
+              <h3 ref={(el) => (h3Refs.current[0] = el)}>
+                01. Conception du design
+              </h3>
+            </div>
+            <p ref={(el) => (pRefs.current[0] = el)}>
               Nous vous proposerons différents modèles et styles afin que vous
               puissiez choisir celui qui correspond le mieux à vos goûts et à
               votre intérieur.
@@ -135,10 +171,12 @@ const Process = () => {
             <div className="square">
               <LogIcon />
             </div>
-            <h3 ref={(el) => (titlesSteps.current[1] = el)}>
-              02. Sélection des matières
-            </h3>
-            <p ref={(el) => (paragraphs.current[1] = el)}>
+            <div className="hidden">
+              <h3 ref={(el) => (h3Refs.current[1] = el)}>
+                02. Sélection des matières
+              </h3>
+            </div>
+            <p ref={(el) => (pRefs.current[1] = el)}>
               Nous vous présenterons les différentes essences et leurs
               caractéristiques pour que vous puissiez faire un choix éclairé.
             </p>
@@ -161,8 +199,10 @@ const Process = () => {
             <div className="square">
               <ToolsIcon />
             </div>
-            <h3 ref={(el) => (titlesSteps.current[2] = el)}>03. Fabrication</h3>
-            <p ref={(el) => (paragraphs.current[2] = el)}>
+            <div className="hidden">
+              <h3 ref={(el) => (h3Refs.current[2] = el)}>03. Fabrication</h3>
+            </div>
+            <p ref={(el) => (pRefs.current[2] = el)}>
               Nous mettons un point d&#39;honneur à réaliser chaque meuble de
               manière artisanale, en respectant les traditions de la menuiserie.
             </p>
@@ -185,8 +225,10 @@ const Process = () => {
             <div className="square">
               <GiftIcon />
             </div>
-            <h3 ref={(el) => (titlesSteps.current[3] = el)}>04. Livraison</h3>
-            <p ref={(el) => (paragraphs.current[3] = el)}>
+            <div className="hidden">
+              <h3 ref={(el) => (h3Refs.current[3] = el)}>04. Livraison</h3>
+            </div>
+            <p ref={(el) => (pRefs.current[3] = el)}>
               Nous nous chargeons de toutes les étapes de transport et
               d&#39;installation afin que vous puissiez profiter pleinement de
               votre nouvelle pièce dès son arrivée.
