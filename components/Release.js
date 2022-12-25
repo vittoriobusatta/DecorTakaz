@@ -93,7 +93,7 @@ function Release() {
         item.current,
         { x: -170 },
         {
-          delay: index * 0.8,
+          delay: (index + 1) * 0.65,
           x: 0,
           opacity: 1,
           ease: "power1.out",
