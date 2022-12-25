@@ -5,7 +5,6 @@ import React from "react";
 import Header from "../../components/Header";
 import catalogueImg from "../../public/images/section/catalogue.jpg";
 import catalogueImgmobile from "../../public/images/section/catalogueMobile.jpg";
-import { Title, Description } from "../../utils/common";
 import { ArrowIcon } from "../../utils/icons";
 
 const Catalogue = () => {
@@ -25,9 +24,9 @@ const Catalogue = () => {
           </div>
 
           <div className="catalogue_layout">
-            <div className="catalogue_content">
-              <div className="catalogue_title">Catalogue</div>
-              <p className="catalogue_description">
+            <div className="catalogue_head">
+              <h1 className="catalogue_title title">Catalogue</h1>
+              <p className="catalogue_introduction introduction">
                 Décor Ta Kaz propose une variété de produits et de services pour
                 répondre aux besoins de ses clients. Dans notre catalogue, vous
                 trouverez divers types de mobilier conçues sur mesure pour
