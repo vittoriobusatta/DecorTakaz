@@ -63,13 +63,13 @@ function Release() {
     gsap.fromTo(
       paragrahRef.current,
       {
-        x: -500,
-        // opacity: 0,
+        // y: 200,
+        opacity: 0,
       },
       {
-        delay: 0.8,
-        x: 0,
-        duration: 1.2,
+        delay: 0.6,
+        y: 0,
+        // duration: 1.2,
         opacity: 1,
       }
     );
@@ -79,7 +79,7 @@ function Release() {
         icon.current,
         { width: 0 },
         {
-          delay: index * 0.5,
+          delay: (index + 1) * 0.6,
           opacity: 1,
           ease: "back.out(1.7)",
           width: "100%",
