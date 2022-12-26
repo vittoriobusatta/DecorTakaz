@@ -2,7 +2,13 @@ import gsap from "gsap";
 import Link from "next/link";
 import React, { useEffect } from "react";
 
-function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
+function Menu({
+  emailLinks,
+  socialsitems,
+  openMenu,
+  menuContainer,
+  listitems,
+}) {
   useEffect(() => {
     let tl = gsap.timeline();
 
@@ -14,19 +20,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
         opacity: 1,
         visibility: "visible",
       });
-      tl.fromTo(
-        menuContainer.current.children,
-        { y: 50, opacity: 0 },
-        {
-          duration: 0.5,
-          y: 0,
-          opacity: 1,
-          stagger: 0.4,
-          ease: "power2.out",
-          delay: 1,
-        },
-        0
-      );
+
       listitems.current.forEach((ref, index) => {
         const listElements = ref;
         tl.fromTo(
@@ -35,7 +29,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
           {
             delay: 0.4 * (index + 1),
             y: 0,
-            duration: 1,
+            duration: 0.8,
             opacity: 1,
             ease: "power4.out",
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -43,6 +37,25 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
           0
         );
       });
+
+      tl.fromTo(
+        socialsitems.current,
+        { y: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: "power2.out",
+        }
+      );
+      tl.fromTo(
+        emailLinks.current,
+        { y: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          ease: "power2.out",
+        }
+      );
     } else {
       tl.to(menuContainer.current, {
         duration: 0.5,
@@ -59,9 +72,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
     return () => {
       tl.kill();
     };
-  }, [openMenu, menuContainer, listitems]);
-
-  console.log(openMenu);
+  }, [openMenu, menuContainer, listitems, socialsitems, emailLinks]);
 
   return (
     <section ref={menuContainer} className="menu">
@@ -88,13 +99,25 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
             </div>
           </Link>
         </ul>
-        <ul className="socials_links">
-          <li>Instagram</li>
-          <li>Facebook</li>
-          <li>Whatsapp</li>
+        <ul ref={socialsitems} className="socials_links opacity">
+          <div className="hidden">
+            <li>Instagram</li>
+          </div>
+          <div className="hidden">
+            <li>Facebook</li>
+          </div>
+          <div className="hidden">
+            <li>Whatsapp</li>
+          </div>
         </ul>
-        <div className="email_links">
-          <a href="mailto:contact@decortakaz.re">contact@decortakaz.re</a>
+        <div className="email_links hidden">
+          <a
+            className="opacity"
+            ref={emailLinks}
+            href="mailto:contact@decortakaz.re"
+          >
+            contact@decortakaz.re
+          </a>
         </div>
       </div>
     </section>
