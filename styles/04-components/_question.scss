@@ -1,0 +1,31 @@
+.question {
+  width: 100%;
+  padding: 44px 26px;
+  ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    margin-top: 52px;
+    & li {
+      color: #ede0d4;
+      transition: 0.5s ease;
+      cursor: pointer;
+      & h3 {
+        background: #785436;
+        padding: 18px 14px;
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 600;
+      }
+      & p {
+        padding: 18px 14px 10px;
+      }
+      &.question_active {
+        color: #563213;
+        & h3 {
+          background: #ddb892;
+        }
+      }
+    }
+  }
+}

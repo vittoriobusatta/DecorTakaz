@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import Process from "../components/Process";
 import gsap from "gsap";
+import Question from "../components/Question";
 
 const Forest = () => {
   return (
@@ -187,6 +188,7 @@ function Home() {
         <Customers />
         <Reviews />
         <Contact />
+        <Question />
         <Footer />
       </main>
     </>
