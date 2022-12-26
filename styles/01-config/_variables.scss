@@ -4,6 +4,7 @@ $primaryColor: #745033;
 $secondaryColor: #DDB892;
 $activeColor: #C9986D;
 $ManropeRegular: "Manrope Regular";
+$safe_area_inset_top: env(safe-area-inset-top);
 
 :export {
   backgroundColor: $backgroundColor;

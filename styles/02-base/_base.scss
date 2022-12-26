@@ -17,10 +17,12 @@
   border-radius: 15px;
 }
 
-body {
-  height: 100%;
-  background-color: $backgroundColor;
-  font-family: "Manrope", sans-serif;
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    height: calc(100% + $safe_area_inset_top);
+    background-color: $backgroundColor;
+    font-family: "Manrope", sans-serif;
+  }
 }
 
 .title {
