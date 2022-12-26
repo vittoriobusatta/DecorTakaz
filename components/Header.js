@@ -16,13 +16,13 @@ function Header() {
     setOpenMenu(!openMenu);
   };
 
-  // useEffect(() => {
-  //   if (openMenu) {
-  //     document.body.style.overflow = 'hidden';
-  //   } else {
-  //     document.body.style.overflow = 'auto';
-  //   }
-  // }, [openMenu]);
+  useEffect(() => {
+    if (openMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [openMenu]);
   
   return (
     <>
