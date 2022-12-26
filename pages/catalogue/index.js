@@ -36,7 +36,7 @@ const Catalogue = () => {
                   Dans notre catalogue, vous trouverez divers types de mobilier
                   conçues sur mesure pour s&#39;intégrer parfaitement à votre
                   espace de vie ou de travail. Vous pourrez également découvrir
-                  une gamme de produits d&#39;intérieure qui sont fabriqués avec
+                  une gamme de pièces d&#39;intérieure qui sont fabriqués avec
                   soin et attention aux détails. Des produits de menuiserie de
                   qualité supérieure pour améliorer l&#39;esthétique et la
                   fonctionnalité de votre maison. Enfin, vous pourrez découvrir
