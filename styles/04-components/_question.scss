@@ -7,10 +7,10 @@
     row-gap: 18px;
     margin-top: 44px;
     & li {
-      color: #563213;
+      color: #ede0d4;
       cursor: pointer;
       & .question_content {
-        background: #E0B07F;
+        background: #78481E;
         padding: 18px 14px;
         border-radius: 3px;
         & h3 {
@@ -22,9 +22,9 @@
       }
       &.question_active {
         & .question_content {
-          background: #512c0b;
+          background: #E0B07F;
           & h3 {
-            color: #ede0d4;
+            color: #512c0b;
           }
         }
       }
