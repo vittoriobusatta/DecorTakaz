@@ -3,13 +3,12 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 
 function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
-  const menu = menuContainer.current;
 
   useEffect(() => {
     let tl = gsap.timeline();
 
     if (openMenu) {
-      tl.to(menu, {
+      tl.to(menuContainer.current, {
         duration: 0.5,
         x: 0,
         ease: "power2.in",
@@ -17,7 +16,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
         visibility: "visible",
       });
       tl.fromTo(
-        menu.children,
+        menuContainer.current.children,
         { y: 50, opacity: 0 },
         {
           duration: 0.5,
@@ -46,14 +45,14 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
         );
       });
     } else {
-      tl.to(menu, {
+      tl.to(menuContainer.current, {
         duration: 0.5,
         x: "0%",
         ease: "power2.out",
         opacity: 0,
         delay: 1,
         onComplete: () => {
-          menu.style.visibility = "hidden";
+          menuContainer.current.style.visibility = "hidden";
         },
       });
     }
@@ -61,7 +60,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
     return () => {
       tl.kill();
     };
-  }, [openMenu, menuContainer, listitems, menu]);
+  }, [openMenu, menuContainer, listitems]);
 
   return (
     <section ref={menuContainer} className="menu">
