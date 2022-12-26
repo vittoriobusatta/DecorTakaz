@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import React, { useEffect, useRef, useState } from "react";
+import React, { createRef, useEffect, useRef, useState } from "react";
 
 const Question = () => {
   const [faqData] = useState([
@@ -27,9 +27,6 @@ const Question = () => {
   const subtitleRef = useRef(null);
   const secondtitleRef = useRef(null);
 
-  const question1 = useRef(null);
-  const question2 = useRef(null);
-  const question3 = useRef(null);
 
   const handleClick = (index) => {
     if (selectedIndex === index) {
@@ -39,10 +36,66 @@ const Question = () => {
     }
   };
 
+  const refs = faqData.map(() => createRef());
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          const animateElements = () => {
+            gsap.fromTo(
+              titleRef.current,
+              { y: 110, skewY: 10 },
+              {
+                delay: 0.3,
+                y: 0,
+                duration: 0.8,
+                opacity: 1,
+                skewY: 0,
+                ease: "power4.out",
+              }
+            );
+            gsap.fromTo(
+              subtitleRef.current,
+              { y: 70, skewY: 10 },
+              {
+                delay: 0.1,
+                y: 0,
+                opacity: 1,
+                skewY: 0,
+                ease: "power4.out",
+              }
+            );
+            gsap.fromTo(
+              secondtitleRef.current,
+              {
+                y: 100,
+                opacity: 0,
+              },
+              {
+                delay: 0.4,
+                y: 0,
+                duration: 1.2,
+                opacity: 1,
+                ease: "power2.out",
+              }
+            );
+            for (let i = 0; i < refs.length; i++) {
+              gsap.fromTo(
+                refs[i].current,
+                {
+                  width: 0,
+                },
+                {
+                  delay: 0.2 * i,
+                  width: "auto",
+                  duration: 1.2,
+                  opacity: 1,
+                  ease: "power2.out",
+                }
+              );
+            }
+          }
           animateElements();
           observer.unobserve(entry.target);
         }
@@ -52,58 +105,26 @@ const Question = () => {
     observer.observe(contactContainerRef.current);
   }, []);
 
-  function animateElements() {
-    gsap.fromTo(
-      titleRef.current,
-      { y: 110, skewY: 10 },
-      {
-        delay: 0.3,
-        y: 0,
-        duration: 0.8,
-        opacity: 1,
-        skewY: 0,
-        ease: "power4.out",
-      }
-    );
-    gsap.fromTo(
-      subtitleRef.current,
-      { y: 70, skewY: 10 },
-      {
-        delay: 0.1,
-        y: 0,
-        opacity: 1,
-        skewY: 0,
-        ease: "power4.out",
-      }
-    );
-    gsap.fromTo(
-      secondtitleRef.current,
-      {
-        y: 100,
-        opacity: 0,
-      },
-      {
-        delay: 0.4,
-        y: 0,
-        duration: 1.2,
-        opacity: 1,
-        ease: "power2.out",
-      }
-    );
-  }
+ 
 
   return (
     <section ref={contactContainerRef} className="question">
       <div className="question_head">
         <div className="hidden">
-          <h5 ref={subtitleRef} className="subtitle ">Faq</h5>
+          <h5 ref={subtitleRef} className="subtitle ">
+            Faq
+          </h5>
         </div>
         <div className="title_content fit-content">
           <div className="hidden fit-content">
-            <h1 ref={titleRef} className="title">Questions</h1>
+            <h1 ref={titleRef} className="title">
+              Questions
+            </h1>
           </div>
           <div className="hidden fit-content">
-            <h6 ref={secondtitleRef} className="secondtitle ">Fréquemment posés</h6>
+            <h6 ref={secondtitleRef} className="secondtitle ">
+              Fréquemment posés
+            </h6>
           </div>
         </div>
       </div>
@@ -113,6 +134,7 @@ const Question = () => {
             key={index}
             onClick={() => handleClick(index)}
             className={selectedIndex === index ? "question_active" : ""}
+            ref={refs[index]}
           >
             <h3>{item.question}</h3>
             {selectedIndex === index && (
