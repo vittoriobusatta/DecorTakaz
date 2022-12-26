@@ -18,6 +18,7 @@
         width: 100%;
         & svg {
           transition: 0.5 ease-out;
+          margin-left: 20px;
         }
         & h3 {
           font-family: "Manrope";
@@ -35,7 +36,7 @@
         }
       }
       & p {
-        padding-bottom: 14px;
+        padding-bottom: 18px;
         font-size: 14px;
         font-weight: 500;
         color: #512c0b;
