@@ -1,5 +1,5 @@
 .menu {
-  height: -webkit-fill-available;
+  min-height: -webkit-fill-available;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -7,6 +7,7 @@
   top: 0;
   background: #2a201e;
   z-index: 1;
+  height: calc(100% + $safe_area_inset_top);
   & ul {
     margin-top: 60px;
     height: 100%;
@@ -18,7 +19,6 @@
     & li {
       opacity: 0;
       transition: clip-path 0.5s ease-out;
-      
     }
   }
   & a {
