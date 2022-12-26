@@ -89,7 +89,7 @@ const Question = () => {
                   width: 0,
                 },
                 {
-                  delay: 0.6 * i,
+                  delay: 0.8 * (i + 1),
                   width: "auto",
                   duration: 1.2,
                   opacity: 1,
@@ -101,11 +101,11 @@ const Question = () => {
               const h3Element = ref;
               gsap.fromTo(
                 h3Element,
-                { x: -50, opacity: 0 },
+                { y: 150 },
                 {
-                  delay: 0.6 * (index + 1),
-                  x: 0,
-                  duration: 0.8,
+                  delay: 0.9 * (index + 1.5),
+                  y: 0,
+                  duration: 1.2,
                   opacity: 1,
                   ease: "power4.out",
                 }
@@ -125,18 +125,18 @@ const Question = () => {
     <section ref={contactContainerRef} className="question">
       <div className="question_head">
         <div className="hidden">
-          <h5 ref={subtitleRef} className="subtitle ">
+          <h5 ref={subtitleRef} className="subtitle opacity">
             Faq
           </h5>
         </div>
         <div className="title_content fit-content">
           <div className="hidden fit-content">
-            <h1 ref={titleRef} className="title">
+            <h1 ref={titleRef} className="title opacity">
               Questions
             </h1>
           </div>
           <div className="hidden fit-content">
-            <h6 ref={secondtitleRef} className="secondtitle ">
+            <h6 ref={secondtitleRef} className="secondtitle opacity">
               Fréquemment posés
             </h6>
           </div>
@@ -147,7 +147,7 @@ const Question = () => {
           <li
             key={index}
             onClick={() => handleClick(index)}
-            className={selectedIndex === index ? "question_active" : ""}
+            className={selectedIndex === index ? "question_active opacity" : "opacity"}
             ref={refs[index]}
           >
             <div className="question_content hidden">
