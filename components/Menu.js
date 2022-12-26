@@ -31,11 +31,11 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
         const listElements = ref;
         tl.fromTo(
           listElements,
-          { y: "50%", clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 40%)" },
+          { y: "100%", clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 40%)" },
           {
             delay: 0.4 * (index + 1),
             y: 0,
-            duration: 1.2,
+            duration: 1,
             opacity: 1,
             ease: "power4.out",
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -65,28 +65,38 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
 
   return (
     <section ref={menuContainer} className="menu">
-      <ul>
-        <Link href="/">
-          <div className="hidden">
-            <li ref={(el) => (listitems.current[0] = el)}>Accueil</li>
-          </div>
-        </Link>
-        <Link href="/catalogue">
-          <div className="hidden">
-            <li ref={(el) => (listitems.current[1] = el)}>Catalogue</li>
-          </div>
-        </Link>
-        <Link href="/about">
-          <div className="hidden">
-            <li ref={(el) => (listitems.current[2] = el)}>À Propos</li>
-          </div>
-        </Link>
-        <Link href="/contact">
-          <div className="hidden">
-            <li ref={(el) => (listitems.current[3] = el)}>Contact</li>
-          </div>
-        </Link>
-      </ul>
+      <div className="menu_container">
+        <ul className="list_container">
+          <Link href="/">
+            <div className="hidden">
+              <li ref={(el) => (listitems.current[0] = el)}>Accueil</li>
+            </div>
+          </Link>
+          <Link href="/catalogue">
+            <div className="hidden">
+              <li ref={(el) => (listitems.current[1] = el)}>Catalogue</li>
+            </div>
+          </Link>
+          <Link href="/about">
+            <div className="hidden">
+              <li ref={(el) => (listitems.current[2] = el)}>À Propos</li>
+            </div>
+          </Link>
+          <Link href="/contact">
+            <div className="hidden">
+              <li ref={(el) => (listitems.current[3] = el)}>Contact</li>
+            </div>
+          </Link>
+        </ul>
+        <ul className="socials_links">
+          <li>Instagram</li>
+          <li>Facebook</li>
+          <li>Whatsapp</li>
+        </ul>
+        <div className="email_links">
+          <a href="mailto:contact@decortakaz.re">contact@decortakaz.re</a>
+        </div>
+      </div>
     </section>
   );
 }
