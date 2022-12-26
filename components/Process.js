@@ -67,7 +67,7 @@ const Process = () => {
           observer.unobserve(entry.target);
         }
       });
-    }, {});
+    }, {threshold : 0.15});
     observer.observe(processContainerRef.current);
   }, []);
 
