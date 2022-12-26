@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { GiftIcon, LogIcon, PenIcon, ToolsIcon } from "../utils/icons";
 
 const Process = () => {

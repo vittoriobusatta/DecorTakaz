@@ -28,6 +28,8 @@ const Question = () => {
   const subtitleRef = useRef(null);
   const secondtitleRef = useRef(null);
 
+  const h3Refs = useRef([]);
+
   const handleClick = (index) => {
     if (selectedIndex === index) {
       setSelectedIndex(-1);
@@ -44,23 +46,23 @@ const Question = () => {
         if (entry.isIntersecting) {
           const animateElements = () => {
             gsap.fromTo(
-              titleRef.current,
-              { y: 110, skewY: 10 },
+              subtitleRef.current,
+              { y: 70, skewY: 10 },
               {
-                delay: 0.3,
+                delay: 0.1,
                 y: 0,
-                duration: 0.8,
                 opacity: 1,
                 skewY: 0,
                 ease: "power4.out",
               }
             );
             gsap.fromTo(
-              subtitleRef.current,
-              { y: 70, skewY: 10 },
+              titleRef.current,
+              { y: 110, skewY: 10 },
               {
-                delay: 0.1,
+                delay: 0.3,
                 y: 0,
+                duration: 0.8,
                 opacity: 1,
                 skewY: 0,
                 ease: "power4.out",
@@ -87,7 +89,7 @@ const Question = () => {
                   width: 0,
                 },
                 {
-                  delay: 0.2 * i,
+                  delay: 0.6 * i,
                   width: "auto",
                   duration: 1.2,
                   opacity: 1,
@@ -95,6 +97,20 @@ const Question = () => {
                 }
               );
             }
+            h3Refs.current.forEach((ref, index) => {
+              const h3Element = ref;
+              gsap.fromTo(
+                h3Element,
+                { x: -50, opacity: 0 },
+                {
+                  delay: 0.6 * (index + 1),
+                  x: 0,
+                  duration: 0.8,
+                  opacity: 1,
+                  ease: "power4.out",
+                }
+              );
+            });
           };
           animateElements();
           observer.unobserve(entry.target);
@@ -135,7 +151,9 @@ const Question = () => {
             ref={refs[index]}
           >
             <div className="question_content hidden">
-              <h3>{item.question}</h3>
+              <h3 className="opacity" ref={(el) => (h3Refs.current[index] = el)}>
+                {item.question}
+              </h3>
               <ArrrowFAQ />
             </div>
             {selectedIndex === index && (
