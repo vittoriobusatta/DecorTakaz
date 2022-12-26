@@ -25,7 +25,16 @@ const Catalogue = () => {
 
           <div className="catalogue_layout">
             <div className="catalogue_head">
-              <h1 className="catalogue_title title">Catalogue</h1>
+              <div className="hidden">
+                <h5 className="subtitle">
+                  Notre
+                </h5>
+              </div>
+              <div className="hidden">
+                <h1 className="catalogue_introduction title">
+                Catalogue
+                </h1>
+              </div>
               <p className="catalogue_introduction introduction">
                 Décor Ta Kaz propose une variété de produits et de services pour
                 répondre aux besoins de ses clients. Dans notre catalogue, vous

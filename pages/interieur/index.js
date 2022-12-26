@@ -29,7 +29,7 @@ const Interieur = () => {
   });
 
   return (
-    <section id="mobilier">
+    <section id="category">
       <Head>
         <title>Intérieur | Menuiserie Artisanale</title>
       </Head>

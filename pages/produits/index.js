@@ -30,7 +30,7 @@ const Produits = () => {
   });
 
   return (
-    <section id="mobilier">
+    <section id="category">
       <Head>
         <title>Produits | Menuiserie Artisanale</title>
       </Head>

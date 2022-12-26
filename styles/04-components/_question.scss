@@ -7,17 +7,12 @@
     row-gap: 18px;
     margin-top: 44px;
     & li {
-      color: #ede0d4;
+      color: #563213;
       cursor: pointer;
-      &.question_active {
-        color: #563213;
-        & .question_content {
-          background: #ddb892;
-        }
-      }
       & .question_content {
-        background: #785436;
+        background: #E0B07F;
         padding: 18px 14px;
+        border-radius: 3px;
         & h3 {
           font-family: "Manrope";
           font-style: normal;
@@ -25,10 +20,19 @@
           font-size: 16px;
         }
       }
+      &.question_active {
+        & .question_content {
+          background: #512c0b;
+          & h3 {
+            color: #ede0d4;
+          }
+        }
+      }
       & p {
         padding: 18px 14px 10px;
         font-size: 14px;
         font-weight: 500;
+        color: #512c0b;
       }
     }
   }
