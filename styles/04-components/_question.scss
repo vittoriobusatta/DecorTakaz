@@ -4,12 +4,11 @@
   ul {
     display: flex;
     flex-direction: column;
-    margin-top: 44px;
+    margin-top: 26px;
     & li {
       cursor: pointer;
       border-bottom: solid 2px rgba(80, 52, 3, 0.671);
       & .question_content {
-        // background: #785436;
         padding: 18px 0;
         border-radius: 3px;
         display: inline-flex;
