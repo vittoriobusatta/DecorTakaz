@@ -3,7 +3,6 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 
 function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
-
   useEffect(() => {
     let tl = gsap.timeline();
 
@@ -61,6 +60,8 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
       tl.kill();
     };
   }, [openMenu, menuContainer, listitems]);
+
+  console.log(openMenu);
 
   return (
     <section ref={menuContainer} className="menu">

@@ -8,14 +8,15 @@
   background: #2a201e;
   z-index: 1;
   height: calc(100% + $safe_area_inset_top);
+  opacity: 0;
   & ul {
     margin-top: 60px;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     gap: 18px;
+    padding: 44px 26px;
     & li {
       opacity: 0;
       transition: clip-path 0.5s ease-out;
@@ -28,7 +29,7 @@
     font-weight: 500;
     font-size: 42px;
     line-height: 58px;
-    text-align: center;
+    text-align: left;
     color: #ede0d4;
   }
 }

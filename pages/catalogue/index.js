@@ -26,28 +26,24 @@ const Catalogue = () => {
           <div className="catalogue_layout">
             <div className="catalogue_head">
               <div className="hidden">
-                <h5 className="subtitle">
-                  Notre
-                </h5>
+                <h5 className="subtitle">Notre</h5>
               </div>
               <div className="hidden">
-                <h1 className="catalogue_introduction title">
-                Catalogue
-                </h1>
+                <h1 className="catalogue_introduction title">Catalogue</h1>
               </div>
-              <p className="catalogue_introduction introduction">
-                Décor Ta Kaz propose une variété de produits et de services pour
-                répondre aux besoins de ses clients. Dans notre catalogue, vous
-                trouverez divers types de mobilier conçues sur mesure pour
-                s&#39;intégrer parfaitement à votre espace de vie ou de travail.
-                Vous pourrez également découvrir une gamme de produits
-                d&#39;intérieure qui sont fabriqués avec soin et attention aux
-                détails. Des produits de menuiserie de qualité supérieure pour
-                améliorer l&#39;esthétique et la fonctionnalité de votre maison.
-                Enfin, vous pourrez découvrir des conception architecturale pour
-                aider à transformer votre espace en un endroit unique et sur
-                mesure.
-              </p>
+              <div className="introduction_container hidden">
+                <p className="catalogue_introduction introduction">
+                  Dans notre catalogue, vous trouverez divers types de mobilier
+                  conçues sur mesure pour s&#39;intégrer parfaitement à votre
+                  espace de vie ou de travail. Vous pourrez également découvrir
+                  une gamme de produits d&#39;intérieure qui sont fabriqués avec
+                  soin et attention aux détails. Des produits de menuiserie de
+                  qualité supérieure pour améliorer l&#39;esthétique et la
+                  fonctionnalité de votre maison. Enfin, vous pourrez découvrir
+                  des conception architecturale pour aider à transformer votre
+                  espace en un endroit unique et sur mesure.
+                </p>
+              </div>
             </div>
             <Image src={catalogueImgmobile} alt="catalogue" />
             <ul className="catalogue_table">
