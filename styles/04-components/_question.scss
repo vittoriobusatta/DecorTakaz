@@ -9,24 +9,26 @@
     & li {
       color: #ede0d4;
       cursor: pointer;
-      & h3 {
+      &.question_active {
+        color: #563213;
+        & .question_content {
+          background: #ddb892;
+        }
+      }
+      & .question_content {
         background: #785436;
         padding: 18px 14px;
-        font-family: "Manrope";
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
+        & h3 {
+          font-family: "Manrope";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+        }
       }
       & p {
         padding: 18px 14px 10px;
         font-size: 14px;
         font-weight: 500;
-      }
-      &.question_active {
-        color: #563213;
-        & h3 {
-          background: #ddb892;
-        }
       }
     }
   }

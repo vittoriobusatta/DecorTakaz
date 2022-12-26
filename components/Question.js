@@ -27,7 +27,6 @@ const Question = () => {
   const subtitleRef = useRef(null);
   const secondtitleRef = useRef(null);
 
-
   const handleClick = (index) => {
     if (selectedIndex === index) {
       setSelectedIndex(-1);
@@ -95,7 +94,7 @@ const Question = () => {
                 }
               );
             }
-          }
+          };
           animateElements();
           observer.unobserve(entry.target);
         }
@@ -104,8 +103,6 @@ const Question = () => {
 
     observer.observe(contactContainerRef.current);
   }, []);
-
- 
 
   return (
     <section ref={contactContainerRef} className="question">
@@ -136,7 +133,9 @@ const Question = () => {
             className={selectedIndex === index ? "question_active" : ""}
             ref={refs[index]}
           >
-            <h3>{item.question}</h3>
+            <div className="question_content hidden">
+              <h3>{item.question}</h3>
+            </div>
             {selectedIndex === index && (
               <p
                 className={`${selectedIndex === index ? "open" : ""} ${
