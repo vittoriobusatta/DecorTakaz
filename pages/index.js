@@ -169,7 +169,6 @@ const Contact = () => {
 };
 
 function Home() {
-  const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
       <Head>
@@ -178,8 +177,7 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header setOpenMenu={setOpenMenu} openMenu={openMenu} />
-      {openMenu && <Menu setOpenMenu={setOpenMenu} openMenu={openMenu} />}
+      <Header/>
 
       <main className="main">
         <Release />

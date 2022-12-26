@@ -3,11 +3,32 @@
   position: fixed;
   left: 0;
   bottom: 0;
+  right: 0;
+  top: 0;
   background: #2a201e;
   z-index: 1;
-  width: 100%;
-  padding-top: 60px;
+  & ul {
+    margin-top: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+    & li {
+      opacity: 0;
+      transition: clip-path 0.5s ease-out;
+      
+    }
+  }
   & a {
+    color: #ede0d4;
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 58px;
+    text-align: center;
     color: #ede0d4;
   }
 }

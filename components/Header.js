@@ -1,25 +1,29 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import axterix from "../assets/share/axterix.svg";
 import React from "react";
 import Link from "next/link";
 import { LogoIcon } from "../utils/icons";
-import gsap from "gsap";
+import Menu from "./Menu";
 
-function Header({ openMenu, setOpenMenu }) {
+function Header() {
+  const [openMenu, setOpenMenu] = useState(false);
   const asterix = useRef(null);
-  const menuRef = useRef(null);
+  const menuContainer = useRef(null);
+  const listitems = useRef([]);
+
   const ClickMenu = () => {
     setOpenMenu(!openMenu);
   };
-  useEffect(() => {
-    const tl = gsap.timeline();
-    if (openMenu) {
-      tl.to(menuRef.current, { duration: 0.5, x: 0 });
-    } else {
-      tl.to(menuRef.current, { duration: 0.5, x: '-100%' });
-    }
-  }, [openMenu]);
+
+  // useEffect(() => {
+  //   if (openMenu) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'auto';
+  //   }
+  // }, [openMenu]);
+  
   return (
     <>
       <header>
@@ -32,6 +36,7 @@ function Header({ openMenu, setOpenMenu }) {
         </button>
         <Image className="axterix" src={axterix} alt="axterix" ref={asterix} />
       </header>
+      <Menu setOpenMenu={setOpenMenu} openMenu={openMenu} menuContainer={menuContainer} listitems={listitems} />
     </>
   );
 }
