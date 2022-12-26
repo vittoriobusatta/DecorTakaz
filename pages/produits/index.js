@@ -3,11 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import {
-  Filter,
-  BackCatalogue,
-  SubHead,
-} from "../../utils/common";
+import { Filter, BackCatalogue, SubHead } from "../../utils/common";
 import Header from "../../components/Header";
 import data from "/public/data.json";
 
@@ -94,18 +90,20 @@ const Produits = () => {
           {filteredData.map((i) => (
             <li key={i.id}>
               <div>
-                <Image
-                  src={i.src}
-                  alt={"Image " + i.id}
-                  width={300}
-                  height={300}
-                  placeholder="blur"
-                  blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8eOlgPQAIBQL16eAgtQAAAABJRU5ErkJggg==`}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
-                />
+                <div className="image_container hidden">
+                  <Image
+                    src={i.src}
+                    alt={"Image " + i.id}
+                    width={300}
+                    height={300}
+                    placeholder="blur"
+                    blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8eOlgPQAIBQL16eAgtQAAAABJRU5ErkJggg==`}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                    }}
+                  />
+                </div>
                 <h3>{i.name}</h3>
                 <p>
                   {i.desc} <br />

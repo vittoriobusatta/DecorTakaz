@@ -68,11 +68,18 @@ const Mobilier = () => {
               Tous
             </button>
             <button
-              className={filter === "table" ? "active" : ""}
+              className={filter === "dinnertable" ? "active" : ""}
               onClick={handleFilterChange}
-              value="table"
+              value="dinnertable"
             >
-              Tables
+              Tables à manger
+            </button>
+            <button
+              className={filter === "lowtable" ? "active" : ""}
+              onClick={handleFilterChange}
+              value="lowtable"
+            >
+              Table Basse
             </button>
             <button
               className={filter === "commode" ? "active" : ""}
@@ -81,13 +88,6 @@ const Mobilier = () => {
             >
               Commodes
             </button>
-            <button
-              className={filter === "other" ? "active" : ""}
-              onClick={handleFilterChange}
-              value="other"
-            >
-              Divers
-            </button>
           </Filter>
         </SubHead>
 
@@ -95,18 +95,20 @@ const Mobilier = () => {
           {filteredData.map((i) => (
             <li key={i.id}>
               <div>
-                <Image
-                  src={i.src}
-                  alt={"Image " + i.id}
-                  width={300}
-                  height={300}
-                  placeholder="blur"
-                  blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8eOlgPQAIBQL16eAgtQAAAABJRU5ErkJggg==`}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
-                />
+                <div className="image_container hidden">
+                  <Image
+                    src={i.src}
+                    alt={"Image " + i.id}
+                    width={300}
+                    height={300}
+                    placeholder="blur"
+                    blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8eOlgPQAIBQL16eAgtQAAAABJRU5ErkJggg==`}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                    }}
+                  />
+                </div>
                 <h3>{i.name}</h3>
                 <p>
                   {i.desc} <br />
@@ -116,7 +118,6 @@ const Mobilier = () => {
             </li>
           ))}
         </ul>
-
       </div>
     </section>
   );

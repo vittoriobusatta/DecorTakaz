@@ -81,6 +81,15 @@ ul.gallerie {
     }
     & img {
       width: 100%;
+      transition: 0.3s ease-out;
+      // transform: scale(1.1);
+      // object-fit: cover;
+      // &:hover {
+      //   transform: scale(1);
+      // }
+    }
+    & .image_container {
+      height: fit-content;
     }
     & h3 {
       font-family: "Manrope";
@@ -111,7 +120,7 @@ ul.gallerie {
   position: relative;
   height: 120px;
   width: 100%;
-  background-color: #2A201E;
+  background-color: #2a201e;
   @media screen and (min-width: 576px) {
     height: 160px;
   }
@@ -129,6 +138,4 @@ ul.gallerie {
     width: 100%;
     object-fit: cover;
   }
-
 }
-

@@ -89,18 +89,21 @@ const Interieur = () => {
           {filteredData.map((i) => (
             <li key={i.id}>
               <div>
-                <Image
-                  src={i.src}
-                  alt={"Image " + i.id}
-                  width={300}
-                  height={300}
-                  placeholder="blur"
-                  blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8eOlgPQAIBQL16eAgtQAAAABJRU5ErkJggg==`}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                  }}
-                />
+                <div className="image_container hidden">
+                  <Image
+                    src={i.src}
+                    alt={"Image " + i.id}
+                    width={300}
+                    height={300}
+                    placeholder="blur"
+                    blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8eOlgPQAIBQL16eAgtQAAAABJRU5ErkJggg==`}
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto",
+                    }}
+                  />
+                </div>
+
                 <h3>{i.name}</h3>
                 <p>
                   {i.desc} <br />

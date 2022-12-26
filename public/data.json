@@ -12,7 +12,7 @@
     "id": 1,
     "name": "Table à manger",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "dinnertable",
     "src": "/images/img1.webp",
     "desc": "Bois de Tamarin, Essence vert/bleu",
     "dim": "1,70m x 80 cm, Hauteur : 75cm"
@@ -21,7 +21,7 @@
     "id": 3,
     "name": "Table basse",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "lowtable",
     "src": "/images/img3.webp",
     "desc": "Bois de Tamarin, Tranparent",
     "dim": "1m x 60cm, Hauteur : 45cm"
@@ -30,7 +30,7 @@
     "id": 4,
     "name": "Table basse",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "lowtable",
     "src": "/images/img4.webp",
     "desc": "Bois de Tamarin, Vert avec effet ",
     "dim": "80cm, Hauteur : 45cm"
@@ -39,7 +39,7 @@
     "id": 5,
     "name": "Table basse ronde",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "lowtable",
     "src": "/images/img5.webp",
     "desc": "Bois de Tamarin, Vert",
     "dim": "70cm x 45cm"
@@ -48,7 +48,7 @@
     "id": 6,
     "name": "Table basse",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "tabllowtablee",
     "src": "/images/img6.webp",
     "desc": "Bois de Tamarin, Tranparent",
     "dim": "1m x 60cm, Hauteur : 45cm"
@@ -57,7 +57,7 @@
     "id": 7,
     "name": "Table à manger",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "dinnertable",
     "src": "/images/img7.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
@@ -66,7 +66,7 @@
     "id": 8,
     "name": "Table à manger ronde",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "dinnertable",
     "src": "/images/img8.webp",
     "desc": "Bois de Tamarin, Vert Emeraude",
     "dim": "1.20m, Hauteur : 75cm"
@@ -75,7 +75,7 @@
     "id": 9,
     "name": "Table basse océan",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "lowtable",
     "src": "/images/img9.webp",
     "desc": "Bois de Tamarin",
     "dim": "50cm x 70cm"
@@ -84,7 +84,7 @@
     "id": 10,
     "name": "Table basse",
     "catalogue": "mobilier",
-    "category": "other",
+    "category": "lowtable",
     "src": "/images/img10.webp",
     "desc": "Bois de Tamarin, bleu océan",
     "dim": "50cm x 70cm"
@@ -93,7 +93,7 @@
     "id": 11,
     "name": "Table basse",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "dinnertable",
     "src": "/images/img11.webp",
     "desc": "Bois de Tamarin, Tranparent",
     "dim": "1m x 60cm, Hauteur : 45cm"
@@ -102,7 +102,7 @@
     "id": 12,
     "name": "Table à manger",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "lowtable",
     "src": "/images/img12.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
@@ -111,7 +111,7 @@
     "id": 13,
     "name": "Table basse",
     "catalogue": "mobilier",
-    "category": "table",
+    "category": "lowtable",
     "src": "/images/img13.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
@@ -124,6 +124,15 @@
     "src": "/images/img14.png",
     "desc": "Bois de Tamarin",
     "dim": ""
+  },
+  {
+    "id": 25,
+    "name": "évier",
+    "catalogue": "interieur",
+    "category": "bathroom",
+    "src": "/images/img26.jpg",
+    "desc": "Bois de Tamarin, bleu turquoise transparent",
+    "dim": "60cm x 120cm, ép.4cm"
   },
   {
     "id": 15,
