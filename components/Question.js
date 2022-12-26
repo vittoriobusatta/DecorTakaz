@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import gsap from "gsap";
+import React, { useEffect, useRef, useState } from "react";
 
 const Question = () => {
   const [faqData] = useState([
@@ -20,6 +21,15 @@ const Question = () => {
   ]);
 
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const contactContainerRef = useRef(null);
+
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const secondtitleRef = useRef(null);
+
+  const question1 = useRef(null);
+  const question2 = useRef(null);
+  const question3 = useRef(null);
 
   const handleClick = (index) => {
     if (selectedIndex === index) {
@@ -29,18 +39,71 @@ const Question = () => {
     }
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateElements();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(contactContainerRef.current);
+  }, []);
+
+  function animateElements() {
+    gsap.fromTo(
+      titleRef.current,
+      { y: 110, skewY: 10 },
+      {
+        delay: 0.3,
+        y: 0,
+        duration: 0.8,
+        opacity: 1,
+        skewY: 0,
+        ease: "power4.out",
+      }
+    );
+    gsap.fromTo(
+      subtitleRef.current,
+      { y: 70, skewY: 10 },
+      {
+        delay: 0.1,
+        y: 0,
+        opacity: 1,
+        skewY: 0,
+        ease: "power4.out",
+      }
+    );
+    gsap.fromTo(
+      secondtitleRef.current,
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        delay: 0.4,
+        y: 0,
+        duration: 1.2,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
+  }
+
   return (
-    <section className="question">
+    <section ref={contactContainerRef} className="question">
       <div className="question_head">
         <div className="hidden">
-          <h5 className="subtitle ">Faq</h5>
+          <h5 ref={subtitleRef} className="subtitle ">Faq</h5>
         </div>
         <div className="title_content fit-content">
           <div className="hidden fit-content">
-            <h1 className="title">Questions</h1>
+            <h1 ref={titleRef} className="title">Questions</h1>
           </div>
           <div className="hidden fit-content">
-            <h1 className="secondtitle ">Fréquemment posés</h1>
+            <h6 ref={secondtitleRef} className="secondtitle ">Fréquemment posés</h6>
           </div>
         </div>
       </div>
