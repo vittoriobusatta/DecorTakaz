@@ -15,7 +15,7 @@ const Question = () => {
     {
       question: "Comment passer commande ?",
       answer:
-        "Il vous suffit de choisir le type de menuiserie : fenêtre, porte, baie coulissante, la matière et de noter les dimensions de votre menuiserie. Comment commander si les cotes ne sont pas standards ? Bien entendu, nous ne pouvons pas mettre toute l'étendue de notre gamme sur le site, envoyez-nous votre demande via nos moyens de contact.",
+        "Il vous suffit de choisir le type de menuiserie : fenêtre, porte, baie coulissante, la matière et de noter les dimensions de votre menuiserie.",
     },
   ]);
 
@@ -44,9 +44,21 @@ const Question = () => {
       </div>
       <ul>
         {faqData.map((item, index) => (
-          <li key={index} onClick={() => handleClick(index)} className={selectedIndex === index ? 'question_active' : ''}>
+          <li
+            key={index}
+            onClick={() => handleClick(index)}
+            className={selectedIndex === index ? "question_active" : ""}
+          >
             <h3>{item.question}</h3>
-            {selectedIndex === index && <p>{item.answer}</p>}
+            {selectedIndex === index && (
+              <p
+                className={`${selectedIndex === index ? "open" : ""} ${
+                  selectedIndex === -1 ? "closed" : ""
+                }`}
+              >
+                {item.answer}
+              </p>
+            )}
           </li>
         ))}
       </ul>
