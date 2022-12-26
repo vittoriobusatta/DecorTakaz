@@ -187,8 +187,8 @@ function Home() {
         <Forest />
         <Customers />
         <Reviews />
-        <Contact />
         <Question />
+        <Contact />
         <Footer />
       </main>
     </>

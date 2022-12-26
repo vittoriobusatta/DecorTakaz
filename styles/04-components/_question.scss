@@ -8,7 +8,6 @@
     margin-top: 52px;
     & li {
       color: #ede0d4;
-      transition: 0.5s ease;
       cursor: pointer;
       & h3 {
         background: #785436;
@@ -40,4 +39,20 @@
 .open.closed {
   transform: translateY(-100%);
   overflow: hidden;
+}
+
+.title_content {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.secondtitle {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  text-align: right;
+  text-transform: uppercase;
+  color: #6c5347;
+  line-height: 20px;
 }
