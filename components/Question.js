@@ -86,13 +86,15 @@ const Question = () => {
               gsap.fromTo(
                 refs[i].current,
                 {
-                  width: 0,
+                  opacity: 0,
+                  x: -50,
                 },
                 {
                   delay: 0.8 * (i + 1),
                   width: "auto",
                   duration: 1.2,
                   opacity: 1,
+                  x: 0,
                   ease: "power2.out",
                 }
               );
@@ -101,10 +103,10 @@ const Question = () => {
               const h3Element = ref;
               gsap.fromTo(
                 h3Element,
-                { y: 150 },
+                { x: -150 },
                 {
-                  delay: 0.9 * (index + 1.5),
-                  y: 0,
+                  delay: 0.8 * (index + 1),
+                  x: 0,
                   duration: 1.2,
                   opacity: 1,
                   ease: "power4.out",
