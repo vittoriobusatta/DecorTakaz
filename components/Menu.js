@@ -38,18 +38,16 @@ function Menu({
         );
       });
 
-      tl.fromTo(
+      tl.to(
         socialsitems.current,
-        { y: 0 },
         {
           y: 0,
           opacity: 1,
           ease: "power2.out",
         }
       );
-      tl.fromTo(
+      tl.to(
         emailLinks.current,
-        { y: 0 },
         {
           y: 0,
           opacity: 1,
