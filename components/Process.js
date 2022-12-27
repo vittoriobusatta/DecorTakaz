@@ -51,13 +51,13 @@ const Process = () => {
             gsap.fromTo(
               paragraphRef.current,
               {
-                y: 100,
+                y: 0,
                 opacity: 0,
               },
               {
                 delay: 0.5,
                 y: 0,
-                duration: 1.2,
+                duration: 0.5,
                 opacity: 1,
                 ease: "power2.out",
               }

@@ -71,6 +71,7 @@ function Menu({
       tl.kill();
     };
   }, [openMenu, menuContainer, listitems, socialsitems, emailLinks]);
+  
 
   return (
     <section ref={menuContainer} className="menu">
