@@ -1,7 +1,5 @@
 import React from 'react'
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import Header from "../../components/Header";
 
 function About() {
@@ -13,8 +11,9 @@ function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="contact">
+      <section className="about">
         <Header />
+        À Propos Page
       </section>
     </>
   )

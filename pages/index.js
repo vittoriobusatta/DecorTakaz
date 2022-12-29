@@ -12,6 +12,7 @@ import Footer from "../components/Footer";
 import Process from "../components/Process";
 import gsap from "gsap";
 import Question from "../components/Question";
+import Link from "next/link";
 
 const Forest = () => {
   const forestContainerRef = useRef(null);
@@ -119,7 +120,7 @@ const Customers = () => {
   );
 };
 
-const Contact = () => {
+const Getintouch = () => {
   const contactTitles = useRef([]);
   const contactButton = useRef(null);
   const contactCta = useRef(null);
@@ -188,9 +189,11 @@ const Contact = () => {
           </div>
         </span>
         <button ref={contactButton}>
-          <div className="hidden">
-            <p ref={contactCta}>Nous Contacter</p>
-          </div>
+          <Link href="/contact">
+            <div className="hidden">
+              <p ref={contactCta}>Nous Contacter</p>
+            </div>
+          </Link>
         </button>
       </div>
     </section>
@@ -206,7 +209,7 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header/>
+      <Header />
 
       <main className="main">
         <Release />
@@ -215,7 +218,7 @@ function Home() {
         <Customers />
         <Reviews />
         <Question />
-        <Contact />
+        <Getintouch />
         <Footer />
       </main>
     </>

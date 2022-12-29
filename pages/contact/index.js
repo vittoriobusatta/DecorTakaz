@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import Header from "../../components/Header";
 
@@ -15,6 +13,7 @@ function Contact() {
 
       <section className="contact">
         <Header />
+        Contact Page
       </section>
     </>
   );
