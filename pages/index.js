@@ -45,7 +45,7 @@ const Forest = () => {
 
   return (
     <section ref={forestContainerRef} className="forest_container hidden">
-      <Image ref={imageForestRef} src={fort} alt="alt" />
+      <Image className="opacity" ref={imageForestRef} src={fort} alt="alt" />
     </section>
   );
 };
