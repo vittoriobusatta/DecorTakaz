@@ -35,13 +35,10 @@ function Menu({ openMenu, menuContainer, listitems }) {
         );
       });
 
-      console.log(socialsitems);
-
       tl.fromTo(
         socialsitems.current,
-        { y: 70, skewY: 10, opacity: 0 },
+        { y: 50, skewY: 10, opacity: 0 },
         {
-          delay: 0.1,
           y: 0,
           opacity: 1,
           skewY: 0,
@@ -52,7 +49,6 @@ function Menu({ openMenu, menuContainer, listitems }) {
         emailLinks.current,
         { y: 0, opacity: 0 },
         {
-          delay: 0.2,
           y: 0,
           opacity: 1,
           ease: "power4.out",
