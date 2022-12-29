@@ -28,8 +28,6 @@ function Header() {
       document.body.style.overflow = 'auto';
     }
   }, [openMenu]);
-
-  console.log(openMenu);
   
   return (
     <>

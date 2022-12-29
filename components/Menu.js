@@ -115,13 +115,14 @@ function Menu({ openMenu, menuContainer, listitems }) {
         </ul>
         <ul ref={socialsitems} className="socials_links opacity">
           <div className="hidden">
-            <li>Instagram</li>
+            <li>
+              <a href="https://www.instagram.com/decortakaz/">Instagram</a>
+            </li>
           </div>
           <div className="hidden">
-            <li>Facebook</li>
-          </div>
-          <div className="hidden">
-            <li>Whatsapp</li>
+            <li>
+              <a href="https://m.facebook.com/profile.php?id=100064274190012">Facebook</a>
+            </li>
           </div>
         </ul>
         <div className="email_links hidden">
