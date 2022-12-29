@@ -26,7 +26,11 @@
     }
     & li {
       opacity: 0;
-      transition: clip-path 0.5s ease-out;
+      transition: clip-path 0.5s ease-out, letter-spacing 0.2s cubic-bezier(.21,1.06,.91,.63), color 0.3s ease-out;
+      &:hover {
+        letter-spacing: 0.5px;
+        color: #ddb892;
+      }
     }
   }
   & .socials_links {
