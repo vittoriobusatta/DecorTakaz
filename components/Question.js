@@ -146,28 +146,28 @@ const Question = () => {
       </div>
       <ul>
         {faqData.map((item, index) => (
-          <li
+          <dl
             key={index}
             onClick={() => handleClick(index)}
             className={selectedIndex === index ? "question_active opacity" : "opacity"}
             ref={refs[index]}
           >
             <div className="question_content hidden">
-              <h3 className="opacity" ref={(el) => (h3Refs.current[index] = el)}>
+              <dt className="opacity" ref={(el) => (h3Refs.current[index] = el)}>
                 {item.question}
-              </h3>
+              </dt>
               <ArrrowFAQ />
             </div>
             {selectedIndex === index && (
-              <p
+              <dd
                 className={`${selectedIndex === index ? "open" : ""} ${
                   selectedIndex === -1 ? "closed" : ""
                 }`}
               >
                 {item.answer}
-              </p>
+              </dd>
             )}
-          </li>
+          </dl>
         ))}
       </ul>
     </section>

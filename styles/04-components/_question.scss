@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 26px;
-    & li {
+    & dl {
       cursor: pointer;
       border-bottom: solid 2px rgba(80, 52, 3, 0.671);
       & .question_content {
@@ -19,7 +19,7 @@
           transition: 0.5 ease-out;
           margin-left: 20px;
         }
-        & h3 {
+        & dt {
           font-family: "Manrope";
           font-style: normal;
           font-weight: 600;
@@ -34,7 +34,7 @@
           }
         }
       }
-      & p {
+      & dd {
         padding-bottom: 18px;
         font-size: 14px;
         font-weight: 500;
