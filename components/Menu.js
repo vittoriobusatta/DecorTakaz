@@ -37,12 +37,12 @@ function Menu({ openMenu, menuContainer, listitems }) {
 
       tl.fromTo(
         socialsitems.current,
-        { y: 30, skewY: 6, opacity: 0 },
+        { y: 0, skewY: 0, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           skewY: 0,
-          ease: "power4.out",
+          ease: "power2.out",
         }
       );
       tl.fromTo(
@@ -79,8 +79,8 @@ function Menu({ openMenu, menuContainer, listitems }) {
           0
         );
       });
-      tl.to(socialsitems.current, { y: 0, skewY: 0, opacity: 0 }, 0);
-      tl.to(emailLinks.current, { y: 0, opacity: 0 }, 0);
+      tl.to(socialsitems.current, { y: 0, skewY: 0, opacity: 0, delay: 0.6 }, 0);
+      tl.to(emailLinks.current, { y: 0, opacity: 0, delay: 0.6 }, 0);
     }
 
     return () => {

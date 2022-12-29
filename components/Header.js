@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import axterix from "../assets/share/axterix.svg";
 import React from "react";
@@ -17,6 +17,10 @@ function Header() {
     setOpenMenu(!openMenu);
   };
 
+  const handleCloseMenu = useCallback(() => {
+    setOpenMenu(false);
+  }, [setOpenMenu]);
+
   useEffect(() => {
     if (openMenu) {
       document.body.style.overflow = 'hidden';
@@ -24,12 +28,14 @@ function Header() {
       document.body.style.overflow = 'auto';
     }
   }, [openMenu]);
+
+  console.log(openMenu);
   
   return (
     <>
       <header>
         <Link aria-label="Retourner à l'accueil" href="/">
-          <LogoIcon />
+          <LogoIcon onClick={handleCloseMenu} />
         </Link>
         <button aria-label="menu" onClick={ClickMenu} className={`burger ${openMenu ? 'active' : ''}`}>
           <div className="bar"></div>
