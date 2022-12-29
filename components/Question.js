@@ -90,7 +90,7 @@ const Question = () => {
                   x: -50,
                 },
                 {
-                  delay: 0.8 * (i + 1),
+                  delay: 0.6 * (i + 1),
                   width: "auto",
                   duration: 1.2,
                   opacity: 1,
@@ -105,7 +105,7 @@ const Question = () => {
                 h3Element,
                 { x: -150 },
                 {
-                  delay: 0.8 * (index + 1),
+                  delay: 0.6 * (index + 1),
                   x: 0,
                   duration: 1.2,
                   opacity: 1,
