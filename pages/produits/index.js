@@ -5,11 +5,24 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Filter, BackCatalogue, SubHead } from "../../utils/common";
 import Header from "../../components/Header";
-import data from "/public/data.json";
+import fs from "fs";
+import path from "path";
 
-const categoryArray = data.filter((item) => item.catalogue == "produits");
+export async function getStaticProps() {
+  const data = fs.readFileSync(path.join(process.cwd(), "/public/data.json"));
 
-const Produits = () => {
+  const appData = JSON.parse(data);
+
+  const categoryArray = appData.filter((item) => item.catalogue == "produits");
+
+  return {
+    props: {
+      categoryArray,
+    },
+  };
+}
+
+const Produits = ({categoryArray}) => {
   const TitleProduits = styled.h1`
     &::before {
       content: "(${categoryArray.length})";

@@ -3,18 +3,26 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import {
-  Contenthead,
-  Filter,
-  BackCatalogue,
-  SubHead,
-} from "../../utils/common";
+import { Filter, BackCatalogue, SubHead } from "../../utils/common";
 import Header from "../../components/Header";
-import data from "/public/data.json";
+import fs from "fs";
+import path from "path";
 
-const categoryArray = data.filter((item) => item.catalogue == "mobilier");
+export async function getStaticProps() {
+  const data = fs.readFileSync(path.join(process.cwd(), "/public/data.json"));
 
-const Mobilier = () => {
+  const appData = JSON.parse(data);
+
+  const categoryArray = appData.filter((item) => item.catalogue == "mobilier");
+
+  return {
+    props: {
+      categoryArray,
+    },
+  };
+}
+
+const Mobilier = ({categoryArray}) => {
   const TitleMobilier = styled.h1`
     &::before {
       content: "(${categoryArray.length})";
