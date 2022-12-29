@@ -11,8 +11,7 @@ function Header() {
   const asterix = useRef(null);
   const menuContainer = useRef(null);
   const listitems = useRef([]);
-  const socialsitems = useRef(null);
-  const emailLinks = useRef(null);
+
 
   const ClickMenu = () => {
     setOpenMenu(!openMenu);
@@ -38,7 +37,7 @@ function Header() {
         </button>
         <Image className="axterix" src={axterix} alt="axterix" ref={asterix} />
       </header>
-      <Menu setOpenMenu={setOpenMenu} openMenu={openMenu} menuContainer={menuContainer} emailLinks={emailLinks} socialsitems={socialsitems} listitems={listitems} />
+      <Menu setOpenMenu={setOpenMenu} openMenu={openMenu} menuContainer={menuContainer} listitems={listitems} />
     </>
   );
 }

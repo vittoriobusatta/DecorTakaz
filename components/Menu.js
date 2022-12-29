@@ -1,14 +1,11 @@
 import gsap from "gsap";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
-function Menu({
-  emailLinks,
-  socialsitems,
-  openMenu,
-  menuContainer,
-  listitems,
-}) {
+function Menu({ openMenu, menuContainer, listitems }) {
+  const socialsitems = useRef(null);
+  const emailLinks = useRef(null);
+
   useEffect(() => {
     let tl = gsap.timeline();
 
@@ -38,16 +35,29 @@ function Menu({
         );
       });
 
-      tl.to(socialsitems.current, {
-        y: 0,
-        opacity: 1,
-        ease: "power2.out",
-      });
-      tl.to(emailLinks.current, {
-        y: 0,
-        opacity: 1,
-        ease: "power2.out",
-      });
+      console.log(socialsitems);
+
+      tl.fromTo(
+        socialsitems.current,
+        { y: 70, skewY: 10, opacity: 0 },
+        {
+          delay: 0.1,
+          y: 0,
+          opacity: 1,
+          skewY: 0,
+          ease: "power4.out",
+        }
+      );
+      tl.fromTo(
+        emailLinks.current,
+        { y: 0, opacity: 0 },
+        {
+          delay: 0.2,
+          y: 0,
+          opacity: 1,
+          ease: "power4.out",
+        }
+      );
     } else {
       tl.to(menuContainer.current, {
         duration: 0.5,
@@ -105,7 +115,7 @@ function Menu({
             </div>
           </Link>
         </ul>
-        <ul ref={socialsitems} className="socials_links">
+        <ul ref={socialsitems} className="socials_links opacity">
           <div className="hidden">
             <li>Instagram</li>
           </div>
