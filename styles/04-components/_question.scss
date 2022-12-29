@@ -4,10 +4,15 @@
   ul {
     display: flex;
     flex-direction: column;
-    margin-top: 26px;
+    margin-top: 44px;
     & dl {
       cursor: pointer;
       border-bottom: solid 2px rgba(80, 52, 3, 0.671);
+      position: relative;
+      overflow: hidden;
+      &:first-child {
+        border-top: solid 2px rgba(80, 52, 3, 0.671);
+      }
       & .question_content {
         padding: 18px 0;
         border-radius: 3px;
@@ -16,8 +21,11 @@
         align-items: center;
         width: 100%;
         & svg {
-          transition: 0.5 ease-out;
           margin-left: 20px;
+          position: relative;
+          z-index: 1;
+          flex: 0 0 16px;
+          transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
         & dt {
           font-family: "Manrope";
@@ -25,32 +33,52 @@
           font-weight: 600;
           font-size: 16px;
           color: #563213;
+          position: relative;
+          z-index: 1;
         }
       }
       &.question_active {
-        & .question_content {
-          & svg {
-            transform: rotate(90deg);
-          }
+        & .question_content svg {
+          transform: rotate(90deg);
+        }
+        & dd {
+          height: auto;
+          padding-bottom: 18px;
         }
       }
       & dd {
-        padding-bottom: 18px;
+        position: relative;
+        z-index: 1;
         font-size: 14px;
         font-weight: 500;
-        color: #512c0b;
+        color: #563213;
+        height: 0;
+        transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+          padding-bottom 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      & .question_overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+        height: 0%;
+        z-index: 0;
+        transition: height 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+          border-radius 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity: 0.4;
+        border-radius: 50% 50% 0% 0%;
+        background-color: #e0b07f;
+      }
+      &:hover .question_overlay {
+        border-radius: 0%;
+        height: 100%;
+      }
+      &.question_active .question_overlay {
+        height: 0%;
       }
     }
   }
-}
-
-.open {
-  transition: all 0.2s ease;
-  transform: translateY(0);
-}
-.open.closed {
-  transform: translateY(-100%);
-  overflow: hidden;
 }
 
 .title_content {

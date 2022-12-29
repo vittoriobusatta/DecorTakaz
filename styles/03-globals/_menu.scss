@@ -16,6 +16,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    margin-top: 60px;
     & a {
       color: #ede0d4;
       font-family: "Manrope";
@@ -52,5 +53,5 @@
 .menu_container {
   width: 100%;
   height: 100%;
-  padding: 104px 26px;
+  padding: 44px 26px;
 }

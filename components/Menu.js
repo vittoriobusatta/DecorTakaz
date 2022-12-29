@@ -98,7 +98,7 @@ function Menu({
             </div>
           </Link>
         </ul>
-        <ul ref={socialsitems} className="socials_links opacity">
+        <ul ref={socialsitems} className="socials_links">
           <div className="hidden">
             <li>Instagram</li>
           </div>
@@ -111,7 +111,7 @@ function Menu({
         </ul>
         <div className="email_links hidden">
           <a
-            className="opacity"
+            className=""
             ref={emailLinks}
             href="mailto:contact@decortakaz.re"
           >

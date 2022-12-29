@@ -149,24 +149,24 @@ const Question = () => {
           <dl
             key={index}
             onClick={() => handleClick(index)}
-            className={selectedIndex === index ? "question_active opacity" : "opacity"}
+            className={
+              selectedIndex === index ? "question_active opacity" : "opacity"
+            }
             ref={refs[index]}
           >
             <div className="question_content hidden">
-              <dt className="opacity" ref={(el) => (h3Refs.current[index] = el)}>
+              <dt
+                className="opacity"
+                ref={(el) => (h3Refs.current[index] = el)}
+              >
                 {item.question}
               </dt>
               <ArrrowFAQ />
             </div>
-            {selectedIndex === index && (
-              <dd
-                className={`${selectedIndex === index ? "open" : ""} ${
-                  selectedIndex === -1 ? "closed" : ""
-                }`}
-              >
-                {item.answer}
-              </dd>
-            )}
+            <div className="question_overlay"></div>
+            {/* {selectedIndex === index &&  */}
+            <dd>{item.answer}</dd>
+            {/* } */}
           </dl>
         ))}
       </ul>
