@@ -60,20 +60,6 @@ function Release() {
         ease: "power4.out",
       }
     );
-    gsap.fromTo(
-      paragrahRef.current,
-      {
-        y: 0,
-        opacity: 0,
-      },
-      {
-        delay: 0.5,
-        y: 0,
-        duration: 0.5,
-        opacity: 1,
-        ease: "power2.out",
-      }
-    );
     const items = [icon1Ref, icon2Ref, icon3Ref, icon4Ref];
     items.forEach((icon, index) => {
       gsap.fromTo(
@@ -117,7 +103,7 @@ function Release() {
           </h1>
         </div>
         <div className="introduction_container hidden">
-          <p ref={paragrahRef} className="introduction opacity">
+          <p ref={paragrahRef} className="introduction">
             En tant que menuisier passionné, je suis toujours à la recherche de
             nouvelles idées et de matériaux innovants pour mes réalisations. Je
             prends le temps d&#39;écouter attentivement les souhaits et les

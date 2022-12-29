@@ -9,15 +9,43 @@ import soa from "/assets/share/soa.png";
 import vittorio from "/assets/share/vb.png";
 import trinity from "/assets/share/ljt.png";
 import Footer from "../components/Footer";
-import Menu from "../components/Menu";
 import Process from "../components/Process";
 import gsap from "gsap";
 import Question from "../components/Question";
 
 const Forest = () => {
+  const forestContainerRef = useRef(null);
+  const imageForestRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateElements();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(forestContainerRef.current);
+  }, []);
+
+  function animateElements() {
+    gsap.fromTo(
+      imageForestRef.current,
+      { y: 200 },
+      {
+        delay: 0.3,
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
+  }
+
   return (
-    <section className="forest_container">
-      <Image src={fort} alt="alt" />
+    <section ref={forestContainerRef} className="forest_container hidden">
+      <Image ref={imageForestRef} src={fort} alt="alt" />
     </section>
   );
 };

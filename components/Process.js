@@ -48,20 +48,6 @@ const Process = () => {
                 ease: "power4.out",
               }
             );
-            gsap.fromTo(
-              paragraphRef.current,
-              {
-                y: 0,
-                opacity: 0,
-              },
-              {
-                delay: 0.5,
-                y: 0,
-                duration: 0.5,
-                opacity: 1,
-                ease: "power2.out",
-              }
-            );
           };
           animateHeadElements(titleRef, subtitleRef, paragraphRef);
           observer.unobserve(entry.target);
@@ -136,7 +122,7 @@ const Process = () => {
             </h1>
           </div>
           <div className="introduction_container hidden">
-            <p ref={paragraphRef} className="introduction opacity">
+            <p ref={paragraphRef} className="introduction">
               Décor ta Kaz est une entreprise spécialisée dans la conception et
               la fabrication de meubles et de structures en bois. Nous
               commençons par établir les spécifications du projet avec le

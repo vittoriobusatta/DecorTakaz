@@ -38,22 +38,16 @@ function Menu({
         );
       });
 
-      tl.to(
-        socialsitems.current,
-        {
-          y: 0,
-          opacity: 1,
-          ease: "power2.out",
-        }
-      );
-      tl.to(
-        emailLinks.current,
-        {
-          y: 0,
-          opacity: 1,
-          ease: "power2.out",
-        }
-      );
+      tl.to(socialsitems.current, {
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+      });
+      tl.to(emailLinks.current, {
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+      });
     } else {
       tl.to(menuContainer.current, {
         duration: 0.5,
@@ -65,13 +59,26 @@ function Menu({
           menuContainer.current.style.visibility = "hidden";
         },
       });
+      listitems.current.forEach((ref, index) => {
+        const listElements = ref;
+        tl.to(
+          listElements,
+          {
+            delay: 0.1 * index,
+            duration: 0.8,
+            ease: "power4.out",
+            y: "100%",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 40%)",
+          },
+          0
+        );
+      });
     }
 
     return () => {
       tl.kill();
     };
   }, [openMenu, menuContainer, listitems, socialsitems, emailLinks]);
-  
 
   return (
     <section ref={menuContainer} className="menu">
@@ -110,11 +117,7 @@ function Menu({
           </div>
         </ul>
         <div className="email_links hidden">
-          <a
-            className=""
-            ref={emailLinks}
-            href="mailto:contact@decortakaz.re"
-          >
+          <a className="" ref={emailLinks} href="mailto:contact@decortakaz.re">
             contact@decortakaz.re
           </a>
         </div>
