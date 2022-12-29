@@ -12,7 +12,6 @@ function Header() {
   const menuContainer = useRef(null);
   const listitems = useRef([]);
 
-
   const ClickMenu = () => {
     setOpenMenu(!openMenu);
   };
@@ -23,25 +22,34 @@ function Header() {
 
   useEffect(() => {
     if (openMenu) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
   }, [openMenu]);
-  
+
   return (
     <>
       <header>
         <Link aria-label="Retourner à l'accueil" href="/">
           <LogoIcon onClick={handleCloseMenu} />
         </Link>
-        <button aria-label="menu" onClick={ClickMenu} className={`burger ${openMenu ? 'active' : ''}`}>
+        <button
+          aria-label="menu"
+          onClick={ClickMenu}
+          className={`burger ${openMenu ? "active" : ""}`}
+        >
           <div className="bar"></div>
           <div className="bar"></div>
         </button>
         <Image className="axterix" src={axterix} alt="axterix" ref={asterix} />
       </header>
-      <Menu setOpenMenu={setOpenMenu} openMenu={openMenu} menuContainer={menuContainer} listitems={listitems} />
+      <Menu
+        setOpenMenu={setOpenMenu}
+        openMenu={openMenu}
+        menuContainer={menuContainer}
+        listitems={listitems}
+      />
     </>
   );
 }

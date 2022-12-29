@@ -1,8 +1,9 @@
 import gsap from "gsap";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
+import { useRouter } from 'next/router';
 
-function Menu({ openMenu, menuContainer, listitems }) {
+function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
   const socialsitems = useRef(null);
   const emailLinks = useRef(null);
 
@@ -88,13 +89,25 @@ function Menu({ openMenu, menuContainer, listitems }) {
     };
   }, [openMenu, menuContainer, listitems, socialsitems, emailLinks]);
 
+   const router = useRouter();
+  const path = router.pathname
+
+  const HomePath = () => {
+    if (path === '/') {
+      setOpenMenu(false);
+    } 
+  }
+
+  console.log(openMenu);
+
+
   return (
     <section ref={menuContainer} className="menu">
       <div className="menu_container">
         <ul className="list_container">
           <Link href="/">
             <div className="hidden">
-              <li ref={(el) => (listitems.current[0] = el)}>Accueil</li>
+              <li onClick={HomePath} ref={(el) => (listitems.current[0] = el)}>Accueil</li>
             </div>
           </Link>
           <Link href="/catalogue">

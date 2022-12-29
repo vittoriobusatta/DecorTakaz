@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Release from "../components/Release";
 import fort from "/assets/share/Subtract.png";
@@ -173,8 +173,8 @@ const Contact = () => {
   }, []);
 
   return (
-    <section className="contact">
-      <div className="contact_content">
+    <section className="getintouch">
+      <div className="getintouch_content">
         <span>
           <div className="hidden">
             <p ref={(el) => (contactTitles.current[0] = el)}>
