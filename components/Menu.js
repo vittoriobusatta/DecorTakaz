@@ -24,7 +24,7 @@ function Menu({ openMenu, menuContainer, listitems }) {
           listElements,
           { y: "100%", clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 40%)" },
           {
-            delay: 0.4 * (index + 1),
+            delay: 0.2 * (index + 1),
             y: 0,
             duration: 0.8,
             opacity: 1,
@@ -37,7 +37,7 @@ function Menu({ openMenu, menuContainer, listitems }) {
 
       tl.fromTo(
         socialsitems.current,
-        { y: 50, skewY: 10, opacity: 0 },
+        { y: 30, skewY: 6, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -79,6 +79,8 @@ function Menu({ openMenu, menuContainer, listitems }) {
           0
         );
       });
+      tl.to(socialsitems.current, { y: 0, skewY: 0, opacity: 0 }, 0);
+      tl.to(emailLinks.current, { y: 0, opacity: 0 }, 0);
     }
 
     return () => {
