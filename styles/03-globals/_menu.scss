@@ -26,10 +26,14 @@
     }
     & li {
       opacity: 0;
-      transition: clip-path 0.5s ease-out, letter-spacing 0.2s cubic-bezier(.21,1.06,.91,.63), color 0.3s ease-out;
-      &:hover {
-        letter-spacing: 0.5px;
-        color: #ddb892;
+      transition: clip-path 0.5s ease-out,
+        letter-spacing 0.2s cubic-bezier(0.21, 1.06, 0.91, 0.63),
+        color 0.3s ease-out;
+      @media screen and (min-width: 1224px) {
+        &:hover {
+          letter-spacing: 0.5px;
+          color: #ddb892;
+        }
       }
     }
   }
@@ -38,7 +42,7 @@
     flex-direction: column;
     margin-top: 8vh;
     gap: 6px;
-    & li a{
+    & li a {
       color: #ddb892;
       font-weight: 500;
       letter-spacing: 0.5px;
