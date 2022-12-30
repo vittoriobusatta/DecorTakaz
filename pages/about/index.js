@@ -1,6 +1,9 @@
-import React from 'react'
+import React from "react";
 import Head from "next/head";
 import Header from "../../components/Header";
+import aboutImg from "../../public/images/section/about.jpg";
+import aboutImgmobile from "../../public/images/section/aboutMobile.jpg";
+import Image from "next/image";
 
 function About() {
   return (
@@ -11,12 +14,45 @@ function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="about">
+      <section className="catalogue">
         <Header />
-        À Propos Page
+        <div className="catalogue_container">
+          <div className="catalogue_layout_left">
+            <Image src={aboutImg} alt="catalogue" />
+          </div>
+
+          <div className="catalogue_layout">
+            <div className="catalogue_head">
+              <div className="hidden">
+                <h5 className="subtitle">À Propos</h5>
+              </div>
+              <div className="hidden">
+                <h1 className="catalogue_introduction title">De nous</h1>
+              </div>
+              <div className="introduction_container hidden">
+                <p className="catalogue_introduction introduction">
+                  Fondée en 2017, Décor Ta Kaz est une entreprise d’ameublement
+                  qui est synonyme de produits de haute qualité des plus grands
+                  designs. En tant que rêveurs, créateurs, innovateurs et
+                  concepteurs, nous sommes fiers de fournir les solutions les
+                  plus efficaces, pratiques et abordables pour la vie moderne.
+                </p>
+                <p className="catalogue_introduction introduction">
+                  En servant tous les conforts, nous cherchons à rendre chaque
+                  jour plus lisse et gérable que vous allez dans vos activités
+                  quotidiennes. Décor ta Kaz est une intégration de marques;
+                  Notre collection comprend des articles fonctionnels améliorés
+                  ainsi qu’un décor exquis - une combinaison idéale qui est mis
+                  en valeur tout espace de vie et de vie.
+                </p>
+              </div>
+            </div>
+            <Image src={aboutImgmobile} alt="catalogue" />
+          </div>
+        </div>
       </section>
     </>
-  )
+  );
 }
 
-export default About
+export default About;
