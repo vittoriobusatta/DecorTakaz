@@ -8,6 +8,49 @@ import Image from "next/image";
 
 function About() {
 
+  const aboutContainerRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateElements();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(aboutContainerRef.current);
+  }, []);
+
+  function animateElements() {
+    gsap.fromTo(
+      titleRef.current,
+      { y: 110, skewY: 10 },
+      {
+        delay: 0.3,
+        y: 0,
+        duration: 0.8,
+        opacity: 1,
+        skewY: 0,
+        ease: "power4.out",
+      }
+    );
+    gsap.fromTo(
+      subtitleRef.current,
+      { y: 70, skewY: 10 },
+      {
+        delay: 0.1,
+        y: 0,
+        opacity: 1,
+        skewY: 0,
+        ease: "power4.out",
+      }
+    );
+  }
+
   return (
     <>
       <Head>
@@ -17,7 +60,7 @@ function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="about">
+      <section ref={aboutContainerRef} className="about">
         <Header />
         <div className="about_container">
           <div className="about_layout_left">
@@ -27,10 +70,10 @@ function About() {
           <div className="about_layout">
             <div className="about_head">
               <div className="hidden">
-                <h5 className="subtitle">À Propos</h5>
+                <h5 ref={subtitleRef} className="subtitle opacity">À Propos</h5>
               </div>
               <div className="hidden">
-                <h1 className="about_introduction title">De nous</h1>
+                <h1 ref={titleRef} className="about_introduction title opacity">De nous</h1>
               </div>
               <div className="introduction_container hidden">
                 <p className="about_introduction introduction">

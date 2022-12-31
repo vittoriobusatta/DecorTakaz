@@ -1,13 +1,71 @@
+import gsap from "gsap";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "../../components/Header";
 import catalogueImg from "../../public/images/section/catalogue.jpg";
 import catalogueImgmobile from "../../public/images/section/catalogueMobile.jpg";
 import { ArrowIcon } from "../../utils/icons";
 
 const Catalogue = () => {
+
+  const catalogueContainerRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateElements();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(catalogueContainerRef.current);
+  }, []);
+
+  function animateElements() {
+    gsap.fromTo(
+      titleRef.current,
+      { y: 110, skewY: 10 },
+      {
+        delay: 0.3,
+        y: 0,
+        duration: 0.8,
+        opacity: 1,
+        skewY: 0,
+        ease: "power4.out",
+      }
+    );
+    gsap.fromTo(
+      subtitleRef.current,
+      { y: 70, skewY: 10 },
+      {
+        delay: 0.1,
+        y: 0,
+        opacity: 1,
+        skewY: 0,
+        ease: "power4.out",
+      }
+    );
+    gsap.fromTo(
+      imageRef.current,
+      { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
+      {
+        delay: 0.5,
+        y: 0,
+        duration: 1.7,
+        opacity: 1,
+        ease: "power4.out",
+        clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)"
+      }
+    );
+  }
+
   return (
     <>
       <Head>
@@ -16,7 +74,7 @@ const Catalogue = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="catalogue">
+      <section ref={catalogueContainerRef} className="catalogue">
         <Header />
         <div className="catalogue_container">
           <div className="catalogue_layout_left">
@@ -26,10 +84,10 @@ const Catalogue = () => {
           <div className="catalogue_layout">
             <div className="catalogue_head">
               <div className="hidden">
-                <h5 className="subtitle">Notre</h5>
+                <h5 ref={subtitleRef} className="subtitle opacity">Notre</h5>
               </div>
               <div className="hidden">
-                <h1 className="catalogue_introduction title">Catalogue</h1>
+                <h1 ref={titleRef} className="catalogue_introduction title opacity">Catalogue</h1>
               </div>
               <div className="introduction_container hidden">
                 <p className="catalogue_introduction introduction">
@@ -45,7 +103,7 @@ const Catalogue = () => {
                 </p>
               </div>
             </div>
-            <Image src={catalogueImgmobile} alt="catalogue" />
+            <Image className="opacity" ref={imageRef} src={catalogueImgmobile} alt="catalogue" />
             <ul className="catalogue_table">
               <li>
                 <Link href="/mobilier/">
