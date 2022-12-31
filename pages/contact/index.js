@@ -1,20 +1,106 @@
 import Head from "next/head";
-import React from "react";
+import Image from "next/image";
 import Header from "../../components/Header";
+import contactImg from "../../public/images/section/contact.jpg";
+import contactImgmobile from "../../public/images/section/contactMobile.jpg";
+import { FacebookIcon, InstagramIcon } from "../../utils/icons";
+import gsap from "gsap";
+import React, { useEffect, useRef } from "react";
 
 function Contact() {
+
+  const contactContainerRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const paragrahRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateElements();
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(contactContainerRef.current);
+  }, []);
+
+  function animateElements() {
+    gsap.fromTo(
+      titleRef.current,
+      { y: 110, skewY: 10 },
+      {
+        delay: 0.3,
+        y: 0,
+        duration: 0.8,
+        opacity: 1,
+        skewY: 0,
+        ease: "power4.out",
+      }
+    );
+    gsap.fromTo(
+      subtitleRef.current,
+      { y: 70, skewY: 10 },
+      {
+        delay: 0.1,
+        y: 0,
+        opacity: 1,
+        skewY: 0,
+        ease: "power4.out",
+      }
+    );
+  }
+
   return (
     <>
       <Head>
         <title>Contact | Menuiserie Artisanale</title>
         <meta name="keywords" content="contact, adresse, téléphone, email" />
-        <meta name="description" content="Nous sommes à votre disposition pour répondre à toutes vos questions. N'hésitez pas à nous contacter par téléphone, email ou sur nos différents réseaux sociaux." />
+        <meta
+          name="description"
+          content="Nous sommes à votre disposition pour répondre à toutes vos questions. N'hésitez pas à nous contacter par téléphone, email ou sur nos différents réseaux sociaux."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="contact">
+      <section ref={contactContainerRef} className="contact">
         <Header />
-        Contact Page
+        <div className="contact_container">
+          <div className="contact_layout_left">
+            <Image src={contactImg} alt="contact" />
+          </div>
+
+          <div className="contact_layout">
+            <div className="contact_head">
+              <div className="hidden">
+                <h5 ref={subtitleRef} className="subtitle opacity">Nous</h5>
+              </div>
+              <div className="hidden">
+                <h1 ref={titleRef} className="title opacity">Contacter</h1>
+              </div>
+              <div className="introduction_container hidden">
+                <p className="contact_introduction">contact@decortakaz.re</p>
+                <p className="contact_introduction">+262 6 92 43 51 92</p>
+                <div className="contact_adresse hidden">
+                  <p>14 Rue Auguste de Villele</p>
+                  <p>Saint-Benoît 97470,</p>
+                  <p>La Réunion</p>
+                </div>
+                <div className="contact_socials">
+                  <a href="https://m.facebook.com/profile.php?id=100064274190012">
+                    <FacebookIcon />
+                  </a>
+                  <a href="https://www.instagram.com/decortakaz/">
+                    <InstagramIcon />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <Image src={contactImgmobile} alt="contact" />
+          </div>
+        </div>
       </section>
     </>
   );

@@ -1,7 +1,6 @@
 import gsap from "gsap";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
-import { useRouter } from 'next/router';
 
 function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
   const socialsitems = useRef(null);
@@ -80,7 +79,11 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
           0
         );
       });
-      tl.to(socialsitems.current, { y: 0, skewY: 0, opacity: 0, delay: 0.6 }, 0);
+      tl.to(
+        socialsitems.current,
+        { y: 0, skewY: 0, opacity: 0, delay: 0.6 },
+        0
+      );
       tl.to(emailLinks.current, { y: 0, opacity: 0, delay: 0.6 }, 0);
     }
 
@@ -89,38 +92,37 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
     };
   }, [openMenu, menuContainer, listitems, socialsitems, emailLinks]);
 
-   const router = useRouter();
-  const path = router.pathname
-
-  const HomePath = () => {
-    if (path === '/') {
+  const handleMenuClose = (path) => {
+    if (
+      path === "/" ||
+      path === "/about" ||
+      path === "/contact" ||
+      path === "/catalogue"
+    ) {
       setOpenMenu(false);
-    } 
-  }
-
-  console.log(openMenu);
-
+    }
+  };
 
   return (
     <section ref={menuContainer} className="menu">
       <div className="menu_container">
         <ul className="list_container">
-          <Link href="/">
+          <Link onClick={() => handleMenuClose("/")} href="/">
             <div className="hidden">
-              <li onClick={HomePath} ref={(el) => (listitems.current[0] = el)}>Accueil</li>
+              <li ref={(el) => (listitems.current[0] = el)}>Accueil</li>
             </div>
           </Link>
-          <Link href="/catalogue">
+          <Link onClick={() => handleMenuClose("/catalogue")} href="/catalogue">
             <div className="hidden">
               <li ref={(el) => (listitems.current[1] = el)}>Catalogue</li>
             </div>
           </Link>
-          <Link href="/about">
+          <Link onClick={() => handleMenuClose("/about")} href="/about">
             <div className="hidden">
               <li ref={(el) => (listitems.current[2] = el)}>À Propos</li>
             </div>
           </Link>
-          <Link href="/contact">
+          <Link onClick={() => handleMenuClose("/contact")} href="/contact">
             <div className="hidden">
               <li ref={(el) => (listitems.current[3] = el)}>Contact</li>
             </div>
@@ -134,7 +136,9 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
           </div>
           <div className="hidden">
             <li>
-              <a href="https://m.facebook.com/profile.php?id=100064274190012">Facebook</a>
+              <a href="https://m.facebook.com/profile.php?id=100064274190012">
+                Facebook
+              </a>
             </li>
           </div>
         </ul>

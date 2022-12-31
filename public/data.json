@@ -18,15 +18,6 @@
     "dim": "1,70m x 80 cm, Hauteur : 75cm"
   },
   {
-    "id": 3,
-    "name": "Table basse",
-    "catalogue": "mobilier",
-    "category": "lowtable",
-    "src": "/images/img3.webp",
-    "desc": "Bois de Tamarin, Tranparent",
-    "dim": "1m x 60cm, Hauteur : 45cm"
-  },
-  {
     "id": 4,
     "name": "Table basse",
     "catalogue": "mobilier",
