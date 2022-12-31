@@ -85,9 +85,6 @@
     transition: 0.3s ease-in;
     @media screen and (min-width: 992px) {
       padding: 0 26px;
-      &:first-child div {
-        // border-top: 2px solid #785436;
-      }
     }
     @media screen and (min-width: 1224px) {
       &:hover {

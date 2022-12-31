@@ -13,6 +13,7 @@ const Catalogue = () => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const imageRef = useRef(null);
+  const borderRef = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -63,6 +64,20 @@ const Catalogue = () => {
         clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
       }
     );
+    borderRef.current.forEach((ref, index) => {
+      gsap.fromTo(
+        ref,
+        { y: 0, width: 0 },
+        {
+          delay: 0.2 * index,
+          y: 0,
+          duration: 0.8,
+          opacity: 1,
+          ease: "power4.out",
+          width: "auto",
+        }
+      );
+    });
   }
 
   return (
@@ -118,11 +133,18 @@ const Catalogue = () => {
             <ul className="catalogue_table">
               <li>
                 <Link href="/mobilier/">
+                  <div
+                    className="border"
+                    ref={(el) => (borderRef.current[0] = el)}
+                  />
                   <div className="catalogue_table_child">
                     <p>Mobilier</p>
                     <ArrowIcon />
                   </div>
-                  <div className="border" />
+                  <div
+                    className="border"
+                    ref={(el) => (borderRef.current[1] = el)}
+                  />
                 </Link>
               </li>
               <li>
@@ -131,7 +153,10 @@ const Catalogue = () => {
                     <p>Intérieur</p>
                     <ArrowIcon />
                   </div>
-                  <div className="border" />
+                  <div
+                    className="border"
+                    ref={(el) => (borderRef.current[2] = el)}
+                  />
                 </Link>
               </li>
               <li>
@@ -140,7 +165,10 @@ const Catalogue = () => {
                     <p>Produits</p>
                     <ArrowIcon />
                   </div>
-                  <div className="border" />
+                  <div
+                    className="border"
+                    ref={(el) => (borderRef.current[3] = el)}
+                  />
                 </Link>
               </li>
               <li>
@@ -149,7 +177,10 @@ const Catalogue = () => {
                     <p>Architecture</p>
                     <ArrowIcon />
                   </div>
-                  <div className="border" />
+                  <div
+                    className="border"
+                    ref={(el) => (borderRef.current[4] = el)}
+                  />
                 </Link>
               </li>
             </ul>
