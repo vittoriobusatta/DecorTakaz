@@ -93,7 +93,7 @@ const Catalogue = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      // { threshold: 0.1 }
     );
     observer.observe(tableContainerRef.current);
   }, []);
