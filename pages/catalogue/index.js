@@ -9,7 +9,6 @@ import catalogueImgmobile from "../../public/images/section/catalogueMobile.jpg"
 import { ArrowIcon } from "../../utils/icons";
 
 const Catalogue = () => {
-
   const catalogueContainerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -61,7 +60,7 @@ const Catalogue = () => {
         duration: 1.7,
         opacity: 1,
         ease: "power4.out",
-        clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)"
+        clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
       }
     );
   }
@@ -84,10 +83,17 @@ const Catalogue = () => {
           <div className="catalogue_layout">
             <div className="catalogue_head">
               <div className="hidden">
-                <h5 ref={subtitleRef} className="subtitle opacity">Notre</h5>
+                <h5 ref={subtitleRef} className="subtitle opacity">
+                  Notre
+                </h5>
               </div>
               <div className="hidden">
-                <h1 ref={titleRef} className="catalogue_introduction title opacity">Catalogue</h1>
+                <h1
+                  ref={titleRef}
+                  className="catalogue_introduction title opacity"
+                >
+                  Catalogue
+                </h1>
               </div>
               <div className="introduction_container hidden">
                 <p className="catalogue_introduction introduction">
@@ -103,7 +109,12 @@ const Catalogue = () => {
                 </p>
               </div>
             </div>
-            <Image className="opacity" ref={imageRef} src={catalogueImgmobile} alt="catalogue" />
+            <Image
+              className="opacity"
+              ref={imageRef}
+              src={catalogueImgmobile}
+              alt="catalogue"
+            />
             <ul className="catalogue_table">
               <li>
                 <Link href="/mobilier/">
@@ -111,6 +122,7 @@ const Catalogue = () => {
                     <p>Mobilier</p>
                     <ArrowIcon />
                   </div>
+                  <div className="border" />
                 </Link>
               </li>
               <li>
@@ -119,6 +131,7 @@ const Catalogue = () => {
                     <p>Intérieur</p>
                     <ArrowIcon />
                   </div>
+                  <div className="border" />
                 </Link>
               </li>
               <li>
@@ -127,6 +140,7 @@ const Catalogue = () => {
                     <p>Produits</p>
                     <ArrowIcon />
                   </div>
+                  <div className="border" />
                 </Link>
               </li>
               <li>
@@ -135,6 +149,7 @@ const Catalogue = () => {
                     <p>Architecture</p>
                     <ArrowIcon />
                   </div>
+                  <div className="border" />
                 </Link>
               </li>
             </ul>

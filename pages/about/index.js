@@ -11,6 +11,7 @@ function About() {
   const aboutContainerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
+  const imageRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -47,6 +48,18 @@ function About() {
         opacity: 1,
         skewY: 0,
         ease: "power4.out",
+      }
+    );
+    gsap.fromTo(
+      imageRef.current,
+      { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
+      {
+        delay: 0.5,
+        y: 0,
+        duration: 1.7,
+        opacity: 1,
+        ease: "power4.out",
+        clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
       }
     );
   }
@@ -93,7 +106,7 @@ function About() {
                 </p>
               </div>
             </div>
-            <Image src={aboutImgmobile} alt="about" />
+            <Image className="opacity" ref={imageRef} src={aboutImgmobile} alt="about" />
           </div>
         </div>
       </section>

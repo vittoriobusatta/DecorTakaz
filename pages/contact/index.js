@@ -8,11 +8,12 @@ import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 
 function Contact() {
-
   const contactContainerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
-  const paragrahRef = useRef(null);
+  const imageRef = useRef(null);
+
+  const spanRef = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -51,6 +52,31 @@ function Contact() {
         ease: "power4.out",
       }
     );
+    gsap.fromTo(
+      imageRef.current,
+      { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
+      {
+        delay: 0.5,
+        y: 0,
+        duration: 1.7,
+        opacity: 1,
+        ease: "power4.out",
+        clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
+      }
+    );
+    spanRef.current.forEach((ref, index) => {
+      gsap.fromTo(
+        ref,
+        { y: 70 },
+        {
+          delay: 0.3 * index,
+          y: 0,
+          duration: 0.8,
+          opacity: 1,
+          ease: "power4.out",
+        }
+      );
+    });
   }
 
   return (
@@ -75,18 +101,33 @@ function Contact() {
           <div className="contact_layout">
             <div className="contact_head">
               <div className="hidden">
-                <h5 ref={subtitleRef} className="subtitle opacity">Nous</h5>
+                <h5 ref={subtitleRef} className="subtitle opacity">
+                  Nous
+                </h5>
               </div>
               <div className="hidden">
-                <h1 ref={titleRef} className="title opacity">Contacter</h1>
+                <h1 ref={titleRef} className="title opacity">
+                  Contacter
+                </h1>
               </div>
               <div className="introduction_container hidden">
                 <p className="contact_introduction">contact@decortakaz.re</p>
                 <p className="contact_introduction">+262 6 92 43 51 92</p>
                 <div className="contact_adresse hidden">
-                  <p>14 Rue Auguste de Villele</p>
-                  <p>Saint-Benoît 97470,</p>
-                  <p>La Réunion</p>
+                  <div className="hidden">
+                    <p className="opacity" ref={(el) => (spanRef.current[0] = el)}>
+                      14 Rue Auguste de Villele
+                    </p>
+                  </div>
+                  <div className="hidden">
+                    <p className="opacity" ref={(el) => (spanRef.current[1] = el)}>
+                      Saint-Benoît 97470,
+                    </p>
+                  </div>
+
+                  <div className="hidden">
+                    <p className="opacity" ref={(el) => (spanRef.current[2] = el)}>La Réunion</p>
+                  </div>
                 </div>
                 <div className="contact_socials">
                   <a href="https://m.facebook.com/profile.php?id=100064274190012">
@@ -98,7 +139,12 @@ function Contact() {
                 </div>
               </div>
             </div>
-            <Image src={contactImgmobile} alt="contact" />
+            <Image
+              className="opacity"
+              ref={imageRef}
+              src={contactImgmobile}
+              alt="contact"
+            />
           </div>
         </div>
       </section>
