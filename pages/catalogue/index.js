@@ -78,7 +78,7 @@ const Catalogue = () => {
                   ref,
                   { y: 0, width: 0 },
                   {
-                    delay: 0.2 * index,
+                    delay: 0.1 * index,
                     y: 0,
                     duration: 0.8,
                     opacity: 1,
@@ -93,7 +93,7 @@ const Catalogue = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }
     );
     observer.observe(tableContainerRef.current);
   }, []);
