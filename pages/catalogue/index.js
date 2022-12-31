@@ -10,6 +10,7 @@ import { ArrowIcon } from "../../utils/icons";
 
 const Catalogue = () => {
   const catalogueContainerRef = useRef(null);
+  const tableContainerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const imageRef = useRef(null);
@@ -64,21 +65,38 @@ const Catalogue = () => {
         clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
       }
     );
-    borderRef.current.forEach((ref, index) => {
-      gsap.fromTo(
-        ref,
-        { y: 0, width: 0 },
-        {
-          delay: 0.2 * index,
-          y: 0,
-          duration: 0.8,
-          opacity: 1,
-          ease: "power4.out",
-          width: "auto",
-        }
-      );
-    });
   }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const animation = () => {
+              borderRef.current.forEach((ref, index) => {
+                gsap.fromTo(
+                  ref,
+                  { y: 0, width: 0 },
+                  {
+                    delay: 0.2 * index,
+                    y: 0,
+                    duration: 0.8,
+                    opacity: 1,
+                    ease: "power4.out",
+                    width: "auto",
+                  }
+                );
+              });
+            };
+            animation();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(tableContainerRef.current);
+  }, []);
 
   return (
     <>
@@ -130,11 +148,11 @@ const Catalogue = () => {
               src={catalogueImgmobile}
               alt="catalogue"
             />
-            <ul className="catalogue_table">
+            <ul ref={tableContainerRef} className="catalogue_table">
               <li>
                 <Link href="/mobilier/">
                   <div
-                    className="border"
+                    className="border opacity"
                     ref={(el) => (borderRef.current[0] = el)}
                   />
                   <div className="catalogue_table_child">
@@ -142,7 +160,7 @@ const Catalogue = () => {
                     <ArrowIcon />
                   </div>
                   <div
-                    className="border"
+                    className="border opacity"
                     ref={(el) => (borderRef.current[1] = el)}
                   />
                 </Link>
@@ -154,7 +172,7 @@ const Catalogue = () => {
                     <ArrowIcon />
                   </div>
                   <div
-                    className="border"
+                    className="border opacity"
                     ref={(el) => (borderRef.current[2] = el)}
                   />
                 </Link>
@@ -166,7 +184,7 @@ const Catalogue = () => {
                     <ArrowIcon />
                   </div>
                   <div
-                    className="border"
+                    className="border opacity"
                     ref={(el) => (borderRef.current[3] = el)}
                   />
                 </Link>
@@ -178,7 +196,7 @@ const Catalogue = () => {
                     <ArrowIcon />
                   </div>
                   <div
-                    className="border"
+                    className="border opacity"
                     ref={(el) => (borderRef.current[4] = el)}
                   />
                 </Link>
