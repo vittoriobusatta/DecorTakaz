@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import React, { createRef, useEffect, useRef } from "react";
 import {
   ArchitectureIcon,
   InterieurIcon,
@@ -13,15 +13,9 @@ function Release() {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const paragrahRef = useRef(null);
-  const icon1Ref = useRef(null);
-  const icon2Ref = useRef(null);
-  const icon3Ref = useRef(null);
-  const icon4Ref = useRef(null);
 
-  const iconContent1 = useRef(null);
-  const iconContent2 = useRef(null);
-  const iconContent3 = useRef(null);
-  const iconContent4 = useRef(null);
+  const items = useRef([]);
+  const iconTitle = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -60,30 +54,29 @@ function Release() {
         ease: "power4.out",
       }
     );
-    const items = [icon1Ref, icon2Ref, icon3Ref, icon4Ref];
-    items.forEach((icon, index) => {
+    items.current.forEach((item, index) => {
       gsap.fromTo(
-        icon.current,
-        { width: 0 },
+        item,
+        { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
         {
-          delay: (index + 1) * 0.6,
+          delay: 0.4 * index,
+          y: 0,
           opacity: 1,
           ease: "back.out(1.7)",
-          width: "100%",
+          clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
         }
       );
     });
 
-    const icons = [iconContent1, iconContent2, iconContent3, iconContent4];
-    icons.forEach((item, index) => {
+    iconTitle.current.forEach((ref, index) => {
       gsap.fromTo(
-        item.current,
-        { x: -170 },
+        ref,
+        { y: -50 },
         {
-          delay: (index + 1) * 0.65,
-          x: 0,
+          delay: (index + 0.8) * 0.6,
+          y: 0,
           opacity: 1,
-          ease: "power1.out",
+          ease: "power4.out",
         }
       );
     });
@@ -115,27 +108,35 @@ function Release() {
         </div>
       </div>
       <ul className="release_category">
-        <li ref={icon1Ref}>
-          <Link ref={iconContent1} href="/mobilier/">
-            <p>Mobilier</p>
+        <li className="opacity hidden" ref={(el) => (items.current[0] = el)}>
+          <Link href="/mobilier/">
+            <div className="hidden">
+              <p ref={(el) => (iconTitle.current[0] = el)}>Mobilier</p>
+            </div>
             <MobilierIcon />
           </Link>
         </li>
-        <li ref={icon2Ref}>
-          <Link ref={iconContent2} href="/interieur/">
-            <p>Intérieur</p>
+        <li className="opacity hidden" ref={(el) => (items.current[1] = el)}>
+          <Link href="/interieur/">
+            <div className="hidden">
+              <p ref={(el) => (iconTitle.current[1] = el)}>Intérieur</p>
+            </div>
             <InterieurIcon />
           </Link>
         </li>
-        <li ref={icon3Ref}>
-          <Link ref={iconContent3} href="/produits/">
-            <p>Produits</p>
+        <li className="opacity hidden" ref={(el) => (items.current[2] = el)}>
+          <Link href="/produits/">
+            <div className="hidden">
+              <p ref={(el) => (iconTitle.current[2] = el)}>Produits</p>
+            </div>
             <ProductIcon />
           </Link>
         </li>
-        <li ref={icon4Ref}>
-          <Link ref={iconContent4} href="/">
-            <p>Architecture</p>
+        <li className="opacity hidden" ref={(el) => (items.current[3] = el)}>
+          <Link href="/">
+            <div className="hidden">
+              <p ref={(el) => (iconTitle.current[3] = el)}>Architecture</p>
+            </div>
             <ArchitectureIcon />
           </Link>
         </li>
