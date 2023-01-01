@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import Header from "../../components/Header";
-import catalogueImg from "../../public/images/section/catalogue.jpg";
-import catalogueImgmobile from "../../public/images/section/catalogueMobile.jpg";
+import catalogueImg from "../../public/images/section/catalogue.webp";
+import catalogueImgmobile from "../../public/images/section/catalogueMobile.webp";
 import { ArrowIcon } from "../../utils/icons";
 
 const Catalogue = () => {

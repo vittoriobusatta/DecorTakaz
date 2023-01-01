@@ -1,7 +1,7 @@
 import Image from "next/image";
-import jennyPP from "/assets/share/circle.png";
-import assadPP from "/assets/share/circle2.png";
-import ambdouPP from "/assets/share/circle3.png";
+import jennyPP from "/assets/share/circle.webp";
+import assadPP from "/assets/share/circle2.webp";
+import ambdouPP from "/assets/share/circle3.webp";
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 

@@ -2,8 +2,8 @@ import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import Head from "next/head";
 import Header from "../../components/Header";
-import aboutImg from "../../public/images/section/about.jpg";
-import aboutImgmobile from "../../public/images/section/aboutMobile.jpg";
+import aboutImg from "../../public/images/section/about.webp";
+import aboutImgmobile from "../../public/images/section/aboutMobile.webp";
 import Image from "next/image";
 
 function About() {

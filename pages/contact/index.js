@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import Header from "../../components/Header";
-import contactImg from "../../public/images/section/contact.jpg";
-import contactImgmobile from "../../public/images/section/contactMobile.jpg";
+import contactImg from "../../public/images/section/contact.webp";
+import contactImgmobile from "../../public/images/section/contactMobile.webp";
 import { FacebookIcon, InstagramIcon } from "../../utils/icons";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";

@@ -112,7 +112,7 @@
     "name": "Mirroir",
     "catalogue": "interieur",
     "category": "bathroom",
-    "src": "/images/img14.png",
+    "src": "/images/img14.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
@@ -121,7 +121,7 @@
     "name": "évier",
     "catalogue": "interieur",
     "category": "bathroom",
-    "src": "/images/img26.jpg",
+    "src": "/images/img26.webp",
     "desc": "Bois de Tamarin, bleu turquoise transparent",
     "dim": "60cm x 120cm, ép.4cm"
   },
@@ -130,7 +130,7 @@
     "name": "Cuisine",
     "catalogue": "interieur",
     "category": "cuisine",
-    "src": "/images/img15.png",
+    "src": "/images/img15.webp",
     "desc": "Bois de Tamarin, Résine époxy vert",
     "dim": ""
   },
@@ -139,7 +139,7 @@
     "name": "Meuble de salle de bain",
     "catalogue": "interieur",
     "category": "bathroom",
-    "src": "/images/img16.png",
+    "src": "/images/img16.webp",
     "desc": "Mahogany (Acajou d'Afrique)",
     "dim": "140 x 60cm, Pronfondeur : 50cm"
   },
@@ -148,7 +148,7 @@
     "name": "Plan de travail",
     "catalogue": "interieur",
     "category": "cuisine",
-    "src": "/images/img17.png",
+    "src": "/images/img17.webp",
     "desc": "Bois de Tamarin",
     "dim": "1,6m x 40cm x 4cm"
   },
@@ -157,7 +157,7 @@
     "name": "Planche avec robinet",
     "catalogue": "interieur",
     "category": "bathroom",
-    "src": "/images/img18.png",
+    "src": "/images/img18.webp",
     "desc": "Bois de Tamarin",
     "dim": "1,6m x 40cm x 4cm"
   },
@@ -166,7 +166,7 @@
     "name": "Console",
     "catalogue": "mobilier",
     "category": "commode",
-    "src": "/images/img19.png",
+    "src": "/images/img19.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
@@ -175,7 +175,7 @@
     "name": "Lampe de Chevet",
     "catalogue": "produits",
     "category": "lampe",
-    "src": "/images/img20.png",
+    "src": "/images/img20.webp",
     "desc": "Bois de Tamarin, Résine transparente",
     "dim": "Hauteur de 50cm, largeur du plateau 40cm"
   },
@@ -184,7 +184,7 @@
     "name": "Planche pour Bar de cuisine",
     "catalogue": "interieur",
     "category": "cuisine",
-    "src": "/images/img21.png",
+    "src": "/images/img21.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
@@ -193,7 +193,7 @@
     "name": "Comptoir pour Salle de bain",
     "catalogue": "interieur",
     "category": "bathroom",
-    "src": "/images/img22.png",
+    "src": "/images/img22.webp",
     "desc": "Bois de Tamarin",
     "dim": "1,2m de long sur 80cm de large."
   },
@@ -202,7 +202,7 @@
     "name": "Ensemble de Salon",
     "catalogue": "interieur",
     "category": "salon",
-    "src": "/images/img23.png",
+    "src": "/images/img23.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
@@ -211,7 +211,7 @@
     "name": "Support Tablette",
     "catalogue": "produits",
     "category": "other",
-    "src": "/images/img24.png",
+    "src": "/images/img24.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   },
@@ -220,7 +220,7 @@
     "name": "Planche a découper",
     "catalogue": "produits",
     "category": "other",
-    "src": "/images/img25.png",
+    "src": "/images/img25.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
   }
