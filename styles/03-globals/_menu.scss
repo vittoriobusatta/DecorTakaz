@@ -29,6 +29,7 @@
       transition: clip-path 0.5s ease-out,
         letter-spacing 0.2s cubic-bezier(0.21, 1.06, 0.91, 0.63),
         color 0.3s ease-out;
+
       @media screen and (min-width: 1224px) {
         &:hover {
           letter-spacing: 0.5px;
@@ -43,7 +44,7 @@
     margin-top: 8vh;
     gap: 6px;
     & li a {
-      color: #ddb892;
+      color: #785436;
       font-weight: 500;
       letter-spacing: 0.5px;
     }
@@ -66,3 +67,8 @@
     margin-top: 83px;
   }
 }
+
+.menu_active {
+  color: #ddb892;
+}
+

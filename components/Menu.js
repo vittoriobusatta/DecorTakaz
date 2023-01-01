@@ -109,22 +109,22 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
         <ul className="list_container">
           <Link onClick={() => handleMenuClose("/")} href="/">
             <div className="hidden">
-              <li ref={(el) => (listitems.current[0] = el)}>Accueil</li>
+              <li className={location.pathname === '/' ? 'menu_active' : ''} ref={(el) => (listitems.current[0] = el)}>Accueil</li>
             </div>
           </Link>
           <Link onClick={() => handleMenuClose("/catalogue")} href="/catalogue">
             <div className="hidden">
-              <li ref={(el) => (listitems.current[1] = el)}>Catalogue</li>
+              <li className={location.pathname === '/catalogue' ? 'menu_active' : ''} ref={(el) => (listitems.current[1] = el)}>Catalogue</li>
             </div>
           </Link>
           <Link onClick={() => handleMenuClose("/about")} href="/about">
             <div className="hidden">
-              <li ref={(el) => (listitems.current[2] = el)}>À Propos</li>
+              <li className={location.pathname === '/about' ? 'menu_active' : ''} ref={(el) => (listitems.current[2] = el)}>À Propos</li>
             </div>
           </Link>
           <Link onClick={() => handleMenuClose("/contact")} href="/contact">
             <div className="hidden">
-              <li ref={(el) => (listitems.current[3] = el)}>Contact</li>
+              <li className={location.pathname === '/contact' ? 'menu_active' : ''} ref={(el) => (listitems.current[3] = el)}>Contact</li>
             </div>
           </Link>
         </ul>
