@@ -251,7 +251,7 @@ const Interieur = ({ categoryArray }) => {
                   />
                 </div>
                 <div className="hidden">
-                  <h3 className="opacity" ref={(el) => (titleimageRef.current[index] = el)}>
+                  <h3 className="" ref={(el) => (titleimageRef.current[index] = el)}>
                     {i.name}
                   </h3>
                 </div>
