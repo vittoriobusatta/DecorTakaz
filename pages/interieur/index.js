@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import { Filter, BackCatalogue, SubHead } from "../../utils/common";
 import Header from "../../components/Header";
 import fs from "fs";
 import path from "path";
+import gsap from "gsap";
 
 export async function getStaticProps() {
   const data = fs.readFileSync(path.join(process.cwd(), "/public/data.json"));
@@ -22,12 +22,12 @@ export async function getStaticProps() {
   };
 }
 
-const Interieur = ({categoryArray}) => {
-  const TitleInterieur = styled.h1`
-    &::before {
-      content: "(${categoryArray.length})";
-    }
-  `;
+const Interieur = ({ categoryArray }) => {
+  // const TitleInterieur = styled.h1`
+  //   &::before {
+  //     content: "(${categoryArray.length})";
+  //   }
+  // `;
   const [filter, setFilter] = useState("all");
 
   const handleFilterChange = (event) => {
@@ -41,6 +41,109 @@ const Interieur = ({categoryArray}) => {
     return item.category === filter;
   });
 
+  const animatedStatus = useRef([]);
+
+  const interieurContainerRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const backcatalogueLinks = useRef([]);
+  const imageReferences = useRef([]);
+  const titleimageRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          gsap.fromTo(
+            titleRef.current,
+            { y: 110, skewY: 10 },
+            {
+              delay: 0.3,
+              y: 0,
+              duration: 0.8,
+              opacity: 1,
+              skewY: 0,
+              ease: "power4.out",
+            }
+          );
+          gsap.fromTo(
+            subtitleRef.current,
+            { y: 70, skewY: 10 },
+            {
+              delay: 0.1,
+              y: 0,
+              opacity: 1,
+              skewY: 0,
+              ease: "power4.out",
+            }
+          );
+          backcatalogueLinks.current.forEach((ref, index) => {
+            gsap.fromTo(
+              ref,
+              { y: 70 },
+              {
+                delay: 0.3 * index,
+                y: 0,
+                duration: 0.8,
+                opacity: 1,
+                ease: "power4.out",
+              }
+            );
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(interieurContainerRef.current);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = imageReferences.current.indexOf(entry.target);
+          if (entry.isIntersecting && !animatedStatus.current[index]) {
+            animatedStatus.current[index] = true;
+            gsap.fromTo(
+              entry.target,
+              { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
+              {
+                delay: 0.2,
+                y: 0,
+                opacity: 1,
+                ease: "power4.out",
+                clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
+              }
+            );
+            titleimageRef.current.forEach((ref, index) => {
+              gsap.fromTo(
+                ref,
+                { y: 50 },
+                {
+                  delay: 0.3 * index,
+                  y: 0,
+                  duration: 0.8,
+                  opacity: 1,
+                  ease: "power4.out",
+                }
+              );
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    imageReferences.current.forEach((ref) => {
+      observer.observe(ref);
+    });
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section id="category">
       <Head>
@@ -49,24 +152,53 @@ const Interieur = ({categoryArray}) => {
 
       <Header />
 
-      <div className="category_head cth_interieur">
-        <TitleInterieur>Intérieur</TitleInterieur>
+      <section
+        ref={interieurContainerRef}
+        className="category_head cth_interieur"
+      >
+        <div className="category_title">
+          <div className="hidden">
+            <h5 ref={subtitleRef} className="subtitle opacity">
+              ({categoryArray.length})
+            </h5>
+          </div>
+          <div className="hidden">
+            <h1 className="opacity" ref={titleRef}>
+              Intérieur
+            </h1>
+          </div>
+        </div>
 
-        <SubHead>
-          <BackCatalogue>
+        <div className="catagory_content">
+          <ul className="backcatalogue">
             <Link href="/mobilier/">
-              <li>Mobilier</li>
+              <div className="hidden">
+                <li ref={(el) => (backcatalogueLinks.current[0] = el)}>
+                  Mobilier
+                </li>
+              </div>
             </Link>
             <Link href="/interieur/">
-              <li className="active">Intérieur</li>
+              <div className="hidden">
+                <li
+                  ref={(el) => (backcatalogueLinks.current[1] = el)}
+                  className="active"
+                >
+                  Intérieur
+                </li>
+              </div>
             </Link>
             <Link href="/produits/">
-              <li>Produits</li>
+              <div className="hidden">
+                <li ref={(el) => (backcatalogueLinks.current[2] = el)}>
+                  Produits
+                </li>
+              </div>
             </Link>
-            {/* <li>Architecture</li> */}
-          </BackCatalogue>
+            {/* <li ref={(el) => (backcatalogueLinks.current[3] = el)}>Architecture</li> */}
+          </ul>
 
-          <Filter>
+          <div className="filter">
             <button
               className={filter === "all" ? "active" : ""}
               onClick={handleFilterChange}
@@ -95,15 +227,17 @@ const Interieur = ({categoryArray}) => {
             >
               Salle de bain
             </button>
-          </Filter>
-        </SubHead>
+          </div>
+        </div>
 
         <ul className="gallerie">
-          {filteredData.map((i) => (
+          {filteredData.map((i, index) => (
             <li key={i.id}>
               <div>
                 <div className="image_container hidden">
                   <Image
+                    className="opacity"
+                    ref={(el) => (imageReferences.current[index] = el)}
                     src={i.src}
                     alt={"Image " + i.id}
                     width={300}
@@ -116,8 +250,11 @@ const Interieur = ({categoryArray}) => {
                     }}
                   />
                 </div>
-
-                <h3>{i.name}</h3>
+                <div className="hidden">
+                  <h3 className="opacity" ref={(el) => (titleimageRef.current[index] = el)}>
+                    {i.name}
+                  </h3>
+                </div>
                 <p>
                   {i.desc} <br />
                   {i.dim}
@@ -126,7 +263,7 @@ const Interieur = ({categoryArray}) => {
             </li>
           ))}
         </ul>
-      </div>
+      </section>
     </section>
   );
 };

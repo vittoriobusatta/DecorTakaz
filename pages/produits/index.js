@@ -23,11 +23,11 @@ export async function getStaticProps() {
 }
 
 const Produits = ({categoryArray}) => {
-  const TitleProduits = styled.h1`
-    &::before {
-      content: "(${categoryArray.length})";
-    }
-  `;
+  // const TitleProduits = styled.h1`
+  //   &::before {
+  //     content: "(${categoryArray.length})";
+  //   }
+  // `;
 
   const [filter, setFilter] = useState("all");
 
@@ -51,10 +51,10 @@ const Produits = ({categoryArray}) => {
       <Header />
 
       <div className="category_head">
-        <TitleProduits>Produits</TitleProduits>
+        <h1>Produits</h1>
 
-        <SubHead>
-          <BackCatalogue>
+        <div className="catagory_content">
+          <ul className="backcatalogue">
             <Link href="/mobilier/">
               <li>Mobilier</li>
             </Link>
@@ -65,9 +65,9 @@ const Produits = ({categoryArray}) => {
               <li className="active">Produits</li>
             </Link>
             {/* <li>Architecture</li> */}
-          </BackCatalogue>
+          </ul>
 
-          <Filter>
+          <div className="filter">
             <button
               className={filter === "all" ? "active" : ""}
               onClick={handleFilterChange}
@@ -96,8 +96,8 @@ const Produits = ({categoryArray}) => {
             >
               Divers
             </button>
-          </Filter>
-        </SubHead>
+          </div>
+        </div>
 
         <ul className="gallerie">
           {filteredData.map((i) => (

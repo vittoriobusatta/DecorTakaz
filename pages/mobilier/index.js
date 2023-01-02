@@ -3,7 +3,6 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import { Filter, BackCatalogue, SubHead } from "../../utils/common";
 import Header from "../../components/Header";
 import fs from "fs";
 import path from "path";
@@ -23,11 +22,11 @@ export async function getStaticProps() {
 }
 
 const Mobilier = ({categoryArray}) => {
-  const TitleMobilier = styled.h1`
-    &::before {
-      content: "(${categoryArray.length})";
-    }
-  `;
+  // const TitleMobilier = styled.h1`
+  //   &::before {
+  //     content: "(${categoryArray.length})";
+  //   }
+  // `;
 
   const [filter, setFilter] = useState("all");
 
@@ -51,10 +50,10 @@ const Mobilier = ({categoryArray}) => {
       <Header />
 
       <div className="category_head">
-        <TitleMobilier>Mobilier</TitleMobilier>
+        <h1>Mobilier</h1>
 
-        <SubHead>
-          <BackCatalogue>
+        <div className="catagory_content">
+          <ul className="backcatalogue">
             <Link href="/mobilier/">
               <li className="active">Mobilier</li>
             </Link>
@@ -65,9 +64,9 @@ const Mobilier = ({categoryArray}) => {
               <li>Produits</li>
             </Link>
             {/* <li>Architecture</li> */}
-          </BackCatalogue>
+          </ul>
 
-          <Filter>
+          <div className="filter">
             <button
               className={filter === "all" ? "active" : ""}
               onClick={handleFilterChange}
@@ -96,8 +95,8 @@ const Mobilier = ({categoryArray}) => {
             >
               Commodes
             </button>
-          </Filter>
-        </SubHead>
+          </div>
+        </div>
 
         <ul className="gallerie">
           {filteredData.map((i) => (
