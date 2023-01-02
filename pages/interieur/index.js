@@ -116,19 +116,19 @@ const Interieur = ({ categoryArray }) => {
                 clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
               }
             );
-            titleimageRef.current.forEach((ref, index) => {
-              gsap.fromTo(
-                ref,
-                { y: 50 },
-                {
-                  delay: 0.3 * index,
-                  y: 0,
-                  duration: 0.8,
-                  opacity: 1,
-                  ease: "power4.out",
-                }
-              );
-            });
+            // titleimageRef.current.forEach((ref, index) => {
+            //   gsap.fromTo(
+            //     ref,
+            //     { y: 50 },
+            //     {
+            //       delay: 0.3 * index,
+            //       y: 0,
+            //       duration: 0.8,
+            //       opacity: 1,
+            //       ease: "power4.out",
+            //     }
+            //   );
+            // });
             observer.unobserve(entry.target);
           }
         });
