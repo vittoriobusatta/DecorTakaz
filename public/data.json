@@ -135,33 +135,6 @@
     "dim": ""
   },
   {
-    "id": 16,
-    "name": "Meuble de salle de bain",
-    "catalogue": "interieur",
-    "category": "bathroom",
-    "src": "/images/img16.webp",
-    "desc": "Mahogany (Acajou d'Afrique)",
-    "dim": "140 x 60cm, Pronfondeur : 50cm"
-  },
-  {
-    "id": 17,
-    "name": "Plan de travail",
-    "catalogue": "interieur",
-    "category": "cuisine",
-    "src": "/images/img17.webp",
-    "desc": "Bois de Tamarin",
-    "dim": "1,6m x 40cm x 4cm"
-  },
-  {
-    "id": 18,
-    "name": "Planche avec robinet",
-    "catalogue": "interieur",
-    "category": "bathroom",
-    "src": "/images/img18.webp",
-    "desc": "Bois de Tamarin",
-    "dim": "1,6m x 40cm x 4cm"
-  },
-  {
     "id": 19,
     "name": "Console",
     "catalogue": "mobilier",
@@ -178,24 +151,6 @@
     "src": "/images/img20.webp",
     "desc": "Bois de Tamarin, Résine transparente",
     "dim": "Hauteur de 50cm, largeur du plateau 40cm"
-  },
-  {
-    "id": 21,
-    "name": "Planche pour Bar de cuisine",
-    "catalogue": "interieur",
-    "category": "cuisine",
-    "src": "/images/img21.webp",
-    "desc": "Bois de Tamarin",
-    "dim": ""
-  },
-  {
-    "id": 22,
-    "name": "Comptoir pour Salle de bain",
-    "catalogue": "interieur",
-    "category": "bathroom",
-    "src": "/images/img22.webp",
-    "desc": "Bois de Tamarin",
-    "dim": "1,2m de long sur 80cm de large."
   },
   {
     "id": 23,
