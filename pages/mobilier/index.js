@@ -128,16 +128,18 @@ const Mobilier = ({ categoryArray }) => {
   }
 
   return (
-    <section 
-    ref={mobilierContainerRef}
-    id="category">
+    <>
       <Head>
         <title>Mobilier | Menuiserie Artisanale</title>
       </Head>
 
       <Header />
 
-      <div className="category_head">
+      <section
+        id="category"
+        ref={mobilierContainerRef}
+        className="category_head"
+      >
         <div className="category_title">
           <div className="hidden">
             <h5 ref={subtitleRef} className="subtitle opacity">
@@ -228,8 +230,8 @@ const Mobilier = ({ categoryArray }) => {
             </li>
           ))}
         </ul>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

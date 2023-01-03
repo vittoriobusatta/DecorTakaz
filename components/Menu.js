@@ -17,6 +17,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
         ease: "power2.in",
         opacity: 1,
         visibility: "visible",
+        display: "block",
       });
 
       listitems.current.forEach((ref, index) => {
@@ -64,6 +65,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
         delay: 1,
         onComplete: () => {
           menuContainer.current.style.visibility = "hidden";
+          menuContainer.current.style.display = "none";
         },
       });
       listitems.current.forEach((ref, index) => {

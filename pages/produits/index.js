@@ -128,15 +128,19 @@ const Produits = ({ categoryArray }) => {
   }
 
   return (
-    <section ref={produitsContainerRef} id="category">
+    <>
       <Head>
         <title>Produits | Menuiserie Artisanale</title>
       </Head>
 
       <Header />
 
-      <div className="category_head">
-      <div className="category_title">
+      <section
+        ref={produitsContainerRef}
+        id="category"
+        className="category_head"
+      >
+        <div className="category_title">
           <div className="hidden">
             <h5 ref={subtitleRef} className="subtitle opacity">
               ({categoryArray.length})
@@ -226,8 +230,8 @@ const Produits = ({ categoryArray }) => {
             </li>
           ))}
         </ul>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

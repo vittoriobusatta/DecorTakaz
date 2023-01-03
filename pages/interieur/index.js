@@ -46,7 +46,6 @@ const Interieur = ({ categoryArray }) => {
   const interieurContainerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
-  const backcatalogueLinks = useRef([]);
   const imageReferences = useRef([]);
   const titleimageRef = useRef([]);
 
@@ -77,19 +76,6 @@ const Interieur = ({ categoryArray }) => {
               ease: "power4.out",
             }
           );
-          backcatalogueLinks.current.forEach((ref, index) => {
-            gsap.fromTo(
-              ref,
-              { y: 70 },
-              {
-                delay: 0.3 * index,
-                y: 0,
-                duration: 0.8,
-                opacity: 1,
-                ease: "power4.out",
-              }
-            );
-          });
           observer.unobserve(entry.target);
         }
       });
@@ -135,14 +121,14 @@ const Interieur = ({ categoryArray }) => {
   }
 
   return (
-    <section id="category">
+    <>
       <Head>
         <title>Intérieur | Menuiserie Artisanale</title>
       </Head>
 
       <Header />
 
-      <section
+      <section id="category"
         ref={interieurContainerRef}
         className="category_head cth_interieur"
       >
@@ -163,7 +149,7 @@ const Interieur = ({ categoryArray }) => {
           <ul className="backcatalogue">
             <Link href="/mobilier/">
               <div className="hidden">
-                <li ref={(el) => (backcatalogueLinks.current[0] = el)}>
+                <li>
                   Mobilier
                 </li>
               </div>
@@ -171,7 +157,6 @@ const Interieur = ({ categoryArray }) => {
             <Link href="/interieur/">
               <div className="hidden">
                 <li
-                  ref={(el) => (backcatalogueLinks.current[1] = el)}
                   className="active"
                 >
                   Intérieur
@@ -180,12 +165,12 @@ const Interieur = ({ categoryArray }) => {
             </Link>
             <Link href="/produits/">
               <div className="hidden">
-                <li ref={(el) => (backcatalogueLinks.current[2] = el)}>
+                <li>
                   Produits
                 </li>
               </div>
             </Link>
-            {/* <li ref={(el) => (backcatalogueLinks.current[3] = el)}>Architecture</li> */}
+            {/* <li>Architecture</li> */}
           </ul>
 
           <div className="filter">
@@ -254,7 +239,7 @@ const Interieur = ({ categoryArray }) => {
           ))}
         </ul>
       </section>
-    </section>
+    </>
   );
 };
 
