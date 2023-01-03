@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import styled from "styled-components";
 import Header from "../../components/Header";
 import fs from "fs";
 import path from "path";

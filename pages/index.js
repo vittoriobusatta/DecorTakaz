@@ -13,7 +13,6 @@ import Process from "../components/Process";
 import gsap from "gsap";
 import Question from "../components/Question";
 import Link from "next/link";
-import Loader from "../components/Loader";
 
 const Forest = () => {
   const forestContainerRef = useRef(null);
@@ -211,7 +210,6 @@ function Home() {
       </Head>
 
       <Header />
-      <Loader />
 
       <main className="main">
         <Release />
