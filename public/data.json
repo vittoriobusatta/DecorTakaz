@@ -45,6 +45,15 @@
     "dim": "1m x 60cm, Hauteur : 45cm"
   },
   {
+    "id": 3,
+    "name": "Etagère",
+    "catalogue": "mobilier",
+    "category": "commode",
+    "src": "/images/img3.webp",
+    "desc": "Bois de Tamarin",
+    "dim": "180cm x 70cm"
+  },
+  {
     "id": 7,
     "name": "Table à manger",
     "catalogue": "mobilier",
