@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import styled from "styled-components";
-import { Filter, BackCatalogue, SubHead } from "../../utils/common";
 import Header from "../../components/Header";
 import fs from "fs";
 import path from "path";
+import gsap from "gsap";
 
 export async function getStaticProps() {
   const data = fs.readFileSync(path.join(process.cwd(), "/public/data.json"));
@@ -22,13 +21,7 @@ export async function getStaticProps() {
   };
 }
 
-const Produits = ({categoryArray}) => {
-  // const TitleProduits = styled.h1`
-  //   &::before {
-  //     content: "(${categoryArray.length})";
-  //   }
-  // `;
-
+const Produits = ({ categoryArray }) => {
   const [filter, setFilter] = useState("all");
 
   const handleFilterChange = (event) => {
@@ -42,8 +35,100 @@ const Produits = ({categoryArray}) => {
     return item.category === filter;
   });
 
+  const animatedStatus = useRef([]);
+  const produitsContainerRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const backcatalogueLinks = useRef([]);
+  const imageReferences = useRef([]);
+  const titleimageRef = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          gsap.fromTo(
+            titleRef.current,
+            { y: 110, skewY: 10 },
+            {
+              delay: 0.3,
+              y: 0,
+              duration: 0.8,
+              opacity: 1,
+              skewY: 0,
+              ease: "power4.out",
+            }
+          );
+          gsap.fromTo(
+            subtitleRef.current,
+            { y: 70, skewY: 10 },
+            {
+              delay: 0.1,
+              y: 0,
+              opacity: 1,
+              skewY: 0,
+              ease: "power4.out",
+            }
+          );
+          backcatalogueLinks.current.forEach((ref, index) => {
+            gsap.fromTo(
+              ref,
+              { y: 70 },
+              {
+                delay: 0.3 * index,
+                y: 0,
+                duration: 0.8,
+                opacity: 1,
+                ease: "power4.out",
+              }
+            );
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    observer.observe(produitsContainerRef.current);
+  }, []);
+
+  useEffect(() => {
+    observeElements();
+  }, [filteredData]);
+
+  function observeElements() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = imageReferences.current.indexOf(entry.target);
+          if (entry.isIntersecting && !animatedStatus.current[index]) {
+            animatedStatus.current[index] = true;
+            gsap.fromTo(
+              entry.target,
+              { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
+              {
+                delay: 0.3,
+                y: 0,
+                opacity: 1,
+                ease: "power4.out",
+                clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
+              }
+            );
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    imageReferences.current.forEach((ref) => {
+      observer.observe(ref);
+    });
+    return () => {
+      observer.disconnect();
+    };
+  }
+
   return (
-    <section id="category">
+    <section ref={produitsContainerRef} id="category">
       <Head>
         <title>Produits | Menuiserie Artisanale</title>
       </Head>
@@ -51,7 +136,18 @@ const Produits = ({categoryArray}) => {
       <Header />
 
       <div className="category_head">
-        <h1>Produits</h1>
+      <div className="category_title">
+          <div className="hidden">
+            <h5 ref={subtitleRef} className="subtitle opacity">
+              ({categoryArray.length})
+            </h5>
+          </div>
+          <div className="hidden">
+            <h1 className="opacity" ref={titleRef}>
+              Produits
+            </h1>
+          </div>
+        </div>
 
         <div className="catagory_content">
           <ul className="backcatalogue">
@@ -100,11 +196,13 @@ const Produits = ({categoryArray}) => {
         </div>
 
         <ul className="gallerie">
-          {filteredData.map((i) => (
+          {filteredData.map((i, index) => (
             <li key={i.id}>
               <div>
                 <div className="image_container hidden">
                   <Image
+                    className="opacity"
+                    ref={(el) => (imageReferences.current[index] = el)}
                     src={i.src}
                     alt={"Image " + i.id}
                     width={300}
@@ -117,7 +215,9 @@ const Produits = ({categoryArray}) => {
                     }}
                   />
                 </div>
-                <h3>{i.name}</h3>
+                <h3 ref={(el) => (titleimageRef.current[index] = el)}>
+                  {i.name}
+                </h3>
                 <p>
                   {i.desc} <br />
                   {i.dim}

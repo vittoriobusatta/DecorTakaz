@@ -99,6 +99,10 @@ const Interieur = ({ categoryArray }) => {
   }, []);
 
   useEffect(() => {
+    observeElements();
+  }, [filteredData]);
+
+  function observeElements() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -109,40 +113,26 @@ const Interieur = ({ categoryArray }) => {
               entry.target,
               { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
               {
-                delay: 0.2,
+                delay: 0.3,
                 y: 0,
                 opacity: 1,
                 ease: "power4.out",
                 clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
               }
             );
-            // titleimageRef.current.forEach((ref, index) => {
-            //   gsap.fromTo(
-            //     ref,
-            //     { y: 50 },
-            //     {
-            //       delay: 0.3 * index,
-            //       y: 0,
-            //       duration: 0.8,
-            //       opacity: 1,
-            //       ease: "power4.out",
-            //     }
-            //   );
-            // });
             observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.5 }
     );
-
     imageReferences.current.forEach((ref) => {
       observer.observe(ref);
     });
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }
 
   return (
     <section id="category">
@@ -251,7 +241,7 @@ const Interieur = ({ categoryArray }) => {
                   />
                 </div>
                 <div className="hidden">
-                  <h3 className="" ref={(el) => (titleimageRef.current[index] = el)}>
+                  <h3 ref={(el) => (titleimageRef.current[index] = el)}>
                     {i.name}
                   </h3>
                 </div>
