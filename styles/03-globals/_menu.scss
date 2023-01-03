@@ -6,7 +6,7 @@
   right: 0;
   top: 0;
   background: #2a201e;
-  z-index: 1;
+  z-index: -1;
   height: calc(100% + $safe_area_inset_top);
   opacity: 0;
   display: flex;

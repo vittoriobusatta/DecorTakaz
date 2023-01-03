@@ -18,6 +18,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
         opacity: 1,
         visibility: "visible",
         display: "block",
+        zIndex: 1,
       });
 
       listitems.current.forEach((ref, index) => {
@@ -63,6 +64,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
         ease: "power2.out",
         opacity: 0,
         delay: 1,
+        zIndex: -1,
         onComplete: () => {
           menuContainer.current.style.visibility = "hidden";
           menuContainer.current.style.display = "none";
