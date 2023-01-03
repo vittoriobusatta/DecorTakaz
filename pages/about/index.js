@@ -86,7 +86,7 @@ function About() {
                 <h5 ref={subtitleRef} className="subtitle opacity">À Propos</h5>
               </div>
               <div className="hidden">
-                <h1 ref={titleRef} className="about_introduction title opacity">De nous</h1>
+                <h1 ref={titleRef} className="about_title title opacity">De nous</h1>
               </div>
               <div className="introduction_container hidden">
                 <p className="about_introduction introduction">
