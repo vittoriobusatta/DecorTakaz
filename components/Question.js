@@ -164,9 +164,7 @@ const Question = () => {
               <ArrrowFAQ />
             </div>
             <div className="question_overlay"></div>
-            {/* {selectedIndex === index &&  */}
             <dd>{item.answer}</dd>
-            {/* } */}
           </dl>
         ))}
       </ul>

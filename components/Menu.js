@@ -18,7 +18,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
         opacity: 1,
         visibility: "visible",
         display: "block",
-        zIndex: 1,
+        zIndex: 90,
       });
 
       listitems.current.forEach((ref, index) => {

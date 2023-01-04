@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Release from "../components/Release";
 import fort from "/assets/share/Subtract.webp";
@@ -13,6 +13,7 @@ import Process from "../components/Process";
 import gsap from "gsap";
 import Question from "../components/Question";
 import Link from "next/link";
+import Landing from "../components/Landing";
 
 const Forest = () => {
   const forestContainerRef = useRef(null);
@@ -201,7 +202,6 @@ const Getintouch = () => {
 };
 
 const Home = () => {
-
   return (
     <>
       <Head>
@@ -211,7 +211,7 @@ const Home = () => {
       </Head>
 
       <Header />
-
+      <Landing />
       <main className="main">
         <Release />
         <Process />

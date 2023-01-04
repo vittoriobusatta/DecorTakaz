@@ -51,6 +51,19 @@ html {
   }
 }
 
+main {
+  position: absolute;
+  top: calc(50vh + 106px);
+  left: 0;
+  right: 0;
+  background-color: #ede0d4;
+  z-index: 2;
+  padding-top: 44px;
+  @media screen and (min-width: 768px) {
+    top: calc(50vh + 116px);
+  }
+}
+
 .title {
   font-weight: 800;
   font-size: max(11.5vw, 38px);

@@ -69,7 +69,6 @@ const Process = () => {
         }
       });
     });
-    
     const animateElement = (element) => {
       const titles = [title1, title2, title3, title4];
       const paragraphs = [paragraph1, paragraph2, paragraph3, paragraph4];
@@ -101,12 +100,10 @@ const Process = () => {
         }
       );
     };
-    
     itemsRefs.current.forEach((itemRef) => {
       itemRef.animated = false;
       observer.observe(itemRef);
     });
-    
   }, []);
 
   return (

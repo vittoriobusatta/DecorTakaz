@@ -27,20 +27,20 @@ function Header() {
 
   const [scrollTop, setScrollTop] = useState(0);
   const navbar = useRef(null);
-  useEffect(() => {
-    function onScroll() {
-      let currentPosition = window.pageYOffset;
-      if (currentPosition > scrollTop) {
-        navbar.current.style.top = openMenu ? "0" : "-100px";
-      } else {
-        navbar.current.style.top = "0";
-      }
-      setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
-    }
+  // useEffect(() => {
+  //   function onScroll() {
+  //     let currentPosition = window.pageYOffset;
+  //     if (currentPosition > scrollTop) {
+  //       navbar.current.style.top = openMenu ? "0" : "-100px";
+  //     } else {
+  //       navbar.current.style.top = "0";
+  //     }
+  //     setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
+  //   }
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollTop, openMenu]);
+  //   window.addEventListener("scroll", onScroll);
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, [scrollTop, openMenu]);
 
   return (
     <>
