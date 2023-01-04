@@ -17,7 +17,7 @@ function Loader() {
         {
           duration: 1,
           ease: "expo.out",
-          delay: 4,
+          delay: 3,
           y: -110 + "%",
           skewY: 2.5 + "deg",
         }
@@ -28,7 +28,7 @@ function Loader() {
           clipPath: "circle(0%",
         },
         {
-          delay: 2.6,
+          delay: 1.6,
           duration: 1,
           ease: "Expo.easeInOut",
           clipPath: "circle(100%",
