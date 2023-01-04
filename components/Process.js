@@ -24,7 +24,7 @@ const Process = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const animateHeadElements = (titleRef, subtitleRef, paragraphRef) => {
+          const animateHeadElements = (titleRef, subtitleRef) => {
             gsap.fromTo(
               titleRef.current,
               { y: 110, skewY: 10 },

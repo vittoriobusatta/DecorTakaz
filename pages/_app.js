@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       {/* <Loading /> */}
-      <Loader />
+      {/* <Loader /> */}
       <Component {...pageProps} />
     </>
   );

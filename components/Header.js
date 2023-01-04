@@ -1,6 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import axterix from "../assets/share/axterix.svg";
 import React from "react";
 import Link from "next/link";
 import { LogoIcon } from "../utils/icons";
@@ -8,7 +6,6 @@ import Menu from "./Menu";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState(false);
-  const asterix = useRef(null);
   const menuContainer = useRef(null);
   const listitems = useRef([]);
 
@@ -28,9 +25,26 @@ function Header() {
     }
   }, [openMenu]);
 
+  const [scrollTop, setScrollTop] = useState(0);
+  const navbar = useRef(null);
+  useEffect(() => {
+    function onScroll() {
+      let currentPosition = window.pageYOffset;
+      if (currentPosition > scrollTop) {
+        navbar.current.style.top = "-100px";
+      } else {
+        navbar.current.style.top = "0";
+      }
+      setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
+    }
+
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollTop]);
+
   return (
     <>
-      <header>
+      <header ref={navbar}>
         <Link aria-label="Retourner à l'accueil" href="/">
           <LogoIcon onClick={handleCloseMenu} />
         </Link>
@@ -42,7 +56,6 @@ function Header() {
           <div className="bar"></div>
           <div className="bar"></div>
         </button>
-        <Image className="axterix" src={axterix} alt="axterix" ref={asterix} />
       </header>
       <Menu
         setOpenMenu={setOpenMenu}

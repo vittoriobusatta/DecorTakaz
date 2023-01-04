@@ -22,6 +22,32 @@
     height: calc(100% + $safe_area_inset_top);
     background-color: $backgroundColor;
     font-family: "Manrope", sans-serif;
+    font-size: 1.6rem;
+  }
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  @media screen and (max-width: 1400px) {
+    font-size: 58%;
+  }
+  @media screen and (max-width: 1224px) {
+    font-size: 52%;
+  }
+  @media screen and (max-width: 992px) {
+    font-size: 46%;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 40%;
+  }
+  @media screen and (max-width: 576px) {
+    font-size: 34%;
+  }
+  @media screen and (max-width: 321px) {
+    font-size: 28%;
   }
 }
 

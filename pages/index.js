@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Release from "../components/Release";
 import fort from "/assets/share/Subtract.webp";
@@ -200,7 +200,8 @@ const Getintouch = () => {
   );
 };
 
-function Home() {
+const Home = () => {
+
   return (
     <>
       <Head>
@@ -223,6 +224,6 @@ function Home() {
       </main>
     </>
   );
-}
+};
 
 export default Home;
