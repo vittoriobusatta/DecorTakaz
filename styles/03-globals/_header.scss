@@ -23,16 +23,14 @@ header {
     padding: 24px 62px;
   }
 }
-.axterix {
-  display: none;
-  @media screen and (min-width: 1224px) {
-    display: block;
-  }
-}
 
 .logo {
   max-height: 30px;
   width: auto;
+  @media screen and (min-width: 992px) {
+    max-height: 40px;
+    height: 34px;
+  }
 }
 
 .burger {

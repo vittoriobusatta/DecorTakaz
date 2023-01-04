@@ -1,21 +1,72 @@
 .landing {
   margin-top: 60px;
   height: calc(100vh - 60px);
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   @media screen and (min-width: 576px) {
     margin-top: 83px;
   }
+  .landing_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.landing_title {
+  position: relative;
   & h1 {
     font-weight: 800;
-    font-size: 18vw;
+    font-size: min(18vw, 96px);
     text-transform: uppercase;
     color: #6c5347;
     text-align: center;
+  }
+  & svg {
+    position: absolute;
+    top: max(-2vw, -10px);
+    right: max(-4vw, -25px);
+  }
+}
+
+.landing_location {
+  width: 100%;
+  padding: 0 26px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  @media screen and (min-width: 992px) {
+    bottom: 40px;
+  }
+  .landing_location_content {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0;
+    border-width: 2px 0px;
+    border-style: solid;
+    border-color: #6c5347;
+    & div:last-child {
+      text-align: right;
+    }
+  }
+  & h5 {
+    font-weight: 600;
+    font-size: min(3.5vw, 20px);
+    text-transform: uppercase;
+    color: #785436;
+  }
+
+  & p {
+    font-weight: 400;
+    font-size: min(3vw, 18px);
+    color: #785436;
   }
 }
