@@ -31,7 +31,7 @@ function Header() {
     function onScroll() {
       let currentPosition = window.pageYOffset;
       if (currentPosition > scrollTop) {
-        navbar.current.style.top = "-100px";
+        navbar.current.style.top = openMenu ? "0" : "-100px";
       } else {
         navbar.current.style.top = "0";
       }
@@ -40,7 +40,7 @@ function Header() {
 
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollTop]);
+  }, [scrollTop, openMenu]);
 
   return (
     <>
