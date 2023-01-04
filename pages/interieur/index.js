@@ -22,11 +22,6 @@ export async function getStaticProps() {
 }
 
 const Interieur = ({ categoryArray }) => {
-  // const TitleInterieur = styled.h1`
-  //   &::before {
-  //     content: "(${categoryArray.length})";
-  //   }
-  // `;
   const [filter, setFilter] = useState("all");
 
   const handleFilterChange = (event) => {
@@ -84,10 +79,6 @@ const Interieur = ({ categoryArray }) => {
   }, []);
 
   useEffect(() => {
-    observeElements();
-  }, []);
-
-  function observeElements() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -117,7 +108,7 @@ const Interieur = ({ categoryArray }) => {
     return () => {
       observer.disconnect();
     };
-  }
+  }, []);
 
   return (
     <>

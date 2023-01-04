@@ -92,10 +92,6 @@ const Produits = ({ categoryArray }) => {
   }, []);
 
   useEffect(() => {
-    observeElements();
-  }, []);
-
-  function observeElements() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -125,7 +121,7 @@ const Produits = ({ categoryArray }) => {
     return () => {
       observer.disconnect();
     };
-  }
+  }, []);
 
   return (
     <>
