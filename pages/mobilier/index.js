@@ -92,10 +92,6 @@ const Mobilier = ({ categoryArray }) => {
   }, []);
 
   useEffect(() => {
-    observeElements();
-  }, [filteredData]);
-
-  function observeElements() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -125,7 +121,7 @@ const Mobilier = ({ categoryArray }) => {
     return () => {
       observer.disconnect();
     };
-  }
+  }, []);
 
   return (
     <>
@@ -205,7 +201,7 @@ const Mobilier = ({ categoryArray }) => {
               <div>
                 <div className="image_container hidden">
                   <Image
-                    className="opacity"
+                    // className="opacity"
                     ref={(el) => (imageReferences.current[index] = el)}
                     src={i.src}
                     alt={"Image " + i.id}
