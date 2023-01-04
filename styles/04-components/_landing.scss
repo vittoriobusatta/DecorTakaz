@@ -21,6 +21,7 @@
 
 .landing_title {
   position: relative;
+  margin-bottom: 88px;
   & h1 {
     font-weight: 800;
     font-size: min(18vw, 96px);
@@ -46,12 +47,6 @@
 .landing_location {
   width: 100%;
   padding: 0 26px;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  @media screen and (min-width: 992px) {
-    bottom: 40px;
-  }
   .landing_location_content {
     display: inline-flex;
     justify-content: space-between;
