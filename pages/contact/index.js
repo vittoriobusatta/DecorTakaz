@@ -130,7 +130,7 @@ function Contact() {
                   </div>
                 </div>
                 <div className="contact_socials">
-                  <a href="https://m.facebook.com/profile.php?id=100064274190012">
+                  <a href="https://www.facebook.com/people/D%C3%A9cor-ta-Kaz/100064274190012/">
                     <FacebookIcon />
                   </a>
                   <a href="https://www.instagram.com/decortakaz/">

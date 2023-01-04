@@ -167,7 +167,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
           </div>
           <div className="hidden">
             <li>
-              <a href="https://m.facebook.com/profile.php?id=100064274190012">
+              <a href="https://www.facebook.com/people/D%C3%A9cor-ta-Kaz/100064274190012/">
                 Facebook
               </a>
             </li>
