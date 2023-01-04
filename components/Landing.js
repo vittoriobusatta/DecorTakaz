@@ -9,6 +9,7 @@ const Landing = () => {
           <h1>Décor</h1>
           <h1>Ta Kaz</h1>
           <Asterix />
+          <p>Depuis 2017</p>
         </div>
         <div className="landing_location">
           <div className="landing_location_content">
