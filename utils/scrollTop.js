@@ -9,7 +9,6 @@ function ScrollTop() {
     let intervalId = null;
     function onScroll() {
       let currentPosition = window.pageYOffset;
-      let maxScroll = document.body.scrollHeight - window.innerHeight;
 
       if (currentPosition > scrollTop) {
         scrollButton.current.style.bottom = "-60px";
@@ -17,12 +16,6 @@ function ScrollTop() {
       } else {
         scrollButton.current.style.bottom = "10px";
       }
-
-      // if (currentPosition >= maxScroll) {
-      //   scrollButton.current.style.bottom = "10px";
-      // } else {
-      //   scrollButton.current.style.bottom = "-60px";
-      // }
       setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
     }
 
