@@ -139,7 +139,8 @@ svg.active {
 
 .scroll_btn {
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   right: 24px;
-  transition: bottom 0.2s ease-out;
+  opacity: 0;
+  transition: bottom 0.2s ease-out, opacity 0.5s;
 }
