@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import Link from "next/link";
-import React, { createRef, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   ArchitectureIcon,
   InterieurIcon,
@@ -133,12 +133,12 @@ function Release() {
           </Link>
         </li>
         <li className="opacity hidden" ref={(el) => (items.current[3] = el)}>
-          <Link href="/">
+          <a>
             <div className="hidden">
               <p ref={(el) => (iconTitle.current[3] = el)}>Architecture</p>
             </div>
             <ArchitectureIcon />
-          </Link>
+          </a>
         </li>
       </ul>
     </section>

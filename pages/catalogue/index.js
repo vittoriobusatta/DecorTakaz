@@ -93,7 +93,6 @@ const Catalogue = () => {
           }
         });
       },
-      // { threshold: 0.1 }
     );
     observer.observe(tableContainerRef.current);
   }, []);
@@ -189,7 +188,7 @@ const Catalogue = () => {
                   />
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/">
                   <div className="catalogue_table_child">
                     <p>Architecture</p>
@@ -200,7 +199,7 @@ const Catalogue = () => {
                     ref={(el) => (borderRef.current[4] = el)}
                   />
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

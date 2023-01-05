@@ -29,6 +29,7 @@ const Produits = ({ categoryArray }) => {
   };
 
   const filteredData = categoryArray.filter((item) => {
+    console.log(item);
     if (filter === "all") {
       return true;
     }
