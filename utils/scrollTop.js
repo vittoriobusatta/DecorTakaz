@@ -10,7 +10,9 @@ function ScrollTop() {
     function onScroll() {
       let currentPosition = window.pageYOffset;
 
-      if (currentPosition > scrollBottom || currentPosition < 2000) {
+      console.log(currentPosition);
+
+      if (currentPosition > scrollBottom || currentPosition < 600) {
         scrollButton.current.style.bottom = "-60px";
         scrollButton.current.style.opacity = 1;
       } else {
