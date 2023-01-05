@@ -148,7 +148,6 @@ ul.gallerie {
 // }
 
 .backcatalogue {
-  margin-top: 22px;
   padding: 0 34px;
   width: 100%;
   display: flex;
@@ -229,8 +228,8 @@ ul.gallerie {
   flex-direction: column;
   row-gap: 45px;
   overflow: hidden;
-  // margin-bottom: 45px;
   margin-bottom: 64px;
+  margin-top: 38px;
   @media screen and (min-width: 768px) {
     align-items: flex-end;
     flex-direction: row;
