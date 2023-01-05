@@ -14,7 +14,7 @@ function ScrollTop() {
         scrollButton.current.style.bottom = "-60px";
         scrollButton.current.style.opacity = 1;
       } else {
-        scrollButton.current.style.bottom = "10px";
+        scrollButton.current.style.bottom = "5px";
       }
       setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
     }
