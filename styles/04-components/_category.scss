@@ -161,7 +161,6 @@ ul.gallerie {
       display: inline-flex;
       align-items: center;
       justify-content: space-between;
-
       & button,
       h2 {
         cursor: pointer;
@@ -169,7 +168,7 @@ ul.gallerie {
         font-weight: 800;
         text-transform: uppercase;
         color: #7F5539;
-        font-size: 19px;
+        font-size: 20px;
         background: none;
         @media screen and (min-width: 1224px) {
           font-size: 24px;
@@ -179,21 +178,21 @@ ul.gallerie {
     &.question_active {
       & .filter {
         height: auto;
-        padding: 4px 18px;
+        padding: 8px 22px;
       }
     }
     & .filter {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      row-gap: 2px;
+      row-gap: 4px;
       height: 0;
       transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1) padding 0.45s
         cubic-bezier(0.16, 1, 0.3, 1);
       & button {
         font-weight: 600;
         font-family: "Manrope";
-        font-size: 15px;
+        font-size: 16px;
         color: #785436;
         background: none;
         cursor: pointer;
