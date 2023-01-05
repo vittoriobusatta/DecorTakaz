@@ -20,7 +20,6 @@ section#category {
     font-size: 48px;
     text-transform: uppercase;
     color: #6c5347;
-   
     @media screen and (min-width: 1224px) {
       font-size: 110px;
     }
@@ -67,12 +66,6 @@ ul.gallerie {
     }
     & img {
       width: 100%;
-      transition: 0.3s ease-out;
-      // transform: scale(1.1);
-      // object-fit: cover;
-      // &:hover {
-      //   transform: scale(1);
-      // }
     }
     & .image_container {
       height: fit-content;
@@ -126,50 +119,92 @@ ul.gallerie {
   }
 }
 
-.filter {
-  background-color: #e1d2c1;
-  display: inline-flex;
-  column-gap: 30px;
-  padding: 6px 20px;
-  width: 100%;
-  @media screen and (min-width: 768px) {
-    max-width: 400px;
-  }
-  @media screen and (min-width: 992px) {
-    column-gap: 80px;
-    overflow-y: none;
-    width: auto;
-    column-gap: 40px;
-    max-width: 440px;
-  }
-  button {
-    background: none;
-    font-family: "Manrope";
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 28px;
-    text-transform: uppercase;
-    color: #785436;
-    white-space: nowrap;
-    cursor: pointer;
-  }
-}
+// .filter {
+//   background-color: #e1d2c1;
+//   display: inline-flex;
+//   column-gap: 30px;
+//   padding: 6px 20px;
+//   width: 100%;
+//   @media screen and (min-width: 768px) {
+//     max-width: 400px;
+//   }
+//   @media screen and (min-width: 992px) {
+//     column-gap: 80px;
+//     width: auto;
+//     column-gap: 40px;
+//     max-width: 440px;
+//   }
+//   button {
+//     background: none;
+//     font-family: "Manrope";
+//     font-weight: 800;
+//     font-size: 16px;
+//     line-height: 28px;
+//     text-transform: uppercase;
+//     color: #785436;
+//     white-space: nowrap;
+//     cursor: pointer;
+//   }
+// }
 
 .backcatalogue {
   margin-top: 22px;
   padding: 0 34px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
   & li {
-    font-family: "Manrope";
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #785436;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 24px;
-    @media screen and (min-width: 1224px) {
-      font-size: 20px;
-      line-height: 28px;
+    overflow: hidden;
+    & .backcatalogue_title {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & button,
+      h2 {
+        cursor: pointer;
+        font-family: "Manrope";
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #785436;
+        font-size: 17px;
+        background: none;
+        @media screen and (min-width: 1224px) {
+          font-size: 20px;
+        }
+      }
     }
+    &.question_active {
+      & .filter {
+        height: auto;
+        padding: 4px 14px;
+      }
+    }
+    & .filter {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 1px;
+      height: 0;
+      transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1) padding 0.45s
+        cubic-bezier(0.16, 1, 0.3, 1);
+      & button {
+        font-weight: 600;
+        font-family: "Manrope";
+        font-size: 14px;
+        color: #785436;
+        background: none;
+        cursor: pointer;
+      }
+    }
+  }
+  & svg {
+    height: 12px;
+    width: auto;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: rotate(0deg);
   }
   @media screen and (min-width: 576px) {
     padding: 0 54px;
@@ -194,7 +229,8 @@ ul.gallerie {
   flex-direction: column;
   row-gap: 45px;
   overflow: hidden;
-  margin-bottom: 45px;
+  // margin-bottom: 45px;
+  margin-bottom: 64px;
   @media screen and (min-width: 768px) {
     align-items: flex-end;
     flex-direction: row;

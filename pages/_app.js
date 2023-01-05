@@ -4,7 +4,7 @@ import "../styles/styles.scss";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Loader />
+      {/* <Loader /> */}
       <Component {...pageProps} />
     </>
   );

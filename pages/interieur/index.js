@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import fs from "fs";
 import path from "path";
 import gsap from "gsap";
+import { ArrowIcon } from "../../utils/icons";
 
 export async function getStaticProps() {
   const data = fs.readFileSync(path.join(process.cwd(), "/public/data.json"));
@@ -86,7 +87,8 @@ const Interieur = ({ categoryArray }) => {
 
       <Header />
 
-      <section id="category"
+      <section
+        id="category"
         ref={interieurContainerRef}
         className="category_head cth_interieur"
       >
@@ -105,33 +107,33 @@ const Interieur = ({ categoryArray }) => {
 
         <div className="catagory_content">
           <ul className="backcatalogue">
-            <Link href="/mobilier/">
-              <div className="hidden">
-                <li>
-                  Mobilier
-                </li>
-              </div>
-            </Link>
-            <Link href="/interieur/">
-              <div className="hidden">
-                <li
-                  className="active"
-                >
-                  Intérieur
-                </li>
-              </div>
-            </Link>
-            <Link href="/produits/">
-              <div className="hidden">
-                <li>
-                  Produits
-                </li>
-              </div>
-            </Link>
-            {/* <li>Architecture</li> */}
+            <li>
+              <Link href="/mobilier/">
+                <h2>Mobilier</h2>
+              </Link>
+              <ArrowIcon />
+            </li>
+            <li>
+              <Link href="/interieur/">
+                <h2 className="active">Intérieur</h2>
+              </Link>
+              <ArrowIcon />
+            </li>
+            <li>
+              <Link href="/produits/">
+                <h2>Produits</h2>
+              </Link>
+              <ArrowIcon />
+            </li>
+            {/* <li>
+              <Link href="/architecture/">
+                <h2>Architecture</h2>
+              </Link>
+              <ArrowIcon />
+            </li> */}
           </ul>
 
-          <div className="filter">
+          {/* <div className="filter">
             <button
               className={filter === "all" ? "active" : ""}
               onClick={handleFilterChange}
@@ -160,7 +162,7 @@ const Interieur = ({ categoryArray }) => {
             >
               Salle de bain
             </button>
-          </div>
+          </div> */}
         </div>
 
         <ul className="gallerie">

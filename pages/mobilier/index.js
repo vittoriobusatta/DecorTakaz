@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import fs from "fs";
 import path from "path";
 import gsap from "gsap";
+import { ArrowIcon } from "../../utils/icons";
 
 export async function getStaticProps() {
   const data = fs.readFileSync(path.join(process.cwd(), "/public/data.json"));
@@ -91,6 +92,15 @@ const Mobilier = ({ categoryArray }) => {
     observer.observe(mobilierContainerRef.current);
   }, []);
 
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    console.log("salut");
+    setIsActive(!isActive);
+  };
+
+  console.log(isActive);
+
   return (
     <>
       <Head>
@@ -119,48 +129,79 @@ const Mobilier = ({ categoryArray }) => {
 
         <div className="catagory_content">
           <ul className="backcatalogue">
-            <Link href="/mobilier/">
-              <li className="active">Mobilier</li>
-            </Link>
-            <Link href="/interieur/">
-              <li>Intérieur</li>
-            </Link>
-            <Link href="/produits/">
-              <li>Produits</li>
-            </Link>
-            {/* <li>Architecture</li> */}
+            <li className={isActive ? "question_active" : ""}>
+              <div
+                className="backcatalogue_title active"
+                onClick={() => handleClick()}
+              >
+                <Link href="/mobilier/">
+                  <button
+                    className={filter === "all" ? "active" : ""}
+                    onClick={handleFilterChange}
+                    value="all"
+                  >
+                    Mobilier
+                  </button>
+                </Link>
+                <svg
+                  height="20"
+                  viewBox="0 0 23 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={isActive ? "active" : ""}
+                >
+                  <path d="M23 14L0 28L5.75 14L0 0L23 14Z" fill="#785436" />
+                </svg>
+              </div>
+              <div className="filter">
+                <button
+                  className={filter === "dinnertable" ? "active" : ""}
+                  onClick={handleFilterChange}
+                  value="dinnertable"
+                >
+                  Tables à manger
+                </button>
+                <button
+                  className={filter === "lowtable" ? "active" : ""}
+                  onClick={handleFilterChange}
+                  value="lowtable"
+                >
+                  Tables Basse
+                </button>
+                <button
+                  className={filter === "commode" ? "active" : ""}
+                  onClick={handleFilterChange}
+                  value="commode"
+                >
+                  Commodes
+                </button>
+              </div>
+            </li>
+            <li>
+              <div className="backcatalogue_title">
+                <Link href="/interieur/">
+                  <h2>Intérieur</h2>
+                </Link>
+                <ArrowIcon />
+              </div>
+            </li>
+            <li>
+              <div className="backcatalogue_title">
+                <Link href="/produits/">
+                  <h2>Produits</h2>
+                </Link>
+                <ArrowIcon />
+              </div>
+            </li>
+            {/* <li>
+              <div className="backcatalogue_title">
+                <Link href="/architecture/">
+                  <h2>Architecture</h2>
+                </Link>
+                <ArrowIcon />
+              </div>
+            </li> */}
           </ul>
-
-          <div className="filter">
-            <button
-              className={filter === "all" ? "active" : ""}
-              onClick={handleFilterChange}
-              value="all"
-            >
-              Tous
-            </button>
-            <button
-              className={filter === "dinnertable" ? "active" : ""}
-              onClick={handleFilterChange}
-              value="dinnertable"
-            >
-              Tables à manger
-            </button>
-            <button
-              className={filter === "lowtable" ? "active" : ""}
-              onClick={handleFilterChange}
-              value="lowtable"
-            >
-              Table Basse
-            </button>
-            <button
-              className={filter === "commode" ? "active" : ""}
-              onClick={handleFilterChange}
-              value="commode"
-            >
-              Commodes
-            </button>
-          </div>
         </div>
 
         <ul className="gallerie">

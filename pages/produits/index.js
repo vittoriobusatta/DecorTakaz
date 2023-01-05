@@ -6,6 +6,7 @@ import Header from "../../components/Header";
 import fs from "fs";
 import path from "path";
 import gsap from "gsap";
+import { ArrowIcon } from "../../utils/icons";
 
 export async function getStaticProps() {
   const data = fs.readFileSync(path.join(process.cwd(), "/public/data.json"));
@@ -118,20 +119,34 @@ const Produits = ({ categoryArray }) => {
         </div>
 
         <div className="catagory_content">
-          <ul className="backcatalogue">
-            <Link href="/mobilier/">
-              <li>Mobilier</li>
-            </Link>
-            <Link href="/interieur/">
-              <li>Intérieur</li>
-            </Link>
-            <Link href="/produits/">
-              <li className="active">Produits</li>
-            </Link>
-            {/* <li>Architecture</li> */}
+        <ul className="backcatalogue">
+            <li>
+              <Link href="/mobilier/">
+                <h2>Mobilier</h2>
+              </Link>
+              <ArrowIcon />
+            </li>
+            <li>
+              <Link href="/interieur/">
+                <h2>Intérieur</h2>
+              </Link>
+              <ArrowIcon />
+            </li>
+            <li>
+              <Link href="/produits/">
+                <h2 className="active">Produits</h2>
+              </Link>
+              <ArrowIcon />
+            </li>
+            {/* <li>
+              <Link href="/architecture/">
+                <h2>Architecture</h2>
+              </Link>
+              <ArrowIcon />
+            </li> */}
           </ul>
 
-          <div className="filter">
+          {/* <div className="filter">
             <button
               className={filter === "all" ? "active" : ""}
               onClick={handleFilterChange}
@@ -160,7 +175,7 @@ const Produits = ({ categoryArray }) => {
             >
               Divers
             </button>
-          </div>
+          </div> */}
         </div>
 
         <ul className="gallerie">
