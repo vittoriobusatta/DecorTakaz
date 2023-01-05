@@ -12,7 +12,7 @@ function ScrollTop() {
 
       console.log(currentPosition);
 
-      if (currentPosition > scrollBottom || currentPosition < 600) {
+      if (currentPosition > scrollBottom || currentPosition < 300) {
         scrollButton.current.style.bottom = "-60px";
         scrollButton.current.style.opacity = 1;
       } else {
