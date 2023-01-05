@@ -30,7 +30,7 @@ function ScrollTop() {
       scrollButton.current.style.opacity = 0;
     }
 
-    intervalId = setInterval(onNoScroll, 5000);
+    intervalId = setInterval(onNoScroll, 3000);
 
     window.addEventListener("scroll", onScroll);
     return () => {
