@@ -153,7 +153,7 @@ ul.gallerie {
   width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 6px;
+  row-gap: 4px;
   & li {
     overflow: hidden;
     & .backcatalogue_title {
@@ -168,35 +168,36 @@ ul.gallerie {
         font-family: "Manrope";
         font-weight: 800;
         text-transform: uppercase;
-        color: #785436;
-        font-size: 17px;
+        color: #7F5539;
+        font-size: 19px;
         background: none;
         @media screen and (min-width: 1224px) {
-          font-size: 20px;
+          font-size: 24px;
         }
       }
     }
     &.question_active {
       & .filter {
         height: auto;
-        padding: 4px 14px;
+        padding: 4px 18px;
       }
     }
     & .filter {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      row-gap: 1px;
+      row-gap: 2px;
       height: 0;
       transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1) padding 0.45s
         cubic-bezier(0.16, 1, 0.3, 1);
       & button {
         font-weight: 600;
         font-family: "Manrope";
-        font-size: 14px;
+        font-size: 15px;
         color: #785436;
         background: none;
         cursor: pointer;
+        text-transform: uppercase;
       }
     }
   }

@@ -95,11 +95,8 @@ const Mobilier = ({ categoryArray }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = () => {
-    console.log("salut");
     setIsActive(!isActive);
   };
-
-  console.log(isActive);
 
   return (
     <>

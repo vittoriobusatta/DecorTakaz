@@ -92,6 +92,12 @@ const Produits = ({ categoryArray }) => {
     observer.observe(produitsContainerRef.current);
   }, []);
 
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <>
       <Head>
@@ -119,63 +125,81 @@ const Produits = ({ categoryArray }) => {
         </div>
 
         <div className="catagory_content">
-        <ul className="backcatalogue">
+          <ul className="backcatalogue">
             <li>
-              <Link href="/mobilier/">
-                <h2>Mobilier</h2>
-              </Link>
-              <ArrowIcon />
+              <div className="backcatalogue_title">
+                <Link href="/mobilier/">
+                  <h2>Mobilier</h2>
+                </Link>
+                <ArrowIcon />
+              </div>
             </li>
             <li>
-              <Link href="/interieur/">
-                <h2>Intérieur</h2>
-              </Link>
-              <ArrowIcon />
+              <div className="backcatalogue_title">
+                <Link href="/interieur/">
+                  <h2>Intérieur</h2>
+                </Link>
+                <ArrowIcon />
+              </div>
             </li>
-            <li>
-              <Link href="/produits/">
-                <h2 className="active">Produits</h2>
-              </Link>
-              <ArrowIcon />
+            <li className={isActive ? "question_active" : ""}>
+              <div
+                className="backcatalogue_title active"
+                onClick={() => handleClick()}
+              >
+                <Link href="/produits/">
+                  <button
+                    className={filter === "all" ? "active" : ""}
+                    onClick={handleFilterChange}
+                    value="all"
+                  >
+                    Produits
+                  </button>
+                </Link>
+                <svg
+                  height="20"
+                  viewBox="0 0 23 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={isActive ? "active" : ""}
+                >
+                  <path d="M23 14L0 28L5.75 14L0 0L23 14Z" fill="#785436" />
+                </svg>
+              </div>
+              <div className="filter">
+                <button
+                  className={filter === "lampe" ? "active" : ""}
+                  onClick={handleFilterChange}
+                  value="lampe"
+                >
+                  Lampes
+                </button>
+                <button
+                  className={filter === "mirroir" ? "active" : ""}
+                  onClick={handleFilterChange}
+                  value="mirroir"
+                >
+                  Mirroirs
+                </button>
+                <button
+                  className={filter === "other" ? "active" : ""}
+                  onClick={handleFilterChange}
+                  value="other"
+                >
+                  Divers
+                </button>
+              </div>
             </li>
+
             {/* <li>
-              <Link href="/architecture/">
-                <h2>Architecture</h2>
-              </Link>
-              <ArrowIcon />
+              <div className="backcatalogue_title">
+                <Link href="/architecture/">
+                  <h2>Architecture</h2>
+                </Link>
+                <ArrowIcon />
+              </div>
             </li> */}
           </ul>
-
-          {/* <div className="filter">
-            <button
-              className={filter === "all" ? "active" : ""}
-              onClick={handleFilterChange}
-              value="all"
-            >
-              Tous
-            </button>
-            <button
-              className={filter === "lampe" ? "active" : ""}
-              onClick={handleFilterChange}
-              value="lampe"
-            >
-              Lampes
-            </button>
-            <button
-              className={filter === "mirroir" ? "active" : ""}
-              onClick={handleFilterChange}
-              value="mirroir"
-            >
-              Mirroirs
-            </button>
-            <button
-              className={filter === "other" ? "active" : ""}
-              onClick={handleFilterChange}
-              value="other"
-            >
-              Divers
-            </button>
-          </div> */}
         </div>
 
         <ul className="gallerie">
