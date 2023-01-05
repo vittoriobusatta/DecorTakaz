@@ -71,6 +71,15 @@
     "desc": "Bois de Tamarin, Vert Emeraude",
     "dim": "1.20m, Hauteur : 75cm"
   },
+    {
+    "id": 17,
+    "name": "Buffet",
+    "catalogue": "mobilier",
+    "category": "commode",
+    "src": "/images/img17.webp",
+    "desc": "Bois de Tamarin",
+    "dim": ""
+  },
   {
     "id": 9,
     "name": "Table basse océan",
@@ -118,7 +127,7 @@
   },
   {
     "id": 14,
-    "name": "Mirroir",
+    "name": "Ensemble Douche",
     "catalogue": "interieur",
     "category": "bathroom",
     "src": "/images/img14.webp",
@@ -169,6 +178,15 @@
     "src": "/images/img23.webp",
     "desc": "Bois de Tamarin",
     "dim": ""
+  },
+  {
+    "id": 16,
+    "name": "Mirroir Mural",
+    "catalogue": "produits",
+    "category": "mirroir",
+    "src": "/images/img16.webp",
+    "desc": "Bois de Tamarin",
+    "dim": "1,20m x 50cm"
   },
   {
     "id": 24,

@@ -29,7 +29,6 @@ const Produits = ({ categoryArray }) => {
   };
 
   const filteredData = categoryArray.filter((item) => {
-    console.log(item);
     if (filter === "all") {
       return true;
     }
@@ -90,38 +89,6 @@ const Produits = ({ categoryArray }) => {
     });
 
     observer.observe(produitsContainerRef.current);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = imageReferences.current.indexOf(entry.target);
-          if (entry.isIntersecting && !animatedStatus.current[index]) {
-            animatedStatus.current[index] = true;
-            gsap.fromTo(
-              entry.target,
-              { y: 0, clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" },
-              {
-                delay: 0.3,
-                y: 0,
-                opacity: 1,
-                ease: "power4.out",
-                clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
-              }
-            );
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    imageReferences.current.forEach((ref) => {
-      observer.observe(ref);
-    });
-    return () => {
-      observer.disconnect();
-    };
   }, []);
 
   return (
@@ -202,7 +169,7 @@ const Produits = ({ categoryArray }) => {
               <div>
                 <div className="image_container hidden">
                   <Image
-                    className="opacity"
+                    // className="opacity"
                     ref={(el) => (imageReferences.current[index] = el)}
                     src={i.src}
                     alt={"Image " + i.id}
