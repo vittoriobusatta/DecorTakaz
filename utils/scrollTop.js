@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { GoTop } from "./icons";
 
 function ScrollTop() {
-  const [scrollTop, setScrollTop] = useState(0);
+  const [scrollBottom, setScrollBottom] = useState(0);
   const scrollButton = useRef(null);
 
   useEffect(() => {
@@ -10,13 +10,13 @@ function ScrollTop() {
     function onScroll() {
       let currentPosition = window.pageYOffset;
 
-      if (currentPosition > scrollTop) {
+      if (currentPosition > scrollBottom || currentPosition < 2000) {
         scrollButton.current.style.bottom = "-60px";
         scrollButton.current.style.opacity = 1;
       } else {
         scrollButton.current.style.bottom = "5px";
       }
-      setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
+      setScrollBottom(currentPosition <= 0 ? 0 : currentPosition);
     }
 
     function onNoScroll() {
@@ -30,7 +30,7 @@ function ScrollTop() {
       window.removeEventListener("scroll", onScroll);
       clearInterval(intervalId);
     };
-  }, [scrollTop]);
+  }, [scrollBottom]);
 
   return (
     <div className="scroll_btn" ref={scrollButton}>
