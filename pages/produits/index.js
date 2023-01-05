@@ -7,6 +7,7 @@ import fs from "fs";
 import path from "path";
 import gsap from "gsap";
 import { ArrowIcon } from "../../utils/icons";
+import ScrollTop from "../../utils/scrollTop";
 
 export async function getStaticProps() {
   const data = fs.readFileSync(path.join(process.cwd(), "/public/data.json"));
@@ -111,6 +112,8 @@ const Produits = ({ categoryArray }) => {
         id="category"
         className="category_head"
       >
+        <ScrollTop />
+
         <div className="category_title">
           <div className="hidden">
             <h5 ref={subtitleRef} className="subtitle opacity">
