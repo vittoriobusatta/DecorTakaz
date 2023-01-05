@@ -136,3 +136,10 @@ svg.active {
     fill: #c9986d;
   }
 }
+
+.scroll_btn {
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  transition: bottom 0.2s ease-out;
+}
