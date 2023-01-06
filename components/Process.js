@@ -135,7 +135,7 @@ const Process = () => {
         <ul className="process_steps">
           <li
             ref={(item) => (itemsRefs.current[0] = item)}
-            className="firststep"
+            className="firststep steps"
           >
             <div className="square">
               <PenIcon />
@@ -149,7 +149,7 @@ const Process = () => {
               votre intérieur.
             </p>
           </li>
-          <div className="connected_point firstpoint">
+          <li className="connected_point firstpoint">
             <svg
               width="4"
               height="43"
@@ -162,10 +162,10 @@ const Process = () => {
               <circle cx="2" cy="28" r="2" fill="#563213" />
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
-          </div>
+          </li>
           <li
             ref={(item) => (itemsRefs.current[1] = item)}
-            className="secondstep"
+            className="secondstep steps"
           >
             <div className="square">
               <LogIcon />
@@ -178,7 +178,7 @@ const Process = () => {
               caractéristiques pour que vous puissiez faire un choix éclairé.
             </p>
           </li>
-          <div className="connected_point secondpoint">
+          <li className="connected_point secondpoint">
             <svg
               width="4"
               height="43"
@@ -191,10 +191,10 @@ const Process = () => {
               <circle cx="2" cy="28" r="2" fill="#563213" />
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
-          </div>
+          </li>
           <li
             ref={(item) => (itemsRefs.current[2] = item)}
-            className="thirdstep"
+            className="thirdstep steps"
           >
             <div className="square">
               <ToolsIcon />
@@ -207,7 +207,7 @@ const Process = () => {
               manière artisanale, en respectant les traditions de la menuiserie.
             </p>
           </li>
-          <div className="connected_point thirdpoint">
+          <li className="connected_point thirdpoint">
             <svg
               width="4"
               height="43"
@@ -220,10 +220,10 @@ const Process = () => {
               <circle cx="2" cy="28" r="2" fill="#563213" />
               <circle cx="2" cy="41" r="2" fill="#563213" />
             </svg>
-          </div>
+          </li>
           <li
             ref={(item) => (itemsRefs.current[3] = item)}
-            className="fourthstep"
+            className="fourthstep steps"
           >
             <div className="square">
               <GiftIcon />

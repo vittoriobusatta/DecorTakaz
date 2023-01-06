@@ -146,7 +146,7 @@ const Question = () => {
       </div>
       <ul>
         {faqData.map((item, index) => (
-          <dl
+          <li
             key={index}
             onClick={() => handleClick(index)}
             className={
@@ -155,17 +155,17 @@ const Question = () => {
             ref={refs[index]}
           >
             <div className="question_content hidden">
-              <dt
+              <h4
                 className="opacity"
                 ref={(el) => (h3Refs.current[index] = el)}
               >
                 {item.question}
-              </dt>
+              </h4>
               <ArrrowFAQ />
             </div>
             <div className="question_overlay"></div>
-            <dd>{item.answer}</dd>
-          </dl>
+            <p>{item.answer}</p>
+          </li>
         ))}
       </ul>
     </section>

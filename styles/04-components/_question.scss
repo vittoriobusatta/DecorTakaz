@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 44px;
-    & dl {
+    & li {
       cursor: pointer;
       border-bottom: solid 2px rgba(80, 52, 3, 0.671);
       position: relative;
@@ -27,7 +27,7 @@
           flex: 0 0 16px;
           transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        & dt {
+        & h4 {
           font-family: "Manrope";
           font-style: normal;
           font-weight: 600;
@@ -41,12 +41,12 @@
         & .question_content svg {
           transform: rotate(90deg);
         }
-        & dd {
+        & p {
           height: auto;
           padding-bottom: 18px;
         }
       }
-      & dd {
+      & p {
         position: relative;
         z-index: 1;
         font-size: 14px;
