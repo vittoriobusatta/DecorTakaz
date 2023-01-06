@@ -6,6 +6,7 @@ import contactImgmobile from "../../public/images/section/contactMobile.webp";
 import { FacebookIcon, InstagramIcon } from "../../utils/icons";
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 function Contact() {
   const contactContainerRef = useRef(null);
@@ -91,8 +92,23 @@ function Contact() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section ref={contactContainerRef} className="contact">
-        <Header />
+      <Header />
+      <motion.section
+        initial={{
+          y: "0%",
+          clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+        }}
+        animate={{
+          y: "0%",
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        exit={{
+          opacity: 1,
+        }}
+        ref={contactContainerRef}
+        className="contact"
+      >
         <div className="contact_container">
           <div className="contact_layout_left">
             <Image src={contactImg} alt="contact" />
@@ -115,18 +131,29 @@ function Contact() {
                 <p className="contact_introduction">+262 6 92 43 51 92</p>
                 <div className="contact_adresse hidden">
                   <div className="hidden">
-                    <p className="opacity" ref={(el) => (spanRef.current[0] = el)}>
+                    <p
+                      className="opacity"
+                      ref={(el) => (spanRef.current[0] = el)}
+                    >
                       14 Rue Auguste de Villele
                     </p>
                   </div>
                   <div className="hidden">
-                    <p className="opacity" ref={(el) => (spanRef.current[1] = el)}>
+                    <p
+                      className="opacity"
+                      ref={(el) => (spanRef.current[1] = el)}
+                    >
                       Saint-Benoît 97470,
                     </p>
                   </div>
 
                   <div className="hidden">
-                    <p className="opacity" ref={(el) => (spanRef.current[2] = el)}>La Réunion</p>
+                    <p
+                      className="opacity"
+                      ref={(el) => (spanRef.current[2] = el)}
+                    >
+                      La Réunion
+                    </p>
                   </div>
                 </div>
                 <div className="contact_socials">
@@ -147,7 +174,7 @@ function Contact() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }

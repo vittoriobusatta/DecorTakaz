@@ -1,11 +1,14 @@
+import { AnimatePresence } from "framer-motion";
 import Loader from "../components/Loader";
 import "../styles/styles.scss";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <Loader />
-      <Component {...pageProps} />
+      <AnimatePresence initial={false} mode={"wait"}>
+        <Component key={router.pathname} {...pageProps} />
+      </AnimatePresence>
     </>
   );
 }

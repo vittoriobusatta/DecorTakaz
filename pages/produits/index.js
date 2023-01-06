@@ -8,6 +8,7 @@ import path from "path";
 import gsap from "gsap";
 import { ArrowIcon } from "../../utils/icons";
 import ScrollTop from "../../utils/scrollTop";
+import { motion } from "framer-motion";
 
 export async function getStaticProps() {
   const data = fs.readFileSync(path.join(process.cwd(), "/public/data.json"));
@@ -107,10 +108,22 @@ const Produits = ({ categoryArray }) => {
 
       <Header />
 
-      <section
+      <motion.section
         ref={produitsContainerRef}
         id="category"
         className="category_head"
+        initial={{
+          y: "0%",
+          clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+        }}
+        animate={{
+          y: "0%",
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        exit={{
+          opacity: 1,
+        }}
       >
         <ScrollTop />
 
@@ -236,7 +249,7 @@ const Produits = ({ categoryArray }) => {
             </li>
           ))}
         </ul>
-      </section>
+      </motion.section>
     </>
   );
 };

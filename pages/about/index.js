@@ -5,9 +5,9 @@ import Header from "../../components/Header";
 import aboutImg from "../../public/images/section/about.webp";
 import aboutImgmobile from "../../public/images/section/aboutMobile.webp";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 function About() {
-
   const aboutContainerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -68,13 +68,35 @@ function About() {
     <>
       <Head>
         <title>À Propos | Menuiserie Artisanale</title>
-        <meta name="keywords" content="entreprise, histoire, activités, objectifs" />
-        <meta name="description" content="En savoir plus sur notre entreprise et nos activités, ainsi que sur nos objectifs et notre histoire."/>
+        <meta
+          name="keywords"
+          content="entreprise, histoire, activités, objectifs"
+        />
+        <meta
+          name="description"
+          content="En savoir plus sur notre entreprise et nos activités, ainsi que sur nos objectifs et notre histoire."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section ref={aboutContainerRef} className="about">
-        <Header />
+      <Header />
+
+      <motion.section
+        initial={{
+          y: "0%",
+          clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+        }}
+        animate={{
+          y: "0%",
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        }}
+        transition={{ duration: 0.75, ease: "easeOut" }}
+        exit={{
+          opacity: 1,
+        }}
+        ref={aboutContainerRef}
+        className="about"
+      >
         <div className="about_container">
           <div className="about_layout_left">
             <Image src={aboutImg} alt="about" />
@@ -83,10 +105,14 @@ function About() {
           <div className="about_layout">
             <div className="about_head">
               <div className="hidden">
-                <h5 ref={subtitleRef} className="subtitle opacity">À Propos</h5>
+                <h5 ref={subtitleRef} className="subtitle opacity">
+                  À Propos
+                </h5>
               </div>
               <div className="hidden">
-                <h1 ref={titleRef} className="about_title title opacity">De nous</h1>
+                <h1 ref={titleRef} className="about_title title opacity">
+                  De nous
+                </h1>
               </div>
               <div className="introduction_container hidden">
                 <p className="about_introduction introduction">
@@ -106,10 +132,15 @@ function About() {
                 </p>
               </div>
             </div>
-            <Image className="opacity" ref={imageRef} src={aboutImgmobile} alt="about" />
+            <Image
+              className="opacity"
+              ref={imageRef}
+              src={aboutImgmobile}
+              alt="about"
+            />
           </div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 }
