@@ -21,40 +21,62 @@ const Process = () => {
   const paragraph4 = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const animateHeadElements = (titleRef, subtitleRef) => {
-            gsap.fromTo(
-              titleRef.current,
-              { y: 110, skewY: 10 },
-              {
-                delay: 0.3,
-                y: 0,
-                duration: 0.8,
-                opacity: 1,
-                skewY: 0,
-                ease: "power4.out",
-              }
-            );
-            gsap.fromTo(
-              subtitleRef.current,
-              { y: 70, skewY: 10 },
-              {
-                delay: 0.1,
-                y: 0,
-                opacity: 1,
-                skewY: 0,
-                ease: "power4.out",
-              }
-            );
-          };
-          animateHeadElements(titleRef, subtitleRef, paragraphRef);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, 
-    {threshold : 0.1}
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const animateHeadElements = (
+              titleRef,
+              subtitleRef,
+              paragraphRef
+            ) => {
+              gsap.fromTo(
+                titleRef.current,
+                { y: 110, skewY: 10 },
+                {
+                  delay: 0.3,
+                  y: 0,
+                  duration: 0.8,
+                  opacity: 1,
+                  skewY: 0,
+                  ease: "power4.out",
+                }
+              );
+              gsap.fromTo(
+                subtitleRef.current,
+                { y: 70, skewY: 10 },
+                {
+                  delay: 0.1,
+                  y: 0,
+                  opacity: 1,
+                  skewY: 0,
+                  ease: "power4.out",
+                }
+              );
+              gsap.fromTo(
+                paragraphRef.current,
+                {
+                  y: 60,
+                  skewY: 8,
+                  clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+                },
+                {
+                  duration: 0.6,
+                  delay: 0.4,
+                  y: 0,
+                  opacity: 1,
+                  skewY: 0,
+                  ease: "power4.out",
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                }
+              );
+            };
+            animateHeadElements(titleRef, subtitleRef, paragraphRef);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
     );
     observer.observe(processContainerRef.current);
   }, []);

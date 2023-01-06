@@ -12,7 +12,7 @@ function Release() {
   const releaseContainerRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
-  const paragrahRef = useRef(null);
+  const paragraphRef = useRef(null);
 
   const items = useRef([]);
   const iconTitle = useRef([]);
@@ -52,6 +52,23 @@ function Release() {
         opacity: 1,
         skewY: 0,
         ease: "power4.out",
+      }
+    );
+    gsap.fromTo(
+      paragraphRef.current,
+      {
+        y: 60,
+        skewY: 8,
+        clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+      },
+      {
+        duration: 0.6,
+        delay: 0.4,
+        y: 0,
+        opacity: 1,
+        skewY: 0,
+        ease: "power4.out",
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
       }
     );
     items.current.forEach((item, index) => {
@@ -96,7 +113,7 @@ function Release() {
           </h1>
         </div>
         <div className="introduction_container hidden">
-          <p ref={paragrahRef} className="introduction">
+          <p ref={paragraphRef} className="introduction">
             En tant que menuisier passionné, je suis toujours à la recherche de
             nouvelles idées et de matériaux innovants pour mes réalisations. Je
             prends le temps d&#39;écouter attentivement les souhaits et les

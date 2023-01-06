@@ -5,7 +5,7 @@ import "../styles/styles.scss";
 function MyApp({ Component, pageProps, router }) {
   return (
     <>
-      <Loader />
+      {/* <Loader /> */}
       <AnimatePresence initial={false} mode={"wait"}>
         <Component key={router.pathname} {...pageProps} />
       </AnimatePresence>
