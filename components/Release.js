@@ -113,7 +113,7 @@ function Release() {
           </h1>
         </div>
         <div className="introduction_container hidden">
-          <p ref={paragraphRef} className="introduction">
+          <p ref={paragraphRef} className="introduction opacity">
             En tant que menuisier passionné, je suis toujours à la recherche de
             nouvelles idées et de matériaux innovants pour mes réalisations. Je
             prends le temps d&#39;écouter attentivement les souhaits et les

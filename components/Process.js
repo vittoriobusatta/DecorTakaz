@@ -143,7 +143,7 @@ const Process = () => {
             </h1>
           </div>
           <div className="introduction_container hidden">
-            <p ref={paragraphRef} className="introduction">
+            <p ref={paragraphRef} className="introduction opacity">
               Décor ta Kaz est une entreprise spécialisée dans la conception et
               la fabrication de meubles et de structures en bois. Nous
               commençons par établir les spécifications du projet avec le
