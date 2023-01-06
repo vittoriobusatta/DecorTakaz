@@ -100,16 +100,17 @@ const Interieur = ({ categoryArray }) => {
         ref={interieurContainerRef}
         className="category_head cth_interieur"
         initial={{
-          y: "0%",
-          clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+          opacity: 0,
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
         }}
         animate={{
-          y: "0%",
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          opacity: 1,
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
         }}
         transition={{ duration: 0.75, ease: "easeOut" }}
         exit={{
           opacity: 1,
+          clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
         }}
       >
         <ScrollTop />
