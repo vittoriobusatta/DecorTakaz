@@ -5,10 +5,13 @@
   height: fit-content;
   @media screen and (min-width: 576px) {
     margin-top: 83px;
-    height: calc(100vh - 109px);
   }
   & .catalogue_container {
     height: fit-content;
+    @media screen and (min-width: 1224px) {
+      display: inline-flex;
+      height: calc(100vh - 109px);
+    }
   }
 }
 

@@ -101,16 +101,13 @@ const Interieur = ({ categoryArray }) => {
         className="category_head cth_interieur"
         initial={{
           opacity: 0,
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
         }}
         animate={{
           opacity: 1,
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
         }}
         transition={{ duration: 0.75, ease: "easeOut" }}
         exit={{
           opacity: 1,
-          clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
         }}
       >
         <ScrollTop />
