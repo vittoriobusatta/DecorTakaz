@@ -108,10 +108,12 @@ const Catalogue = () => {
       <motion.div
         initial={{
           y: "0%",
+          opacity: 0,
           clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
         }}
         animate={{
           y: "0%",
+          opacity: 1,
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
         }}
         transition={{ duration: 0.75, ease: "easeOut" }}
@@ -135,7 +137,7 @@ const Catalogue = () => {
                 <div className="hidden">
                   <h1
                     ref={titleRef}
-                    className="catalogue_introduction title opacity"
+                    className="catalogue_title title opacity"
                   >
                     Catalogue
                   </h1>
@@ -202,18 +204,16 @@ const Catalogue = () => {
                     />
                   </Link>
                 </li>
-                {/* <li>
-                <Link href="/">
+                <li className="disable">
                   <div className="catalogue_table_child">
-                    <p>Architecture</p>
+                    <p className="disable">Architecture</p>
                     <ArrowIcon />
                   </div>
                   <div
                     className="border opacity"
                     ref={(el) => (borderRef.current[4] = el)}
                   />
-                </Link>
-              </li> */}
+              </li>
               </ul>
             </div>
           </div>

@@ -84,10 +84,12 @@ function About() {
       <motion.section
         initial={{
           y: "0%",
+          opacity: 0,
           clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
         }}
         animate={{
           y: "0%",
+          opacity: 1,
           clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
         }}
         transition={{ duration: 0.75, ease: "easeOut" }}

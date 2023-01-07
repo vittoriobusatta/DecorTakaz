@@ -19,10 +19,11 @@
 
 @supports (padding: env(safe-area-inset-top)) {
   body {
-    height: calc(100% + $safe_area_inset_top);
+    // height: calc(100% + $safe_area_inset_top);
     background-color: $backgroundColor;
     font-family: "Manrope", sans-serif;
     font-size: 1.6rem;
+    overflow: hidden;
   }
 }
 
