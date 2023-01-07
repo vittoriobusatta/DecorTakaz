@@ -231,7 +231,7 @@ const Produits = ({ categoryArray }) => {
                 </h3>
                 <p>
                   {i.desc} <br />
-                  {i.dim}
+                  {/* {i.dim} */}
                 </p>
               </div>
             </li>

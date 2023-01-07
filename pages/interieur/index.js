@@ -218,7 +218,7 @@ const Interieur = ({ categoryArray }) => {
                 </div>
                 <p>
                   {i.desc} <br />
-                  {i.dim}
+                  {/* {i.dim} */}
                 </p>
               </div>
             </li>

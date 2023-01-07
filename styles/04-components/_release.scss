@@ -28,11 +28,19 @@
   grid-row-gap: 16px;
   width: 100%;
   padding: clamp(44px, 11rem, 104px) 26px;
-
   @media screen and (min-width: 768px) {
-    padding: 44px;
+    // padding: 44px 26px;
     display: flex;
     justify-content: space-between;
+    grid-column-gap: 6px;
+    padding: clamp(44px, 11rem, 104px) 26px;
+  }
+  @media screen and (min-width: 992px) {
+    grid-column-gap: 12px;
+  }
+  @media screen and (min-width: 1224px) {
+    grid-column-gap: 18px;
+    padding: clamp(44px, 11rem, 104px) 62px;
   }
   & li {
     height: 100%;
@@ -57,14 +65,18 @@
         stroke: #ede0d4;
       }
     }
+
+    @media screen and (min-width: 576px) {
+      height: 180px;
+    }
     @media screen and (min-width: 768px) {
       flex: 1;
     }
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: 992px) {
       height: 200px;
     }
     @media screen and (min-width: 1224px) {
-      height: 260px;
+      height: 240px;
       width: 24%;
       &:hover {
         background-color: #906745;
@@ -104,13 +116,15 @@
       margin-top: 14px;
     }
     @media screen and (min-width: 576px) {
-      padding-top: 40px;
+      padding-top: 24px;
+    }
+    @media screen and (min-width: 992px) {
+      padding-top: 30px;
     }
   }
   & p {
     font-weight: 600;
     font-size: 15px;
-    // line-height: 36px;
     text-transform: uppercase;
     color: #ede0d4;
     letter-spacing: 0.03em;

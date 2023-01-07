@@ -166,7 +166,7 @@ const Mobilier = ({ categoryArray }) => {
                   onClick={handleFilterChange}
                   value="lowtable"
                 >
-                  Tables Basse
+                  Tables Basses
                 </button>
                 <button
                   className={filter === "commode" ? "active" : ""}
@@ -228,7 +228,7 @@ const Mobilier = ({ categoryArray }) => {
                 </h3>
                 <p>
                   {i.desc} <br />
-                  {i.dim}
+                  {/* {i.dim} */}
                 </p>
               </div>
             </li>
