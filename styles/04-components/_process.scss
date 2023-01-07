@@ -33,7 +33,7 @@
     grid-template-rows: repeat(2, 1fr);
     grid-row-gap: 80px;
     grid-column-gap: 40px;
-    padding: 44px;
+    padding: 44px 42px;
     margin-top: clamp(44px, 11rem, 104px);
     & li.firststep {
       grid-area: 1 / 1 / 2 / 2;
