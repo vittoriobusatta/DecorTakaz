@@ -127,9 +127,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
           <Link onClick={() => handleMenuClose("/catalogue")} href="/catalogue">
             <div className="hidden">
               <li
-                className={
-                  pathname === "/catalogue" ? "menu_active" : ""
-                }
+                className={pathname === "/catalogue" ? "menu_active" : ""}
                 ref={(el) => (listitems.current[1] = el)}
               >
                 Catalogue
@@ -149,9 +147,7 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
           <Link onClick={() => handleMenuClose("/contact")} href="/contact">
             <div className="hidden">
               <li
-                className={
-                  pathname === "/contact" ? "menu_active" : ""
-                }
+                className={pathname === "/contact" ? "menu_active" : ""}
                 ref={(el) => (listitems.current[3] = el)}
               >
                 Contact
@@ -159,24 +155,30 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
             </div>
           </Link>
         </ul>
-        <ul ref={socialsitems} className="socials_links opacity">
-          <div className="hidden">
-            <li>
-              <a href="https://www.instagram.com/decortakaz/">Instagram</a>
-            </li>
+        <div className="menu_links">
+          <ul ref={socialsitems} className="socials_links opacity">
+            <div className="hidden">
+              <li>
+                <a href="https://www.instagram.com/decortakaz/">Instagram</a>
+              </li>
+            </div>
+            <div className="hidden">
+              <li>
+                <a href="https://www.facebook.com/people/D%C3%A9cor-ta-Kaz/100064274190012/">
+                  Facebook
+                </a>
+              </li>
+            </div>
+          </ul>
+          <div className="email_links hidden">
+            <a
+              className=""
+              ref={emailLinks}
+              href="mailto:contact@decortakaz.re"
+            >
+              contact@decortakaz.re
+            </a>
           </div>
-          <div className="hidden">
-            <li>
-              <a href="https://www.facebook.com/people/D%C3%A9cor-ta-Kaz/100064274190012/">
-                Facebook
-              </a>
-            </li>
-          </div>
-        </ul>
-        <div className="email_links hidden">
-          <a className="" ref={emailLinks} href="mailto:contact@decortakaz.re">
-            contact@decortakaz.re
-          </a>
         </div>
       </div>
     </section>
