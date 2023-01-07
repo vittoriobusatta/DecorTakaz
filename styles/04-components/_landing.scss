@@ -7,6 +7,7 @@
   left: 0;
   right: 0;
   background-color: #ede0d4;
+  min-height: 600px;
   @media screen and (min-width: 576px) {
     margin-top: 83px;
   }
@@ -63,14 +64,14 @@
   }
   & h5 {
     font-weight: 600;
-    font-size: min(3.5vw, 20px);
+    font-size: min(3.5vw, 18px);
     text-transform: uppercase;
     color: #785436;
   }
 
   & p {
     font-weight: 400;
-    font-size: min(3vw, 18px);
+    font-size: min(3vw, 14px);
     color: #785436;
   }
 }

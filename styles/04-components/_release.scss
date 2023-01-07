@@ -1,9 +1,6 @@
 .release {
   width: 100%;
-  margin-bottom: 90px;
-  @media screen and (min-width: 768px) {
-    margin-bottom: 100px;
-  }
+  margin-bottom: clamp(44px, 11rem, 104px);
 }
 
 .release_head {
@@ -30,24 +27,12 @@
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   width: 100%;
-  padding: 12px 26px 0;
-  @media screen and (min-width: 576px) {
-    margin-top: 30px;
-    padding: 0 22px;
-  }
+  padding: 22px 26px clamp(44px, 11rem, 104px);
+
   @media screen and (min-width: 768px) {
-    margin-top: 40px;
-    padding: 0 26px;
+    padding: 44px;
     display: flex;
     justify-content: space-between;
-  }
-  @media screen and (min-width: 992px) {
-    margin-top: 60px;
-    padding: 0 32px;
-  }
-  @media screen and (min-width: 1224px) {
-    margin-top: 80px;
-    padding: 0 42px;
   }
   & li {
     height: 100%;
@@ -75,15 +60,12 @@
     @media screen and (min-width: 768px) {
       flex: 1;
     }
-    @keyframes dashed {
-      0% {
-        stroke-dasharray: 0;
-      }
-      100% {
-        stroke-dasharray: 500;
-      }
+    @media screen and (min-width: 576px) {
+      height: 200px;
     }
     @media screen and (min-width: 1224px) {
+      height: 260px;
+      width: 24%;
       &:hover {
         background-color: #906745;
         & svg path {
@@ -92,13 +74,6 @@
           stroke: #d9a672;
         }
       }
-    }
-    @media screen and (min-width: 576px) {
-      height: 200px;
-    }
-    @media screen and (min-width: 1224px) {
-      height: 260px;
-      width: 24%;
     }
   }
 }

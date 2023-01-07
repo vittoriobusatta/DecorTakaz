@@ -5,21 +5,16 @@ footer {
   align-items: center;
   width: 100%;
   @media screen and (min-width: 768px) {
-    padding: 24px 42px;
-  }
-  @media screen and (min-width: 992px) {
-    padding: 24px 52px;
-  }
-  @media screen and (min-width: 1224px) {
-    padding: 24px 62px;
+    padding: 24px 24px;
   }
   & p {
     font-weight: 700;
     font-size: 12px;
+    font-size: clamp(12px, 1.6rem, 16px);
     color: #785436;
     max-width: 130px;
-    @media screen and (min-width: 768px) {
-      max-width: 300px;
+    @media screen and (min-width: 576px) {
+      max-width: none;
     }
     &:nth-child(1) {
       text-align: start;

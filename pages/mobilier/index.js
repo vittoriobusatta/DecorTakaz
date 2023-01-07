@@ -108,20 +108,10 @@ const Mobilier = ({ categoryArray }) => {
 
       <Header />
 
-      <motion.section
+      <section
         id="category"
         ref={mobilierContainerRef}
         className="category_head"
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
-        transition={{ duration: 0.75, ease: "easeOut" }}
-        exit={{
-          opacity: 1,
-        }}
       >
         <ScrollTop />
         <div className="category_title">
@@ -244,7 +234,7 @@ const Mobilier = ({ categoryArray }) => {
             </li>
           ))}
         </ul>
-      </motion.section>
+      </section>
     </>
   );
 };

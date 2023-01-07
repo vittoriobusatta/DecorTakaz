@@ -164,7 +164,7 @@ const Question = () => {
               <ArrrowFAQ />
             </div>
             <div className="question_overlay"></div>
-            <p>{item.answer}</p>
+            <p className="opacity">{item.answer}</p>
           </li>
         ))}
       </ul>

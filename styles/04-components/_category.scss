@@ -1,8 +1,7 @@
 #category {
   margin-top: 90px;
   @media screen and (min-width: 1224px) {
-    padding: 0 120px;
-    margin-top: 78px + 118px;
+    padding: 0 92px;
   }
 }
 
@@ -119,34 +118,6 @@ ul.gallerie {
   }
 }
 
-// .filter {
-//   background-color: #e1d2c1;
-//   display: inline-flex;
-//   column-gap: 30px;
-//   padding: 6px 20px;
-//   width: 100%;
-//   @media screen and (min-width: 768px) {
-//     max-width: 400px;
-//   }
-//   @media screen and (min-width: 992px) {
-//     column-gap: 80px;
-//     width: auto;
-//     column-gap: 40px;
-//     max-width: 440px;
-//   }
-//   button {
-//     background: none;
-//     font-family: "Manrope";
-//     font-weight: 800;
-//     font-size: 16px;
-//     line-height: 28px;
-//     text-transform: uppercase;
-//     color: #785436;
-//     white-space: nowrap;
-//     cursor: pointer;
-//   }
-// }
-
 .backcatalogue {
   padding: 0 34px;
   width: 100%;
@@ -186,8 +157,7 @@ ul.gallerie {
       align-items: flex-start;
       row-gap: 4px;
       height: 0;
-      transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1) padding 0.45s
-        cubic-bezier(0.16, 1, 0.3, 1);
+      transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
       & button {
         font-weight: 600;
         font-family: "Manrope";

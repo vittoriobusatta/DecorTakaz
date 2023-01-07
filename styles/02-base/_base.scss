@@ -53,7 +53,7 @@ html {
 
 main {
   position: absolute;
-  top: calc(100vh + 106px);
+  top: calc(100vh + 44px);
   left: 0;
   right: 0;
   background-color: #ede0d4;
@@ -66,51 +66,29 @@ main {
 
 .title {
   font-weight: 800;
-  font-size: max(11.5vw, 38px);
+  font-size: clamp(26px, 8rem, 74px);
   text-transform: uppercase;
   color: #6c5347;
-  @media screen and (min-width: 1224px) {
-    font-size: 110px;
-    line-height: 151px;
-  }
 }
 
 .subtitle {
-  font-size: max(2vw, 12px);
   letter-spacing: 0.05em;
   color: #d9a672;
   font-weight: 800;
   text-transform: uppercase;
-  @media screen and (min-width: 1224px) {
-    font-size: 24px;
-    line-height: 33px;
-  }
+  font-size: clamp(12px, 1.8rem, 18px);
 }
 
 .introduction {
   font-weight: 500;
   color: #785436;
-  max-width: 1200px;
+  max-width: 1000px;
   text-align: start;
-  font-size: 14px;
-  @media screen and (min-width: 576px) {
-    font-size: 15px;
-  }
-  @media screen and (min-width: 768px) {
-    padding: 24px 0 48px;
-    font-size: 16px;
-  }
-  @media screen and (min-width: 992px) {
-    font-size: 18px;
-  }
-  @media screen and (min-width: 1224px) {
-    font-size: 20px;
-    line-height: 26px;
-  }
+  font-size: clamp(14px, 2rem, 18px);
 }
 
 .introduction_container {
-  margin: 24px 0 48px;
+  margin: 24px 0 44px;
 }
 
 .hidden {
@@ -130,6 +108,10 @@ main {
   background-color: #785436;
 }
 
+.circle {
+  border-radius: 50%;
+}
+
 svg.active {
   transform: rotate(90deg) !important;
   & path {
@@ -140,7 +122,6 @@ svg.active {
 .scroll_btn {
   position: fixed;
   bottom: 5px;
-  // right: 24px;
   left: 50%;
   transform: translate(-50%, 0%);
   opacity: 0;

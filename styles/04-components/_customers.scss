@@ -1,5 +1,5 @@
 .customers {
-  padding: 44px 26px;
+  padding: clamp(44px, 11rem, 104px) 26px;
 }
 
 .customers_container {
@@ -9,20 +9,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  // @media screen and (min-width: 1224px) {
-  //   padding: 100px 30px;
-  // }
   & h2 {
     font-weight: 800;
-    font-size: 18px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #785436;
     opacity: 0;
-    @media screen and (min-width: 1224px) {
-      font-size: 24px;
-      line-height: 33px;
-    }
+    font-size: clamp(18px, 2.6rem, 22px);
   }
 }
 
@@ -46,12 +39,12 @@
     overflow: hidden;
     & img {
       height: auto;
-      width: 45px;
+      width: 6rem;
       min-width: 35px;
       opacity: 0;
-      @media screen and (min-width: 1224px) {
-        width: 70px;
-      }
+      // @media screen and (min-width: 1224px) {
+      //   width: 70px;
+      // }
     }
   }
 }

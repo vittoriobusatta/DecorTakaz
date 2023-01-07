@@ -1,0 +1,8 @@
+@keyframes dashed {
+  0% {
+    stroke-dasharray: 0;
+  }
+  100% {
+    stroke-dasharray: 500;
+  }
+}

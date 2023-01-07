@@ -108,20 +108,10 @@ const Produits = ({ categoryArray }) => {
 
       <Header />
 
-      <motion.section
+      <section
         ref={produitsContainerRef}
         id="category"
         className="category_head"
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
-        transition={{ duration: 0.75, ease: "easeOut" }}
-        exit={{
-          opacity: 1,
-        }}
       >
         <ScrollTop />
 
@@ -247,7 +237,7 @@ const Produits = ({ categoryArray }) => {
             </li>
           ))}
         </ul>
-      </motion.section>
+      </section>
     </>
   );
 };

@@ -15,23 +15,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 44px 26px;
-  @media screen and (min-width: 576px) {
-    padding: 44px 32px;
-  }
-  @media screen and (min-width: 1224px) {
-    padding: 100px 30px;
-  }
+  padding: clamp(44px, 11rem, 104px) 26px;
   & h2 {
     font-weight: 800;
-    font-size: 18px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     opacity: 0;
-    @media screen and (min-width: 1224px) {
-      font-size: 24px;
-      line-height: 33px;
-    }
+    font-size: clamp(18px, 2.6rem, 22px);
   }
 }
 
@@ -42,35 +32,20 @@
   flex-direction: column;
   margin-top: 40px;
   & .reviews_quote {
-    font-weight: 500;
-    font-size: 56px;
-    text-align: center;
-    color: #785436;
-    @media screen and (min-width: 1224px) {
-      font-size: 96px;
-      line-height: 132px;
+    padding: 24px 0 40px 0;
+    & svg {
+      height: clamp(16px, 2.2rem, 24px)
     }
   }
   & .reviews_paragraph p {
-    font-size: 16px;
+    font-size: clamp(16px, 2rem, 20px);
     font-weight: 500;
     text-align: center;
     color: #ede0d4;
     max-width: 650px;
     margin-bottom: 40px;
-    @media screen and (min-width: 576px) {
-      font-size: 17px;
-    }
-    @media screen and (min-width: 768px) {
-      font-size: 18px;
-    }
-    @media screen and (min-width: 992px) {
-      font-size: 20px;
-    }
     @media screen and (min-width: 1224px) {
-      font-size: 24px;
-      line-height: 165%;
-      max-width: 850px;
+      max-width: 800px;
     }
   }
 }
@@ -83,6 +58,10 @@
   & img {
     height: 50px;
     width: auto;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    &:hover {
+      transform: scale(1.15);
+    }
     @media screen and (min-width: 1224px) {
       height: 80px;
     }
