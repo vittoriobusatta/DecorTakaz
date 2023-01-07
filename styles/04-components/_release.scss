@@ -27,7 +27,7 @@
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   width: 100%;
-  padding: 22px 26px clamp(44px, 11rem, 104px);
+  padding: clamp(44px, 11rem, 104px) 26px;
 
   @media screen and (min-width: 768px) {
     padding: 44px;
