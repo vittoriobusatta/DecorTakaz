@@ -1,5 +1,17 @@
 .customers {
   padding: 44px 26px;
+  @media screen and (min-width: 576px) {
+    padding: 44px 32px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 44px 42px;
+  }
+  @media screen and (min-width: 992px) {
+    padding: 88px 52px;
+  }
+  @media screen and (min-width: 1224px) {
+    padding: 88px 62px;
+  }
 }
 
 .customers_container {
@@ -39,12 +51,12 @@
     overflow: hidden;
     & img {
       height: auto;
-      width: 6rem;
+      width: 45px;
       min-width: 35px;
       opacity: 0;
-      // @media screen and (min-width: 1224px) {
-      //   width: 70px;
-      // }
+      @media screen and (min-width: 1224px) {
+        width: 65px;
+      }
     }
   }
 }

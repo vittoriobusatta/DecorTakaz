@@ -1,6 +1,18 @@
 .question {
   width: 100%;
   padding: 44px 26px;
+  @media screen and (min-width: 576px) {
+    padding: 44px 32px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 44px 42px;
+  }
+  @media screen and (min-width: 992px) {
+    padding: 88px 52px;
+  }
+  @media screen and (min-width: 1224px) {
+    padding: 88px 62px;
+  }
   ul {
     display: flex;
     flex-direction: column;
