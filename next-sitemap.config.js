@@ -1,7 +1,5 @@
 module.exports = {
-    siteUrl: 'https://www.decortakaz.re',
-    generateRobotsTxt: true,
-    ignoredExtensions: [
-        'png', 'jpg', 'jpeg', 'gif', 'svg', 'pdf'
-    ],
+  siteUrl: process.env.SITE_URL || "https://www.decortakaz.re",
+  generateRobotsTxt: true,
+  generateIndexSitemap: false,
 };
