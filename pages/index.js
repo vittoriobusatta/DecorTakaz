@@ -208,7 +208,7 @@ const Home = () => {
         <title>Décor Ta Kaz | Menuiserie Artisanale</title>
         <meta
           name="description"
-          content="Menuisier artisan spécialisée dans la conception et la fabrication de meubles et de structures en bois. Nous proposons des solutions sur mesure et de qualité pour tous vos projets."
+          content="Menuisier artisan spécialisée dans la conception et la fabrication de meubles et de structures en bois. Nous proposons des solutions sur mesure et de qualité pour tous vos projets sur l'île de la Réunion."
         />
         <link rel="icon" href="/favicon.ico" />
         <meta
