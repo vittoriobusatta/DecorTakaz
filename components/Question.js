@@ -47,10 +47,11 @@ const Question = () => {
           const animateElements = () => {
             gsap.fromTo(
               subtitleRef.current,
-              { y: 70, skewY: 10 },
+              { y: "300%", skewY: 10 },
               {
-                delay: 0.1,
-                y: 0,
+                delay: 0.3,
+                y: "0",
+                duration: 0.8,
                 opacity: 1,
                 skewY: 0,
                 ease: "power4.out",

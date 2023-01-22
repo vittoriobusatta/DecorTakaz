@@ -32,10 +32,10 @@ const Process = () => {
             ) => {
               gsap.fromTo(
                 titleRef.current,
-                { y: 110, skewY: 10 },
+                { y: "300%", skewY: 10 },
                 {
                   delay: 0.3,
-                  y: 0,
+                  y: "0",
                   duration: 0.8,
                   opacity: 1,
                   skewY: 0,
