@@ -171,12 +171,8 @@ function Menu({ setOpenMenu, openMenu, menuContainer, listitems }) {
             </div>
           </ul>
           <div className="email_links hidden">
-            <a
-              className=""
-              ref={emailLinks}
-              href="mailto:contact@decortakaz.re"
-            >
-              contact@decortakaz.re
+            <a className="" ref={emailLinks} href="mailto:decortakaz@gmail.com">
+              decortakaz@gmail.com
             </a>
           </div>
         </div>

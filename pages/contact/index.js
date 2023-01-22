@@ -129,7 +129,7 @@ function Contact() {
                 </h1>
               </div>
               <div className="introduction_container hidden">
-                <p className="contact_introduction">contact@decortakaz.re</p>
+                <p className="contact_introduction">decortakaz@gmail.com</p>
                 <p className="contact_introduction">+262 6 92 43 51 92</p>
                 <div className="contact_adresse hidden">
                   <div className="hidden">
