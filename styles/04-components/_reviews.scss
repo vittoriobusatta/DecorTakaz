@@ -30,10 +30,11 @@
   }
   & h2 {
     font-weight: 800;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     opacity: 0;
     font-size: clamp(18px, 2.6rem, 22px);
+    font-family: $TuskerGrotesk;
   }
 }
 
@@ -43,6 +44,7 @@
   align-items: center;
   flex-direction: column;
   margin-top: 40px;
+  font-family: $RivalSans;
   & .reviews_quote {
     padding: 24px 0 40px 0;
     & svg {
@@ -51,9 +53,9 @@
   }
   & .reviews_paragraph p {
     font-size: clamp(16px, 2rem, 20px);
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
-    color: #ede0d4;
+    color: $backgroundColor;
     max-width: 650px;
     margin-bottom: 40px;
     @media screen and (min-width: 1224px) {
@@ -82,7 +84,7 @@
     margin-top: 15px;
     overflow: hidden;
     & h4 {
-      font-weight: 800;
+      font-weight: 400;
       font-size: 18px;
       color: #ede0d4;
     }
@@ -99,7 +101,7 @@
       font-weight: 800;
       font-size: 12px;
       text-transform: uppercase;
-      color: #8e5f31;
+      color: $color2;
     }
     @media screen and (min-width: 1224px) {
       font-size: 16px;
@@ -118,11 +120,11 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #4e3d3a;
+  background-color: #4E3D3A;
   margin: 0 5px;
   cursor: pointer;
   &.active {
-    background-color: #ede0d4;
+    background-color: $backgroundColor;
   }
 }
 

@@ -1,6 +1,41 @@
 .process {
   width: 100%;
   // margin-bottom: clamp(44px, 11rem, 104px);
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 26px;
+    background-color: $accentColor;
+    color: $backgroundColor;
+    & h1 {
+      font-family: $TuskerGrotesk;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: $backgroundColor;
+    }
+    a {
+      font-family: $RivalSans;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+    @media screen and (min-width: 576px) {
+      padding: 0px 32px;
+    }
+    @media screen and (min-width: 768px) {
+      padding: 0 42px;
+    }
+    @media screen and (min-width: 992px) {
+      padding: 0 52px;
+    }
+    @media screen and (min-width: 1224px) {
+      padding: 0 62px;
+    }
+  }
 }
 
 .process_head {
@@ -60,10 +95,12 @@
     }
     & h3 {
       font-weight: 700;
-      color: #563213;
+      color: $accentColor;
+      text-transform: uppercase;
+      font-family: $RivalSans;
       margin: 16px 0px 6px;
       opacity: 0;
-      font-size: clamp(18px, 2.4rem, 20px);
+      font-size: clamp(16px, 2.4rem, 20px);
       @media screen and (min-width: 992px) {
         margin: 20px 0px 8px;
       }
@@ -72,7 +109,7 @@
       max-width: 300px;
       text-align: center;
       font-weight: 500;
-      color: #785436;
+      color: $color1;
       opacity: 0;
       font-size: clamp(14px, 2rem, 16px);
       @media screen and (min-width: 992px) {
@@ -107,11 +144,11 @@
 .square {
   width: 60px;
   height: 60px;
-  border: 2px solid #785436;
+  border: 2px solid $accentColor;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5%;
+  border-radius: 10px;
   @media screen and (min-width: 768px) {
     width: 70px;
     height: 70px;

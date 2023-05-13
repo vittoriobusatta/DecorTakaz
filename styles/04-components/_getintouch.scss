@@ -1,6 +1,6 @@
 .getintouch {
-  padding: 32px 26px;
-  background-color: #6B4525;
+  padding: 26px;
+  background-color: $color1;
   @media screen and (min-width: 1224px) {
   }
 }
@@ -11,11 +11,12 @@
   align-items: center;
   flex-direction: column;
   & span {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    row-gap: 4px;
     @media screen and (min-width: 1224px) {
       margin-bottom: 30px;
     }
@@ -24,23 +25,24 @@
       font-weight: 800;
       font-size: clamp(20px, 5vw, 38px);
       text-align: center;
-      color: #e0b07f;
+      color: $backgroundColor;
       white-space: nowrap;
       opacity: 0;
     }
   }
 
   & button {
-    font-weight: 800;
+    font-weight: 500;
     font-size: 11px;
     text-transform: uppercase;
-    background: #ede0d4;
+    background: transparent;
+    border: 1px solid $backgroundColor;
     border-radius: 4px;
     opacity: 0;
     padding: 6px 12px;
     & div {
       & p {
-        color: #785436;
+        color: $backgroundColor;
         white-space: nowrap;
       }
     }

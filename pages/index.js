@@ -1,13 +1,13 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Release from "../components/Release";
-import fort from "/assets/share/Subtract.webp";
+import fort from "/assets/share/forest.svg";
 import Reviews from "../components/Reviews";
-import soa from "/assets/share/soa.webp";
-import vittorio from "/assets/share/vb.webp";
-import trinity from "/assets/share/ljt.webp";
+import soa from "/assets/share/soa.svg";
+import vittorio from "/assets/share/vittorio.svg";
+import oliveblue from "/assets/share/oliveblue.svg";
 import Footer from "../components/Footer";
 import Process from "../components/Process";
 import gsap from "gsap";
@@ -107,13 +107,13 @@ const Customers = () => {
         </div>
         <ul ref={customersContainerRef} className="customers_content">
           <li>
-            <Image ref={icon1Ref} src={vittorio} alt="alt" />
-          </li>
-          <li>
             <Image ref={icon2Ref} src={soa} alt="alt" />
           </li>
           <li>
-            <Image ref={icon3Ref} src={trinity} alt="alt" />
+            <Image ref={icon1Ref} src={vittorio} alt="alt" />
+          </li>
+          <li>
+            <Image ref={icon3Ref} src={oliveblue} alt="alt" />
           </li>
         </ul>
       </div>
@@ -192,7 +192,7 @@ const Getintouch = () => {
         <button ref={contactButton}>
           <Link href="/contact">
             <div className="hidden">
-              <p ref={contactCta}>Nous Contacter</p>
+              <p ref={contactCta}>Faire un devis</p>
             </div>
           </Link>
         </button>
@@ -202,6 +202,15 @@ const Getintouch = () => {
 };
 
 const Home = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("/db.json")
+      .then((response) => response.json())
+      .then((resdata) => setData(resdata))
+      .catch((err) => setErreur(err.message));
+  }, []);
+
   return (
     <>
       <Head>
@@ -218,7 +227,7 @@ const Home = () => {
         <meta name="author" content="Décor Ta Kaz" />
         <meta name="geo.placename" content="Saint-Benoît" />
         <meta name="geo.region" content="Ile de la Réunion" />
-        
+
         <meta property="og:locale" content="fr_RE" />
         <meta property="og:type" content="website" />
         <meta
@@ -236,7 +245,7 @@ const Home = () => {
       <Header />
       <Landing />
       <main className="main">
-        <Release />
+        <Release data={data} />
         <Process />
         <Forest />
         <Customers />

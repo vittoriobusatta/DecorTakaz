@@ -1,139 +1,80 @@
 .release {
   width: 100%;
   // margin-bottom: clamp(44px, 11rem, 104px);
-}
-
-.release_head {
-  width: 100%;
-  padding: 0 26px;
-  @media screen and (min-width: 576px) {
-    padding: 0 32px;
-  }
-  @media screen and (min-width: 768px) {
-    padding: 0 42px;
-  }
-  @media screen and (min-width: 992px) {
-    padding: 0 52px;
-  }
-  @media screen and (min-width: 1224px) {
-    padding: 0 62px;
-  }
-}
-
-.release_category {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  width: 100%;
-  padding: clamp(44px, 11rem, 104px) 26px;
-  @media screen and (min-width: 768px) {
-    // padding: 44px 26px;
+  &__head {
     display: flex;
     justify-content: space-between;
-    grid-column-gap: 6px;
-    padding: clamp(44px, 11rem, 104px) 26px;
-  }
-  @media screen and (min-width: 992px) {
-    grid-column-gap: 12px;
-  }
-  @media screen and (min-width: 1224px) {
-    grid-column-gap: 18px;
-    padding: clamp(44px, 11rem, 104px) 62px;
-  }
-  & li {
-    height: 100%;
-    background-color: #745033;
-    height: 160px;
-    transition: 0.5s ease-out;
-    overflow: hidden;
-    opacity: 0;
-    &:nth-child(1) {
-      grid-area: 1 / 1 / 2 / 2;
+    align-items: center;
+    width: 100%;
+    padding: 8px 26px;
+    background-color: $accentColor;
+    color: $backgroundColor;
+    & h1 {
+      font-family: "Tusker Grotesk";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: $backgroundColor;
     }
-    &:nth-child(2) {
-      grid-area: 1 / 2 / 2 / 3;
+    a {
+      font-family: $RivalSans;
+      font-size: 11px;
+      text-transform: uppercase;
     }
-    &:nth-child(3) {
-      grid-area: 2 / 1 / 3 / 2;
-    }
-    &:nth-child(4) {
-      grid-area: 2 / 2 / 3 / 3;
-      background-color: #745033a3;
-      & svg path {
-        stroke: #ede0d4;
-      }
-    }
-
     @media screen and (min-width: 576px) {
-      height: 180px;
+      padding: 0px 32px;
     }
     @media screen and (min-width: 768px) {
-      flex: 1;
+      padding: 0 42px;
     }
     @media screen and (min-width: 992px) {
-      height: 200px;
+      padding: 0 52px;
     }
     @media screen and (min-width: 1224px) {
-      height: 240px;
-      width: 24%;
-      &:hover {
-        background-color: #906745;
-        & svg path {
-          stroke-dasharray: 0;
-          animation: dashed 1.5s forwards;
-          stroke: #d9a672;
-        }
+      padding: 0 62px;
+    }
+  }
+  &__category {
+    width: 100%;
+    &__item {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid $accentColor;
+      & a {
+        height: 100%;
+        width: 100%;
+        padding: 16px 26px;
+      }
+      & p {
+        font-family: $RivalSans;
+        font-size: 22px;
+        text-transform: uppercase;
+        color: $accentColor;
+        font-weight: 500;
       }
     }
   }
 }
 
-.release_category li {
-  & svg {
-    height: 50px;
-    width: auto;
-    @media screen and (min-width: 576px) {
-      height: 60px;
-    }
-    @media screen and (min-width: 992px) {
-      height: 70px;
-    }
-  }
-  & svg path {
-    transition: 0.5s ease-out;
-  }
-  & a {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
-    padding-top: 25px;
-    & div {
-      margin-top: 14px;
-    }
-    @media screen and (min-width: 576px) {
-      padding-top: 24px;
-    }
-    @media screen and (min-width: 992px) {
-      padding-top: 30px;
-    }
-  }
-  & p {
-    font-weight: 600;
-    font-size: 15px;
-    text-transform: uppercase;
-    color: #ede0d4;
-    letter-spacing: 0.03em;
-    @media screen and (min-width: 576px) {
-      font-size: 18px;
-    }
-    @media screen and (min-width: 1224px) {
-      font-size: 24px;
-      margin-top: 20px;
-    }
-  }
-}
+// .release_category {
+//   width: 100%;
+// padding: clamp(44px, 11rem, 104px) 26px;
+//   @media screen and (min-width: 768px) {
+//     // padding: 44px 26px;
+//     display: flex;
+//     justify-content: space-between;
+//     grid-column-gap: 6px;
+//     padding: clamp(44px, 11rem, 104px) 26px;
+//   }
+//   @media screen and (min-width: 992px) {
+//     grid-column-gap: 12px;
+//   }
+//   @media screen and (min-width: 1224px) {
+//     grid-column-gap: 18px;
+//     padding: clamp(44px, 11rem, 104px) 62px;
+//   }
+// }

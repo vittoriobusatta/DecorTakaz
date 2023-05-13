@@ -131,27 +131,16 @@ const Process = () => {
   return (
     <section ref={processContainerRef} className="process">
       <div className="process_content">
-        <div className="process_head">
+        <div className="process__head">
           <div className="hidden">
-            <h5 ref={subtitleRef} className="subtitle opacity">
-              Notre
-            </h5>
-          </div>
-          <div className="hidden">
-            <h1 ref={titleRef} className="title opacity">
-              Processus
+            <h1 ref={titleRef} className="title">
+              Notre Processus
             </h1>
           </div>
-          <div className="introduction_container hidden">
-            <p ref={paragraphRef} className="introduction opacity">
-              Décor ta Kaz est une entreprise spécialisée dans la conception et
-              la fabrication de meubles et de structures en bois. Nous
-              commençons par établir les spécifications du projet avec le
-              client, puis préparons les matériaux nécessaires et assemblons
-              chaque meuble ou structure avec soin. Nous veillons à ce que
-              chaque produit soit fini avec soin et vérifié pour garantir une
-              qualité exceptionnelle avant de le livrer à nos clients.
-            </p>
+          <div className="hidden">
+            <a ref={titleRef} className="release__head__cta">
+              Info
+            </a>
           </div>
         </div>
         <ul className="process_steps">
