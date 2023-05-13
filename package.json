@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fontsource/manrope": "^4.5.12",
+    "@vercel/analytics": "^1.0.1",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
     "framer-motion": "^8.1.9",
