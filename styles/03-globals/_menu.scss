@@ -5,7 +5,7 @@
   bottom: 0;
   right: 0;
   top: 0;
-  background: #2a201e;
+  background: $color1;
   z-index: -1;
   height: calc(100% + $safe_area_inset_top);
   opacity: 0;
@@ -16,12 +16,14 @@
   flex-direction: column;
   gap: 12px;
   & a {
-    color: #ede0d4;
-    font-family: "Manrope";
+    color: $backgroundColor;
+    font-family: $TuskerGrotesk;
     font-style: normal;
     font-weight: 500;
-    font-size: 42px;
+    font-size: 52px;
     text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
   }
   & li {
     opacity: 0;
@@ -31,7 +33,7 @@
     @media screen and (min-width: 1224px) {
       &:hover {
         letter-spacing: 0.5px;
-        color: #ddb892;
+        color: $color2;
       }
     }
   }
@@ -44,7 +46,7 @@
     margin-top: 8vh;
     gap: 6px;
     & li a {
-      color: #c9986d;
+      color: $color2;
       font-weight: 500;
       letter-spacing: 0.5px;
       font-size: 16px;
@@ -56,7 +58,7 @@
   & .email_links {
     margin-top: 60px;
     & a {
-      color: #ede0d4;
+      color: $color2;
       font-size: 18px;
     }
   }
@@ -84,7 +86,7 @@
 }
 
 .menu_active {
-  color: #ddb892;
+  color: $color2;
 }
 
 header {
