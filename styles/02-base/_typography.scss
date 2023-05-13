@@ -1,3 +1,9 @@
 @import "~@fontsource/manrope/index.css";
 @import "~@fontsource/manrope/500.css";
 @import "~@fontsource/manrope/800.css";
+
+@font-face {
+  font-family: "Tusker Grotesk";
+  src: url("/fonts/TuskerGrotesk/TuskerGrotesk-4800Super.woff2") format("woff2"),
+    url("/fonts/TuskerGrotesk-4800Super.ttf") format("truetype");
+}

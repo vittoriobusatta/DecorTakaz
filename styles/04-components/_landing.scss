@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #ede0d4;
+  background-color: $backgroundColor;
   min-height: 600px;
   @media screen and (min-width: 576px) {
     margin-top: 83px;
