@@ -1,15 +1,12 @@
 import React from "react";
-import { Asterix } from "../utils/icons";
 
 const Landing = () => {
   return (
     <section className="landing">
       <div className="landing_container">
         <div className="landing_title">
-          <h1>Décor</h1>
-          <h1>Ta Kaz</h1>
-          <Asterix />
-          <p>Depuis 2017</p>
+          <h1>Décor Ta Kaz</h1>
+          <h2>Menuiserie Artisanale</h2>
         </div>
         <div className="landing_location">
           <div className="landing_location_content">
@@ -19,7 +16,7 @@ const Landing = () => {
             </div>
             <div>
               <h5>Coordonnées</h5>
-              <p>55” 43” 3.402 E</p>
+              <p>21°2’37.304”S, 55°43’10.438”E </p>
             </div>
           </div>
         </div>
