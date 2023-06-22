@@ -3,11 +3,13 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-const HOST = process.env.HOST || "decortakaz-feat.vercel.app"
+const HOST = "http://localhost:3000"
 const categoryUrl = `${HOST}/api/categories`;
 const productUrl = `${HOST}/api/products`;
 
 export default function Category({ category, products }) {
+
+  console.log(process.env.HOST);
 
   return (
     <>
@@ -100,5 +102,10 @@ export async function getStaticPaths() {
     };
   } catch (error) {
     console.error(error);
+    return {
+      paths: [],
+      fallback: false,
+    };
   }
 }
+
