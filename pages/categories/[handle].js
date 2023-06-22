@@ -69,7 +69,7 @@ export async function getStaticProps({ params }) {
       props: {
         category,
         products: await productRes.data.filter(
-          (product) => product.categoryId === category.id
+          (product) => product.categoryId === category._id
         ),
       },
     };

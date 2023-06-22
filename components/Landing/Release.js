@@ -13,9 +13,9 @@ function Release({ categories, products }) {
         </div>
       </div>
       <ul className="release__category">
-        {categories?.map((item, index) => {
+        {categories.map((item, index) => {
           const categoryProducts = products.filter(
-            (product) => product.categoryId === item.id
+            (product) => product.categoryId === item._id
           );
 
           return (
