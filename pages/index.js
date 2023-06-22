@@ -11,7 +11,7 @@ import Getintouch from "../components/Landing/Getintouch";
 import Customers from "../components/Landing/Customers";
 import Forest from "../components/Landing/Forest";
 
-const HOST = "https://www.decortakaz.re"
+const HOST = process.env.NEXT_PUBLIC_HOST || "decortakaz-feat.vercel.app"
 const categoryUrl = `${HOST}/api/categories`;
 const productUrl = `${HOST}/api/products`;
 
