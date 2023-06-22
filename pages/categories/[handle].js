@@ -2,9 +2,8 @@ import axios from "axios";
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Header from "../../components/Header";
 
-const HOST = "http://localhost:3000";
+const HOST = process.env.HOST;
 const categoryUrl = `${HOST}/api/categories`;
 const productUrl = `${HOST}/api/products`;
 
