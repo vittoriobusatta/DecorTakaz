@@ -3,12 +3,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-const HOST = process.env.NEXT_PUBLIC_HOSTNAME
-const categoryUrl = `${HOST}/api/categories`;
-const productUrl = `${HOST}/api/products`;
-
 export default function Category({ category, products }) {
-
   return (
     <>
       <Head>
@@ -62,9 +57,10 @@ export default function Category({ category, products }) {
 export async function getStaticProps({ params }) {
   const { handle } = params;
   try {
+    const domain = process.env.NEXT_PUBLIC_HOSTNAME;
     const [productRes, categoryRes] = await Promise.all([
-      axios.get(productUrl),
-      axios.get(categoryUrl),
+      axios.get(`${domain}/api/products`),
+      axios.get(`${domain}/api/categories`),
     ]);
 
     const category = categoryRes.data.find(
@@ -90,7 +86,8 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   try {
-    const path = await axios.get(categoryUrl);
+    const domain = process.env.NEXT_PUBLIC_HOSTNAME;
+    const path = await axios.get(`${domain}/api/categories`);
     const paths = path.data.map((category) => ({
       params: { handle: category.handle },
     }));
@@ -106,4 +103,3 @@ export async function getStaticPaths() {
     };
   }
 }
-

@@ -11,15 +11,12 @@ import Getintouch from "../components/Landing/Getintouch";
 import Customers from "../components/Landing/Customers";
 import Forest from "../components/Landing/Forest";
 
-const HOST = process.env.NEXT_PUBLIC_HOSTNAME
-const categoryUrl = `${HOST}/api/categories`;
-const productUrl = `${HOST}/api/products`;
-
 export async function getServerSideProps() {
   try {
+    const domain = process.env.NEXT_PUBLIC_HOSTNAME;
     const [productRes, categoryRes] = await Promise.all([
-      axios.get(productUrl),
-      axios.get(categoryUrl),
+      axios.get(`${domain}/api/products`),
+      axios.get(`${domain}/api/categories`),
     ]);
     const products = productRes.data;
     const categories = categoryRes.data;
@@ -31,11 +28,16 @@ export async function getServerSideProps() {
     };
   } catch (error) {
     console.error(error);
+    return {
+      props: {
+        products: [],
+        categories: [],
+      },
+    };
   }
 }
 
 const Home = ({ products, categories }) => {
-
   return (
     <>
       <Head>
