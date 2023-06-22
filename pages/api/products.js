@@ -1,8 +1,7 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import clientPromise from "../../libs/mongodb";
 
 export default async function handler(req, res) {
-  const products = await prisma.product.findMany();
-  res.json(products);
+  const mongoClient = await clientPromise;
+  const data = await mongoClient.db().collection("Product").find({}).toArray();
+  res.status(200).json(JSON.parse(JSON.stringify(data)));
 }
