@@ -11,20 +11,16 @@ import Getintouch from "../components/Landing/Getintouch";
 import Customers from "../components/Landing/Customers";
 import Forest from "../components/Landing/Forest";
 
-const domain = "https://www.decortakaz.re";
+const domain = process.env.NEXT_PUBLIC_HOSTNAME;
 
 export async function getServerSideProps() {
   try {
-    const [productRes, categoryRes] = await Promise.all([
-      axios.get(`${domain}/api/products`).catch((err) => console.error(err)),
-      axios.get(`${domain}/api/categories`).catch((err) => console.error(err)),
-    ]);
-    const products = await productRes.data;
-    const categories = await categoryRes.data;
+    const productRes = await axios.get(`${domain}/api/products`);
+    const categoryRes = await axios.get(`${domain}/api/categories`);
     return {
       props: {
-        products,
-        categories,
+        products: await productRes.data,
+        categories: await categoryRes.data,
       },
     };
   } catch (error) {
