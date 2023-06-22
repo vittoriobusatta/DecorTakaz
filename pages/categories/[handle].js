@@ -3,7 +3,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-const HOST = process.env.NEXT_PUBLIC_HOST || "decortakaz-feat.vercel.app"
+const HOST = process.env.HOST || "decortakaz-feat.vercel.app"
 const categoryUrl = `${HOST}/api/categories`;
 const productUrl = `${HOST}/api/products`;
 
