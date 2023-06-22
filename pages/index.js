@@ -18,8 +18,8 @@ export async function getServerSideProps() {
       axios.get(`${domain}/api/products`),
       axios.get(`${domain}/api/categories`),
     ]);
-    const products = productRes.data;
-    const categories = categoryRes.data;
+    const products = await productRes.data;
+    const categories = await categoryRes.data;
     return {
       props: {
         products,
