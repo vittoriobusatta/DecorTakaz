@@ -3,12 +3,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-const HOST = process.env.NEXT_PUBLIC_HOSTNAME
-const categoryUrl = `${HOST}/api/categories`;
-const productUrl = `${HOST}/api/products`;
-
 export default function Category({ category, products }) {
-
   return (
     <>
       <Head>
@@ -62,18 +57,19 @@ export default function Category({ category, products }) {
 export async function getStaticProps({ params }) {
   const { handle } = params;
   try {
+    const domain = process.env.NEXT_PUBLIC_HOSTNAME;
     const [productRes, categoryRes] = await Promise.all([
-      axios.get(productUrl),
-      axios.get(categoryUrl),
+      axios.get(`${domain}/api/products`),
+      axios.get(`${domain}/api/categories`),
     ]);
 
-    const category = categoryRes.data.find(
+    const category = await categoryRes.data.find(
       (category) => category.handle === handle
     );
     return {
       props: {
         category,
-        products: productRes.data.filter(
+        products: await productRes.data.filter(
           (product) => product.categoryId === category.id
         ),
       },
@@ -90,8 +86,9 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   try {
-    const path = await axios.get(categoryUrl);
-    const paths = path.data.map((category) => ({
+    const domain = process.env.NEXT_PUBLIC_HOSTNAME;
+    const path = await axios.get(`${domain}/api/categories`);
+    const paths = await path.data.map((category) => ({
       params: { handle: category.handle },
     }));
     return {
@@ -106,4 +103,3 @@ export async function getStaticPaths() {
     };
   }
 }
-
