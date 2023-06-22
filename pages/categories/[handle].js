@@ -3,7 +3,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-const HOST = process.env.HOST;
+const HOST = "https://www.decortakaz.re/"
 const categoryUrl = `${HOST}/api/categories`;
 const productUrl = `${HOST}/api/products`;
 

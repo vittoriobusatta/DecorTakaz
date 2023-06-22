@@ -11,7 +11,7 @@ import Getintouch from "../components/Landing/Getintouch";
 import Customers from "../components/Landing/Customers";
 import Forest from "../components/Landing/Forest";
 
-const HOST = process.env.HOST;
+const HOST = "https://www.decortakaz.re/"
 const categoryUrl = `${HOST}/api/categories`;
 const productUrl = `${HOST}/api/products`;
 
