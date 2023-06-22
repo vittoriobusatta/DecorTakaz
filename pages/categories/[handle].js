@@ -3,6 +3,8 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
+const domain = "https://www.decortakaz.re";
+
 export default function Category({ category, products }) {
   return (
     <>
@@ -57,7 +59,6 @@ export default function Category({ category, products }) {
 export async function getStaticProps({ params }) {
   const { handle } = params;
   try {
-    const domain = process.env.NEXT_PUBLIC_HOSTNAME;
     const [productRes, categoryRes] = await Promise.all([
       axios.get(`${domain}/api/products`),
       axios.get(`${domain}/api/categories`),
@@ -86,7 +87,6 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   try {
-    const domain = process.env.NEXT_PUBLIC_HOSTNAME;
     const path = await axios.get(`${domain}/api/categories`);
     const paths = await path.data.map((category) => ({
       params: { handle: category.handle },
