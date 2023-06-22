@@ -45,8 +45,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    row-gap: 10vw;
-    padding: clamp(44px, 11rem, 104px) 26px;
+    row-gap: 62px;
+    padding: 44px 26px;
     @media screen and (min-width: 768px) {
       display: grid;
       align-items: flex-start;
