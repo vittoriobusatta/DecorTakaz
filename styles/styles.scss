@@ -10,16 +10,17 @@
 @import './03-globals/loader';
 @import './03-globals/menu';
 
+@import './04-components/landing/process';
+@import './04-components/landing/release';
+@import './04-components/landing/question';
+@import './04-components/landing/customers';
+@import './04-components/landing/getintouch';
+
 @import './04-components/category';
-@import './04-components/process';
 @import './04-components/reviews';
-@import './04-components/customers';
-@import './04-components/getintouch';
 @import './04-components/contact';
 @import './04-components/about';
 @import './04-components/catalogue';
-@import './04-components/release';
-@import './04-components/question';
 @import './04-components/landing';
 
 

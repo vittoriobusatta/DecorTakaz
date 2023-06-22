@@ -5,17 +5,17 @@ const faqData = [
   {
     question: "Comment passer commande ?",
     answer:
-      "Il vous suffit de choisir le type de menuiserie : fenêtre, porte, baie coulissante, la matière et de noter les dimensions de votre menuiserie.",
+      "Il vous est simplement nécessaire de sélectionner le type de menuiserie souhaité, qu'il s'agisse d'une fenêtre, d'une porte ou d'une baie coulissante, ainsi que le matériau désiré, et de prendre note des dimensions de votre menuiserie.",
   },
   {
     question: "Quels sont les modes de paiments",
     answer:
-      "Pour régler votre commande, Decor Ta Kaz vous propose le paiement via différents moyens : par carte bleue, chèque, virement, espèce.",
+      "Pour faciliter le règlement de votre commande, Decor Ta Kaz propose plusieurs moyens de paiement, tels que la carte bleue, le chèque, le virement ou en espèces. Vous pouvez choisir l'option qui vous convient le mieux.",
   },
   {
     question: "Comment vais-je reçevoir ma commande ?",
     answer:
-      "Votre commande sera acheminée par nos propre moyen. Nous prenons soin de protéger les menuiseries afin qu'elles vous arrivent sans encombre.",
+      "Nous acheminerons votre commande par nos propres moyens en prenant soin de protéger les menuiseries afin qu'elles vous parviennent en parfait état, sans aucun problème.",
   },
 ];
 
@@ -39,7 +39,7 @@ const Question = () => {
 
   return (
     <section ref={contactContainerRef} className="question">
-      <div className="release__head">
+      <div className="section__head">
         <div className="hidden">
           <h1 ref={titleRef} className="title">
             faqs

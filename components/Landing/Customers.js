@@ -13,13 +13,13 @@ function Customers() {
         </div>
         <ul className="customers_content">
           <li>
-            <Image src={soa} alt="alt" />
+            <Image src={soa} alt="soa" />
           </li>
           <li>
-            <Image src={vittorio} alt="alt" />
+            <Image src={vittorio} alt="vittorio" />
           </li>
           <li>
-            <Image src={oliveblue} alt="alt" />
+            <Image src={oliveblue} alt="oliveblue" />
           </li>
         </ul>
       </div>

@@ -10,6 +10,7 @@ import Question from "../components/Landing/Question";
 import Getintouch from "../components/Landing/Getintouch";
 import Customers from "../components/Landing/Customers";
 import Forest from "../components/Landing/Forest";
+import Footer from "../components/Footer";
 
 const domain = process.env.NEXT_PUBLIC_HOSTNAME;
 
@@ -35,7 +36,6 @@ export async function getServerSideProps() {
 }
 
 const Home = ({ products, categories }) => {
-  console.log(categories);
   return (
     <>
       <Head>
@@ -51,6 +51,7 @@ const Home = ({ products, categories }) => {
         <Testimonials />
         <Question />
         <Getintouch />
+        <Footer />
       </main>
     </>
   );

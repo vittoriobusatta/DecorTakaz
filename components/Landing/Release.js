@@ -4,12 +4,12 @@ import React from "react";
 function Release({ categories, products }) {
   return (
     <section className="release">
-      <div className="release__head">
+      <div className="section__head">
         <div className="hidden">
           <h1 className="title">Nos Réalisations</h1>
         </div>
         <div className="hidden">
-          <a className="release__head__cta">Voir tout</a>
+          <a>Voir tout</a>
         </div>
       </div>
       <ul className="release__category">
@@ -20,7 +20,9 @@ function Release({ categories, products }) {
 
           return (
             <li key={index} className="release__item">
-              <div className="release__item__background" />
+              <div
+                className={`release__item__background release__item__background__${item.handle}`}
+              />
               <Link href={`/categories${item.link}`}>
                 <h4>({categoryProducts.length})</h4>
                 <p>{item.name}</p>

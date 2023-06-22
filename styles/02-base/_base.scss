@@ -127,3 +127,44 @@ svg.active {
   opacity: 0;
   transition: bottom 0.2s ease-out, opacity 0.5s;
 }
+
+.section__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px 26px;
+  background-color: $accentColor;
+  color: $backgroundColor;
+  border-bottom: 2px solid $backgroundColor;
+  border-top: 2px solid $backgroundColor;
+  & h1 {
+    font-family: "Tusker Grotesk";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $backgroundColor;
+    @media screen and (min-width: 992px) {
+      font-size: 24px;
+    }
+  }
+  a {
+    font-family: $RivalSans;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+  @media screen and (min-width: 576px) {
+    padding: 10px 32px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 12px 42px;
+  }
+  @media screen and (min-width: 992px) {
+    padding: 12px 52px;
+  }
+  @media screen and (min-width: 1224px) {
+    padding: 12px 62px;
+  }
+}
