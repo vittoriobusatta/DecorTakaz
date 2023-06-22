@@ -4,9 +4,6 @@ const nextConfig = {
   experimental: {
     scrollRestoration: false,
   },
-  env: {
-    HOST: process.env.NEXT_PUBLIC_HOST,
-  },
 };
 
 module.exports = nextConfig;

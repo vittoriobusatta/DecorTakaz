@@ -11,12 +11,9 @@ import Getintouch from "../components/Landing/Getintouch";
 import Customers from "../components/Landing/Customers";
 import Forest from "../components/Landing/Forest";
 
-const HOST = "http://localhost:3000"
+const HOST = process.env.NEXT_PUBLIC_HOSTNAME
 const categoryUrl = `${HOST}/api/categories`;
 const productUrl = `${HOST}/api/products`;
-
-console.log(process.env.NEXT_PUBLIC_HOSTNAME);
-
 
 export async function getServerSideProps() {
   try {

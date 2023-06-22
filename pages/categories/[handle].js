@@ -3,13 +3,11 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
-const HOST = "http://localhost:3000"
+const HOST = process.env.NEXT_PUBLIC_HOSTNAME
 const categoryUrl = `${HOST}/api/categories`;
 const productUrl = `${HOST}/api/products`;
 
 export default function Category({ category, products }) {
-
-  console.log(process.env.HOST);
 
   return (
     <>
