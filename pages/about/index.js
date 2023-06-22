@@ -2,7 +2,7 @@ import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import Head from "next/head";
 import Header from "../../components/Header";
-import aboutImg from "../../public/images/section/about.webp";
+// import aboutImg from "../../public/images/section/about.webp";
 import aboutImgmobile from "../../public/images/section/aboutMobile.webp";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -101,7 +101,7 @@ function About() {
       >
         <div className="about_container">
           <div className="about_layout_left">
-            <Image src={aboutImg} alt="about" />
+            {/* <Image src={aboutImg} alt="about" /> */}
           </div>
 
           <div className="about_layout">

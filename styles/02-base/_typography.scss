@@ -1,3 +1,13 @@
-@import "~@fontsource/manrope/index.css";
-@import "~@fontsource/manrope/500.css";
-@import "~@fontsource/manrope/800.css";
+@import url("https://use.typekit.net/fqg5gfj.css");
+
+@font-face {
+  font-family: "Tusker Grotesk";
+  src: url("../../public/fonts/TuskerGrotesk-4800Super.woff2")
+      format("woff2"),
+    url("../../public/fonts/TuskerGrotesk-4800Super.ttf") format("truetype");
+
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+

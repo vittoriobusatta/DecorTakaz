@@ -10,53 +10,50 @@ function Loader() {
   const subtitleRef = useRef(null);
 
   useEffect(() => {
-    const onLoad = () => {
-      gsap.fromTo(
-        container.current,
-        { opacity: 1, y: 0 + "%", skewY: 0 + "deg" },
-        {
-          duration: 1,
-          ease: "expo.out",
-          delay: 3,
-          y: -110 + "%",
-          skewY: 2.5 + "deg",
-        }
-      );
-      gsap.fromTo(
-        overlay.current,
-        {
-          clipPath: "circle(0%",
-        },
-        {
-          delay: 1.6,
-          duration: 1,
-          ease: "Expo.easeInOut",
-          clipPath: "circle(100%",
-          opacity: 1,
-        }
-      );
-      gsap.fromTo(
-        titleRef.current,
-        { y: 70 },
-        {
-          delay: 0.3,
-          y: 0,
-          opacity: 1,
-          ease: "power2.out",
-        }
-      );
-      gsap.fromTo(
-        subtitleRef.current,
-        { y: 70 },
-        {
-          delay: 0.5,
-          y: 0,
-          opacity: 1,
-          ease: "power2.out",
-        }
-      );
-    }
-    onLoad()
+    gsap.fromTo(
+      container.current,
+      { opacity: 1, y: 0 + "%", skewY: 0 + "deg" },
+      {
+        duration: 1,
+        ease: "expo.out",
+        delay: 3,
+        y: -110 + "%",
+        skewY: 2.5 + "deg",
+      }
+    );
+    gsap.fromTo(
+      overlay.current,
+      {
+        clipPath: "circle(0%",
+      },
+      {
+        delay: 1.6,
+        duration: 1,
+        ease: "Expo.easeInOut",
+        clipPath: "circle(100%",
+        opacity: 1,
+      }
+    );
+    gsap.fromTo(
+      titleRef.current,
+      { y: 70 },
+      {
+        delay: 0.3,
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
+    gsap.fromTo(
+      subtitleRef.current,
+      { y: 70 },
+      {
+        delay: 0.5,
+        y: 0,
+        opacity: 1,
+        ease: "power2.out",
+      }
+    );
   }, []);
 
   return (
@@ -218,10 +215,14 @@ function Loader() {
         </svg>
         <div>
           <div className="hidden">
-            <h1 className="opacity" ref={titleRef}>Décor Ta Kaz</h1>
+            <h1 className="opacity" ref={titleRef}>
+              Décor Ta Kaz
+            </h1>
           </div>
           <div className="hidden">
-            <p className="opacity" ref={subtitleRef}>Menuiserie artisanale</p>
+            <p className="opacity" ref={subtitleRef}>
+              Menuiserie artisanale
+            </p>
           </div>
         </div>
       </div>

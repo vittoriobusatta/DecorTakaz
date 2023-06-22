@@ -1,249 +1,56 @@
 import Head from "next/head";
 import Header from "../components/Header";
-import React, { useEffect, useRef } from "react";
-import Image from "next/image";
-import Release from "../components/Release";
-import fort from "/assets/share/Subtract.webp";
-import Reviews from "../components/Reviews";
-import soa from "/assets/share/soa.webp";
-import vittorio from "/assets/share/vb.webp";
-import trinity from "/assets/share/ljt.webp";
-import Footer from "../components/Footer";
-import Process from "../components/Process";
-import gsap from "gsap";
-import Question from "../components/Question";
-import Link from "next/link";
-import Landing from "../components/Landing";
+import React from "react";
+import Landing from "../components/Landing/Landing";
+import axios from "axios";
+import Release from "../components/Landing/Release";
+import Process from "../components/Landing/Process";
+import Testimonials from "../components/Landing/Testimonials";
+import Question from "../components/Landing/Question";
+import Getintouch from "../components/Landing/Getintouch";
+import Customers from "../components/Landing/Customers";
+import Forest from "../components/Landing/Forest";
 
-const Forest = () => {
-  const forestContainerRef = useRef(null);
-  const imageForestRef = useRef(null);
+const HOST = process.env.NEXT_PUBLIC_HOSTNAME
+const categoryUrl = `${HOST}/api/categories`;
+const productUrl = `${HOST}/api/products`;
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateElements();
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-
-    observer.observe(forestContainerRef.current);
-  }, []);
-
-  function animateElements() {
-    gsap.fromTo(
-      imageForestRef.current,
-      { y: 200 },
-      {
-        delay: 0.3,
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        ease: "power2.out",
-      }
-    );
+export async function getServerSideProps() {
+  try {
+    const [productRes, categoryRes] = await Promise.all([
+      axios.get(productUrl),
+      axios.get(categoryUrl),
+    ]);
+    const products = productRes.data;
+    const categories = categoryRes.data;
+    return {
+      props: {
+        products,
+        categories,
+      },
+    };
+  } catch (error) {
+    console.error(error);
   }
+}
 
-  return (
-    <section ref={forestContainerRef} className="forest_container hidden">
-      <Image className="opacity" ref={imageForestRef} src={fort} alt="alt" />
-    </section>
-  );
-};
+const Home = ({ products, categories }) => {
 
-const Customers = () => {
-  const customersContainerRef = useRef(null);
-  const titleRef = useRef(null);
-  const icon1Ref = useRef(null);
-  const icon2Ref = useRef(null);
-  const icon3Ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateElements();
-          observer.unobserve(entry.target);
-        }
-      });
-    });
-
-    observer.observe(customersContainerRef.current);
-  }, []);
-
-  function animateElements() {
-    gsap.fromTo(
-      titleRef.current,
-      { y: 70 },
-      {
-        y: 0,
-        opacity: 1,
-        ease: "power2.out",
-      }
-    );
-
-    const icons = [icon1Ref, icon2Ref, icon3Ref];
-    icons.forEach((icon, index) => {
-      gsap.fromTo(
-        icon.current,
-        { y: 70 },
-        {
-          delay: index * 0.3,
-          y: 0,
-          opacity: 1,
-          ease: "power2.out",
-        }
-      );
-    });
-  }
-
-  return (
-    <section className="customers">
-      <div className="customers_container">
-        <div className="hidden">
-          <h2 ref={titleRef}>Nos Clients</h2>
-        </div>
-        <ul ref={customersContainerRef} className="customers_content">
-          <li>
-            <Image ref={icon1Ref} src={vittorio} alt="alt" />
-          </li>
-          <li>
-            <Image ref={icon2Ref} src={soa} alt="alt" />
-          </li>
-          <li>
-            <Image ref={icon3Ref} src={trinity} alt="alt" />
-          </li>
-        </ul>
-      </div>
-    </section>
-  );
-};
-
-const Getintouch = () => {
-  const contactTitles = useRef([]);
-  const contactButton = useRef(null);
-  const contactCta = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateElements(entry.target);
-        }
-      });
-    });
-    function animateElements(element) {
-      gsap.fromTo(
-        element,
-        { y: 70, skewY: 20 },
-        {
-          duration: 1.2,
-          y: 0,
-          opacity: 1,
-          skewY: 0,
-          ease: "power4.out",
-        }
-      );
-      gsap.fromTo(
-        contactButton.current,
-        { width: 0 },
-        {
-          delay: 0.5,
-          opacity: 1,
-          ease: "power2.out",
-          width: "auto",
-        }
-      );
-      gsap.fromTo(
-        contactCta.current,
-        { y: 70 },
-        {
-          y: 0,
-          delay: 0.8,
-          opacity: 1,
-          ease: "power2.out",
-        }
-      );
-      observer.unobserve(element);
-    }
-
-    contactTitles.current.forEach((title) => {
-      observer.observe(title);
-    });
-  }, []);
-
-  return (
-    <section className="getintouch">
-      <div className="getintouch_content">
-        <span>
-          <div className="hidden">
-            <p ref={(el) => (contactTitles.current[0] = el)}>
-              Impressionnez par notre travail?
-            </p>
-          </div>
-          <div className="hidden">
-            <p ref={(el) => (contactTitles.current[1] = el)}>
-              Contactez-nous maintenant
-            </p>
-          </div>
-        </span>
-        <button ref={contactButton}>
-          <Link href="/contact">
-            <div className="hidden">
-              <p ref={contactCta}>Nous Contacter</p>
-            </div>
-          </Link>
-        </button>
-      </div>
-    </section>
-  );
-};
-
-const Home = () => {
   return (
     <>
       <Head>
         <title>Accueil | Décor Ta Kaz</title>
-        <meta
-          name="description"
-          content="Menuisier artisan spécialisée dans la conception et la fabrication de meubles et de structures en bois. Nous proposons des solutions sur mesure et de qualité pour tous vos projets sur l'île de la Réunion."
-        />
-        <meta name="robots" content="index, follow" />
-        <meta
-          name="keywords"
-          content="menuisier, artisan, menuiserie, Réunion"
-        />
-        <meta name="author" content="Décor Ta Kaz" />
-        <meta name="geo.placename" content="Saint-Benoît" />
-        <meta name="geo.region" content="Ile de la Réunion" />
-        
-        <meta property="og:locale" content="fr_RE" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:description"
-          content="Menuisier artisan spécialisée dans la conception et la fabrication de meubles et de structures en bois. Nous proposons des solutions sur mesure et de qualité pour tous vos projets sur l'île de la Réunion."
-        />
-        <link rel="icon" href="/favicon.ico" />
-        <meta
-          property="og:image"
-          content="https://decortakaz.re/images/Banner.jpg"
-        />
-        <meta property="og:title" content="Décor Ta Kaz" />
       </Head>
 
-      <Header />
       <Landing />
       <main className="main">
-        <Release />
+        <Release products={products} categories={categories} />
         <Process />
         <Forest />
         <Customers />
-        <Reviews />
+        <Testimonials />
         <Question />
         <Getintouch />
-        <Footer />
       </main>
     </>
   );

@@ -4,15 +4,16 @@ footer {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  font-family: $RivalSans;
   @media screen and (min-width: 768px) {
     padding: 24px 24px;
   }
   & p {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 12px;
     font-size: clamp(12px, 1.6rem, 16px);
-    color: #785436;
-    max-width: 130px;
+    color: $accentColor;
+    flex: 1;
     @media screen and (min-width: 576px) {
       max-width: none;
     }
@@ -24,7 +25,7 @@ footer {
     }
   }
   & a {
-    color: #785436;
+    color: $accentColor;
     font-weight: 800;
     text-decoration: underline;
   }

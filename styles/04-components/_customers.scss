@@ -1,5 +1,5 @@
 .customers {
-  padding: 44px 26px;
+  padding: 32px 44px;
   @media screen and (min-width: 576px) {
     padding: 44px 32px;
   }
@@ -22,11 +22,11 @@
   align-items: center;
   flex-direction: column;
   & h2 {
+    font-family: $TuskerGrotesk;
     font-weight: 800;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #785436;
-    opacity: 0;
+    color: $accentColor;
     font-size: clamp(18px, 2.6rem, 22px);
   }
 }
