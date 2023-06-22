@@ -9,6 +9,8 @@
     padding: 8px 26px;
     background-color: $accentColor;
     color: $backgroundColor;
+    border-bottom: 2px solid $backgroundColor;
+    border-top: 2px solid $backgroundColor;
     & h1 {
       font-family: $TuskerGrotesk;
       font-style: normal;
@@ -17,6 +19,9 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: $backgroundColor;
+      @media screen and (min-width: 992px) {
+        font-size: 22px;
+      }
     }
     a {
       font-family: $RivalSans;
@@ -24,16 +29,16 @@
       text-transform: uppercase;
     }
     @media screen and (min-width: 576px) {
-      padding: 0px 32px;
+      padding: 10px 32px;
     }
     @media screen and (min-width: 768px) {
-      padding: 0 42px;
+      padding: 12px 42px;
     }
     @media screen and (min-width: 992px) {
-      padding: 0 52px;
+      padding: 12px 52px;
     }
     @media screen and (min-width: 1224px) {
-      padding: 0 62px;
+      padding: 12px 62px;
     }
   }
 }
