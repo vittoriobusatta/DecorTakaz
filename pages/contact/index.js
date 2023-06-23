@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React, { useRef } from "react";
-import Transition from "../../utils/Transition";
 
 function Contact() {
   const contactContainerRef = useRef(null);
@@ -24,4 +23,4 @@ function Contact() {
   );
 }
 
-export default Transition(Contact);
+export default Contact;

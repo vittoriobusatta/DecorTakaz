@@ -1,6 +1,5 @@
 import Head from "next/head";
-import React, {useRef } from "react";
-import Transition from "../../utils/Transition";
+import React, { useRef } from "react";
 
 const Catalogue = () => {
   const catalogueContainerRef = useRef(null);
@@ -20,4 +19,4 @@ const Catalogue = () => {
   );
 };
 
-export default Transition(Catalogue);
+export default Catalogue;

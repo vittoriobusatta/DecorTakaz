@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import Head from "next/head";
-import Transition from "../../utils/Transition";
 
 function About() {
   const aboutContainerRef = useRef(null);
@@ -27,4 +26,5 @@ function About() {
   );
 }
 
-export default Transition(About);
+export default About;
+
