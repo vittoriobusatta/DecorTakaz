@@ -1,11 +1,13 @@
 import React from "react";
+import { LandingTitle } from "../../utils/icons";
+
 
 const Landing = () => {
   return (
     <section className="landing">
       <div className="landing_container">
         <div className="landing_title">
-          <h1>Décor Ta Kaz</h1>
+          <LandingTitle />
           <h2>Menuiserie Artisanale</h2>
         </div>
         <div className="landing_location">

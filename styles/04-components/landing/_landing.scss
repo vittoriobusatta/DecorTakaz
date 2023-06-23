@@ -39,6 +39,10 @@
     font-family: $TuskerGrotesk;
     line-height: 1;
   }
+  & svg {
+    width: 100%;
+    height: fit-content;
+  }
   & h2 {
     font-family: $TuskerGrotesk;
     font-style: normal;
@@ -46,6 +50,7 @@
     font-size: min(4vw, 46px);
     text-transform: uppercase;
     color: $accentColor;
+    line-height: 1.8;
   }
 }
 
