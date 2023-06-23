@@ -23,7 +23,7 @@ export default function ImagePixelisation({ src, src10 }) {
 
   useEffect(() => {
     const options = {
-      threshold: 0.75,
+      threshold: 0.55,
       rootMargin: "0px",
       triggerOnce: true,
     };

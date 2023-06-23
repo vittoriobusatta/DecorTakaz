@@ -165,7 +165,7 @@ svg.active {
   min-height: -webkit-fill-available;
   height: calc(100% + $safe_area_inset_top);
   inset: 0;
-  background-color: $accentColor;
+  background-color: $color1;
   width: 100%;
   transform-origin: bottom;
   z-index: 999;
@@ -183,7 +183,7 @@ svg.active {
   min-height: -webkit-fill-available;
   height: calc(100% + $safe_area_inset_top);
   inset: 0;
-  background-color: $accentColor;
+  background-color: $color1;
   width: 100%;
   transform-origin: top;
   z-index: 999;
