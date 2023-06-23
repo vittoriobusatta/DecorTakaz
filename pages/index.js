@@ -14,7 +14,7 @@ import Transition from "../utils/transition";
 
 const domain = process.env.NEXT_PUBLIC_HOSTNAME;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const productRes = await axios.get(`${domain}/api/products`);
     const categoryRes = await axios.get(`${domain}/api/categories`);
