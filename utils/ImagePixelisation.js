@@ -40,7 +40,7 @@ export default function ImagePixelisation({ src, src10 }) {
             });
             setTimeout(() => {
               requestAnimationFrame(() => animate(ctx, image));
-            }, 250);
+            }, 150);
           };
           image.src = src;
         }
