@@ -4,6 +4,7 @@ const nextConfig = {
   experimental: {
     scrollRestoration: false,
   },
+  output: 'export',
 };
 
 module.exports = nextConfig;
