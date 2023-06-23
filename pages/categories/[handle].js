@@ -51,7 +51,7 @@ function Category({ category, products }) {
         </div>
         <ul className="gallery">
           {products.map((item, index) => (
-            <li key={item.id}>
+            <li key={index}>
               <div>
                 <div className="image_container hidden">
                   <Image
@@ -62,7 +62,6 @@ function Category({ category, products }) {
                     placeholder="blur"
                     blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8eOlgPQAIBQL16eAgtQAAAABJRU5ErkJggg==`}
                     style={{
-                      // maxWidth: "100%",
                       height: "auto",
                     }}
                   />
