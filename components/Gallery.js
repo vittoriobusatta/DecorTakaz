@@ -1,6 +1,5 @@
 import React from "react";
 import ImagePixelisation from "../utils/ImagePixelisation";
-import Link from "next/link";
 
 function Gallery({ products }) {
   return (
