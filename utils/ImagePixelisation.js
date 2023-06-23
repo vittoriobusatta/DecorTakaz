@@ -23,7 +23,7 @@ export default function ImagePixelisation({ src, src10 }) {
 
   useEffect(() => {
     const options = {
-      threshold: .75,
+      threshold: 0.75,
       rootMargin: "0px",
       triggerOnce: true,
     };
@@ -38,9 +38,7 @@ export default function ImagePixelisation({ src, src10 }) {
             const ctx = canvas.current.getContext("2d", {
               willReadFrequently: true,
             });
-            setTimeout(() => {
-              requestAnimationFrame(() => animate(ctx, image));
-            }, 50);
+            requestAnimationFrame(() => animate(ctx, image));
           };
           image.src = src;
         }
