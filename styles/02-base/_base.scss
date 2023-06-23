@@ -131,7 +131,7 @@ svg.active {
   border-bottom: 2px solid $backgroundColor;
   border-top: 2px solid $backgroundColor;
   & h1 {
-    font-family: "Tusker Grotesk";
+    font-family: $TuskerGrotesk;
     font-style: normal;
     font-weight: 800;
     font-size: 18px;

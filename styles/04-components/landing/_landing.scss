@@ -28,9 +28,11 @@
   justify-content: center;
   align-items: flex-end;
   flex-direction: column;
+  width: 91vw;
+  max-width: 1534px;
   & h1 {
     font-weight: 800;
-    font-size: min(19vw, 320px);
+    font-size: min(18vw, 302px);
     text-transform: uppercase;
     color: $accentColor;
     text-align: center;
@@ -41,7 +43,7 @@
     font-family: $TuskerGrotesk;
     font-style: normal;
     font-weight: 800;
-    font-size: min(4vw, 64px);
+    font-size: min(4vw, 46px);
     text-transform: uppercase;
     color: $accentColor;
   }
