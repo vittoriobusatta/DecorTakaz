@@ -3,7 +3,6 @@ import ImagePixelisation from "../utils/ImagePixelisation";
 import Link from "next/link";
 
 function Gallery({ products }) {
-  console.log(products);
   return (
     <>
       {products.length > 0 && (
