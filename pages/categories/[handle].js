@@ -1,8 +1,8 @@
 import axios from "axios";
 import React from "react";
 import Head from "next/head";
-import Transition from "../../utils/transition";
 import Gallery from "../../components/Gallery";
+import Transition from "../../utils/Transition";
 
 const domain = process.env.NEXT_PUBLIC_HOSTNAME;
 
