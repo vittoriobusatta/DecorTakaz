@@ -8,7 +8,10 @@ if (!uri) {
   );
 }
 
-const options = {};
+const options = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+};
 
 let client;
 let clientPromise;

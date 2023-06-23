@@ -1,28 +1,10 @@
 import axios from "axios";
 import React from "react";
 import Head from "next/head";
-import Image from "next/image";
 import Transition from "../../utils/transition";
+import Gallery from "../../components/Gallery";
 
 const domain = process.env.NEXT_PUBLIC_HOSTNAME;
-
-const filters = [
-  {
-    name: "Tout",
-  },
-  {
-    name: "Mobilier",
-  },
-  {
-    name: "Intérieur",
-  },
-  {
-    name: "Produits",
-  },
-  {
-    name: "Architecture",
-  },
-];
 
 function Category({ category, products }) {
   return (
@@ -40,39 +22,9 @@ function Category({ category, products }) {
             <div className="hidden">
               <h1>{category.name}</h1>
             </div>
-            <ul>
-              {filters.map((filter, index) => (
-                <li key={index} className="hidden">
-                  <h5>{filter.name},</h5>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
-        <ul className="gallery">
-          {products.map((item, index) => (
-            <li key={index}>
-              <div>
-                <div className="image_container hidden">
-                  <Image
-                    src={item.source}
-                    alt={"Image " + item.id}
-                    width={300}
-                    height={300}
-                    placeholder="blur"
-                    blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8eOlgPQAIBQL16eAgtQAAAABJRU5ErkJggg==`}
-                    style={{
-                      height: "auto",
-                    }}
-                  />
-                </div>
-                <div className="hidden">
-                  <h3>{item.name}</h3>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <Gallery products={products}/>
       </section>
     </>
   );
