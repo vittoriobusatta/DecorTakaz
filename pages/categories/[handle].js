@@ -2,17 +2,17 @@ import axios from "axios";
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
+import Transition from "../../transition";
 
 const domain = process.env.NEXT_PUBLIC_HOSTNAME;
 
-export default function Category({ category, products }) {
+function Category({ category, products }) {
   return (
     <>
       <Head>
         <title>{category.name} | Menuiserie Artisanale</title>
       </Head>
 
-      {/* <Header /> */}
       <section id="category">
         <div className="category_title">
           <div className="hidden">
@@ -43,10 +43,6 @@ export default function Category({ category, products }) {
                 <div className="hidden">
                   <h3>{item.name}</h3>
                 </div>
-                {/* <p>
-                  {item.description}
-                  {item.dimensions}
-                </p> */}
               </div>
             </li>
           ))}
@@ -55,6 +51,8 @@ export default function Category({ category, products }) {
     </>
   );
 }
+
+export default Transition(Category);
 
 export async function getStaticProps({ params }) {
   const { handle } = params;
