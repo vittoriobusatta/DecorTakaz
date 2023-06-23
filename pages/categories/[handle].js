@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import Head from "next/head";
 import Gallery from "../../components/Gallery";
+import Transition from "../../utils/Transition";
 
 const domain = process.env.NEXT_PUBLIC_HOSTNAME;
 
@@ -9,7 +10,7 @@ function Category({ category, products }) {
   return (
     <>
       <Head>
-        <title>{category.name} | Menuiserie Artisanale</title>
+        <title>Categories | Menuiserie Artisanale</title>
       </Head>
 
       <section id="category">
@@ -23,13 +24,13 @@ function Category({ category, products }) {
             </div>
           </div>
         </div>
-        <Gallery products={products}/>
+        <Gallery products={products} />
       </section>
     </>
   );
 }
 
-export default Category;
+export default Transition(Category);
 
 export async function getStaticProps({ params }) {
   const { handle } = params;
