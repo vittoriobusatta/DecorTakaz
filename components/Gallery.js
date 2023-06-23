@@ -2,6 +2,7 @@ import React from "react";
 import ImagePixelisation from "../utils/ImagePixelisation";
 
 function Gallery({ products }) {
+  console.log(products);
   return (
     <ul className="gallery">
       {products.map((item, index) => {
@@ -14,6 +15,9 @@ function Gallery({ products }) {
           </li>
         );
       })}
+      {products.length === 0 && (
+        <h1>{`Il n'y a pas encore de produits dans cette catégorie`}</h1>
+      )}
     </ul>
   );
 }
