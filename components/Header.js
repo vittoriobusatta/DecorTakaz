@@ -25,11 +25,32 @@ function Header() {
     }
   }, [openMenu]);
 
+  const [scollTop, setScrollTop] = useState(0);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      let currentPosition = window.scrollY;
+      if (currentPosition > scollTop) {
+        headerRef.current.classList.add("header__hidden");
+      } else {
+        headerRef.current.classList.remove("header__hidden");
+      }
+      setScrollTop(currentPosition <= 0 ? 0 : currentPosition);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scollTop]);
+
   return (
     <>
-      <header>
+      <header className="header" ref={headerRef}>
         <Link aria-label="Retourner à l'accueil" href="/">
-        <LogoIcon color={"#4E2705"} color2={"#FFF0E0"} onClick={handleCloseMenu} />
+          <LogoIcon
+            color={"#4E2705"}
+            color2={"#FFF0E0"}
+            onClick={handleCloseMenu}
+          />
         </Link>
         <button
           aria-label="menu"

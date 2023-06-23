@@ -1,4 +1,4 @@
-header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -21,6 +21,10 @@ header {
   }
   @media screen and (min-width: 1224px) {
     padding: 20px 62px;
+  }
+  &__hidden {
+    transform: translateY(-100%);
+    transition: transform 600ms ease;
   }
 }
 
