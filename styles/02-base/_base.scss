@@ -70,14 +70,6 @@ main {
   color: #6c5347;
 }
 
-.subtitle {
-  letter-spacing: 0.05em;
-  color: #d9a672;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: clamp(12px, 1.8rem, 18px);
-}
-
 .introduction {
   font-weight: 500;
   color: #785436;
@@ -177,6 +169,13 @@ svg.active {
   height: 100vh;
   transform-origin: bottom;
   z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & svg {
+    height: 80px;
+    width: auto;
+  }
 }
 
 .slide-out {
@@ -187,4 +186,11 @@ svg.active {
   height: 100vh;
   transform-origin: top;
   z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & svg {
+    height: 80px;
+    width: auto;
+  }
 }

@@ -2,9 +2,27 @@ import axios from "axios";
 import React from "react";
 import Head from "next/head";
 import Image from "next/image";
-import Transition from "../../transition";
+import Transition from "../../utils/transition";
 
 const domain = process.env.NEXT_PUBLIC_HOSTNAME;
+
+const filters = [
+  {
+    name: "Tout",
+  },
+  {
+    name: "Mobilier",
+  },
+  {
+    name: "Intérieur",
+  },
+  {
+    name: "Produits",
+  },
+  {
+    name: "Architecture",
+  },
+];
 
 function Category({ category, products }) {
   return (
@@ -16,13 +34,22 @@ function Category({ category, products }) {
       <section id="category">
         <div className="category_title">
           <div className="hidden">
-            <h5 className="subtitle opacity">({products.length})</h5>
+            <h5 className="subtitle">({products.length})</h5>
           </div>
-          <div className="hidden">
-            <h1 className="opacity">{category.name}</h1>
+          <div className="category__filters">
+            <div className="hidden">
+              <h1>{category.name}</h1>
+            </div>
+            <ul>
+              {filters.map((filter, index) => (
+                <li key={index} className="hidden">
+                  <h5>{filter.name},</h5>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-        <ul className="gallerie">
+        <ul className="gallery">
           {products.map((item, index) => (
             <li key={item.id}>
               <div>
@@ -35,7 +62,7 @@ function Category({ category, products }) {
                     placeholder="blur"
                     blurDataURL={`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8eOlgPQAIBQL16eAgtQAAAABJRU5ErkJggg==`}
                     style={{
-                      maxWidth: "100%",
+                      // maxWidth: "100%",
                       height: "auto",
                     }}
                   />

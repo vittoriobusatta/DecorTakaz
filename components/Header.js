@@ -29,7 +29,7 @@ function Header() {
     <>
       <header>
         <Link aria-label="Retourner à l'accueil" href="/">
-          <LogoIcon onClick={handleCloseMenu} />
+        <LogoIcon color={"#4E2705"} color2={"#FFF0E0"} onClick={handleCloseMenu} />
         </Link>
         <button
           aria-label="menu"

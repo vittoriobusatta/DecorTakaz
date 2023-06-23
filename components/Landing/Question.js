@@ -52,13 +52,13 @@ const Question = () => {
             key={index}
             onClick={() => handleClick(index)}
             className={
-              selectedIndex === index ? "question_active opacity" : "opacity"
+              // selectedIndex === index ? "question_active opacity" : "opacity"
+              selectedIndex === index ? "question_active" : ""
             }
             ref={refs[index]}
           >
             <div className="question_content hidden">
               <h4
-                className="opacity"
                 ref={(el) => (h3Refs.current[index] = el)}
               >
                 {item.question}
@@ -66,7 +66,7 @@ const Question = () => {
               <ArrrowFAQ />
             </div>
             <div className="question_overlay"></div>
-            <p className="opacity">{item.answer}</p>
+            <p>{item.answer}</p>
           </li>
         ))}
       </ul>
