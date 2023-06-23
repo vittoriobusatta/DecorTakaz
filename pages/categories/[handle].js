@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import Head from "next/head";
 import Gallery from "../../components/Gallery";
-import Transition from "../../utils/Transition";
+import Transition from '../../utils/Transition';
 
 const domain = process.env.NEXT_PUBLIC_HOSTNAME;
 

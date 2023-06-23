@@ -10,7 +10,7 @@ import Getintouch from "../components/Landing/Getintouch";
 import Customers from "../components/Landing/Customers";
 import Forest from "../components/Landing/Forest";
 import Footer from "../components/Footer";
-import Transition from "../utils/Transition";
+import Transition from '../utils/Transition';
 
 const domain = process.env.NEXT_PUBLIC_HOSTNAME;
 
