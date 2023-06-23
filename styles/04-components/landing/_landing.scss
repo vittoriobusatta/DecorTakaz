@@ -18,6 +18,19 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 0px 4vw;
+    @media screen and (min-width: 576px) {
+      padding: 0px 32px;
+    }
+    @media screen and (min-width: 768px) {
+      padding: 0px 42px;
+    }
+    @media screen and (min-width: 992px) {
+      padding: 0px 52px;
+    }
+    @media screen and (min-width: 1224px) {
+      padding: 0px 62px;
+    }
   }
 }
 
@@ -28,8 +41,7 @@
   justify-content: center;
   align-items: flex-end;
   flex-direction: column;
-  width: 91vw;
-  max-width: 1534px;
+  width: 100%;
   & h1 {
     font-weight: 800;
     font-size: min(18vw, 302px);
@@ -55,8 +67,7 @@
 }
 
 .landing_location {
-  width: 91vw;
-  max-width: 1534px;
+  width: 100%;
   font-family: $RivalSans;
   color: $accentColor;
   .landing_location_content {
