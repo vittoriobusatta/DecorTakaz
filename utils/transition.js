@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function Transition(Component) {
+function Transition(Component) {
   return function TransitionComponent(props) {
     return (
       <>
@@ -24,3 +24,5 @@ export default function Transition(Component) {
     );
   };
 }
+
+export default Transition;
