@@ -54,7 +54,7 @@
     width: 100%;
     height: 3px;
     background: $accentColor;
-    transition: transform 1s ease, background 1s ease;
+    transition: transform 1s ease, background 3.5s ease;
     border-radius: 10px;
     &:nth-child(1) {
       transform: translate3d(0, -5px, 0);
