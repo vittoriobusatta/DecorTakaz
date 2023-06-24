@@ -11,8 +11,8 @@ function Gallery({ products }) {
               <li key={index}>
                 <ImagePixelisation src={item.source} src10={item.source10} />
                 {/* <div className="hidden">
-              <h3>{item.name}</h3>
-            </div> */}
+                  <h3>{item.name}</h3>
+                </div> */}
               </li>
             );
           })}

@@ -1,5 +1,6 @@
 import React from "react";
 import { GiftIcon, LogIcon, PenIcon, ToolsIcon } from "../../utils/icons";
+import MaskText from "../../utils/MaskText";
 
 const process = [
   {
@@ -37,7 +38,11 @@ const Process = () => {
     <section className="process">
       <div className="section__head">
         <div className="hidden">
-          <h1 className="title">Notre Processus</h1>
+          <MaskText
+            phrases={["Notre Processus"]}
+            headingLevel={"1"}
+            className="section__head__title"
+          />
         </div>
         <div className="hidden">
           <a>Info</a>

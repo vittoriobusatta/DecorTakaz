@@ -130,13 +130,22 @@ svg.active {
   color: $backgroundColor;
   border-bottom: 2px solid $backgroundColor;
   border-top: 2px solid $backgroundColor;
-  & h1 {
+  &__title {
     font-family: $TuskerGrotesk;
     font-style: normal;
     font-weight: 800;
     font-size: 18px;
     text-transform: uppercase;
     color: $backgroundColor;
+    & div {
+      transform: translateY(100%);
+      transition: transform 0.55s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+    &--visible {
+      & div {
+        transform: translateY(0);
+      }
+    }
     @media screen and (min-width: 992px) {
       font-size: 24px;
     }
@@ -195,4 +204,3 @@ svg.active {
     width: auto;
   }
 }
-

@@ -1,5 +1,6 @@
 import React, { createRef, useRef, useState } from "react";
 import { ArrrowFAQ } from "../../utils/icons";
+import MaskText from "../../utils/MaskText";
 
 const faqData = [
   {
@@ -41,9 +42,11 @@ const Question = () => {
     <section ref={contactContainerRef} className="question">
       <div className="section__head">
         <div className="hidden">
-          <h1 ref={titleRef} className="title">
-            faqs
-          </h1>
+          <MaskText
+            phrases={["Faqs"]}
+            headingLevel={"1"}
+            className="section__head__title"
+          />
         </div>
       </div>
       <ul>
@@ -58,9 +61,7 @@ const Question = () => {
             ref={refs[index]}
           >
             <div className="question_content hidden">
-              <h4
-                ref={(el) => (h3Refs.current[index] = el)}
-              >
+              <h4 ref={(el) => (h3Refs.current[index] = el)}>
                 {item.question}
               </h4>
               <ArrrowFAQ />
