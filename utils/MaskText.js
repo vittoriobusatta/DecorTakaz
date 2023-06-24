@@ -7,8 +7,8 @@ function MaskText({ phrases, headingLevel, className }) {
   useEffect(() => {
     const options = {
       root: null,
-      rootMargin: "0px 0px -200px 0px",
-      threshold: 0.75,
+      rootMargin: "0px 0px -100px 0px",
+      threshold: 0.50,
     };
 
     const observer = new IntersectionObserver((entries, observer) => {

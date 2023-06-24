@@ -9,7 +9,7 @@ function Release({ categories, products }) {
     const options = {
       root: null,
       rootMargin: "0px 0px -100px 0px",
-      threshold: 0.75,
+      threshold: 0.50,
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
