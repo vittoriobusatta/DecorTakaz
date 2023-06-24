@@ -16,7 +16,7 @@ function Release({ categories, products }) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("release__item--visible");
-          // observer.unobserve(entry.target);
+          observer.unobserve(entry.target);
         } else {
           entry.target.classList.remove("release__item--visible");
         }
@@ -72,17 +72,15 @@ function Release({ categories, products }) {
               <div
                 className={`release__item__background release__item__background__${item.handle}`}
               />
-              {/* <div className="release__item__content"> */}
-                <Link
-                  href={`/categories${item.link}`}
-                  className="release__item__link"
-                >
-                  <h4>({categoryProducts.length})</h4>
-                  <div className="hidden">
-                    <h1>{item.name}</h1>
-                  </div>
-                </Link>
-              {/* </div> */}
+              <Link
+                href={`/categories${item.link}`}
+                className="release__item__content"
+              >
+                <h4>({categoryProducts.length})</h4>
+                <div className="hidden">
+                  <h1>{item.name}</h1>
+                </div>
+              </Link>
             </li>
           );
         })}

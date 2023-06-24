@@ -31,7 +31,7 @@
         display: none;
       }
     }
-    &__link {
+    &__content {
       display: flex;
       align-items: center;
       flex-direction: row;
@@ -77,7 +77,7 @@
       &::before {
         transform: scaleX(1);
       }
-      .release__item__link {
+      .release__item__content {
         transform: translateY(0);
       }
       & h1 {
