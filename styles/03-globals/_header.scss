@@ -26,6 +26,9 @@
     transform: translateY(-100%);
     transition: transform 600ms ease;
   }
+  &__logo {
+    z-index: 999;
+  }
 }
 
 .logo {
@@ -51,7 +54,7 @@
     width: 100%;
     height: 3px;
     background: $accentColor;
-    transition: transform 1s ease;
+    transition: transform 1s ease, background 1s ease;
     border-radius: 10px;
     &:nth-child(1) {
       transform: translate3d(0, -5px, 0);
@@ -64,6 +67,7 @@
   &.active {
     .bar {
       transition: transform 600ms ease;
+      background: $backgroundColor;
     }
 
     & .bar:nth-child(1) {

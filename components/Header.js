@@ -45,10 +45,14 @@ function Header() {
   return (
     <>
       <header className="header" ref={headerRef}>
-        <Link aria-label="Retourner à l'accueil" href="/">
+        <Link
+          className="header__logo"
+          aria-label="Retourner à l'accueil"
+          href="/"
+        >
           <LogoIcon
-            color={"#4E2705"}
-            color2={"#FFF0E0"}
+            color={openMenu ? "#FFF0E0" : "#4E2705"}
+            color2={openMenu ? "#4E2705" : "#FFF0E0"}
             onClick={handleCloseMenu}
           />
         </Link>
@@ -60,13 +64,13 @@ function Header() {
           <div className="bar"></div>
           <div className="bar"></div>
         </button>
+        <Menu
+          setOpenMenu={setOpenMenu}
+          openMenu={openMenu}
+          menuContainer={menuContainer}
+          listitems={listitems}
+        />
       </header>
-      <Menu
-        setOpenMenu={setOpenMenu}
-        openMenu={openMenu}
-        menuContainer={menuContainer}
-        listitems={listitems}
-      />
     </>
   );
 }
