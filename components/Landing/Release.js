@@ -16,7 +16,7 @@ function Release({ categories, products }) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("release__item--visible");
-          observer.unobserve(entry.target);
+          // observer.unobserve(entry.target);
         } else {
           entry.target.classList.remove("release__item--visible");
         }
