@@ -150,11 +150,30 @@ svg.active {
       font-size: 24px;
     }
   }
-  a {
-    font-family: $RivalSans;
-    font-size: 11px;
-    text-transform: uppercase;
+  &__link {
+    display: inline-flex;
+    align-items: baseline;
+    &:hover {
+      & svg {
+        &:first-child {
+          transform: translateX(20px);
+          @media screen and (min-width: 992px) {
+            transform: translateX(110%);
+          }
+        }
+        &:last-child {
+          transform: translateX(0);
+        }
+      }
+    }
+    span {
+      font-family: $RivalSans;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $backgroundColor;
+    }
   }
+
   @media screen and (min-width: 576px) {
     padding: 10px 32px;
   }
