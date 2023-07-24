@@ -16,9 +16,7 @@ function Contact() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="contact" ref={contactContainerRef}>
-        <h1>Contact</h1>
-      </section>
+      <section className="contact" ref={contactContainerRef}></section>
     </>
   );
 }

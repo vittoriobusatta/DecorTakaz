@@ -49,12 +49,9 @@ function Header() {
           className="header__logo"
           aria-label="Retourner à l'accueil"
           href="/"
+          onClick={() => setOpenMenu(false)}
         >
-          <LogoIcon
-            color={openMenu ? "#FFF0E0" : "#4E2705"}
-            color2={openMenu ? "#4E2705" : "#FFF0E0"}
-            onClick={handleCloseMenu}
-          />
+          <LogoIcon isActive={openMenu} onClick={handleCloseMenu} />
         </Link>
         <button
           aria-label="menu"
