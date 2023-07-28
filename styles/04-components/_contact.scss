@@ -118,12 +118,11 @@
     min-width: 320px;
   }
   &__footer {
-    padding: 22px min(6vw, 44px);
+    padding: 22px min(6vw, 44px) 44px;
     @media screen and (min-width: 576px) {
-      padding: 0 min(6vw, 44px);
+      padding: 0 min(6vw, 44px) 44px;
     }
     width: 100%;
-    padding-bottom: 44px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
