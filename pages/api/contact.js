@@ -3,8 +3,16 @@ import { mailOptions, transporter } from "../../utils/nodemailer";
 const CONTACT_MESSAGE_FIELDS = {
   name: "Name",
   email: "Email",
-  subject: "Subject",
-  message: "Message",
+  phone: "Téléphone",
+  city: "Ville",
+  type: "Type de projet",
+  height: "Hauteur",
+  width: "Largeur",
+  length: "Longueur",
+  budget: "Budget",
+  project: "Projet",
+  material: "Matériau",
+  comment: "Commentaire",
 };
 
 const generateEmailContent = (data) => {
@@ -26,15 +34,16 @@ const generateEmailContent = (data) => {
 const handler = async (req, res) => {
   if (req.method === "POST") {
     const data = req.body;
-    if (!data || !data.name || !data.email || !data.subject || !data.message) {
-      return res.status(400).send({ message: "Bad request" });
+
+    if (!data.name || !data.email) {
+      return res.status(400).json({ message: "Missing fields" });
     }
 
     try {
       await transporter.sendMail({
         ...mailOptions,
         ...generateEmailContent(data),
-        subject: data.subject,
+        subject: `Nouveau message de ${data.name}`,
       });
 
       return res.status(200).json({ success: true });
