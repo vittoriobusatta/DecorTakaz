@@ -2,6 +2,7 @@ import { mailOptions, transporter } from "../../utils/nodemailer";
 
 const CONTACT_MESSAGE_FIELDS = {
   name: "Name",
+  lastname: "Lastname",
   email: "Email",
   phone: "Téléphone",
   city: "Ville",
@@ -43,7 +44,7 @@ const handler = async (req, res) => {
       await transporter.sendMail({
         ...mailOptions,
         ...generateEmailContent(data),
-        subject: `Nouveau message de ${data.name}`,
+        subject: `Nouveau message de ${data.name} depuis le site web`,
       });
 
       return res.status(200).json({ success: true });

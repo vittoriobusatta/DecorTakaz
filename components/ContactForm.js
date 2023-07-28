@@ -212,7 +212,7 @@ export default function Home({ isOpened, setIsOpened }) {
 
   const actionLabel = useMemo(() => {
     if (step === STEPS.RECAP) {
-      return "Create";
+      return "Créer";
     }
 
     return "Suivant";
