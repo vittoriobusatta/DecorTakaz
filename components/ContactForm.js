@@ -270,7 +270,7 @@ export default function Home({ isOpened, setIsOpened }) {
   switch (step) {
     case STEPS.DETAILS:
       headerContent = (
-        <div className="form__content">
+        <div className="form__header__content">
           <h1>Détails du projet</h1>
         </div>
       );
@@ -354,7 +354,7 @@ export default function Home({ isOpened, setIsOpened }) {
       break;
     case STEPS.BUDGET:
       headerContent = (
-        <div className="form__content">
+        <div className="form__header__content">
           <h1>Budget</h1>
         </div>
       );
@@ -377,7 +377,7 @@ export default function Home({ isOpened, setIsOpened }) {
       break;
     case STEPS.COMMENTAIRE:
       headerContent = (
-        <div className="form__content">
+        <div className="form__header__content">
           <h1>Commentaire</h1>
         </div>
       );
@@ -400,7 +400,7 @@ export default function Home({ isOpened, setIsOpened }) {
       break;
     case STEPS.RECAP:
       headerContent = (
-        <div className="form__content">
+        <div className="form__header__content">
           <h1>Récapitulatif</h1>
         </div>
       );
@@ -514,7 +514,7 @@ export default function Home({ isOpened, setIsOpened }) {
                 height="24"
                 width="24"
                 stroke="#111"
-                stroke-width="3"
+                strokeWidth="3"
               >
                 <path d="m6 6 20 20M26 6 6 26"></path>
               </svg>
