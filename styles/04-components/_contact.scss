@@ -49,6 +49,11 @@
       color: $color1;
       margin: 0;
     }
+    &__content {
+      display: flex;
+      justify-content: center;
+      flex: 1 1;
+    }
   }
   &__body {
     height: 100%;
@@ -64,10 +69,8 @@
   }
   &__content {
     display: flex;
-    align-items: center;
     flex-direction: column;
     row-gap: min(5vw, 44px);
-    flex: 1 1;
   }
   &__form {
     display: flex;

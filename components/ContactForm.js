@@ -410,7 +410,7 @@ export default function Home({ isOpened, setIsOpened }) {
       break;
     default:
       headerContent = (
-        <div className="form__content">
+        <div className="form__header__content">
           <h1>Coordonnées</h1>
         </div>
       );
