@@ -20,12 +20,12 @@ const MATERIALS = [
     value: "resine",
   },
   {
-    label: "Bois massif",
-    value: "massif",
+    label: "Bois de sapin",
+    value: "sapin",
   },
   {
-    label: "Bois de rose",
-    value: "rose",
+    label: "Bois de cryptomeria",
+    value: "cryptomeria",
   },
 ];
 
