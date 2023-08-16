@@ -64,7 +64,7 @@
   &__content {
     display: flex;
     flex-direction: column;
-    row-gap: 44px;
+    row-gap: min(5vw, 44px);
   }
   &__form {
     display: flex;
