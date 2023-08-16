@@ -74,8 +74,8 @@ function Release({ categories, products }) {
                   transform="translate(6.441)"
                   fill="none"
                   stroke="#fff0e0"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
+                  strokeMiterlimit="10"
+                  strokeWidth="2"
                 ></line>{" "}
               </g>
             </svg>
@@ -98,8 +98,8 @@ function Release({ categories, products }) {
                   transform="translate(6.441)"
                   fill="none"
                   stroke="#fff0e0"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
+                  strokeMiterlimit="10"
+                  strokeWidth="2"
                 ></line>{" "}
               </g>
             </svg>
