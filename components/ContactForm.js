@@ -267,6 +267,7 @@ export default function Home({ isOpened, setIsOpened }) {
   let bodyContent;
   let headerContent;
 
+
   switch (step) {
     case STEPS.DETAILS:
       headerContent = (
@@ -502,7 +503,12 @@ export default function Home({ isOpened, setIsOpened }) {
     <>
       <div className="form">
         <div className="form__container">
-          <div className="form__header">
+          <div className="form__header"
+          style={{
+            "--step": `${step + 1}`,
+            "--total": Object.keys(STEPS).length
+          }}
+          >
             {headerContent}
             <button className="close" onClick={() => setIsOpened(false)}>
               <svg
