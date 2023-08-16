@@ -7,7 +7,8 @@
 
 .form {
   position: fixed;
-  z-index: 2;
+  height: calc(100% + $safe_area_inset_top);
+  z-index: 100;
   bottom: 0%;
   left: 0;
   display: flex;
@@ -37,8 +38,8 @@
   &__header {
     padding: 14px;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid $color1;
     & h1 {
@@ -63,8 +64,10 @@
   }
   &__content {
     display: flex;
+    align-items: center;
     flex-direction: column;
     row-gap: min(5vw, 44px);
+    flex: 1 1;
   }
   &__form {
     display: flex;

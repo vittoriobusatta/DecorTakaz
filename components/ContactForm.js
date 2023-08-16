@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
@@ -206,7 +206,7 @@ export default function Home({ isOpened, setIsOpened }) {
 
   const onNext = () => {
     if (stepIsValid()) {
-    setStep((value) => value + 1);
+      setStep((value) => value + 1);
     }
   };
 
@@ -502,7 +502,24 @@ export default function Home({ isOpened, setIsOpened }) {
     <>
       <div className="form">
         <div className="form__container">
-          <div className="form__header">{headerContent}</div>
+          <div className="form__header">
+            {headerContent}
+            <button className="close" onClick={() => setIsOpened(false)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 32 32"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                height="24"
+                width="24"
+                stroke="#111"
+                stroke-width="3"
+              >
+                <path d="m6 6 20 20M26 6 6 26"></path>
+              </svg>
+            </button>
+          </div>
           <div className="form__body">{bodyContent}</div>
           <div className="form__footer">
             {step !== STEPS.COORDONNES && (
