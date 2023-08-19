@@ -20,9 +20,8 @@
 @supports (padding: env(safe-area-inset-top)) {
   body {
     background-color: $backgroundColor;
-    font-family: "Manrope", sans-serif;
+    font-family: $RivalSans;
     font-size: 1.6rem;
-    overflow: hidden;
   }
 }
 
