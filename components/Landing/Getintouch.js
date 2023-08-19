@@ -4,7 +4,6 @@ import { useEstimate } from "../../hook/useEstimate";
 
 function Getintouch() {
   const { isOpened, onOpen } = useEstimate();
-  console.log(isOpened);
 
   return (
     <section className="getintouch">

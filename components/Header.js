@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import React from "react";
 import Link from "next/link";
 import { LogoIcon } from "../utils/icons";
+import { useEstimate } from "../hook/useEstimate";
 
 function Header() {
   const [scollTop, setScrollTop] = useState(0);
   const headerRef = useRef(null);
+  const { onOpen } = useEstimate();
 
   useEffect(() => {
     const onScroll = () => {
@@ -31,6 +33,9 @@ function Header() {
         >
           <LogoIcon />
         </Link>
+        <button onClick={onOpen}>
+          <p>Faire un devis</p>
+        </button>
       </header>
     </>
   );

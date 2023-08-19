@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Layout from "../components/Layout";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
+import Header from "../components/Header";
 
 function MyApp({ Component, pageProps, router }) {
   if (typeof window !== "undefined") {
@@ -38,11 +39,11 @@ function MyApp({ Component, pageProps, router }) {
     <>
       {/* <Loader /> */}
       <Analytics />
-      <Layout>
-        <AnimatePresence mode={"wait"}>
+      <AnimatePresence mode={"wait"}>
+        <Layout>
           <Component key={router.pathname} {...pageProps} />
-        </AnimatePresence>
-      </Layout>
+        </Layout>
+      </AnimatePresence>
     </>
   );
 }
