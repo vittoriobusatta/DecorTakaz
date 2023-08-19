@@ -3,10 +3,13 @@ import React from "react";
 import Head from "next/head";
 import Gallery from "../../components/Gallery";
 import Transition from "../../utils/SlideTransition";
+import ContactForm from "../../components/ContactForm";
+import { useEstimate } from "../../hook/useEstimate";
 
 const domain = process.env.NEXT_PUBLIC_HOSTNAME;
 
 function Category({ category, products }) {
+  const { isOpened } = useEstimate();
   return (
     <>
       <Head>
@@ -26,6 +29,10 @@ function Category({ category, products }) {
         </div>
         <Gallery products={products} />
       </section>
+
+      {isOpened && (
+        <ContactForm isOpened={isOpened} />
+      )}
     </>
   );
 }
