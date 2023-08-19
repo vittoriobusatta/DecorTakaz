@@ -1,6 +1,7 @@
-import { Fragment, useEffect, useMemo, useState } from "react";
+import { Fragment, use, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useEstimate } from "../hook/useEstimate";
 
 const STEPS = {
   COORDONNES: 0,
@@ -117,7 +118,8 @@ const Input = ({
   );
 };
 
-export default function Home({ isOpened, setIsOpened }) {
+export default function Home() {
+  const { onClose } = useEstimate();
   const [step, setStep] = useState(STEPS.COORDONNES);
   const [isLoading, setIsLoading] = useState(false);
   const { register, setValue, watch } = useForm({
@@ -244,7 +246,7 @@ export default function Home({ isOpened, setIsOpened }) {
       })
       .finally(() => {
         setIsLoading(false);
-        setIsOpened(false);
+        onClose();
       });
   };
 
@@ -266,7 +268,6 @@ export default function Home({ isOpened, setIsOpened }) {
 
   let bodyContent;
   let headerContent;
-
 
   switch (step) {
     case STEPS.DETAILS:
@@ -503,14 +504,15 @@ export default function Home({ isOpened, setIsOpened }) {
     <>
       <div className="form">
         <div className="form__container">
-          <div className="form__header"
-          style={{
-            "--step": `${step + 1}`,
-            "--total": Object.keys(STEPS).length
-          }}
+          <div
+            className="form__header"
+            style={{
+              "--step": `${step + 1}`,
+              "--total": Object.keys(STEPS).length,
+            }}
           >
             {headerContent}
-            <button className="close" onClick={() => setIsOpened(false)}>
+            <button className="close" onClick={onClose}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 32 32"
@@ -566,7 +568,7 @@ export default function Home({ isOpened, setIsOpened }) {
       <div
         className="overlay"
         onClick={() => {
-          setIsOpened(false);
+          onClose();
         }}
       ></div>
     </>

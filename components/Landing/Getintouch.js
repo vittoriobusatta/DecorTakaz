@@ -1,9 +1,10 @@
-import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import ContactForm from "../ContactForm";
+import { useEstimate } from "../../hook/useEstimate";
 
 function Getintouch() {
-  const [isOpened, setIsOpened] = useState(false);
+  const { isOpened, onOpen } = useEstimate();
+  console.log(isOpened);
 
   return (
     <section className="getintouch">
@@ -16,14 +17,14 @@ function Getintouch() {
             <p>Contactez-nous maintenant</p>
           </div>
         </span>
-        <button onClick={() => setIsOpened(true)}>
+        <button onClick={onOpen}>
           <div className="hidden">
             <p>Faire un devis</p>
           </div>
         </button>
       </div>
       {isOpened && (
-        <ContactForm isOpened={isOpened} setIsOpened={setIsOpened} />
+        <ContactForm isOpened={isOpened} />
       )}
     </section>
   );

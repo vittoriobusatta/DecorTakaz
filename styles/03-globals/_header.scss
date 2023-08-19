@@ -26,6 +26,17 @@
     transform: translateY(-100%);
     transition: transform 600ms ease;
   }
+  & button {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    background: $accentColor;
+    border: 1px solid $backgroundColor;
+    border-radius: 25px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    color: $backgroundColor;
+  }
   &__logo {
     z-index: 999;
     &__icon {
