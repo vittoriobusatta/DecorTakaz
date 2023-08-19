@@ -4,16 +4,6 @@ import Link from "next/link";
 import { LogoIcon } from "../utils/icons";
 
 function Header() {
-  const [openMenu, setOpenMenu] = useState(false);
-
-  useEffect(() => {
-    if (openMenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [openMenu]);
-
   const [scollTop, setScrollTop] = useState(0);
   const headerRef = useRef(null);
 
@@ -38,7 +28,6 @@ function Header() {
           className="header__logo"
           aria-label="Retourner à l'accueil"
           href="/"
-          onClick={() => setOpenMenu(false)}
         >
           <LogoIcon />
         </Link>
