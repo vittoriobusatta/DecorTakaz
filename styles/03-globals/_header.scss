@@ -8,7 +8,7 @@
   justify-content: space-between;
   min-height: 60px;
   background-color: $backgroundColor;
-  z-index: 888;
+  z-index: 80;
   padding: 12px 26px;
   @media screen and (min-width: 576px) {
     padding: 16px 32px;
@@ -26,8 +26,36 @@
     transform: translateY(-100%);
     transition: transform 600ms ease;
   }
+  & button {
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    background: $accentColor;
+    border: 1px solid $backgroundColor;
+    border-radius: 25px;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+    color: $backgroundColor;
+  }
   &__logo {
     z-index: 999;
+    &__icon {
+      width: 100%;
+      height: 100%;
+      max-width: 28px;
+      max-height: 30px;
+      & g {
+        transition: opacity 2s ease;
+      }
+      &--active {
+        .header__logo__icon__white {
+          opacity: 1;
+        }
+        .header__logo__icon__dark {
+          opacity: 0;
+        }
+      }
+    }
   }
 }
 

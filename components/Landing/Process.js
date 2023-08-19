@@ -44,9 +44,6 @@ const Process = () => {
             className="section__head__title"
           />
         </div>
-        <div className="hidden">
-          <a>Info</a>
-        </div>
       </div>
       <ul className="process__list">
         {process.map((item, index) => {

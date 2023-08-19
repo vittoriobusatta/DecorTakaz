@@ -20,15 +20,13 @@
 @supports (padding: env(safe-area-inset-top)) {
   body {
     background-color: $backgroundColor;
-    font-family: "Manrope", sans-serif;
+    font-family: $RivalSans;
     font-size: 1.6rem;
-    overflow: hidden;
   }
 }
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
   @media screen and (max-width: 1400px) {
@@ -51,13 +49,32 @@ html {
   }
 }
 
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 main {
   position: absolute;
   top: calc(100vh + 44px);
   left: 0;
   right: 0;
   background-color: $backgroundColor;
-  z-index: 2;
   @media screen and (min-width: 768px) {
     top: calc(100vh + 116px);
   }

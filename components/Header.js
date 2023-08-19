@@ -1,32 +1,13 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import React from "react";
 import Link from "next/link";
 import { LogoIcon } from "../utils/icons";
-import Menu from "./Menu";
+import { useEstimate } from "../hook/useEstimate";
 
 function Header() {
-  const [openMenu, setOpenMenu] = useState(false);
-  const menuContainer = useRef(null);
-  const listitems = useRef([]);
-
-  const ClickMenu = () => {
-    setOpenMenu(!openMenu);
-  };
-
-  const handleCloseMenu = useCallback(() => {
-    setOpenMenu(false);
-  }, [setOpenMenu]);
-
-  useEffect(() => {
-    if (openMenu) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [openMenu]);
-
   const [scollTop, setScrollTop] = useState(0);
   const headerRef = useRef(null);
+  const { onOpen } = useEstimate();
 
   useEffect(() => {
     const onScroll = () => {
@@ -50,26 +31,11 @@ function Header() {
           aria-label="Retourner à l'accueil"
           href="/"
         >
-          <LogoIcon
-            color={openMenu ? "#FFF0E0" : "#4E2705"}
-            color2={openMenu ? "#4E2705" : "#FFF0E0"}
-            onClick={handleCloseMenu}
-          />
+          <LogoIcon />
         </Link>
-        <button
-          aria-label="menu"
-          onClick={ClickMenu}
-          className={`burger ${openMenu ? "active" : ""}`}
-        >
-          <div className="bar"></div>
-          <div className="bar"></div>
+        <button onClick={onOpen}>
+          <p>Faire un devis</p>
         </button>
-        <Menu
-          setOpenMenu={setOpenMenu}
-          openMenu={openMenu}
-          menuContainer={menuContainer}
-          listitems={listitems}
-        />
       </header>
     </>
   );

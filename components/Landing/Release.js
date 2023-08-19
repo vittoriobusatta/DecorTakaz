@@ -52,59 +52,6 @@ function Release({ categories, products }) {
             className="section__head__title"
           />
         </div>
-        <Link href="/categories" className="section__head__link">
-          <span>Voir tout</span>
-          <div className="release__arrow">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="8"
-              viewBox="0 0 42.985 12.881"
-            >
-              {" "}
-              <g transform="translate(0 12.882) rotate(-90)">
-                {" "}
-                <path
-                  d="M6.441,2.736,0,0,6.441,15.268,12.881,0Z"
-                  transform="translate(0 27.717)"
-                  fill="#fff0e0"
-                ></path>{" "}
-                <line
-                  y2="37.086"
-                  transform="translate(6.441)"
-                  fill="none"
-                  stroke="#fff0e0"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
-                ></line>{" "}
-              </g>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="26"
-              height="8"
-              viewBox="0 0 42.985 12.881"
-            >
-              {" "}
-              <g transform="translate(0 12.882) rotate(-90)">
-                {" "}
-                <path
-                  d="M6.441,2.736,0,0,6.441,15.268,12.881,0Z"
-                  transform="translate(0 27.717)"
-                  fill="#fff0e0"
-                ></path>{" "}
-                <line
-                  y2="37.086"
-                  transform="translate(6.441)"
-                  fill="none"
-                  stroke="#fff0e0"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
-                ></line>{" "}
-              </g>
-            </svg>
-          </div>
-        </Link>
       </div>
       <ul className="release__category">
         {categories.map((item, index) => {
